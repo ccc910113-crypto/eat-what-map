@@ -1,5 +1,5 @@
-// eat-what-map service worker, build 202611041927
-const V = "ewm-202611041927";
+// eat-what-map service worker, build 202611042007
+const V = "ewm-202611042007";
 const SHELL = ["./", "index.html", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png", "icons/apple-touch-icon.png"];
 const TILE_CACHE = "ewm-tiles", TILE_MAX = 800;
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });
