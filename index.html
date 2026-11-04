@@ -65,7 +65,9 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,4.2vw,40px);l
 .seg{display:inline-flex;background:var(--sunk);border-radius:10px;padding:3px;gap:2px;max-width:100%;overflow-x:auto}
 .seg button{border:0;background:transparent;border-radius:8px;padding:6px 12px;font-size:13px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;color:var(--muted)}
 .seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow);font-weight:500}
-.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex:1 1 auto;min-width:0}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex:1 1 auto;min-width:0;padding:4px 3px;margin:-4px -3px}
+.chip:focus-visible,.seg button:focus-visible{outline-offset:-2px}
+.search:focus-within{box-shadow:0 0 0 2px var(--brown)}
 .chips::-webkit-scrollbar{display:none}
 .chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 12px;font-size:13px;cursor:pointer;white-space:nowrap}
 .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
@@ -217,6 +219,8 @@ footer a{color:var(--brown-ink)}
 :root[data-theme="dark"]{--on-accent:#1a1713;--accent-btn:#d69a45}
 :root{--gC:#766b60}
 .num,.code{color:var(--on-accent)!important}
+.code{background:var(--accent-btn)}
+.pill.ok,.chev{color:var(--ink)}
 .card.active .num{color:var(--bg)!important}
 .btn.primary{background:var(--accent-btn);border-color:var(--accent-btn);color:var(--on-accent)}
 .pill.later{color:var(--brown-ink)}
@@ -246,7 +250,7 @@ footer summary{cursor:pointer;color:var(--ink)}
 .chev{padding:6px 10px;bottom:6px}
 .ord{padding-right:0}
 .body2 .pro{padding-right:96px}
-.ltag{transform:translate(-50%,-150%)}
+.ltag{transform:translate(-50%,-210%)}
 .lclu{width:auto!important;min-width:34px;height:26px!important;padding:0 8px;font-size:12px!important;border-width:2px!important;border-radius:13px!important}
 @media (max-width:900px){
   .bar .wrap{gap:6px;padding-block:8px}
@@ -824,10 +828,10 @@ function detailHTML(s){
     '<div class="actions"><a class="btn primary" href="'+gmWalk(s)+'" target="_blank" rel="noopener">從'+esc(origin().label)+'走過去</a><button class="btn onmap" data-id="'+s.id+'">在地圖上看</button><a class="btn" href="'+gmSearch(s)+'" target="_blank" rel="noopener">看菜單照片</a>'+(s.menu_link?'<a class="btn" href="'+esc(s.menu_link)+'" target="_blank" rel="noopener">'+esc(s.menu_link_label||"線上菜單")+'</a>':'')+'</div></div>';
 }
 function cardHTML(s){
-  const st=status(s),on=state.active===s.id,ex=OPEN.has(s.id),shut=!(st.open||st.soon);
+  const st=status(s),on=state.active===s.id,ex=OPEN.has(s.id),shut=!(st.open||st.soon)&&st.cls!=="ok";
   const fp=s.fit?((s.fit.est?'約 ':'')+'$'+s.fit.price):('$'+s.pmin+'–'+s.pmax);
   return '<article class="card'+(on?' active':'')+(ex?' open':'')+(shut?' shut':'')+'" id="c-'+s.id+'">'+
-   '<button class="head" data-id="'+s.id+'" aria-expanded="'+ex+'" aria-controls="d-'+s.id+'" aria-label="'+esc(s.name)+'，'+esc(st.txt)+'，'+(ex?'收起':'展開')+'菜單">'+
+   '<button class="head" data-id="'+s.id+'" aria-expanded="'+ex+'" aria-controls="d-'+s.id+'" aria-label="'+esc(s.name)+'，'+esc(st.txt)+(s.unverified?'，待確認：'+esc(s.unverified):'')+'，'+(ex?'收起':'展開')+'菜單">'+
     '<span class="num g'+(s.fit?s.fit.grade:"C")+'">'+s.rank+'</span>'+
     '<span class="hmain"><span class="name">'+esc(s.name)+'</span><span class="meta"><span class="pill '+st.cls+'">'+st.txt+'</span>'+(s.unverified?'<span class="pill flag" title="'+esc(s.unverified)+'">待確認</span>':'')+(staleYear(s)?'<span class="pill ok" title="菜單價格來自 '+staleYear(s)+' 年，現在可能已經漲價">價格是 '+staleYear(s)+' 年的</span>':'')+'<span>'+esc(s.cuisine)+'</span><span>步行 '+s.min+' 分</span></span></span>'+
     '<span class="price"><span class="pmain">'+fp+'</span><small>店內 $'+s.pmin+'–'+s.pmax+(s.pest?'・估計':'')+'</small></span>'+
@@ -868,7 +872,7 @@ function toggleCard(id){
 $("list").addEventListener("click",e=>{
   const h=e.target.closest(".head");if(h){toggleCard(h.dataset.id);return}
   const m=e.target.closest(".onmap");if(m){setActive(m.dataset.id);if(innerWidth<=900){state.view="map";sync();scrollTo({top:0})}if(window.LM)LM.focus(m.dataset.id);return}
-  const cp_=e.target.closest(".copy");if(cp_){const t=cp_.dataset.copy;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>{cp_.textContent="已複製"},()=>{cp_.textContent="請手動選取"})}
+  const cp_=e.target.closest(".copy");if(cp_){const t=cp_.dataset.copy;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>{cp_.textContent="已複製";setTimeout(()=>{cp_.textContent="複製"},2000)},()=>{cp_.textContent="請手動選取"})}
 });
 $("list").addEventListener("mouseover",e=>{const c=e.target.closest(".card");if(c&&window.LM)LM.hover(c.id.slice(2))});
 $("list").addEventListener("mouseleave",()=>{if(window.LM)LM.hover(null)});
@@ -876,7 +880,7 @@ function select(id,from){
   const s=SHOPS.find(x=>x.id===id);
   if(s&&!visible().includes(s)){Object.assign(state,{type:"全部",openNow:false,q:"",maxp:300});$("q").value="";}
   OPEN.add(id);state.active=id;
-  if(from==="popup")state.view="list";
+  if(from==="popup"||from==="svg")state.view="list";
   sync();render();
   const c=$("c-"+id);if(c)c.scrollIntoView({behavior:RM()?"auto":"smooth",block:"start"});
 }
@@ -911,7 +915,7 @@ function setOrigin(o){
     ORIGINS.gps={label:"我的位置",ll,q:ll[0].toFixed(6)+","+ll[1].toFixed(6)};
     state.origin="gps";recompute();if(window.LM){LM.me(ll,p.coords.accuracy);LM.origin(ll,true)}sync();render();
     msg("已定位，誤差約 "+Math.round(p.coords.accuracy)+" m。位置只在你的瀏覽器裡使用，不會上傳。"+(meters(ll,STATION)>3000?"你目前離科技大樓站超過 3 公里，距離僅供參考。":""));
-  },e=>{sync();msg(e.code===1?"沒有取得定位權限。可以改用「神樂屋」當起點，或在網址列旁允許位置存取。":"定位失敗，請稍後再試，或改用其他起點。")},{enableHighAccuracy:true,timeout:15000,maximumAge:60000});
+  },e=>{sync();msg((state.origin==="gps"?"距離仍用上一次定位的位置計算。":"")+(e.code===1?"沒有取得定位權限。可以改用「神樂屋」當起點，或在網址列旁允許位置存取。":"定位失敗，請稍後再試，或改用其他起點。"))},{enableHighAccuracy:true,timeout:15000,maximumAge:60000});
 }
 
 (function(){
@@ -921,7 +925,7 @@ function setOrigin(o){
     const[sx,sy]=P(STATION[0],STATION[1]);
     $("svgpins").innerHTML='<g transform="translate('+sx+','+sy+')"><rect x="-70" y="-17" width="140" height="34" rx="6" fill="var(--brown)"/><text text-anchor="middle" dominant-baseline="central" fill="#fff" font-size="18" font-weight="700">BR08 科技大樓</text></g>'+
       SHOPS.map(s=>{const[x,y]=P(s.ll[0],s.ll[1]);return '<g class="pin" data-id="'+s.id+'" transform="translate('+x+','+y+')" style="cursor:pointer"><circle r="15" fill="var(--g'+(s.fit?s.fit.grade:"C")+')" stroke="#fff" stroke-width="3"/><title>'+esc(s.name)+'</title></g>'}).join("");
-    document.querySelectorAll("#svgpins .pin").forEach(p=>p.onclick=()=>select(p.dataset.id,"map"));
+    document.querySelectorAll("#svgpins .pin").forEach(p=>{p.setAttribute("tabindex","0");p.setAttribute("role","button");p.onclick=()=>select(p.dataset.id,"svg");p.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();select(p.dataset.id,"svg")}}});
     msg("地圖載入不了（可能沒有網路），先顯示簡易街道圖。");
     return;
   }
@@ -933,18 +937,25 @@ function setOrigin(o){
   ];
   let ti=0,errs=0;
   const tiles=L.tileLayer(TILE_SRC[0][0],{maxZoom:19,maxNativeZoom:19,attribution:TILE_SRC[0][1],referrerPolicy:"no-referrer"}).addTo(map);
-  tiles.on("tileerror",()=>{if(++errs>=4&&ti<TILE_SRC.length-1){ti++;errs=0;map.attributionControl.removeAttribution(TILE_SRC[ti-1][1]);tiles.options.attribution=TILE_SRC[ti][1];map.attributionControl.addAttribution(TILE_SRC[ti][1]);tiles.setUrl(TILE_SRC[ti][0]);msg("地圖讀取不順，已換一個地圖來源。")}});
+  tiles.on("tileerror",()=>{if(++errs>=4&&ti<TILE_SRC.length-1){ti++;errs=0;map.attributionControl.removeAttribution(TILE_SRC[ti-1][1]);tiles.options.attribution=TILE_SRC[ti][1];map.attributionControl.addAttribution(TILE_SRC[ti][1]);tiles.setUrl(TILE_SRC[ti][0]);const lg=document.querySelector(".maplegend span:last-child");if(lg)lg.textContent="底圖 © Esri";msg("地圖讀取不順，已換一個地圖來源。")}});
   const mk={};
-  const layer=L.markerClusterGroup?L.markerClusterGroup({maxClusterRadius:24,disableClusteringAtZoom:17,spiderfyOnMaxZoom:true,showCoverageOnHover:false,iconCreateFunction:c=>L.divIcon({className:"",html:'<div class="lclu">'+c.getChildCount()+'</div>',iconSize:[40,26],iconAnchor:[20,13]})}):L.layerGroup();
+  const layer=L.markerClusterGroup?L.markerClusterGroup({maxClusterRadius:24,disableClusteringAtZoom:17,spiderfyOnMaxZoom:true,showCoverageOnHover:false,iconCreateFunction:c=>L.divIcon({className:"",html:'<div class="lclu" role="img" aria-label="'+c.getChildCount()+' 家店，按 Enter 放大">'+c.getChildCount()+'</div>',iconSize:[40,26],iconAnchor:[20,13]})}):L.layerGroup();
   layer.addTo(map);
-  const icon=s=>L.divIcon({className:"",html:'<div class="lpin g'+(s.fit?s.fit.grade:"C")+(s.id===state.active?' active':'')+'"><span>'+(s.rank||'')+'</span></div>',iconSize:[30,30],iconAnchor:[15,36],popupAnchor:[0,-36]});
+  const icon=s=>L.divIcon({className:"",html:'<div class="lpin g'+(s.fit?s.fit.grade:"C")+(s.id===state.active?' active':'')+'" data-lid="'+s.id+'"><span>'+(s.rank||'')+'</span></div>',iconSize:[30,30],iconAnchor:[15,36],popupAnchor:[0,-36]});
   const pop=s=>{const st=status(s);return '<div class="pop"><span class="t">'+esc(s.name)+'</span><span class="m">'+esc(st.txt)+'・步行 '+s.min+' 分</span>'+(s.fit?'<div>'+esc(s.fit.order)+'</div><div><b>'+s.fit.protein+' g</b> 蛋白質・'+(s.fit.est?'約 ':'')+'$'+s.fit.price+'</div>':'')+'<div class="b"><a class="p" href="'+gmWalk(s)+'" target="_blank" rel="noopener">步行路線</a><button data-more="'+s.id+'">看菜單</button></div></div>'};
   SHOPS.forEach(s=>{const m=L.marker(s.ll,{icon:icon(s),title:s.name,keyboard:true,riseOnHover:true});layer.addLayer(m);
     m.bindPopup(()=>pop(s),{autoPanPadding:[30,30]});
     m.on("click",()=>{setActive(s.id);if(innerWidth>900){const c=$("c-"+s.id);if(c)c.scrollIntoView({behavior:RM()?"auto":"smooth",block:"nearest"})}});
     mk[s.id]=m});
+  $("lmap").addEventListener("keydown",e=>{
+    if(e.key!=="Enter"&&e.key!==" ")return;
+    const icon=e.target.closest&&e.target.closest(".leaflet-marker-icon");if(!icon)return;
+    const pin=icon.querySelector(".lpin");
+    if(pin&&pin.dataset.lid){e.preventDefault();e.stopPropagation();const id=pin.dataset.lid;setActive(id);mk[id].openPopup();setTimeout(()=>{const a=document.querySelector(".leaflet-popup a, .leaflet-popup button");if(a)a.focus()},60);return}
+    if(icon.querySelector(".lclu")&&layer._featureGroup){e.preventDefault();e.stopPropagation();layer._featureGroup.eachLayer(l=>{if(l._icon===icon&&l.zoomToBounds)l.zoomToBounds({padding:[40,40]})})}
+  },true);
   map.on("popupopen",e=>{const b=e.popup.getElement().querySelector("[data-more]");if(b)b.onclick=()=>{map.closePopup();select(b.dataset.more,"popup")}});
-  const tag=(ll,txt,bg)=>L.marker(ll,{icon:L.divIcon({className:"",html:'<span class="ltag" style="background:'+bg+'">'+txt+'</span>',iconSize:[0,0]}),interactive:false,zIndexOffset:2000}).addTo(map);
+  const tag=(ll,txt,bg)=>L.marker(ll,{icon:L.divIcon({className:"",html:'<span class="ltag" style="background:'+bg+'">'+txt+'</span>',iconSize:[0,0]}),interactive:false,zIndexOffset:-200}).addTo(map);
   tag(STATION,"BR08 科技大樓","#8f5f17");tag(ORIGINS.kagura.ll,"神樂屋","#5b4a8a");
   const ring=L.circle(origin().ll,{radius:400,color:"#a8701f",weight:1.5,dashArray:"5 6",fill:false,interactive:false}).addTo(map);
   let me=null,acc=null,fitted=false;
@@ -970,7 +981,7 @@ function barH(){document.documentElement.style.setProperty("--barh",$("bar").off
 $("foot").innerHTML=META.footer.split("<br>").map(p=>p.startsWith("已排除")||p.startsWith("另外也查過")?'<details><summary>沒有收錄的店</summary><p>'+p+'</p></details>':"<p>"+p+"</p>").join("");
 recompute();sync();clock();barH();render();
 addEventListener("resize",barH);
-setInterval(()=>{clock();const f=document.activeElement&&document.activeElement.dataset?document.activeElement.dataset.id:null;const y=scrollY;render();if(f){const h=document.querySelector('.head[data-id="'+f+'"]');if(h)h.focus({preventScroll:true})}scrollTo(0,y)},60000);
+setInterval(()=>{clock();const ae=document.activeElement;if(ae&&ae.closest&&ae.closest('.detail'))return;const f=ae&&ae.classList&&ae.classList.contains('head')?ae.dataset.id:null;const y=scrollY;render();if(f){const h=document.querySelector('.head[data-id="'+f+'"]');if(h)h.focus({preventScroll:true})}scrollTo(0,y)},60000);
 </script>
 
 <script>
