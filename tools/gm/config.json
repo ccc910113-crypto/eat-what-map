@@ -1,0 +1,12 @@
+{
+  "cdp_url": "http://127.0.0.1:9222",
+  "pause_seconds": [2.0, 3.5],
+  "page_wait_seconds": 5,
+  "max_shops_per_run": 60,
+  "recent_months_ok": 12,
+  "coord_mismatch_m": 150,
+  "name_similarity_min": 0.5,
+  "price_diff_flag_pct": 10,
+  "stop_on_challenge": true,
+  "hl": "zh-TW"
+}

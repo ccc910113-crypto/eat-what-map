@@ -22,5 +22,7 @@ import patches_audit3
 S=patches_audit3.apply(S)
 import patches_xcheck
 S=patches_xcheck.apply(S)
+import patches_gm
+S=patches_gm.apply(S)
 json.dump(S,open("shops.json","w"),ensure_ascii=False,indent=1)
 print(len(S))
