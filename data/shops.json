@@ -5189,5 +5189,534 @@
    121.543217
   ],
   "xcheck": "比對 2 個來源：營業 一致・時間 只有一個來源・價格 只有一個來源"
+ },
+ {
+  "id": "impasta",
+  "name": "I'm Pasta 和平店",
+  "cuisine": "義大利麵・燉飯・焗烤",
+  "type": "異國",
+  "addr": "台北市大安區和平東路二段118巷50號",
+  "ll": [
+   25.022497,
+   121.542779
+  ],
+  "phone": "02-2735-3535",
+  "pmin": 125,
+  "pmax": 209,
+  "pest": false,
+  "hours": "每天 11:00–14:30、17:00–20:30（Google 地圖，2026-11）",
+  "slots": [
+   {
+    "d": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "o": "11:00",
+    "c": "14:30"
+   },
+   {
+    "d": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "o": "17:00",
+    "c": "20:30"
+   }
+  ],
+  "verified": "Google 地圖 2026-11：4.2 分、1,948 則評論，最新評論 3 週前；foodpanda 仍上架",
+  "signature": [
+   "蕃茄蔬菜雞肉麵",
+   "火爆骰子牛佐紅醬麵"
+  ],
+  "items": [
+   {
+    "cat": "義大利麵",
+    "name": "蕃茄蔬菜雞肉麵（起）",
+    "price": 125
+   },
+   {
+    "cat": "義大利麵",
+    "name": "奶油蔬菜鮭魚麵（起）",
+    "price": 145
+   },
+   {
+    "cat": "義大利麵",
+    "name": "主廚秘製打拋豬麵（起）",
+    "price": 155
+   },
+   {
+    "cat": "義大利麵",
+    "name": "義式肉醬麵（起）",
+    "price": 130
+   },
+   {
+    "cat": "義大利麵",
+    "name": "火爆骰子牛佐紅醬麵（起）",
+    "price": 209
+   },
+   {
+    "cat": "燉飯",
+    "name": "蘑菇雞肉燉飯",
+    "price": 130
+   },
+   {
+    "cat": "燉飯",
+    "name": "奶油蔬菜雞肉燉飯",
+    "price": 135
+   },
+   {
+    "cat": "焗烤",
+    "name": "肉控燒牛焗烤（起）",
+    "price": 180
+   },
+   {
+    "cat": "小點",
+    "name": "義式青菜",
+    "price": 50
+   },
+   {
+    "cat": "小點",
+    "name": "主廚手作雞肉捲",
+    "price": 75
+   },
+   {
+    "cat": "外送價（foodpanda 2026-11）",
+    "name": "蕃茄蔬菜雞肉麵",
+    "price": 185
+   },
+   {
+    "cat": "外送價（foodpanda 2026-11）",
+    "name": "義式肉醬麵",
+    "price": 185
+   }
+  ],
+  "menu_source": "https://menufans.com/place/im-pasta-he-ping-dian-019b96b50e5e7925895d962f0167c711",
+  "menu_source_label": "menufans 轉載的店內菜單＋foodpanda 外送價",
+  "menu_source_date": "2026-02（店內）、2026-11（外送）",
+  "menu_link": "https://www.foodpanda.com.tw/restaurant/y9ne/im-pasta-tai-bei-he-ping-dian",
+  "menu_link_label": "foodpanda 菜單（外送價）",
+  "note": "店內菜單的價格是起價，換麵型可能不同價。foodpanda 上同一道麵貴約 50%（125→185），以店內價為準，出發前可打電話確認。",
+  "xcheck": "比對 3 個來源：營業 一致・時間 Google 地圖・價格 店內和外送價不同",
+  "fit": {
+   "order": "蕃茄蔬菜雞肉麵（麵量減半）＋義式青菜",
+   "price": 175,
+   "est": true,
+   "protein": 22,
+   "grade": "B",
+   "why": "紅醬、不炸、不甜，雞肉是主要蛋白質；但整盤以白麵為主，每百元約 12.6 g，沒到 A。",
+   "avoid": "奶油白醬、青醬奶油、焗烤（油脂和起司多）；培根、香腸（加工肉）；海鮮和蛤蜊類（不在豬雞牛魚）；炸雞塊、薯條；含糖飲料。",
+   "tip": "想吃牛可以點火爆骰子牛佐紅醬麵 209 元。麵量減半要先講。"
+  }
+ },
+ {
+  "id": "salvia",
+  "name": "蘇草 salvia",
+  "cuisine": "義大利麵・燉飯・帕里尼",
+  "type": "異國",
+  "addr": "台北市大安區辛亥路二段209號",
+  "ll": [
+   25.021642,
+   121.54244
+  ],
+  "phone": "02-2377-2289",
+  "pmin": 220,
+  "pmax": 380,
+  "pest": false,
+  "hours": "10:00–20:30，週四公休（Google 地圖，2026-11）；另有不定期公休公告在粉絲團",
+  "slots": [
+   {
+    "d": [
+     0,
+     1,
+     2,
+     3,
+     5,
+     6
+    ],
+    "o": "10:00",
+    "c": "20:30"
+   }
+  ],
+  "verified": "Google 地圖 2026-11：4.5 分、1,249 則評論，最新評論 3 個月前；2025-07 有食記",
+  "signature": [
+   "南瓜雞肉燉飯",
+   "莎莎雞腿早午餐"
+  ],
+  "items": [
+   {
+    "cat": "燉飯",
+    "name": "南瓜雞肉燉飯",
+    "price": 220
+   },
+   {
+    "cat": "木盤",
+    "name": "莎莎雞（腿）早午餐（附飲料）",
+    "price": 350
+   },
+   {
+    "cat": "木盤",
+    "name": "醬烤豬排早午餐",
+    "price": 350
+   },
+   {
+    "cat": "木盤",
+    "name": "酸豆鮭魚早午餐",
+    "price": 380
+   },
+   {
+    "cat": "帕里尼",
+    "name": "炙燒雞肉帕里尼（起）",
+    "price": 90
+   },
+   {
+    "cat": "帕里尼",
+    "name": "壽喜燒牛肉帕里尼（起）",
+    "price": 110
+   }
+  ],
+  "menu_source": "https://tenjo.tw/salvia/",
+  "menu_source_label": "周花花食記＋menufans",
+  "menu_source_date": "2025-07",
+  "menu_link": "https://tenjo.tw/salvia/",
+  "menu_link_label": "食記（2025-07）",
+  "note": "義大利麵各品項價格查不到（店內掃 QR code 看菜單）。內用低消每人 100 元，週末限時 2 小時。",
+  "xcheck": "比對 3 個來源：營業 一致・時間 Google 地圖・價格 只有一個來源",
+  "fit": {
+   "order": "南瓜雞肉燉飯（飯量減半或打包一半）",
+   "price": 220,
+   "protein": 25,
+   "grade": "C",
+   "why": "不炸、不甜，但整盤燉飯是精緻澱粉，通常用奶油和起司收尾；每百元約 11 g。",
+   "avoid": "奶油明太子麵、焗烤、早午餐附的薯條和大份麵包、拿鐵和調味飲料。",
+   "tip": "請店家起司和奶油少放。莎莎雞腿早午餐 350 元蛋白質較多，但超過 300，兩人分食較合理。"
+  }
+ },
+ {
+  "id": "grepan",
+  "name": "格芮潘義式創意廚房",
+  "cuisine": "義大利麵・燉飯・焗烤",
+  "type": "異國",
+  "addr": "台北市大安區和平東路二段118巷5之1號",
+  "ll": [
+   25.02388,
+   121.542953
+  ],
+  "pmin": 140,
+  "pmax": 180,
+  "pest": false,
+  "hours": "每天 11:00–14:30、16:30–21:00（Google 地圖，2026-11）",
+  "slots": [
+   {
+    "d": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "o": "11:00",
+    "c": "14:30"
+   },
+   {
+    "d": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "o": "16:30",
+    "c": "21:00"
+   }
+  ],
+  "verified": "Google 地圖 2026-11：3.7 分、829 則評論，近一年內有評論；Uber Eats 和 foodpanda 仍上架",
+  "unverified": "價格是 Uber Eats 外送價，店內可能較低",
+  "signature": [
+   "蕃茄香雞麵",
+   "香蒜紅染嫩雞麵"
+  ],
+  "items": [
+   {
+    "cat": "義大利麵",
+    "name": "蕃茄香雞麵",
+    "price": 140
+   },
+   {
+    "cat": "義大利麵",
+    "name": "香蒜紅染嫩雞麵",
+    "price": 140
+   },
+   {
+    "cat": "義大利麵",
+    "name": "羅勒嫩雞麵",
+    "price": 140
+   },
+   {
+    "cat": "義大利麵",
+    "name": "香蒜咖哩嫩雞麵",
+    "price": 140
+   },
+   {
+    "cat": "義大利麵",
+    "name": "奶油香雞麵",
+    "price": 140
+   },
+   {
+    "cat": "義大利麵",
+    "name": "蕃茄肉醬麵",
+    "price": 140
+   },
+   {
+    "cat": "燉飯",
+    "name": "蕃茄香雞燉飯",
+    "price": 160
+   },
+   {
+    "cat": "燉飯",
+    "name": "羅勒嫩雞燉飯",
+    "price": 160
+   },
+   {
+    "cat": "焗烤",
+    "name": "蕃茄焗烤嫩雞通心粉",
+    "price": 155
+   },
+   {
+    "cat": "焗烤",
+    "name": "蕃茄焗烤肉醬通心粉",
+    "price": 150
+   }
+  ],
+  "menu_source": "https://www.ubereats.com/tw/store/asx%E6%A0%BC%E8%8A%AE%E6%BD%98%E7%BE%A9%E5%BC%8F%E5%89%B5%E6%84%8F%E5%BB%9A%E6%88%BF/eijoYKM4W8-3_tM5cUYj-w",
+  "menu_source_label": "Uber Eats 菜單（外送價）",
+  "menu_source_date": "2026-11",
+  "menu_link": "https://www.ubereats.com/tw/store/asx%E6%A0%BC%E8%8A%AE%E6%BD%98%E7%BE%A9%E5%BC%8F%E5%89%B5%E6%84%8F%E5%BB%9A%E6%88%BF/eijoYKM4W8-3_tM5cUYj-w",
+  "menu_link_label": "Uber Eats 菜單",
+  "note": "Google 評分偏低（3.7）。Uber Eats 共 43 道，這裡只列雞肉和肉醬類。",
+  "xcheck": "比對 3 個來源：營業 一致・時間 Google 地圖・價格 只有外送價",
+  "fit": {
+   "order": "蕃茄香雞麵（麵量減半）",
+   "price": 140,
+   "protein": 20,
+   "grade": "B",
+   "why": "紅醬、不炸、不甜，價格低；但以白麵為主，每百元約 14 g，蛋白質來源只有雞肉。",
+   "avoid": "奶油系列、焗烤、培根（加工肉）、蛤蜊和海鮮類。",
+   "tip": "如果店內有加肉選項，加一份雞肉最划算。"
+  }
+ },
+ {
+  "id": "faxian",
+  "name": "發現義大利麵",
+  "cuisine": "義大利麵・燉飯",
+  "type": "異國",
+  "addr": "台北市大安區和平東路二段118巷2之2號",
+  "ll": [
+   25.024301,
+   121.542803
+  ],
+  "pmin": 170,
+  "pmax": 210,
+  "pest": false,
+  "hours": "11:00–21:00，週二公休（Google 地圖，2026-11）",
+  "slots": [
+   {
+    "d": [
+     0,
+     1,
+     3,
+     4,
+     5,
+     6
+    ],
+    "o": "11:00",
+    "c": "21:00"
+   }
+  ],
+  "verified": "Google 地圖 2026-11：3.9 分、1,418 則評論，最新評論 2 個月前；Uber Eats 仍上架",
+  "unverified": "價格是 Uber Eats 外送價，店內可能較低",
+  "signature": [
+   "勃根地紅酒燉牛肉蕃茄義大利麵",
+   "鄉村雞肉鮮菇蕃茄義大利麵"
+  ],
+  "items": [
+   {
+    "cat": "蕃茄",
+    "name": "鄉村雞肉鮮菇蕃茄義大利麵",
+    "price": 200
+   },
+   {
+    "cat": "蕃茄",
+    "name": "勃根地紅酒燉牛肉蕃茄義大利麵",
+    "price": 210
+   },
+   {
+    "cat": "蕃茄",
+    "name": "經典起士肉醬蕃茄義大利麵",
+    "price": 170
+   },
+   {
+    "cat": "蕃茄",
+    "name": "煙燻黑胡椒豬肉蕃茄義大利麵",
+    "price": 200
+   },
+   {
+    "cat": "橄欖油",
+    "name": "橄欖油蒜椒煙燻雞胸義大利麵",
+    "price": 200
+   },
+   {
+    "cat": "和風咖哩",
+    "name": "精燉牛肉和風咖哩義大利麵",
+    "price": 210
+   },
+   {
+    "cat": "奶油",
+    "name": "迷迭香鮮嫩雞肉奶油義大利麵",
+    "price": 200
+   },
+   {
+    "cat": "奶油",
+    "name": "煙燻鮭魚蘆筍奶油義大利麵",
+    "price": 200
+   },
+   {
+    "cat": "燉飯",
+    "name": "法式紅酒牛肉燉飯",
+    "price": 210
+   },
+   {
+    "cat": "附餐",
+    "name": "玉米濃湯",
+    "price": 20
+   }
+  ],
+  "menu_source": "https://www.ubereats.com/tw/store/%E7%99%BC%E7%8F%BE%E7%BE%A9%E5%A4%A7%E5%88%A9%E9%BA%B5/yaB5PKzCTxqegfUp3533Ww",
+  "menu_source_label": "Uber Eats 菜單（外送價）",
+  "menu_source_date": "2026-11",
+  "menu_link": "https://www.ubereats.com/tw/store/%E7%99%BC%E7%8F%BE%E7%BE%A9%E5%A4%A7%E5%88%A9%E9%BA%B5/yaB5PKzCTxqegfUp3533Ww",
+  "menu_link_label": "Uber Eats 菜單",
+  "note": "Uber Eats 共 50 道，大多 200 元；這裡只列豬雞牛魚的代表品項。",
+  "xcheck": "比對 2 個來源：營業 一致・時間 Google 地圖・價格 只有外送價",
+  "fit": {
+   "order": "勃根地紅酒燉牛肉蕃茄義大利麵（麵量減半）",
+   "price": 210,
+   "protein": 22,
+   "grade": "B",
+   "why": "蕃茄底、不炸、不甜，燉牛肉份量看得到；但以白麵為主，每百元約 10.5 g。",
+   "avoid": "奶油和青醬奶油系列、匈牙利香腸和培根（加工肉）、海鮮和蛤蜊類、玉米濃湯、香蒜麵包。",
+   "tip": "想吃雞就點鄉村雞肉鮮菇蕃茄 200 元。"
+  }
+ },
+ {
+  "id": "no29",
+  "name": "29號館 義大利麵",
+  "cuisine": "義大利麵",
+  "type": "異國",
+  "addr": "台北市大安區瑞安街67之1號",
+  "ll": [
+   25.028628,
+   121.541456
+  ],
+  "phone": "02-2706-6577",
+  "pmin": 166,
+  "pmax": 264,
+  "pest": false,
+  "hours": "11:30–14:30、17:30–20:30，週一、週二公休（Google 地圖，2026-11）",
+  "slots": [
+   {
+    "d": [
+     0,
+     3,
+     4,
+     5,
+     6
+    ],
+    "o": "11:30",
+    "c": "14:30"
+   },
+   {
+    "d": [
+     0,
+     3,
+     4,
+     5,
+     6
+    ],
+    "o": "17:30",
+    "c": "20:30"
+   }
+  ],
+  "verified": "Google 地圖 2026-11：4.0 分、499 則評論，最新評論 2 個月前；Uber Eats 仍上架",
+  "unverified": "價格是 Uber Eats 外送價，店內可能較低",
+  "signature": [
+   "蕃茄肉醬義大利麵（豬肉）"
+  ],
+  "items": [
+   {
+    "cat": "義大利麵",
+    "name": "蕃茄肉醬義大利麵（豬肉）",
+    "price": 177
+   },
+   {
+    "cat": "義大利麵",
+    "name": "紅醬蕃茄義大利麵",
+    "price": 166
+   },
+   {
+    "cat": "義大利麵",
+    "name": "白酒清炒義大利麵",
+    "price": 166
+   },
+   {
+    "cat": "義大利麵",
+    "name": "奶油蕃茄義大利麵",
+    "price": 177
+   },
+   {
+    "cat": "義大利麵",
+    "name": "鮮奶白醬義大利麵",
+    "price": 177
+   },
+   {
+    "cat": "義大利麵",
+    "name": "青醬羅勒義大利麵",
+    "price": 177
+   },
+   {
+    "cat": "義大利麵",
+    "name": "黑松露菌菇醬義大利麵",
+    "price": 264
+   }
+  ],
+  "menu_source": "https://www.ubereats.com/tw/store/29%E8%99%9F%E9%A4%A8%E7%BE%A9%E5%A4%A7%E5%88%A9%E9%BA%B5/PPXUXoYVTB-GhGw650Vpsg",
+  "menu_source_label": "Uber Eats 菜單（外送價）",
+  "menu_source_date": "2026-11",
+  "menu_link": "https://www.ubereats.com/tw/store/29%E8%99%9F%E9%A4%A8%E7%BE%A9%E5%A4%A7%E5%88%A9%E9%BA%B5/PPXUXoYVTB-GhGw650Vpsg",
+  "menu_link_label": "Uber Eats 菜單",
+  "note": "外送菜單只有 7 道醬汁麵，肉類只有豬肉肉醬；店內可能有更多選項。不提供起司粉。",
+  "xcheck": "比對 2 個來源：營業 一致・時間 Google 地圖・價格 只有外送價",
+  "fit": {
+   "order": "蕃茄肉醬義大利麵（豬肉）",
+   "price": 177,
+   "protein": 15,
+   "grade": "C",
+   "why": "肉醬的肉量少，整盤以白麵為主，每百元約 8.5 g。",
+   "avoid": "奶油白醬、黑松露菌菇（幾乎沒有蛋白質）。",
+   "tip": "肉醬的肉量不多，可以問店內有沒有加肉。"
+  }
  }
 ]

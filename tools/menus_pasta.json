@@ -1,0 +1,813 @@
+{
+ "https://www.foodpanda.com.tw/restaurant/y9ne/im-pasta-tai-bei-he-ping-dian": {
+  "name": "I'm Pasta (台北和平店)菜單 價格 | 向附近的I'm Pasta (台北和平店)訂購 | foodpanda 外送",
+  "items": [
+   {
+    "name": "首次訂餐享免外送服務費",
+    "price": 9,
+    "from": false
+   },
+   {
+    "name": "義式肉醬麵",
+    "price": 185,
+    "from": false
+   },
+   {
+    "name": "奶油青醬雞肉麵",
+    "price": 201,
+    "from": false
+   },
+   {
+    "name": "香蒜白酒蛤蜊麵",
+    "price": 213,
+    "from": false
+   },
+   {
+    "name": "蕃茄蔬菜雞肉麵",
+    "price": 185,
+    "from": false
+   },
+   {
+    "name": "奶油起司蛤蜊麵(鹹度來自蒜醬)",
+    "price": 213,
+    "from": false
+   },
+   {
+    "name": "佛羅倫斯奶油海鮮焗烤(鹹度來自蒜醬)",
+    "price": 256,
+    "from": false
+   },
+   {
+    "name": "外送服務費 $29",
+    "price": 29,
+    "from": false
+   },
+   {
+    "name": "外送服務費 $59",
+    "price": 59,
+    "from": false
+   },
+   {
+    "name": "外送服務費 $49",
+    "price": 49,
+    "from": false
+   },
+   {
+    "name": "外送服務費 $69",
+    "price": 69,
+    "from": false
+   },
+   {
+    "name": "外送服務費 $35",
+    "price": 35,
+    "from": false
+   }
+  ],
+  "fetched": "2026-11-04"
+ },
+ "https://www.ubereats.com/tw/store/asx%E6%A0%BC%E8%8A%AE%E6%BD%98%E7%BE%A9%E5%BC%8F%E5%89%B5%E6%84%8F%E5%BB%9A%E6%88%BF/eijoYKM4W8-3_tM5cUYj-w": {
+  "name": "ASX格芮潘義式創意廚房",
+  "items": [
+   {
+    "cat": "人氣精選 Popular Items",
+    "name": "羅勒培根麵Basil Bacon Pasta",
+    "price": 140.0,
+    "desc": "肉品來源:台灣"
+   },
+   {
+    "cat": "人氣精選 Popular Items",
+    "name": "香蒜紅染嫩雞麵 Garlic Red-Dyed Tender Chicken Pasta",
+    "price": 140.0,
+    "desc": ""
+   },
+   {
+    "cat": "人氣精選 Popular Items",
+    "name": "蕃茄焗烤嫩雞通心粉 Tomato Baked Tender Chicken Penne",
+    "price": 155.0,
+    "desc": ""
+   },
+   {
+    "cat": "義大利麵 Pasta",
+    "name": "蕃茄肉醬麵 Tomato Meat Sauce Pasta",
+    "price": 140.0,
+    "desc": "肉品來源:加拿大"
+   },
+   {
+    "cat": "義大利麵 Pasta",
+    "name": "蕃茄香雞麵 Tomato Fragrant Chicken Pasta",
+    "price": 140.0,
+    "desc": "(含濃湯及美式咖啡)"
+   },
+   {
+    "cat": "義大利麵 Pasta",
+    "name": "蕃茄培根麵 Tomato Bacon Pasta",
+    "price": 140.0,
+    "desc": "肉品來源:台灣"
+   },
+   {
+    "cat": "義大利麵 Pasta",
+    "name": "蕃茄蛤蜊麵 Tomato Clam Pasta",
+    "price": 150.0,
+    "desc": ""
+   },
+   {
+    "cat": "義大利麵 Pasta",
+    "name": "奶油肉醬麵 Cream Sauce Meat Sauce Pasta",
+    "price": 140.0,
+    "desc": "肉品來源:加拿大"
+   },
+   {
+    "cat": "義大利麵 Pasta",
+    "name": "奶油香雞麵 Cream Sauce Fragrant Chicken Pasta",
+    "price": 140.0,
+    "desc": ""
+   },
+   {
+    "cat": "義大利麵 Pasta",
+    "name": "奶油蛋黃培根麵 Bacon and Egg Yolk Cream Pasta",
+    "price": 140.0,
+    "desc": "肉品來源:台灣"
+   },
+   {
+    "cat": "義大利麵 Pasta",
+    "name": "奶油蛤蜊麵 Cream Sauce Clam Pasta",
+    "price": 150.0,
+    "desc": "(含濃湯及美式咖啡)"
+   },
+   {
+    "cat": "義大利麵 Pasta",
+    "name": "羅勒嫩雞麵 Pesto Tender Chicken Pasta",
+    "price": 140.0,
+    "desc": ""
+   },
+   {
+    "cat": "義大利麵 Pasta",
+    "name": "羅勒蛤蜊麵 Pesto Clam Pasta",
+    "price": 180.0,
+    "desc": ""
+   },
+   {
+    "cat": "義大利麵 Pasta",
+    "name": "香蒜咖哩嫩雞麵Garlic Curry Tender Chicken Pasta",
+    "price": 140.0,
+    "desc": ""
+   },
+   {
+    "cat": "義大利麵 Pasta",
+    "name": "香蒜咖哩培根麵 Garlic Curry Bacon Pasta",
+    "price": 140.0,
+    "desc": "肉品來源:台灣"
+   },
+   {
+    "cat": "義大利麵 Pasta",
+    "name": "香蒜紅染培根麵 Garlic Red Sauce Bacon Pasta",
+    "price": 140.0,
+    "desc": "肉品來源:台灣"
+   },
+   {
+    "cat": "燉飯 Risotto",
+    "name": "蕃茄肉醬燉飯 Tomato Meat Sauce Risotto",
+    "price": 160.0,
+    "desc": "肉品來源:加拿大"
+   },
+   {
+    "cat": "燉飯 Risotto",
+    "name": "蕃茄香雞燉飯 Tomato Fragrant Chicken Risotto",
+    "price": 160.0,
+    "desc": ""
+   },
+   {
+    "cat": "燉飯 Risotto",
+    "name": "蕃茄培根燉飯 Tomato Bacon Risotto",
+    "price": 160.0,
+    "desc": "肉品來源:台灣"
+   },
+   {
+    "cat": "燉飯 Risotto",
+    "name": "蕃茄蛤蜊燉飯Tomato Clam Risotto",
+    "price": 170.0,
+    "desc": ""
+   },
+   {
+    "cat": "燉飯 Risotto",
+    "name": "奶油肉醬燉飯 Creamy Meat Sauce Risotto",
+    "price": 160.0,
+    "desc": "肉品來源:加拿大"
+   },
+   {
+    "cat": "燉飯 Risotto",
+    "name": "奶油香雞燉飯 Creamy Fragrant Chicken Risotto",
+    "price": 160.0,
+    "desc": ""
+   },
+   {
+    "cat": "燉飯 Risotto",
+    "name": "奶油培根燉飯 Creamy Bacon Risotto",
+    "price": 160.0,
+    "desc": "肉品來源:台灣"
+   },
+   {
+    "cat": "燉飯 Risotto",
+    "name": "羅勒海鮮燉飯 Basil Seafood Risotto",
+    "price": 170.0,
+    "desc": ""
+   },
+   {
+    "cat": "燉飯 Risotto",
+    "name": "羅勒嫩雞燉飯 Basil Tender Chicken Risotto",
+    "price": 160.0,
+    "desc": ""
+   },
+   {
+    "cat": "燉飯 Risotto",
+    "name": "羅勒培根燉飯Basil Bacon Risotto",
+    "price": 160.0,
+    "desc": "肉品來源:台灣"
+   },
+   {
+    "cat": "燉飯 Risotto",
+    "name": "羅勒蛤蜊燉飯 Basil Clam Risotto",
+    "price": 160.0,
+    "desc": ""
+   },
+   {
+    "cat": "焗烤 Au Gratin",
+    "name": "蕃茄焗烤肉醬通心粉 Tomato Au Gratin with Meat Sauce Macaroni",
+    "price": 150.0,
+    "desc": "肉品來源:加拿大"
+   },
+   {
+    "cat": "焗烤 Au Gratin",
+    "name": "蕃茄焗烤海鮮通心粉 Tomato Au Gratin with Seafood Macaroni",
+    "price": 160.0,
+    "desc": ""
+   },
+   {
+    "cat": "焗烤 Au Gratin",
+    "name": "蕃茄焗烤培根通心粉 Tomato Au Gratin with Bacon Macaroni",
+    "price": 160.0,
+    "desc": "肉品來源:台灣"
+   },
+   {
+    "cat": "焗烤 Au Gratin",
+    "name": "奶油焗烤嫩雞通心粉 Cream Au Gratin with Tender Chicken Macaroni",
+    "price": 150.0,
+    "desc": ""
+   },
+   {
+    "cat": "焗烤 Au Gratin",
+    "name": "奶油焗烤培根通心粉 Cream Au Gratin with Bacon Macaroni",
+    "price": 150.0,
+    "desc": "肉品來源:台灣"
+   },
+   {
+    "cat": "焗烤 Au Gratin",
+    "name": "羅勒焗烤嫩雞通心粉 Basil Au Gratin with Tender Chicken Macaroni",
+    "price": 160.0,
+    "desc": "(含濃湯及美式咖啡)"
+   },
+   {
+    "cat": "焗烤 Au Gratin",
+    "name": "羅勒焗烤培根通心粉 Basil Au Gratin with Bacon Macaroni",
+    "price": 160.0,
+    "desc": "肉品來源:台灣"
+   },
+   {
+    "cat": "焗烤 Au Gratin",
+    "name": "咖哩焗烤嫩雞通心粉Curry Au Gratin with Tender Chicken Macaroni",
+    "price": 160.0,
+    "desc": ""
+   },
+   {
+    "cat": "焗烤 Au Gratin",
+    "name": "咖哩焗烤培根通心粉 Curry Au Gratin with Bacon Macaroni",
+    "price": 160.0,
+    "desc": "肉品來源:台灣"
+   },
+   {
+    "cat": "素食專區 Vegetarian Section",
+    "name": "蕃茄野菇麵 Tomato and Wild Mushroom Noodles",
+    "price": 150.0,
+    "desc": "含洋蔥。"
+   },
+   {
+    "cat": "素食專區 Vegetarian Section",
+    "name": "奶油野菇麵 Creamy Wild Mushroom Noodles",
+    "price": 150.0,
+    "desc": ""
+   },
+   {
+    "cat": "素食專區 Vegetarian Section",
+    "name": "香蒜咖哩野菇麵 Garlic Curry Wild Mushroom Noodles",
+    "price": 150.0,
+    "desc": "含蒜。"
+   },
+   {
+    "cat": "素食專區 Vegetarian Section",
+    "name": "香蒜紅染野菇麵 Garlic Red Sauce Wild Mushroom Noodles",
+    "price": 150.0,
+    "desc": "含蒜。"
+   },
+   {
+    "cat": "素食專區 Vegetarian Section",
+    "name": "蕃茄焗烤野菇通心粉 Baked Tomato and Wild Mushroom Penne",
+    "price": 160.0,
+    "desc": ""
+   },
+   {
+    "cat": "素食專區 Vegetarian Section",
+    "name": "奶油焗烤野菇通心粉 Baked Creamy Wild Mushroom Penne",
+    "price": 160.0,
+    "desc": ""
+   },
+   {
+    "cat": "素食專區 Vegetarian Section",
+    "name": "咖哩焗烤野菇通心粉 Baked Curry Wild Mushroom Penne",
+    "price": 160.0,
+    "desc": ""
+   }
+  ],
+  "hours": [
+   {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+     "Monday",
+     "Tuesday",
+     "Wednesday",
+     "Thursday",
+     "Friday",
+     "Saturday",
+     "Sunday"
+    ],
+    "opens": "11:45",
+    "closes": "14:00"
+   },
+   {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+     "Monday",
+     "Tuesday",
+     "Wednesday",
+     "Thursday",
+     "Friday",
+     "Saturday",
+     "Sunday"
+    ],
+    "opens": "17:00",
+    "closes": "20:30"
+   }
+  ],
+  "rating": {
+   "@type": "AggregateRating",
+   "ratingValue": 4.4,
+   "reviewCount": 13
+  },
+  "fetched": "2026-11-04"
+ },
+ "https://www.ubereats.com/tw/store/%E7%99%BC%E7%8F%BE%E7%BE%A9%E5%A4%A7%E5%88%A9%E9%BA%B5/yaB5PKzCTxqegfUp3533Ww": {
+  "name": "發現義大利麵",
+  "items": [
+   {
+    "cat": "人氣精選",
+    "name": "煙燻鮭魚蘆筍奶油義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "人氣精選",
+    "name": "橄欖油蒜椒煙燻培根蘆筍義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "人氣精選",
+    "name": "綠蓉蛤蜊奶油青醬義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "人氣精選",
+    "name": "匈牙利辣味香腸蕃茄義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "人氣精選",
+    "name": "什錦海鮮和風咖哩義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "人氣精選",
+    "name": "香蒜麵包",
+    "price": 20.0,
+    "desc": "每一碗麵都包括1碗湯跟一份麵包\n請確認再選購"
+   },
+   {
+    "cat": "人氣精選",
+    "name": "玉米濃湯",
+    "price": 20.0,
+    "desc": "每一碗麵都已經包括一碗湯跟一份麵包\n請確認再選購"
+   },
+   {
+    "cat": "奶油風味義大利麵",
+    "name": "紐奧良辣味香嫩雞奶油義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "奶油風味義大利麵",
+    "name": "迷迭香鮮嫩雞肉奶油義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "奶油風味義大利麵",
+    "name": "煙燻培根鮮菇奶油義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。本店使用台灣豬肉"
+   },
+   {
+    "cat": "奶油風味義大利麵",
+    "name": "菌菇煙燻雞胸奶油義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "奶油風味義大利麵",
+    "name": "摩斯奶油蛤蜊義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "奶油風味義大利麵",
+    "name": "匈牙利辣味香腸奶油義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "奶油風味義大利麵",
+    "name": "煙燻黑胡椒豬肉奶油義大利麵",
+    "price": 200.0,
+    "desc": "本店使用台灣豬肉"
+   },
+   {
+    "cat": "奶油風味義大利麵",
+    "name": "普羅旺斯海鮮奶油義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "奶油風味義大利麵",
+    "name": "紐奧良辣味培根奶油義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。本店使用台灣豬肉"
+   },
+   {
+    "cat": "奶油青醬風味義大利麵",
+    "name": "鮮嫩雞肉奶油青醬義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "奶油青醬風味義大利麵",
+    "name": "煙燻鮭魚碎肉奶油青醬義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "奶油青醬風味義大利麵",
+    "name": "什錦海鮮奶油青醬義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "奶油青醬風味義大利麵",
+    "name": "匈牙利辣味香腸奶油青醬義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "奶油青醬風味義大利麵",
+    "name": "煙燻黑胡椒豬肉奶油青醬義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "奶油青醬風味義大利麵",
+    "name": "煙燻雞胸奶油青醬義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "和風咖哩風味義大利麵",
+    "name": "精燉牛肉和風咖哩義大利麵",
+    "price": 210.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "和風咖哩風味義大利麵",
+    "name": "鮮嫩雞肉和風咖哩義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "和風咖哩風味義大利麵",
+    "name": "匈牙利辣味香腸和風咖哩義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "和風咖哩風味義大利麵",
+    "name": "煙燻雞胸和風咖哩義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "和風咖哩風味義大利麵",
+    "name": "煙燻黑胡椒豬肉和風咖哩義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "粉紅醬風味義大利麵",
+    "name": "鮮嫩雞肉粉紅醬義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "粉紅醬風味義大利麵",
+    "name": "蛤蜊鮮菇粉紅醬義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "粉紅醬風味義大利麵",
+    "name": "什錦海鮮粉紅醬義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "粉紅醬風味義大利麵",
+    "name": "煙燻雞胸粉紅醬義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "粉紅醬風味義大利麵",
+    "name": "煙燻黑胡椒豬肉粉紅醬義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "蕃茄風味義大利麵",
+    "name": "巴塞隆納海鮮蕃茄義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "蕃茄風味義大利麵",
+    "name": "紐奧良辣味蛤蜊蕃茄義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "蕃茄風味義大利麵",
+    "name": "經典起士肉醬蕃茄義大利麵",
+    "price": 170.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "蕃茄風味義大利麵",
+    "name": "鄉村雞肉鮮菇蕃茄義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "蕃茄風味義大利麵",
+    "name": "勃根地紅酒燉牛肉蕃茄義大利麵",
+    "price": 210.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "蕃茄風味義大利麵",
+    "name": "嚴選煙燻雞胸蕃茄義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "蕃茄風味義大利麵",
+    "name": "培根鮮菇蕃茄義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "蕃茄風味義大利麵",
+    "name": "煙燻黑胡椒豬肉蕃茄義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "橄欖油風味義大利麵",
+    "name": "橄欖油蒜椒白酒蛤蜊義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "橄欖油風味義大利麵",
+    "name": "橄欖油蒜椒煙燻雞胸義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "橄欖油風味義大利麵",
+    "name": "橄欖油蒜椒什錦海鮮義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "橄欖油風味義大利麵",
+    "name": "橄欖油蒜椒煙燻黑胡椒豬肉義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "橄欖油風味義大利麵",
+    "name": "橄欖油蒜椒匈牙利辣味香腸義大利麵",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "義式燉飯",
+    "name": "法式紅酒牛肉燉飯",
+    "price": 210.0,
+    "desc": "附麵包及湯。本店使用澳洲牛肉"
+   },
+   {
+    "cat": "義式燉飯",
+    "name": "菌菇煙燻雞胸燉飯",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "義式燉飯",
+    "name": "奶油青醬蛤蜊燉飯",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "義式燉飯",
+    "name": "和風咖哩燻豬肉燉飯",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   },
+   {
+    "cat": "義式燉飯",
+    "name": "茄汁海鮮燉飯",
+    "price": 200.0,
+    "desc": "附麵包及湯。"
+   }
+  ],
+  "hours": [
+   {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+     "Sunday",
+     "Monday"
+    ],
+    "opens": "11:00",
+    "closes": "20:45"
+   },
+   {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+     "Wednesday",
+     "Thursday",
+     "Friday",
+     "Saturday"
+    ],
+    "opens": "11:00",
+    "closes": "20:45"
+   }
+  ],
+  "rating": {
+   "@type": "AggregateRating",
+   "ratingValue": 4.9,
+   "reviewCount": 10000
+  },
+  "fetched": "2026-11-04"
+ },
+ "https://www.ubereats.com/tw/store/29%E8%99%9F%E9%A4%A8%E7%BE%A9%E5%A4%A7%E5%88%A9%E9%BA%B5/PPXUXoYVTB-GhGw650Vpsg": {
+  "name": "29號館義大利麵",
+  "items": [
+   {
+    "cat": "人氣精選 Popular Items",
+    "name": "白酒清炒義大利麵",
+    "price": 166.0,
+    "desc": "會放幾片辣椒片"
+   },
+   {
+    "cat": "人氣精選 Popular Items",
+    "name": "奶油蕃茄義大利麵",
+    "price": 177.0,
+    "desc": "奶油蕃茄醬拌義大利麵，搭配黑橄欖與青花椰。此品項為醬拌麵，出餐已拌勻，無法分開裝。"
+   },
+   {
+    "cat": "人氣精選 Popular Items",
+    "name": "紅醬蕃茄義大利麵",
+    "price": 166.0,
+    "desc": "蕃茄紅醬拌義大利麵，搭配鮮蝦、蛤蜊、花枝、黑橄欖與青花椰。"
+   },
+   {
+    "cat": "人氣精選 Popular Items",
+    "name": "鮮奶白醬義大利麵",
+    "price": 177.0,
+    "desc": "鮮奶白醬拌義大利麵，搭配青花椰、彩椒、黑橄欖與小黃瓜"
+   },
+   {
+    "cat": "人氣精選 Popular Items",
+    "name": "青醬羅勒義大利麵",
+    "price": 177.0,
+    "desc": "羅勒青醬拌義大利麵，搭配蝦、蛤蜊、黑橄欖與綠花椰菜"
+   },
+   {
+    "cat": "人氣精選 Popular Items",
+    "name": "黑松露菌菇醬義大利麵",
+    "price": 264.0,
+    "desc": "黑松露菌菇醬拌義大利麵，香氣濃郁。"
+   },
+   {
+    "cat": "人氣精選 Popular Items",
+    "name": "蕃茄肉醬義大利麵(豬肉)",
+    "price": 177.0,
+    "desc": "蕃茄紅醬拌義大利麵，搭配豬肉肉醬。"
+   },
+   {
+    "cat": "人氣精選 Popular Items",
+    "name": "############",
+    "price": 0.0,
+    "desc": "此品項為醬拌麵，出餐已拌勻，無法分開裝。"
+   },
+   {
+    "cat": "人氣精選 Popular Items",
+    "name": "1. 不提供起司粉及吸管",
+    "price": 0.0,
+    "desc": "為響應環保與減少浪費，起司粉與吸管均不提供；餐點以原味呈現，建議自備環保吸管或餐具，感謝體諒。"
+   },
+   {
+    "cat": "人氣精選 Popular Items",
+    "name": "2. 沙拉醬及鬼椒醬無法另外包",
+    "price": 0.0,
+    "desc": "出餐說明：沙拉醬與鬼椒醬將直接拌入或淋上，恕不提供分裝或另包。"
+   },
+   {
+    "cat": "人氣精選 Popular Items",
+    "name": "3. 醬麵無法分開裝",
+    "price": 0.0,
+    "desc": "此品項為醬拌麵，出餐已拌勻，無法分開裝。"
+   }
+  ],
+  "hours": [
+   {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": "Sunday",
+    "opens": "11:30",
+    "closes": "14:00"
+   },
+   {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": "Sunday",
+    "opens": "17:30",
+    "closes": "20:00"
+   },
+   {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+     "Wednesday",
+     "Thursday",
+     "Friday",
+     "Saturday"
+    ],
+    "opens": "11:30",
+    "closes": "14:00"
+   },
+   {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+     "Wednesday",
+     "Thursday",
+     "Friday",
+     "Saturday"
+    ],
+    "opens": "17:30",
+    "closes": "20:00"
+   }
+  ],
+  "rating": {
+   "@type": "AggregateRating",
+   "ratingValue": 4.9,
+   "reviewCount": 350
+  },
+  "fetched": "2026-11-04"
+ }
+}
