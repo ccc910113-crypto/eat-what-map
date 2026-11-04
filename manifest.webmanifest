@@ -8,6 +8,52 @@
   "display": "standalone",
   "background_color": "#f6f3ee",
   "theme_color": "#f6f3ee",
+  "id": "./",
+  "categories": [
+    "food",
+    "navigation",
+    "lifestyle"
+  ],
+  "shortcuts": [
+    {
+      "name": "地圖",
+      "short_name": "地圖",
+      "url": "./#map",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "只看營業中",
+      "short_name": "營業中",
+      "url": "./#open",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/list-narrow.png",
+      "sizes": "1000x2160",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "店家清單與建議點法"
+    },
+    {
+      "src": "screenshots/desktop-wide.png",
+      "sizes": "1440x900",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "清單與地圖"
+    }
+  ],
   "icons": [
     {
       "src": "icons/icon-192.png",
@@ -22,7 +68,7 @@
       "purpose": "any"
     },
     {
-      "src": "icons/icon-512.png",
+      "src": "icons/icon-maskable-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
