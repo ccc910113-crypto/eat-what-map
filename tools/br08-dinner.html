@@ -1,0 +1,1232 @@
+<title>科技大樓站晚餐地圖</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.js"></script>
+<style>
+/* Layout: sticky toolbar → split list | live map (phones: list/map tab switch) */
+:root{
+  --bg:#f6f3ee; --surface:#fffdf9; --sunk:#efe9e0; --ink:#272118; --muted:#76695a; --line:#e2d9cb;
+  --brown:#a8701f; --brown-ink:#7a4f12; --brown-soft:#f3e5ce;
+  --open:#2f7a4a; --open-soft:#ddefe2; --warn:#9a6a0a; --warn-soft:#f6ead0; --closed:#a2452f; --closed-soft:#f6e0da;
+  --gA:#2f7a4a; --gB:#9a6a0a; --gC:#8a8076;
+  --pin:#b04a32; --me:#2b7bd6;
+  --shadow:0 1px 2px rgba(60,40,10,.06),0 4px 14px rgba(60,40,10,.06);
+  --display:"LXGW WenKai TC","Kaiti TC","STKaiti",serif;
+  --body:"Noto Sans TC","PingFang TC","Heiti TC","Microsoft JhengHei",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1a1713; --surface:#231f19; --sunk:#2b261f; --ink:#efe7da; --muted:#a99a8a; --line:#3a332a;
+  --brown:#d69a45; --brown-ink:#e8b66a; --brown-soft:#3a2c19;
+  --open:#7cc897; --open-soft:#1e3426; --warn:#e2b45a; --warn-soft:#3a2e15; --closed:#e58d77; --closed-soft:#3a221c;
+  --gA:#7cc897; --gB:#e2b45a; --gC:#a99a8a; --pin:#e0705a; --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1a1713; --surface:#231f19; --sunk:#2b261f; --ink:#efe7da; --muted:#a99a8a; --line:#3a332a;
+  --brown:#d69a45; --brown-ink:#e8b66a; --brown-soft:#3a2c19;
+  --open:#7cc897; --open-soft:#1e3426; --warn:#e2b45a; --warn-soft:#3a2e15; --closed:#e58d77; --closed-soft:#3a221c;
+  --gA:#7cc897; --gB:#e2b45a; --gC:#a99a8a; --pin:#e0705a; --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25); color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--brown);outline-offset:2px}
+.wrap{max-width:1280px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+header .wrap{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;padding-block:22px 14px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.08em;color:var(--muted)}
+.code{background:var(--brown);color:#fff;font-weight:700;border-radius:4px;padding:1px 6px;letter-spacing:.04em}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,4.2vw,40px);line-height:1.15;margin:4px 0 0;text-wrap:balance}
+.sub{color:var(--muted);margin:6px 0 0;max-width:60ch;font-size:14px}
+.clock{font-size:13px;color:var(--muted);text-align:right;line-height:1.35}
+.clock b{display:block;color:var(--ink);font-size:20px;font-variant-numeric:tabular-nums;font-weight:700}
+
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:1000;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-block:1px solid var(--line)}
+.bar .wrap{display:flex;flex-direction:column;gap:10px;padding-block:10px}
+.row{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+.search{flex:1 1 220px;display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:0 12px;min-width:0}
+.search:focus-within{border-color:var(--brown)}
+.search svg{flex:none;color:var(--muted)}
+.search input{border:0;background:transparent;outline:none;padding:9px 0;width:100%;min-width:0}
+.seg{display:inline-flex;background:var(--sunk);border-radius:10px;padding:3px;gap:2px;max-width:100%;overflow-x:auto}
+.seg button{border:0;background:transparent;border-radius:8px;padding:6px 12px;font-size:13px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow);font-weight:500}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex:1 1 auto;min-width:0;padding:4px 3px;margin:-4px -3px}
+.chip:focus-visible,.seg button:focus-visible{outline-offset:-2px}
+.search:focus-within{box-shadow:0 0 0 2px var(--brown)}
+.chips::-webkit-scrollbar{display:none}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 12px;font-size:13px;cursor:pointer;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip .c{opacity:.6;margin-left:4px;font-variant-numeric:tabular-nums}
+.ctl{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);white-space:nowrap}
+select{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:5px 8px;font-size:13px}
+.tog{display:inline-flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;white-space:nowrap;user-select:none;position:relative}
+.tog input{position:absolute;opacity:0;pointer-events:none}
+.tog .sw{width:30px;height:18px;border-radius:9px;background:var(--line);position:relative;transition:background .15s}
+.tog .sw::after{content:"";position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:var(--surface);transition:transform .15s;box-shadow:0 1px 2px rgba(0,0,0,.2)}
+.tog input:checked+.sw{background:var(--open)}
+.tog input:checked+.sw::after{transform:translateX(12px)}
+.tog input:focus-visible+.sw{outline:2px solid var(--brown);outline-offset:2px}
+.status{font-size:12px;color:var(--muted)}
+
+
+
+main .wrap{padding-block:16px 48px}
+.viewtabs{display:none;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:20px;align-items:start}
+.list{display:flex;flex-direction:column;gap:8px;min-width:0}
+.mapbox{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--barh,120px) + 12px);background:var(--sunk);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+#lmap{height:calc(100vh - var(--barh,120px) - 90px);min-height:420px;width:100%}
+#svgmap{display:block;width:100%;height:auto}
+.maplegend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--muted);padding:8px 12px;border-top:1px solid var(--line);background:var(--surface)}
+.maplegend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px;vertical-align:-1px}
+@media (max-width:900px){
+  .viewtabs{display:inline-flex}
+  .grid{grid-template-columns:minmax(0,1fr)}
+  .grid[data-view="list"] .mapbox{display:none}
+  .grid[data-view="map"] .listcol{display:none}
+  .mapbox{position:relative;top:0}
+  #lmap{height:68vh}
+}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;scroll-margin-top:calc(var(--barh,120px) + 16px);transition:border-color .15s,box-shadow .15s}
+.card:hover{border-color:color-mix(in srgb,var(--brown) 45%,var(--line))}
+.card.active{border-color:var(--brown);box-shadow:0 0 0 1px var(--brown),var(--shadow)}
+.head{all:unset;box-sizing:border-box;display:grid;grid-template-columns:30px minmax(0,1fr) auto;grid-template-areas:"n m p" ". b b";position:relative;gap:2px 12px;width:100%;padding:12px 14px 10px;cursor:pointer;border-radius:14px}
+.head:hover .chev{color:var(--ink)}
+.num{grid-area:n}.hmain{grid-area:m;min-width:0}.price{grid-area:p}.body2{grid-area:b}
+.chev{position:absolute;right:14px;bottom:10px;display:inline-flex;align-items:center;gap:4px;font-size:12px;color:var(--muted);padding:2px 8px 2px 6px;border-radius:999px;background:var(--sunk)}
+.chev svg{transition:transform .2s}
+.card.open .chev svg{transform:rotate(180deg)}
+.collapse{display:grid;grid-template-rows:0fr;transition:grid-template-rows .22s ease}
+.card.instant .collapse{transition:none!important}
+.card.open .collapse{grid-template-rows:1fr}
+.cin{overflow:hidden;min-height:0}
+.listhead{display:flex;align-items:baseline;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.listhead .sec-h{margin:0}
+.lh-actions{display:flex;gap:6px}
+.btn.sm{padding:3px 10px;font-size:12px}
+.head:focus-visible{outline:2px solid var(--brown);outline-offset:-2px;border-radius:14px}
+.num{width:28px;height:28px;border-radius:50%;background:var(--pin);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;margin-top:2px}
+.num.gA{background:var(--gA)}.num.gB{background:var(--gB)}.num.gC{background:var(--gC)}
+.card.active .num{background:var(--ink);color:var(--bg)}
+.name{font-family:var(--display);font-weight:700;font-size:18px;line-height:1.25;display:block}
+.meta{font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;margin-top:2px}
+.price{text-align:right;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:16px}
+.price small{display:block;font-weight:400;font-size:12px;color:var(--muted)}
+.body2{display:flex;flex-direction:column;gap:6px;margin-top:8px;min-width:0}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font-size:12px;border-radius:999px;padding:2px 9px;white-space:nowrap;line-height:1.5}
+.pill.open{background:var(--open-soft);color:var(--open)}
+.pill.later{background:var(--warn-soft);color:var(--warn)}
+.pill.closed,.pill.flag{background:var(--closed-soft);color:var(--closed)}
+.pill.ok{background:var(--sunk);color:var(--muted)}
+.pro{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:10px;font-size:13px}
+.grade{font-weight:700;font-size:12px;border-radius:6px;padding:0 7px;border:1.5px solid currentColor;line-height:1.5}
+.grade.A{color:var(--gA)}.grade.B{color:var(--gB)}.grade.C{color:var(--gC)}
+.meter{height:8px;border-radius:4px;background:var(--sunk);overflow:hidden;position:relative}
+.meter span{position:absolute;inset:0 auto 0 0;border-radius:4px;background:var(--gA)}
+.meter.B span{background:var(--gB)}.meter.C span{background:var(--gC)}
+.meter::after{content:"";position:absolute;top:0;bottom:0;left:60%;border-left:1.5px dashed var(--muted);opacity:.6}
+.pnum{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--muted)}
+.pnum b{font-size:15px;color:var(--ink)}
+.ord{font-size:13.5px;padding-right:64px}
+.ord::before{content:"建議點法";font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--brown-ink);background:var(--brown-soft);border-radius:4px;padding:1px 6px;margin-right:8px}
+
+.detail{border-top:1px solid var(--line);padding:12px 14px 14px 56px;display:flex;flex-direction:column;gap:12px}
+.fitline{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted)}
+.fitline b{font-size:11px;letter-spacing:.06em;margin-right:6px;color:var(--ink)}
+.fitline .avoid,.fitline .avoid b{color:var(--closed)}
+.menuwrap{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.menuwrap .lab{margin-bottom:6px}
+.infoline{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:12.5px;color:var(--muted)}
+@media (max-width:560px){.detail{padding-left:16px}.pro{grid-template-columns:auto minmax(0,1fr)}.pnum{grid-column:1/-1}}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:12px;overflow-x:auto}
+.tabs button{border:0;background:transparent;padding:10px 12px;font-size:13px;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--brown);font-weight:500}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:6px 12px;color:var(--ink);background:var(--bg);cursor:pointer}
+.btn:hover{border-color:var(--brown)}
+.btn.primary{background:var(--brown);border-color:var(--brown);color:#fff}
+.fitbox p{margin:0 0 10px}
+.fitbox .lead{font-size:16px;font-weight:700}
+.lab{font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--muted);display:block;margin-bottom:2px}
+.fitbox .avoid{color:var(--closed)}
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;font-size:14px;margin:0}
+.kv dt{color:var(--muted);font-size:13px}
+.kv dd{margin:0;min-width:0}
+.tel{user-select:all;font-variant-numeric:tabular-nums}
+.copy{border:1px solid var(--line);background:var(--bg);border-radius:6px;font-size:12px;padding:0 8px;margin-left:8px;cursor:pointer}
+.menu{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0 24px}
+.menu h3{grid-column:1/-1;margin:10px 0 2px;font-size:12px;letter-spacing:.08em;color:var(--brown-ink);font-weight:700}
+.menu h3:first-child{margin-top:0}
+.mi{display:flex;gap:6px;align-items:baseline;font-size:13.5px;min-width:0;line-height:1.6}
+.mi .n{flex:0 1 auto;min-width:0}
+.mi .dots{flex:1 1 12px;border-bottom:1px dotted var(--line);transform:translateY(-4px)}
+.mi .p{font-variant-numeric:tabular-nums;white-space:nowrap}
+.mi .pg{font-size:11px;color:var(--gA);margin-left:6px;white-space:nowrap}
+.mi.sigi .n{font-weight:700}
+.mi.np{color:var(--muted)}
+.nptag{font-style:normal;font-size:11px;margin-left:6px;padding:0 5px;border-radius:4px;color:var(--muted);border:1px solid var(--line);white-space:nowrap}
+.src{font-size:12px;color:var(--muted);margin-top:12px}
+.src a{color:var(--brown-ink)}
+.note{font-size:12.5px;color:var(--muted);background:var(--sunk);border-radius:8px;padding:8px 12px;margin-top:10px}
+.empty{color:var(--muted);padding:28px;text-align:center;border:1px dashed var(--line);border-radius:14px}
+.empty .btn{margin-top:10px}
+footer{border-top:1px solid var(--line)}
+footer .wrap{padding-block:18px 32px;font-size:12px;color:var(--muted)}
+footer p{max-width:90ch;margin:0 0 6px}
+footer a{color:var(--brown-ink)}
+
+.leaflet-container{font-family:var(--body);background:var(--sunk)}
+.lpin{width:30px;height:30px;border-radius:50% 50% 50% 4px;transform:rotate(-45deg);background:#b04a32;border:2.5px solid #fff;display:grid;place-items:center;box-shadow:0 2px 6px rgba(0,0,0,.35);transition:transform .15s,opacity .15s}
+.lpin span{transform:rotate(45deg);color:#fff;font:700 13px/1 var(--body);font-variant-numeric:tabular-nums}
+.lpin.gA{background:#2f7a4a}.lpin.gB{background:#b07a12}.lpin.gC{background:#8a8076}
+.lpin.dim{opacity:.22}
+.lpin.active{transform:rotate(-45deg) scale(1.3);background:#1f1a14;border-color:#e8b66a}
+.ltag{display:inline-block;transform:translate(-50%,-50%);color:#fff;font:700 12px/1 var(--body);padding:6px 8px;border-radius:6px;white-space:nowrap;box-shadow:0 1px 4px rgba(0,0,0,.35)}
+.lme{width:18px;height:18px;border-radius:50%;background:#2b7bd6;border:3px solid #fff;box-shadow:0 0 0 6px rgba(43,123,214,.25)}
+.leaflet-popup-content-wrapper{border-radius:12px}
+.leaflet-popup-content{margin:12px 14px;font-size:13px;line-height:1.5;min-width:200px;color:#272118}
+.pop .t{font-family:var(--display);font-size:16px;font-weight:700;display:block;margin-bottom:2px}
+.pop .m{color:#76695a;display:block;margin-bottom:4px}
+.pop .b{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.pop .b a,.pop .b button{font:inherit;font-size:12px;border-radius:6px;padding:4px 8px;text-decoration:none;border:1px solid #e2d9cb;background:#fff;color:#272118;cursor:pointer}
+.pop .b a.p{background:#a8701f;border-color:#a8701f;color:#fff}
+.lclu{width:52px;height:30px;border-radius:15px;background:#272118;color:#fff;border:3px solid #e8b66a;display:grid;place-items:center;font:700 13px/1 var(--body);box-shadow:0 2px 6px rgba(0,0,0,.35)}
+.rd-edge{stroke:var(--line);fill:none;stroke-linecap:round;stroke-linejoin:round}
+.rd{stroke:var(--surface);fill:none;stroke-linecap:round;stroke-linejoin:round}
+.rd.major{stroke:var(--brown-soft)}
+.park{fill:var(--open-soft)}
+.rlabel{font-size:19px;fill:var(--muted);paint-order:stroke;stroke:var(--sunk);stroke-width:4px}
+
+/* v3: contrast, mobile, states */
+:root{--on-accent:#fff;--accent-btn:#8f5f17;--gA-strong:#22633a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--gA-strong:#7cc897}}
+:root[data-theme="dark"]{--gA-strong:#7cc897}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--on-accent:#1a1713;--accent-btn:#d69a45}}
+:root[data-theme="dark"]{--on-accent:#1a1713;--accent-btn:#d69a45}
+:root{--gC:#766b60}
+.num,.code{color:var(--on-accent)!important}
+.code{background:var(--accent-btn)}
+.pill.ok,.chev{color:var(--ink)}
+.card.active .num{color:var(--bg)!important}
+.btn.primary{background:var(--accent-btn);border-color:var(--accent-btn);color:var(--on-accent)}
+.pill.later{color:var(--brown-ink)}
+.tog .sw{background:var(--muted)}
+.lpin.gB{background:#946510}
+.lpin.hover{transform:rotate(-45deg) scale(1.2)}
+.card.shut{background:var(--bg)}
+.card.shut .name,.card.shut .pmain{color:var(--muted)}
+.mi.over{color:var(--muted)}
+.mi.over .p{text-decoration:line-through}
+.mi.over.sigi .n{font-weight:400}
+.chip:disabled{opacity:.45;cursor:default}
+.price .pmain{display:block;font-size:17px}
+.price small{font-weight:400}
+.oseg{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
+.sect{display:flex;flex-direction:column;gap:6px}
+.sect>.lab{margin:0}
+.advice{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted)}
+.advice b{font-size:11px;letter-spacing:.06em;margin-right:6px;color:var(--ink)}
+.advice .avoid,.advice .avoid b{color:var(--closed)}
+.info{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;font-size:13px;margin:0}
+.info dt{color:var(--muted)}
+.info dd{margin:0;min-width:0}
+.info .warn{color:var(--closed)}
+footer details{margin-top:6px}
+footer details p{margin:6px 0 0;line-height:1.7}
+.cov{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+footer summary{cursor:pointer;color:var(--ink)}
+.chev{padding:6px 10px;bottom:6px}
+.ord{padding-right:0}
+.body2 .pro{padding-right:96px}
+.ltag{transform:translate(-50%,-210%)}
+.lclu{width:auto!important;min-width:34px;height:26px!important;padding:0 8px;font-size:12px!important;border-width:2px!important;border-radius:13px!important}
+@media (max-width:900px){
+  .bar{top:env(safe-area-inset-top,0px)}
+  body::before{content:"";position:fixed;inset:0 0 auto 0;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:1250}
+  .bar .wrap{gap:6px;padding-block:8px}
+  .bar .row:first-child{flex-wrap:nowrap}
+  header .wrap{padding-block:14px 10px}
+  .sub{display:none}
+  .clock{display:flex;gap:6px;align-items:baseline}
+  .clock b{display:inline;font-size:15px}
+  .viewtabs{display:none!important}
+  main .wrap{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+  footer .wrap{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
+  .tabbar{display:grid!important}
+  #originWrap{display:none!important}
+  #lmap{height:calc(100dvh - var(--barh,60px) - 64px - env(safe-area-inset-bottom,0px) - 40px)}
+}
+/* bottom tab bar (phones / installed app) */
+.tabbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:1200;grid-template-columns:repeat(4,1fr);background:color-mix(in srgb,var(--surface) 94%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:6px max(8px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-left,0px))}
+.tab{border:0;background:transparent;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 0 4px;min-height:52px;font-size:11px;color:var(--muted);cursor:pointer;position:relative;border-radius:12px;-webkit-tap-highlight-color:transparent}
+.tab svg{width:24px;height:24px}
+.tab[aria-current="true"],.tab[aria-pressed="true"]{color:var(--brown-ink);font-weight:700}
+.tab[aria-current="true"] .ico,.tab[aria-pressed="true"] .ico{background:var(--brown-soft)}
+.tab .ico{display:grid;place-items:center;width:52px;height:28px;border-radius:14px;transition:background .15s}
+.tab .badge{position:absolute;top:2px;left:calc(50% + 10px);min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--accent-btn);color:var(--on-accent);box-shadow:0 0 0 2px var(--surface);font-size:11px;font-weight:700;display:grid;place-items:center;line-height:1}
+.tab .badge:empty{display:none}
+/* filter bottom sheet */
+.sheet-bg{position:fixed;inset:0;z-index:1300;background:rgba(20,15,10,.45);opacity:0;transition:opacity .2s}
+.sheet-bg.on{opacity:1}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:1301;max-height:min(82dvh,640px);display:flex;flex-direction:column;background:var(--surface);border-radius:20px 20px 0 0;box-shadow:0 -8px 30px rgba(0,0,0,.25);transform:translateY(100%);transition:transform .25s cubic-bezier(.2,.8,.2,1);padding-bottom:env(safe-area-inset-bottom,0px)}
+.sheet.on{transform:translateY(0)}
+.sheet .grab{display:grid;place-items:center;padding:10px 0 4px;cursor:grab;touch-action:none}
+.sheet .grab span{width:40px;height:5px;border-radius:3px;background:var(--line)}
+.sheet .sh-head{display:flex;justify-content:space-between;align-items:center;padding:4px max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px))}
+.sheet .sh-head h2{margin:0;font-family:var(--display);font-size:20px}
+.sheet .sh-body{overflow-y:auto;padding:4px max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:16px}
+.sheet .sh-sec{display:flex;flex-direction:column;gap:8px}
+.sheet .sh-sec>.lab{margin:0}
+.sheet .sh-foot{display:grid;grid-template-columns:1fr 2fr;gap:10px;padding:10px max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px));border-top:1px solid var(--line)}
+.sheet .sh-foot .btn{justify-content:center;padding:12px;font-size:15px;border-radius:12px}
+.sheet .chips{flex-wrap:wrap;overflow:visible;margin:0;padding:0}
+.sheet .chip{padding:8px 14px;font-size:14px}
+.sheet .seg{width:100%}
+.sheet .seg button{flex:1;justify-content:center;padding:9px 6px}
+.sheet .ctl{color:var(--ink);font-size:14px;justify-content:space-between;width:100%}
+.sheet select{font-size:15px;padding:8px 10px;min-width:58%}
+.sheet .tog{font-size:15px;justify-content:space-between;width:100%;flex-direction:row-reverse}
+.sheet #originSelWrap{display:none!important}
+#originSelWrap{display:none}
+
+/* v6: stats row, card layout, pills, sheet modes, map tab, PWA */
+.head{grid-template-columns:30px minmax(0,1fr) auto!important;grid-template-areas:"n m c" ". s s" ". b b"!important}
+.stats{grid-area:s;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:8px;border:1px solid var(--line);border-radius:10px;background:var(--bg);overflow:hidden}
+.st{display:flex;flex-direction:column;padding:6px 10px;font-variant-numeric:tabular-nums;min-width:0}
+.st+.st{border-left:1px solid var(--line)}
+.st b{font-size:18px;line-height:1.2;color:var(--ink)}
+.st i{font-style:normal;font-size:12px;font-weight:400;color:var(--muted);margin-left:1px}
+.st small{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.st.on{background:var(--brown-soft)}
+.st.on small,.st.on i{color:var(--brown-ink)}
+.st.on.gA b{color:var(--gA-strong)}.st.on.gB b{color:var(--brown-ink)}
+.st.gA b{color:var(--gA)}.st.gB b{color:var(--gB)}
+.chev{position:static!important;grid-area:c;align-self:start;min-height:36px}
+.body2{margin-top:6px!important}
+.ord{padding-right:0!important}
+.mi.pick{background:var(--brown-soft);border-radius:6px;margin-inline:-6px;padding-inline:6px}
+.mi.pick .n::before{content:"✓ ";color:var(--brown-ink);font-weight:700}
+.btn.fold{margin-left:auto}
+.pill.open{background:none!important;color:var(--muted)!important;padding-inline:0!important}
+.pill.open::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--open);margin-right:5px;vertical-align:1px}
+.pill.flag{background:none!important;color:var(--warn)!important;border:1px dashed currentColor}
+.btn.ftags{margin-left:4px;font-family:var(--body);font-size:12px}
+.lclu{background:var(--surface)!important;color:var(--ink)!important;border:1.5px solid var(--muted)!important}
+.lclu small{font-size:10px;font-weight:400;margin-left:1px}
+.lclu{display:flex!important;align-items:center;justify-content:center;white-space:nowrap}
+.lpin.gA{background:var(--gA)}.lpin.gB{background:var(--gB)}.lpin.gC{background:var(--gC)}
+.lpin span{color:var(--on-accent)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .leaflet-tile-pane{filter:brightness(.72) contrast(1.1) saturate(.75)}}
+:root[data-theme="dark"] .leaflet-tile-pane{filter:brightness(.72) contrast(1.1) saturate(.75)}
+.sheet[data-mode="filter"] [data-for="origin"],.sheet[data-mode="origin"] [data-for="filter"]{display:none!important}
+.sheet[data-mode="origin"] .seg{display:grid;grid-template-columns:1fr;gap:8px;background:none;padding:0}
+.sheet[data-mode="origin"] .seg button{min-height:52px;justify-content:flex-start;padding:0 16px;font-size:16px;color:var(--ink);border:1px solid var(--line);border-radius:12px}
+.sheet[data-mode="origin"] .seg button[aria-pressed="true"]{border-color:var(--brown);background:var(--brown-soft);box-shadow:none}
+header .wrap{padding-top:calc(14px + env(safe-area-inset-top,0px))}
+@media (max-width:900px){
+  .lh-actions{display:none}
+  .search input{font-size:16px}
+  select{font-size:16px}
+  .chev{min-height:44px;min-width:44px;justify-content:center}
+  .chip{min-height:36px}
+  .sheet .tog .sw{width:44px;height:26px;border-radius:13px}
+  .sheet .tog .sw::after{width:22px;height:22px}
+  .sheet .tog input:checked+.sw::after{transform:translateX(18px)}
+  .sheet select,.sheet .btn{min-height:48px}
+  :root[data-view="map"] header,:root[data-view="map"] footer,:root[data-view="map"] .listhead{display:none}
+  :root[data-view="map"] .mapbox{position:fixed;left:0;right:0;top:calc(env(safe-area-inset-top,0px) + var(--barh,60px));bottom:var(--tabh,70px);border:0;border-radius:0;display:flex;flex-direction:column;z-index:5}
+  :root[data-view="map"] #lmap{flex:1;height:auto!important;min-height:0}
+  :root[data-view="map"] .maplegend{flex-wrap:nowrap;overflow-x:auto;white-space:nowrap}
+}
+@media (display-mode:standalone) and (max-width:900px){header .eyebrow{display:none}h1{font-size:22px}header .wrap{padding-bottom:6px}}
+
+@media (max-width:900px){
+  .actions .btn,#ftags{min-height:44px}
+  .copy{min-height:36px;padding:0 12px}
+  .sheet .tog{min-height:48px}
+  #sheetClose{min-width:44px;min-height:44px}
+  .sheet .grab{padding:14px 0 10px}
+}
+.sh-msg{margin:8px 0 0;font-size:13px;color:var(--muted);min-height:1em}
+
+.leaflet-bar a,.leaflet-bar a:hover{background:var(--surface);color:var(--ink);border-bottom-color:var(--line)}
+.leaflet-control-attribution{background:color-mix(in srgb,var(--surface) 85%,transparent)!important;color:var(--muted)}
+.leaflet-control-attribution a{color:var(--brown-ink)}
+.ltag.kg{transform:translate(-50%,60%)}
+
+/* v8 a11y */
+.sr-only,.status:empty,.sh-msg:empty{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;margin:0;padding:0}
+.hh{margin:0;font:inherit}
+.pill.flag{color:var(--brown-ink)!important}
+.mi.pick .pg{color:var(--gA-strong)}
+.chip .c{opacity:1;color:var(--muted)}
+.chip[aria-pressed="true"] .c{color:inherit;opacity:.85}
+
+/* v9 */
+html{scroll-padding-top:calc(var(--barh,60px) + 8px);scroll-padding-bottom:calc(var(--tabh,0px) + 8px)}
+.card{scroll-margin-bottom:calc(var(--tabh,0px) + 8px)}
+@media (max-width:360px){.st small{white-space:normal;overflow:visible;text-overflow:clip;line-height:1.3}.st{padding:6px 8px}}
+@media (max-width:900px) and (max-height:480px){:root:not([data-view="map"]) .bar{position:static}.tab{min-height:44px;padding:2px 0}.tab .ico{height:24px}}
+.skip:focus{position:fixed!important;width:auto;height:auto;clip-path:none;top:8px;left:8px;z-index:2000;background:var(--surface);color:var(--ink);padding:10px 14px;border-radius:8px;box-shadow:var(--shadow)}
+.tab .tsub{display:block;font-size:10px;font-weight:400;line-height:1.1;opacity:.85}
+.grab{border:0;background:transparent;width:100%;cursor:grab}
+a.tel{color:var(--brown-ink);font-weight:700;text-decoration:underline;text-underline-offset:3px;display:inline-flex;align-items:center;min-height:36px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<a class="sr-only skip" href="#list">跳到店家清單</a>
+<header>
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="code">BR08</span>捷運文湖線・科技大樓站</div>
+      <h1>科技大樓站晚餐地圖</h1>
+      <p class="sub">每人 100–300 元、晚上有開的店。每家都有文字菜單，以及只吃豬、雞、牛、魚的點法和蛋白質估計。</p>
+    </div>
+    <div class="clock" id="clock"></div>
+  </div>
+</header>
+
+<div class="bar" id="bar" role="search" aria-label="搜尋與篩選">
+  <div class="wrap">
+    <div class="row">
+      <label class="search" for="q">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" aria-label="搜尋店名或菜色" placeholder="搜尋店名或菜色，例如：雞胸、牛排、鮭魚" autocomplete="off">
+      </label>
+      <span class="oseg" id="originWrap">從
+      <span class="seg" role="group" aria-label="從哪裡出發" id="originSeg">
+        <button data-o="station" aria-pressed="true">科技大樓站</button>
+        <button data-o="kagura" aria-pressed="false">神樂屋</button>
+        <button data-o="gps" aria-pressed="false"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>我的位置</button>
+      </span></span>
+    </div>
+    <div class="row" id="filterRow">
+      <label class="ctl" for="originSel" id="originSelWrap"><select id="originSel" aria-label="從哪裡出發"><option value="station">從科技大樓站</option><option value="kagura">從神樂屋</option><option value="gps">從我的位置</option></select></label>
+      <div class="chips" id="chips" role="group" aria-label="類型"></div>
+      <label class="tog" for="openNow"><input type="checkbox" id="openNow"><span class="sw"></span>只看營業中</label>
+      <label class="ctl" for="maxw">步行<select id="maxw"><option value="0">不限</option><option value="5">5 分內</option><option value="8">8 分內</option><option value="10">10 分內</option></select></label>
+      <label class="ctl" for="maxp">每人預算<select id="maxp"><option value="300">$300</option><option value="250">$250</option><option value="200">$200</option><option value="150">$150</option></select></label>
+      <label class="ctl" for="sort">排序<select id="sort"><option value="protein">蛋白質多→少</option><option value="cp">每百元蛋白質多→少</option><option value="dist">距離近→遠</option><option value="price">價格低→高</option><option value="fit">增肌適合度 A→C</option></select></label>
+    </div>
+    <div class="status" id="status" role="status"></div>
+  </div>
+</div>
+
+<main><div class="wrap">
+  <div class="seg viewtabs" role="group" aria-label="顯示方式" id="viewTabs">
+    <button data-v="list" aria-pressed="true">清單</button>
+    <button data-v="map" aria-pressed="false">地圖</button>
+  </div>
+  <div class="grid" id="grid" data-view="list">
+    <div class="listcol">
+      <div class="listhead"><div class="sec-h" id="listTitle"></div><div class="lh-actions"><button class="btn sm" id="expandAll">全部展開</button><button class="btn sm" id="collapseAll">全部收起</button></div></div>
+      <p id="srCount" class="sr-only" role="status"></p>
+      <div class="list" id="list"></div>
+    </div>
+    <div class="mapbox">
+      <div id="lmap" hidden></div>
+      <svg id="svgmap" viewBox="0 0 1000 960" role="img" aria-label="科技大樓站周邊街道（簡易版）">
+        <path class="park" d="M378.4,669.0 L374.0,699.1 L423.7,706.9 L424.4,676.3 L378.4,669.0Z"/>
+<path class="park" d="M371.3,151.4 L401.6,127.6 L416.3,143.2 L416.3,168.9 L383.2,168.0 L371.3,151.4Z"/>
+<path class="park" d="M957.0,84.5 L956.3,122.1 L1001.5,122.1 L1002.4,85.7 L957.0,84.5Z"/>
+<path class="park" d="M269.5,721.7 L251.8,750.7 L235.5,777.6 L256.7,793.5 L273.7,794.8 L274.9,724.1 L269.5,721.7Z"/>
+<path class="park" d="M723.5,398.3 L724.3,377.8 L712.3,377.4 L711.4,397.6 L723.5,398.3Z"/>
+<path class="park" d="M663.5,421.8 L700.6,424.3 L697.8,460.3 L661.1,457.7 L663.5,421.8Z"/>
+<path class="park" d="M752.9,499.2 L731.3,497.7 L730.3,524.2 L751.8,525.0 L752.5,510.0 L752.9,499.2Z"/>
+<path class="park" d="M955.8,759.8 L955.4,792.3 L984.0,794.1 L1011.6,767.3 L1010.2,763.2 L955.8,759.8Z"/>
+<path class="park" d="M620.6,47.2 L652.0,48.0 L653.5,-16.7 L622.1,-17.5 L620.6,47.2Z"/>
+<path class="park" d="M285.8,436.2 L282.5,459.3 L325.9,464.1 L324.8,442.4 L285.8,436.2Z"/>
+<path class="park" d="M160.8,290.3 L169.7,280.4 L222.5,281.8 L222.2,314.4 L197.8,313.8 L160.8,290.3Z"/>
+<path class="park" d="M384.6,282.4 L414.1,283.5 L413.6,318.5 L383.4,317.6 L384.6,282.4Z"/>
+<path class="park" d="M307.7,16.7 L307.4,45.4 L337.0,46.0 L337.0,17.0 L307.7,16.7Z"/>
+<path class="park" d="M390.0,1031.7 L383.6,1031.6 L364.3,1031.3 L361.0,1031.2 L342.1,1030.9 L342.1,1026.7 L341.2,1026.7 L339.8,1026.6 L339.8,1026.2 L339.8,1021.3 L339.9,1017.5 L339.9,1015.6 L340.0,1010.8 L340.0,1009.9 L340.2,995.1 L340.3,989.5 L338.5,989.4 L338.5,987.6 L340.4,987.7 L340.4,983.7 L340.5,980.9 L339.3,980.9 L339.4,978.6 L339.4,977.8 L339.4,977.5 L339.4,975.4 L339.4,974.6 L339.4,974.3 L339.6,961.3 L339.7,958.9 L406.4,960.0 L418.9,960.2 L420.4,960.2 L449.7,960.7 L449.6,963.8 L449.5,971.7 L450.8,972.4 L453.1,974.9 L449.5,974.8 L429.2,974.5 L429.1,979.3 L447.5,979.6 L447.4,982.7 L426.5,982.4 L426.4,985.3 L421.2,985.2 L421.1,989.2 L421.0,996.7 L420.8,1011.4 L420.7,1016.7 L418.3,1016.7 L418.2,1027.6 L418.8,1027.6 L418.8,1029.2 L416.1,1030.0 L416.0,1032.1 L397.2,1031.8 L390.0,1031.7Z"/>
+<path class="park" d="M113.9,446.4 L134.7,449.3 L139.5,425.7 L126.6,419.3 L113.9,446.4Z"/>
+<path class="park" d="M40.6,-10.9 L40.7,-23.1 L45.0,-23.9 L45.1,-31.4 L56.5,-31.4 L55.8,-10.3 L40.6,-10.9Z"/>
+<path class="park" d="M576.5,158.1 L610.3,157.4 L610.1,183.2 L576.9,183.1 L576.5,158.1Z"/>
+<path class="park" d="M216.7,745.6 L239.8,762.6 L247.2,749.7 L224.8,734.0 L216.7,745.6Z"/>
+<path class="park" d="M103.8,185.3 L122.6,185.6 L122.4,167.7 L103.6,167.7 L103.8,185.3Z"/>
+<path class="park" d="M216.0,802.4 L207.5,817.3 L192.3,805.9 L194.1,803.4 L193.0,802.6 L201.0,792.2 L216.0,802.4Z"/>
+<path class="park" d="M847.3,748.1 L848.3,719.2 L862.2,719.5 L862.9,690.5 L897.9,690.7 L897.8,698.5 L868.5,697.8 L868.4,716.1 L872.3,716.2 L872.4,722.1 L868.2,722.0 L868.1,739.6 L900.7,740.4 L900.8,749.8 L847.3,748.1Z"/>
+<path class="park" d="M864.7,862.3 L864.8,835.3 L871.0,835.3 L875.6,823.4 L848.2,823.1 L841.5,824.9 L839.8,866.9 L870.9,867.5 L864.7,862.3Z"/>
+<path class="park" d="M871.0,835.3 L875.6,823.4 L875.6,809.9 L881.6,810.0 L895.9,810.2 L895.6,835.5 L892.4,835.4 L871.0,835.3Z"/>
+<path class="park" d="M936.3,-11.4 L943.7,-11.9 L949.9,-12.1 L948.0,70.3 L937.0,69.6 L936.3,-11.4Z"/>
+<path class="park" d="M936.4,86.5 L948.2,86.3 L946.9,205.6 L946.5,243.2 L935.9,242.8 L936.4,86.5Z"/>
+<path class="park" d="M942.1,-210.9 L950.8,-211.0 L951.8,-167.9 L950.0,-18.0 L936.7,-17.1 L942.1,-210.9Z"/>
+<path class="park" d="M915.3,-11.5 L921.5,-11.3 L921.7,79.1 L915.8,78.7 L915.3,-11.5Z"/>
+<path class="park" d="M915.3,82.6 L922.2,82.6 L921.1,237.1 L912.8,237.0 L915.3,82.6Z"/>
+<path class="park" d="M416.6,473.3 L416.2,487.7 L420.7,491.7 L457.9,491.5 L458.5,474.6 L416.6,473.3Z"/>
+<path class="rd-edge" stroke-width="8.5" d="M224.3,279.6 L246.7,256.0 L278.1,220.7 L283.7,214.4"/>
+<path class="rd-edge" stroke-width="8.5" d="M272.9,872.1 L273.0,865.2 L273.6,833.2 L273.8,828.0 L273.9,800.5 L273.9,795.8 L274.0,791.7 L275.2,762.7 L275.9,728.0 L276.0,724.5 L276.4,707.2"/>
+<path class="rd-edge" stroke-width="8.5" d="M867.2,78.6 L872.0,78.7 L904.5,79.0 L906.9,79.0 L910.5,78.8"/>
+<path class="rd-edge" stroke-width="8.5" d="M617.5,49.5 L548.3,47.6 L541.2,51.3 L540.9,79.4"/>
+<path class="rd-edge" stroke-width="8.5" d="M540.3,156.8 L541.6,115.5"/>
+<path class="rd-edge" stroke-width="8.5" d="M618.5,16.5 L545.3,15.9 L541.8,19.6 L537.4,23.0 L532.2,22.0 L512.6,-8.0"/>
+<path class="rd-edge" stroke-width="8.5" d="M852.3,578.1 L852.6,573.1 L854.7,532.9 L856.7,498.9"/>
+<path class="rd-edge" stroke-width="8.5" d="M490.7,4.2 L498.9,2.1 L512.6,-8.0 L519.1,-25.0 L523.3,-42.7 L523.7,-51.2 L523.9,-54.1 L524.6,-69.9 L525.1,-87.8 L525.1,-92.7 L525.2,-101.7 L525.5,-120.2 L518.8,-154.4 L518.7,-156.8 L516.2,-189.4"/>
+<path class="rd-edge" stroke-width="8.5" d="M226.4,78.1 L277.3,79.1 L337.9,80.2"/>
+<path class="rd-edge" stroke-width="8.5" d="M372.6,80.6 L360.4,80.5 L337.9,80.2 L338.6,48.7"/>
+<path class="rd-edge" stroke-width="8.5" d="M226.2,87.3 L129.7,85.6"/>
+<path class="rd-edge" stroke-width="8.5" d="M362.5,145.0 L336.9,117.6 L337.0,114.3 L337.9,80.2"/>
+<path class="rd-edge" stroke-width="8.5" d="M128.6,125.6 L64.6,125.8 L13.3,125.5 L8.3,125.4"/>
+<path class="rd-edge" stroke-width="8.5" d="M64.6,125.8 L64.4,139.8 L64.1,190.4"/>
+<path class="rd-edge" stroke-width="8.5" d="M132.0,1.2 L126.5,1.2 L13.6,1.4 L8.7,1.4"/>
+<path class="rd-edge" stroke-width="8.5" d="M276.4,707.2 L268.7,705.6 L212.2,696.9 L199.4,714.6"/>
+<path class="rd-edge" stroke-width="8.5" d="M123.1,735.5 L127.6,738.7 L207.6,795.6 L214.7,800.8 L219.2,803.8"/>
+<path class="rd-edge" stroke-width="8.5" d="M147.6,797.2 L106.2,767.4 L102.2,764.1"/>
+<path class="rd-edge" stroke-width="8.5" d="M81.6,792.3 L85.3,795.0 L131.4,828.1"/>
+<path class="rd-edge" stroke-width="8.5" d="M55.3,828.1 L59.3,822.7 L60.9,820.6 L81.6,792.3 L84.2,788.7 L102.2,764.1 L105.1,760.1 L123.1,735.5 L125.0,733.1 L127.7,729.2"/>
+<path class="rd-edge" stroke-width="8.5" d="M153.2,569.5 L148.6,568.9 L117.3,564.1 L72.8,557.3 L25.3,550.0 L7.3,547.3 L0.7,546.3"/>
+<path class="rd-edge" stroke-width="8.5" d="M199.4,714.6 L227.2,734.5 L245.9,748.1 L249.2,752.0"/>
+<path class="rd-edge" stroke-width="8.5" d="M299.0,539.9 L297.8,548.9 L292.9,585.2 L291.5,595.3 L288.3,618.8 L283.7,652.7 L282.5,661.8 L279.3,685.9 L277.1,702.3 L276.4,707.2 L265.2,724.7 L251.2,748.8 L249.2,752.0 L236.9,773.8 L234.6,777.1 L231.8,783.5 L220.8,801.1 L219.2,803.8 L216.9,807.9 L202.2,832.5 L201.0,834.6 L201.1,836.9 L201.8,862.5 L202.1,870.0"/>
+<path class="rd-edge" stroke-width="8.5" d="M425.1,708.8 L425.7,679.1 L425.8,675.2 L426.5,640.5 L427.2,605.4"/>
+<path class="rd-edge" stroke-width="8.5" d="M246.7,256.0 L267.5,274.4 L273.9,276.7 L324.9,276.1"/>
+<path class="rd-edge" stroke-width="8.5" d="M339.0,355.1 L274.0,353.6"/>
+<path class="rd-edge" stroke-width="8.5" d="M158.5,366.2 L179.6,377.5 L224.1,384.3 L335.7,401.8"/>
+<path class="rd-edge" stroke-width="8.5" d="M477.2,145.1 L469.2,144.9 L466.2,144.8 L418.5,143.4"/>
+<path class="rd-edge" stroke-width="8.5" d="M225.4,316.9 L209.2,316.5 L197.1,316.1 L183.8,333.4 L172.5,348.0 L158.5,366.2 L152.1,374.3 L138.1,396.6 L129.1,410.7 L108.4,447.3 L91.2,477.7 L86.3,486.2 L84.3,494.0"/>
+<path class="rd-edge" stroke-width="8.5" d="M72.8,557.3 L79.5,516.3 L80.6,508.5"/>
+<path class="rd-edge" stroke-width="8.5" d="M157.9,290.4 L168.7,278.3 L224.3,279.6"/>
+<path class="rd-edge" stroke-width="8.5" d="M891.7,953.7 L887.5,948.9 L870.6,923.1 L842.6,880.8 L835.5,868.8 L831.9,864.7 L815.2,841.1 L807.9,830.4 L800.3,823.2 L783.6,784.4 L770.9,744.8 L757.0,705.7 L749.9,684.9"/>
+<path class="rd-edge" stroke-width="8.5" d="M749.9,684.9 L748.6,712.4 L746.9,743.6 L744.8,777.6"/>
+<path class="rd-edge" stroke-width="8.5" d="M475.6,742.2 L481.6,742.3 L498.0,742.6 L512.3,743.0"/>
+<path class="rd-edge" stroke-width="8.5" d="M749.9,684.9 L751.0,668.9 L751.8,656.2 L753.5,633.1 L756.2,588.1 L755.1,582.1"/>
+<path class="rd-edge" stroke-width="8.5" d="M819.5,905.1 L845.6,933.4 L848.5,936.5"/>
+<path class="rd-edge" stroke-width="8.5" d="M773.1,852.5 L775.8,859.1 L785.8,869.8 L800.7,885.7 L819.5,905.1"/>
+<path class="rd-edge" stroke-width="8.5" d="M132.2,-32.3 L132.2,-29.6 L132.0,1.2 L131.7,10.3 L130.7,47.8 L129.7,85.6 L129.2,114.6 L128.6,125.6 L129.6,140.3 L129.2,162.4 L129.0,187.6 L128.8,194.4"/>
+<path class="rd-edge" stroke-width="8.5" d="M335.7,401.8 L414.8,403.6"/>
+<path class="rd-edge" stroke-width="8.5" d="M274.0,353.6 L224.7,352.9"/>
+<path class="rd-edge" stroke-width="8.5" d="M324.9,276.1 L375.0,279.2 L384.6,279.8 L418.8,280.9 L464.1,281.6 L466.5,281.7 L474.6,282.0"/>
+<path class="rd-edge" stroke-width="8.5" d="M396.9,116.2 L416.2,102.6 L432.5,92.9 L450.8,88.6 L467.7,88.8 L470.6,88.9 L478.1,89.0 L489.0,90.0"/>
+<path class="rd-edge" stroke-width="8.5" d="M197.1,316.1 L194.2,314.3 L157.9,290.4 L113.5,261.4 L51.2,215.8 L51.1,190.1"/>
+<path class="rd-edge" stroke-width="8.5" d="M128.8,194.4 L129.0,199.4 L129.4,236.5"/>
+<path class="rd-edge" stroke-width="8.5" d="M283.7,214.4 L288.9,209.6 L330.4,171.0 L343.1,160.7 L362.5,145.0 L396.9,116.2"/>
+<path class="rd-edge" stroke-width="8.5" d="M202.8,526.0 L204.9,512.1 L206.2,503.4 L212.2,463.6 L218.2,423.7 L224.1,384.3 L224.6,359.3 L224.7,352.9 L224.9,342.7 L225.1,331.5 L225.4,316.9"/>
+<path class="rd-edge" stroke-width="8.5" d="M224.3,279.6 L225.6,312.2 L225.4,316.9"/>
+<path class="rd-edge" stroke-width="8.5" d="M338.6,48.7 L339.5,12.0 L339.8,-27.7"/>
+<path class="rd-edge" stroke-width="8.5" d="M759.0,493.2 L758.8,498.4 L757.4,527.1"/>
+<path class="rd-edge" stroke-width="8.5" d="M757.4,527.1 L753.9,526.6 L673.9,522.0"/>
+<path class="rd-edge" stroke-width="8.5" d="M757.4,527.1 L755.0,567.2 L754.4,571.8 L755.1,582.1"/>
+<path class="rd-edge" stroke-width="8.5" d="M127.7,729.2 L134.8,705.1 L135.1,703.1 L137.3,683.3 L139.9,663.2 L146.4,619.3 L147.9,608.8 L152.6,573.6 L153.2,569.5 L158.8,528.1 L159.9,519.9"/>
+<path class="rd-edge" stroke-width="8.5" d="M209.5,676.2 L206.9,693.3 L212.2,696.9"/>
+<path class="rd-edge" stroke-width="8.5" d="M117.3,564.1 L117.3,547.8 L113.5,532.7 L114.3,521.5 L115.5,513.5"/>
+<path class="rd-edge" stroke-width="8.5" d="M617.5,49.5 L698.6,50.8"/>
+<path class="rd-edge" stroke-width="8.5" d="M541.6,115.5 L534.1,115.3 L528.5,108.3 L518.4,77.8 L513.0,66.6 L503.6,53.5 L497.3,44.0 L489.8,42.6"/>
+<path class="rd-edge" stroke-width="8.5" d="M537.4,23.0 L541.8,35.0 L503.6,53.5"/>
+<path class="rd-edge" stroke-width="8.5" d="M541.6,115.5 L540.9,79.4"/>
+<path class="rd-edge" stroke-width="8.5" d="M1013.4,916.2 L990.0,891.3 L986.6,887.7 L983.0,883.9"/>
+<path class="rd-edge" stroke-width="8.5" d="M1013.4,916.2 L949.1,977.9 L930.1,989.0 L926.9,991.8 L920.9,997.7"/>
+<path class="rd-edge" stroke-width="8.5" d="M869.1,247.6 L869.1,239.7 L869.1,193.8 L868.8,188.9 L866.1,136.8 L867.2,78.6 L867.3,71.5 L867.9,-12.9 L867.9,-17.6 L867.8,-24.4 L867.4,-58.1 L867.4,-90.7 L868.0,-117.9 L868.3,-126.9 L869.8,-219.4 L869.9,-227.7"/>
+<path class="rd-edge" stroke-width="8.5" d="M474.7,792.3 L480.6,792.4 L510.5,792.9"/>
+<path class="rd-edge" stroke-width="8.5" d="M224.9,196.1 L225.3,238.2 L224.3,279.6"/>
+<path class="rd-edge" stroke-width="8.5" d="M416.5,321.1 L418.8,280.9 L419.1,224.7"/>
+<path class="rd-edge" stroke-width="8.5" d="M234.6,777.1 L229.0,773.5 L141.8,710.1 L134.8,705.1"/>
+<path class="rd-edge" stroke-width="8.5" d="M1006.4,371.6 L1003.3,368.4 L960.5,366.5 L956.0,366.3 L950.1,365.9"/>
+<path class="rd-edge" stroke-width="8.5" d="M744.8,777.6 L751.3,795.8 L773.1,852.5"/>
+<path class="rd-edge" stroke-width="8.5" d="M848.5,936.5 L873.1,962.3 L877.5,966.8"/>
+<path class="rd-edge" stroke-width="8.5" d="M131.4,828.1 L144.4,837.1 L144.3,843.3 L143.9,860.8 L143.7,867.2"/>
+<path class="rd-edge" stroke-width="8.5" d="M201.0,834.6 L196.8,832.0 L155.2,802.5 L147.6,797.2"/>
+<path class="rd-edge" stroke-width="8.5" d="M159.4,686.0 L157.4,682.7 L160.7,659.8"/>
+<path class="rd-edge" stroke-width="8.5" d="M305.8,318.5 L274.2,317.9 L225.4,316.9"/>
+<path class="rd-edge" stroke-width="8.5" d="M331.5,480.8 L357.4,485.0 L412.9,493.9 L418.4,494.8"/>
+<path class="rd-edge" stroke-width="8.5" d="M113.5,261.4 L91.6,291.6"/>
+<path class="rd-edge" stroke-width="8.5" d="M948.7,482.2 L954.9,482.7 L1013.4,486.5 L1037.4,486.8 L1042.7,485.8"/>
+<path class="rd-edge" stroke-width="8.5" d="M970.0,844.0 L953.7,844.0 L946.1,844.0"/>
+<path class="rd-edge" stroke-width="8.5" d="M1075.2,908.8 L1043.2,927.3 L1031.7,934.5"/>
+<path class="rd-edge" stroke-width="8.5" d="M421.5,876.7 L421.6,869.9 L422.0,852.8 L422.4,832.2 L423.1,799.5"/>
+<path class="rd-edge" stroke-width="8.5" d="M423.1,799.5 L423.8,767.0 L424.4,737.6 L425.1,708.8"/>
+<path class="rd-edge" stroke-width="8.5" d="M427.2,605.4 L428.0,568.4 L428.2,558.5"/>
+<path class="rd-edge" stroke-width="8.5" d="M159.4,686.0 L199.4,714.6"/>
+<path class="rd-edge" stroke-width="8.5" d="M414.8,403.6 L444.3,404.3 L461.2,404.6 L463.8,404.6 L471.7,404.9"/>
+<path class="rd-edge" stroke-width="8.5" d="M418.4,494.8 L425.4,494.8 L459.3,495.0 L463.3,495.0 L469.6,495.0"/>
+<path class="rd-edge" stroke-width="8.5" d="M84.3,494.0 L80.6,508.5"/>
+<path class="rd-edge" stroke-width="8.5" d="M856.7,498.9 L858.6,467.5 L858.9,462.3 L861.2,425.4 L862.2,393.5 L865.3,353.9 L865.6,352.1 L868.0,313.5 L869.0,278.1 L869.1,253.8 L869.1,247.6"/>
+<path class="rd-edge" stroke-width="8.5" d="M949.9,371.8 L956.0,372.1 L1002.8,373.7 L1006.4,371.6"/>
+<path class="rd-edge" stroke-width="8.5" d="M1006.4,371.6 L1018.1,371.6 L1024.1,371.1"/>
+<path class="rd-edge" stroke-width="8.5" d="M141.8,710.1 L146.0,704.3 L159.4,686.0"/>
+<path class="rd-edge" stroke-width="8.5" d="M127.7,729.2 L132.4,722.8 L141.8,710.1"/>
+<path class="rd-edge" stroke-width="12.5" d="M692.2,-231.5 L692.2,-221.8 L692.5,-200.7 L693.6,-179.4 L694.7,-154.8 L694.7,-146.4 L696.1,-119.9 L697.4,-87.4 L697.8,-77.6 L699.0,-47.1 L699.7,-21.6 L698.6,50.8 L697.8,83.4 L697.0,118.0 L696.4,136.4 L696.2,154.4 L694.5,189.6"/>
+<path class="rd-edge" stroke-width="12.5" d="M7.3,184.8 L12.4,189.6 L51.1,190.1 L64.1,190.4 L122.9,192.9 L128.8,194.4"/>
+<path class="rd-edge" stroke-width="12.5" d="M1063.9,601.6 L1066.5,590.9 L1067.5,584.6 L1055.6,515.7 L1054.8,511.6 L1048.9,477.5 L1042.3,439.7 L1040.9,431.9 L1030.9,364.2 L1030.1,359.9 L1021.4,320.3 L1019.5,304.1 L1019.7,292.0 L1021.7,278.4 L1024.1,269.4 L1025.2,266.7 L1027.7,259.6 L1032.3,250.1 L1032.8,249.2 L1038.6,240.2 L1047.8,229.0 L1059.0,217.9 L1099.9,177.7 L1109.3,168.3 L1119.7,158.5 L1150.9,127.3 L1176.7,103.1 L1182.4,96.3 L1194.8,84.0 L1210.3,68.9 L1239.9,39.7 L1242.7,37.0 L1245.2,33.8 L1246.4,31.2 L1247.5,24.4 L1247.5,21.9 L1248.3,-13.0 L1248.5,-22.5 L1249.2,-53.0 L1249.8,-79.7 L1250.0,-86.8 L1250.8,-124.1 L1251.9,-172.3"/>
+<path class="rd-edge" stroke-width="12.5" d="M228.2,-30.0 L227.9,10.5"/>
+<path class="rd-edge" stroke-width="12.5" d="M932.5,-15.1 L911.2,-16.1 L906.7,-16.7 L898.4,-16.9 L872.6,-17.5 L867.9,-17.6 L864.0,-17.6 L779.9,-17.2 L699.7,-21.6"/>
+<path class="rd-edge" stroke-width="12.5" d="M695.6,238.5 L693.5,238.5 L687.9,238.2 L639.0,236.2 L615.9,233.3 L571.2,230.4 L531.3,228.2 L496.6,226.4 L486.2,226.7 L475.8,226.1"/>
+<path class="rd-edge" stroke-width="12.5" d="M475.8,226.1 L467.1,226.3 L464.5,226.2 L419.1,224.7"/>
+<path class="rd-edge" stroke-width="12.5" d="M419.1,224.7 L379.2,223.9 L372.7,223.8 L341.4,223.1 L324.7,222.7 L298.3,221.9 L286.3,220.4"/>
+<path class="rd-edge" stroke-width="12.5" d="M224.9,196.1 L262.2,195.8 L261.8,196.7"/>
+<path class="rd-edge" stroke-width="12.5" d="M261.8,196.7 L279.4,211.0 L283.7,214.4"/>
+<path class="rd-edge" stroke-width="12.5" d="M283.7,214.4 L286.3,220.4 L290.9,232.1 L304.9,250.8 L307.9,254.6 L324.9,276.1"/>
+<path class="rd-edge" stroke-width="12.5" d="M227.0,48.4 L226.4,78.1 L226.2,87.3 L226.2,116.0 L226.1,124.7 L225.7,146.5 L225.5,154.8 L224.9,196.1"/>
+<path class="rd-edge" stroke-width="12.5" d="M227.9,10.5 L227.0,48.4"/>
+<path class="rd-edge" stroke-width="12.5" d="M694.5,189.6 L695.1,215.9 L695.6,228.9 L695.6,236.6 L695.6,238.1 L695.6,238.5"/>
+<path class="rd-edge" stroke-width="12.5" d="M324.9,276.1 L342.3,301.0 L341.6,319.3 L339.6,346.7 L339.0,355.1 L337.7,374.0 L335.7,401.8 L330.1,440.8 L330.9,463.7 L331.5,480.8 L332.3,497.0 L332.2,498.4 L332.9,523.1 L333.3,531.3 L331.6,544.6"/>
+<path class="rd-edge" stroke-width="12.5" d="M1059.1,791.4 L1055.3,787.3 L1028.1,761.3 L1027.1,752.8 L1031.0,711.6 L1034.1,648.5 L1037.1,605.1 L1037.4,600.5"/>
+<path class="rd-edge" stroke-width="12.5" d="M1106.2,159.8 L1093.6,171.0 L1055.6,208.3 L1043.5,219.9 L1035.3,228.6 L1028.5,237.3 L1025.8,242.9 L1023.4,245.4 L1016.9,258.9 L1015.9,266.0 L1010.3,283.0 L1009.0,299.8 L1009.9,313.8 L1022.1,361.1 L1024.1,371.1 L1032.9,433.3 L1034.9,441.9 L1042.7,485.8 L1048.4,511.1"/>
+<path class="rd-edge" stroke-width="12.5" d="M1168.9,-13.9 L1162.5,-13.9 L1101.9,-14.1 L1048.7,-14.2 L1039.9,-14.2 L1018.8,-14.3 L966.5,-14.4 L959.2,-14.5 L953.0,-14.4 L932.5,-15.1"/>
+<path class="rd-edge" stroke-width="12.5" d="M869.1,247.6 L861.3,246.9 L803.3,243.3 L781.1,242.7 L773.9,242.2 L769.1,242.2 L703.5,239.0 L701.2,238.8 L696.0,238.6 L695.6,238.5"/>
+<path class="rd-edge" stroke-width="12.5" d="M1134.6,246.9 L1126.2,249.6 L1086.3,262.7 L1038.9,259.9 L1027.7,259.6 L1016.9,258.9 L1014.1,259.0 L967.4,256.3 L962.4,256.0 L957.0,255.6 L950.7,255.1 L929.9,253.0"/>
+<path class="rd-edge" stroke-width="12.5" d="M128.8,194.4 L135.5,195.1 L224.9,196.1"/>
+<path class="rd-edge" stroke-width="12.5" d="M929.9,253.0 L909.1,251.5 L903.0,250.8 L897.9,250.3 L874.1,248.0 L869.1,247.6"/>
+<path class="rd-edge" stroke-width="16.5" d="M472.4,922.1 L472.7,905.2"/>
+<path class="rd-edge" stroke-width="16.5" d="M945.7,900.8 L932.6,913.4 L927.6,918.2"/>
+<path class="rd-edge" stroke-width="16.5" d="M920.3,950.1 L925.9,937.4 L926.3,927.2"/>
+<path class="rd-edge" stroke-width="16.5" d="M932.8,-141.0 L932.6,-27.0 L932.6,-22.0 L932.5,-15.1"/>
+<path class="rd-edge" stroke-width="16.5" d="M945.6,924.2 L963.2,905.0 L966.9,901.0 L972.8,894.7 L983.0,883.9 L997.0,868.6 L1049.3,817.6 L1063.1,800.2"/>
+<path class="rd-edge" stroke-width="16.5" d="M-7.8,778.1 L-5.3,785.4 L1.6,800.9 L29.7,845.5 L71.0,873.3 L86.3,880.7 L102.2,886.6 L116.8,890.5 L135.1,894.2 L152.1,895.7 L280.2,899.5 L373.4,902.5"/>
+<path class="rd-edge" stroke-width="16.5" d="M945.6,924.2 L945.7,906.5 L945.7,900.8"/>
+<path class="rd-edge" stroke-width="16.5" d="M627.8,959.9 L607.1,941.8 L584.3,926.3 L559.9,913.8 L534.1,904.3 L507.3,898.0 L480.7,895.2 L478.3,894.9 L473.0,894.7"/>
+<path class="rd-edge" stroke-width="16.5" d="M473.0,894.7 L462.7,894.4"/>
+<path class="rd-edge" stroke-width="16.5" d="M472.7,905.2 L477.9,905.4 L495.7,906.1 L511.2,908.1 L526.5,911.5 L541.4,916.2 L555.9,922.2 L569.7,929.5 L582.8,938.0 L595.2,947.6 L606.6,958.3 L617.0,970.0"/>
+<path class="rd-edge" stroke-width="16.5" d="M774.0,1093.8 L778.9,1089.3 L780.9,1086.8 L817.3,1052.4 L886.3,984.0 L897.1,974.1 L920.3,950.1"/>
+<path class="rd-edge" stroke-width="16.5" d="M479.0,565.0 L489.0,565.6 L511.3,567.0 L520.4,567.6 L587.4,571.8 L606.1,572.9 L617.7,573.6 L625.8,574.1 L630.7,574.5 L714.3,579.7 L755.1,582.1"/>
+<path class="rd-edge" stroke-width="16.5" d="M468.5,551.7 L457.1,550.0 L407.4,542.6 L373.8,537.5 L338.2,532.2 L333.3,531.3"/>
+<path class="rd-edge" stroke-width="16.5" d="M479.0,565.0 L479.9,553.6"/>
+<path class="rd-edge" stroke-width="16.5" d="M468.5,551.7 L468.7,563.9"/>
+<path class="rd-edge" stroke-width="16.5" d="M925.7,920.1 L914.3,931.8 L904.2,942.3"/>
+<path class="rd-edge" stroke-width="16.5" d="M925.7,920.1 L926.1,925.1 L926.3,927.2"/>
+<path class="rd-edge" stroke-width="16.5" d="M947.6,594.8 L956.5,595.4 L998.8,597.8 L1037.4,600.5 L1054.3,600.9 L1063.9,601.6"/>
+<path class="rd-edge" stroke-width="16.5" d="M947.6,594.8 L947.9,583.9"/>
+<path class="rd-edge" stroke-width="16.5" d="M906.4,592.4 L906.3,603.4 L906.1,641.7 L906.0,657.7 L905.9,662.3 L905.8,676.7 L905.5,697.2 L905.4,743.1 L905.4,748.1 L905.4,751.2 L905.5,762.7 L904.6,872.3 L904.3,917.1 L904.3,922.6 L904.2,931.5 L904.2,942.3"/>
+<path class="rd-edge" stroke-width="16.5" d="M906.4,592.4 L915.5,593.0 L926.2,593.5"/>
+<path class="rd-edge" stroke-width="16.5" d="M947.9,583.9 L926.3,582.5"/>
+<path class="rd-edge" stroke-width="16.5" d="M947.9,583.9 L947.9,577.2 L948.5,506.0 L948.7,482.2 L949.6,387.4 L949.6,382.2 L949.6,377.0 L949.9,371.8 L950.1,365.9 L949.8,357.3 L950.6,270.2 L950.6,265.2 L950.6,262.3 L950.7,255.1 L950.8,244.6 L951.1,205.9 L951.5,161.2 L951.8,124.4 L952.1,95.4 L952.1,89.7 L952.2,79.7"/>
+<path class="rd-edge" stroke-width="16.5" d="M468.7,563.9 L468.7,573.8 L468.1,598.8 L466.3,679.6"/>
+<path class="rd-edge" stroke-width="16.5" d="M468.7,563.9 L479.0,565.0"/>
+<path class="rd-edge" stroke-width="16.5" d="M479.9,553.6 L480.1,544.4 L481.4,477.5 L481.9,449.0 L482.8,406.9 L482.8,402.6 L483.0,394.4 L484.3,326.1 L485.1,290.0 L485.1,288.4 L486.1,235.0 L486.2,226.7 L486.5,219.0 L487.2,179.0 L487.7,156.3 L487.8,152.5 L488.9,92.3 L489.0,90.0 L489.2,81.1 L489.4,68.2 L489.8,42.6 L490.7,4.2 L491.1,-19.9 L491.3,-26.6 L491.3,-29.5 L491.8,-51.6 L492.1,-69.7 L492.3,-76.5 L493.7,-148.9 L494.5,-190.3 L495.1,-221.5 L495.4,-235.7"/>
+<path class="rd-edge" stroke-width="16.5" d="M479.9,553.6 L468.5,551.7"/>
+<path class="rd-edge" stroke-width="16.5" d="M906.4,581.4 L895.9,581.3 L852.3,578.1 L827.5,576.6 L815.9,575.9 L754.4,571.8"/>
+<path class="rd-edge" stroke-width="16.5" d="M906.4,581.4 L906.4,592.4"/>
+<path class="rd-edge" stroke-width="16.5" d="M475.8,226.1 L475.7,235.0 L474.6,282.0 L474.5,288.4 L473.7,321.9 L472.2,385.3 L472.0,394.0 L471.7,404.9 L471.7,407.8 L470.7,447.7 L469.6,495.0 L468.5,542.8 L468.5,551.7"/>
+<path class="rd-edge" stroke-width="16.5" d="M80.6,508.5 L85.6,509.2 L115.5,513.5 L159.9,519.9 L202.8,526.0 L299.0,539.9 L331.6,544.6 L336.7,545.3 L360.0,548.7 L428.2,558.5 L456.7,562.6 L468.7,563.9"/>
+<path class="rd-edge" stroke-width="16.5" d="M333.3,531.3 L284.0,523.9 L236.2,516.8 L204.9,512.1 L123.2,499.8 L108.4,497.6 L88.5,494.6 L84.3,494.0"/>
+<path class="rd-edge" stroke-width="16.5" d="M755.1,582.1 L818.2,586.5 L856.4,589.2 L886.9,591.3 L892.9,591.7 L895.6,592.2 L906.4,592.4"/>
+<path class="rd-edge" stroke-width="16.5" d="M754.4,571.8 L717.3,569.2 L681.6,566.9 L625.2,563.2 L618.5,562.8 L607.0,562.0 L592.6,561.1 L588.3,560.8 L559.9,558.9 L524.0,556.5 L509.8,555.6 L489.8,554.2 L479.9,553.6"/>
+<path class="rd-edge" stroke-width="16.5" d="M462.9,878.1 L455.2,877.6 L421.5,876.7 L338.9,874.1 L281.1,872.2 L272.9,872.1 L213.3,870.3 L202.1,870.0 L163.9,868.6 L143.7,867.2 L132.1,865.1 L117.9,861.6 L100.3,855.8 L79.8,845.1 L62.2,833.6 L55.3,828.1"/>
+<path class="rd-edge" stroke-width="16.5" d="M467.7,922.0 L472.4,922.1"/>
+<path class="rd-edge" stroke-width="16.5" d="M904.2,942.3 L891.7,953.7 L877.5,966.8 L842.8,998.5 L797.0,1041.2 L763.9,1072.3 L762.2,1073.6 L757.7,1077.6"/>
+<path class="rd-edge" stroke-width="16.5" d="M483.3,-236.0 L483.1,-221.6 L482.6,-183.2 L482.0,-154.9 L481.2,-103.3 L480.0,-29.8 L480.0,-26.6 L479.9,-19.8 L478.8,49.4 L478.3,80.6 L478.1,89.0 L478.0,94.1 L477.6,119.6 L477.2,145.1 L477.1,152.6 L476.1,219.1 L475.8,226.1"/>
+<path class="rd-edge" stroke-width="16.5" d="M462.4,921.9 L467.7,922.0"/>
+<path class="rd-edge" stroke-width="16.5" d="M473.3,878.6 L473.4,870.2 L474.2,823.6 L474.7,792.3 L475.1,768.2 L475.6,742.2 L476.5,688.2 L476.6,682.7 L478.3,574.2 L479.0,565.0"/>
+<path class="rd-edge" stroke-width="16.5" d="M1055.9,794.4 L1039.9,807.3 L987.5,858.3 L966.0,880.0 L962.6,883.4 L961.6,884.4 L957.7,888.0 L945.7,900.8"/>
+<path class="rd-edge" stroke-width="16.5" d="M1060.3,590.4 L1054.6,590.1 L994.2,586.7 L965.2,585.1 L959.6,584.8 L956.5,584.6 L947.9,583.9"/>
+<path class="rd-edge" stroke-width="16.5" d="M464.8,768.1 L463.2,861.8 L463.1,867.5 L463.1,869.9 L462.9,878.1"/>
+<path class="rd-edge" stroke-width="16.5" d="M617.0,970.0 L709.0,1066.0"/>
+<path class="rd-edge" stroke-width="16.5" d="M561.5,941.7 L576.2,950.5 L586.1,957.4 L607.0,977.4 L634.0,1006.4 L647.5,1020.9 L661.8,1036.3"/>
+<path class="rd-edge" stroke-width="16.5" d="M15.8,851.5 L22.4,859.2 L30.6,865.3 L38.4,870.6 L48.9,877.5 L59.8,883.8 L69.8,889.4 L80.1,894.5 L98.0,901.1 L118.1,906.2 L127.1,908.5 L140.5,910.7 L155.2,911.5 L253.7,914.7 L279.8,915.5 L286.6,915.7 L331.8,917.4 L336.9,917.5 L443.9,921.3 L449.0,921.5 L454.4,921.7 L462.4,921.9"/>
+<path class="rd-edge" stroke-width="16.5" d="M2.1,496.1 L11.1,497.5 L24.7,499.7 L45.6,503.0 L69.0,506.6 L80.6,508.5"/>
+<path class="rd-edge" stroke-width="16.5" d="M462.5,905.3 L462.4,921.9"/>
+<path class="rd-edge" stroke-width="16.5" d="M462.5,905.3 L472.7,905.2"/>
+<path class="rd-edge" stroke-width="16.5" d="M932.5,-15.1 L932.4,-8.0 L932.4,-3.0 L932.0,67.7 L932.0,70.9 L931.8,78.7"/>
+<path class="rd-edge" stroke-width="16.5" d="M928.6,375.4 L928.5,382.1 L927.2,502.2"/>
+<path class="rd-edge" stroke-width="16.5" d="M719.9,1055.0 L697.0,1031.8 L667.1,999.2 L627.8,959.9"/>
+<path class="rd-edge" stroke-width="16.5" d="M564.5,898.7 L551.6,893.4 L548.1,891.9 L530.0,885.4 L507.8,881.2"/>
+<path class="rd-edge" stroke-width="16.5" d="M927.6,918.2 L925.7,920.1"/>
+<path class="rd-edge" stroke-width="16.5" d="M920.3,950.1 L934.5,935.3"/>
+<path class="rd-edge" stroke-width="16.5" d="M934.5,935.3 L945.6,924.2"/>
+<path class="rd-edge" stroke-width="16.5" d="M613.1,928.2 L599.5,917.3 L573.8,903.5 L564.5,898.7"/>
+<path class="rd-edge" stroke-width="16.5" d="M473.3,878.6 L462.9,878.1"/>
+<path class="rd-edge" stroke-width="16.5" d="M462.9,878.1 L462.7,894.4"/>
+<path class="rd-edge" stroke-width="16.5" d="M466.3,679.6 L466.2,687.0 L465.3,739.6"/>
+<path class="rd-edge" stroke-width="16.5" d="M462.5,905.3 L472.4,922.1"/>
+<path class="rd-edge" stroke-width="16.5" d="M472.4,922.1 L477.3,922.1 L493.5,923.1 L511.4,925.7 L530.9,930.6 L547.0,936.2 L561.5,941.7"/>
+<path class="rd-edge" stroke-width="16.5" d="M473.0,894.7 L473.3,878.6"/>
+<path class="rd-edge" stroke-width="16.5" d="M472.7,905.2 L473.0,894.7"/>
+<path class="rd-edge" stroke-width="16.5" d="M462.7,894.4 L462.5,905.3"/>
+<path class="rd-edge" stroke-width="16.5" d="M462.7,894.4 L454.9,894.1 L280.6,888.0 L155.2,883.8 L133.7,882.3 L112.5,877.9 L91.2,869.6 L73.4,859.9 L42.0,839.5"/>
+<path class="rd-edge" stroke-width="16.5" d="M84.3,494.0 L71.9,492.2 L57.9,490.1 L39.6,487.3 L13.0,483.3 L2.7,481.8"/>
+<path class="rd-edge" stroke-width="16.5" d="M912.9,-226.8 L912.8,-214.4 L912.1,-126.5 L911.4,-30.2 L911.4,-26.1 L911.3,-22.5 L911.2,-16.1 L911.2,-7.7 L910.6,62.0 L910.6,67.4 L910.5,70.3 L910.5,78.8 L909.2,232.0 L909.2,237.3 L909.1,243.3 L909.1,251.5 L909.0,256.1 L908.6,313.6 L908.2,362.7 L908.1,368.9 L908.1,373.8 L907.7,425.5 L907.3,463.3 L907.0,501.2 L906.8,535.3 L906.6,565.8 L906.5,569.5 L906.5,572.0 L906.4,581.4"/>
+<path class="rd-edge" stroke-width="16.5" d="M926.3,582.5 L906.4,581.4"/>
+<path class="rd-edge" stroke-width="16.5" d="M926.3,582.5 L926.2,593.5"/>
+<path class="rd-edge" stroke-width="16.5" d="M926.2,593.5 L947.6,594.8"/>
+<path class="rd-edge" stroke-width="16.5" d="M926.2,593.5 L926.0,604.1 L926.0,607.5 L924.4,755.8 L924.4,761.5"/>
+<path class="rd-edge" stroke-width="16.5" d="M952.2,79.7 L952.5,71.4 L952.6,32.2 L952.8,-0.1 L952.8,-4.4 L952.9,-8.8 L953.0,-14.4 L953.0,-21.7 L953.3,-54.5 L954.0,-128.3 L954.3,-170.8 L954.6,-206.0"/>
+<path class="rd-edge" stroke-width="16.5" d="M924.4,761.5 L924.4,766.2 L924.3,878.5 L924.5,903.6 L925.0,911.0 L925.7,920.1"/>
+<path class="rd-edge" stroke-width="16.5" d="M927.2,502.2 L926.5,572.8 L926.4,575.9 L926.3,582.5"/>
+<path class="rd-edge" stroke-width="16.5" d="M931.8,78.7 L931.6,92.7 L930.1,236.6 L930.0,243.9 L929.9,253.0"/>
+<path class="rd-edge" stroke-width="16.5" d="M929.9,253.0 L929.8,258.8 L929.7,266.0 L928.6,368.6 L928.6,375.4"/>
+<path class="rd-edge" stroke-width="16.5" d="M507.8,881.2 L491.4,879.9 L484.6,879.4 L478.8,879.0 L473.3,878.6"/>
+<path class="rd-edge" stroke-width="16.5" d="M658.8,973.3 L622.5,935.7 L613.1,928.2"/>
+<path class="rd-edge" stroke-width="16.5" d="M373.4,902.5 L450.2,904.9 L454.7,905.1 L462.5,905.3"/>
+<path class="rd-edge" stroke-width="16.5" d="M465.3,739.6 L464.8,766.1 L464.8,768.1"/>
+<path class="rd-edge" stroke-width="16.5" d="M55.3,828.1 L50.3,823.3 L40.8,813.4 L32.0,801.7 L25.6,792.1 L22.2,787.0 L14.2,775.0 L11.2,768.6"/>
+<path class="rd-edge" stroke-width="16.5" d="M946.6,755.4 L947.1,662.7 L947.3,644.9 L947.5,611.7 L947.5,608.4 L947.5,604.8 L947.6,594.8"/>
+<path class="rd-edge" stroke-width="16.5" d="M945.7,900.8 L945.8,890.3 L946.1,844.0 L946.2,820.9 L946.4,794.5 L946.5,772.8 L946.5,767.3 L946.5,762.9 L946.6,755.4"/>
+<path class="rd" stroke-width="6" d="M224.3,279.6 L246.7,256.0 L278.1,220.7 L283.7,214.4"/>
+<path class="rd" stroke-width="6" d="M272.9,872.1 L273.0,865.2 L273.6,833.2 L273.8,828.0 L273.9,800.5 L273.9,795.8 L274.0,791.7 L275.2,762.7 L275.9,728.0 L276.0,724.5 L276.4,707.2"/>
+<path class="rd" stroke-width="6" d="M867.2,78.6 L872.0,78.7 L904.5,79.0 L906.9,79.0 L910.5,78.8"/>
+<path class="rd" stroke-width="6" d="M617.5,49.5 L548.3,47.6 L541.2,51.3 L540.9,79.4"/>
+<path class="rd" stroke-width="6" d="M540.3,156.8 L541.6,115.5"/>
+<path class="rd" stroke-width="6" d="M618.5,16.5 L545.3,15.9 L541.8,19.6 L537.4,23.0 L532.2,22.0 L512.6,-8.0"/>
+<path class="rd" stroke-width="6" d="M852.3,578.1 L852.6,573.1 L854.7,532.9 L856.7,498.9"/>
+<path class="rd" stroke-width="6" d="M490.7,4.2 L498.9,2.1 L512.6,-8.0 L519.1,-25.0 L523.3,-42.7 L523.7,-51.2 L523.9,-54.1 L524.6,-69.9 L525.1,-87.8 L525.1,-92.7 L525.2,-101.7 L525.5,-120.2 L518.8,-154.4 L518.7,-156.8 L516.2,-189.4"/>
+<path class="rd" stroke-width="6" d="M226.4,78.1 L277.3,79.1 L337.9,80.2"/>
+<path class="rd" stroke-width="6" d="M372.6,80.6 L360.4,80.5 L337.9,80.2 L338.6,48.7"/>
+<path class="rd" stroke-width="6" d="M226.2,87.3 L129.7,85.6"/>
+<path class="rd" stroke-width="6" d="M362.5,145.0 L336.9,117.6 L337.0,114.3 L337.9,80.2"/>
+<path class="rd" stroke-width="6" d="M128.6,125.6 L64.6,125.8 L13.3,125.5 L8.3,125.4"/>
+<path class="rd" stroke-width="6" d="M64.6,125.8 L64.4,139.8 L64.1,190.4"/>
+<path class="rd" stroke-width="6" d="M132.0,1.2 L126.5,1.2 L13.6,1.4 L8.7,1.4"/>
+<path class="rd" stroke-width="6" d="M276.4,707.2 L268.7,705.6 L212.2,696.9 L199.4,714.6"/>
+<path class="rd" stroke-width="6" d="M123.1,735.5 L127.6,738.7 L207.6,795.6 L214.7,800.8 L219.2,803.8"/>
+<path class="rd" stroke-width="6" d="M147.6,797.2 L106.2,767.4 L102.2,764.1"/>
+<path class="rd" stroke-width="6" d="M81.6,792.3 L85.3,795.0 L131.4,828.1"/>
+<path class="rd" stroke-width="6" d="M55.3,828.1 L59.3,822.7 L60.9,820.6 L81.6,792.3 L84.2,788.7 L102.2,764.1 L105.1,760.1 L123.1,735.5 L125.0,733.1 L127.7,729.2"/>
+<path class="rd" stroke-width="6" d="M153.2,569.5 L148.6,568.9 L117.3,564.1 L72.8,557.3 L25.3,550.0 L7.3,547.3 L0.7,546.3"/>
+<path class="rd" stroke-width="6" d="M199.4,714.6 L227.2,734.5 L245.9,748.1 L249.2,752.0"/>
+<path class="rd" stroke-width="6" d="M299.0,539.9 L297.8,548.9 L292.9,585.2 L291.5,595.3 L288.3,618.8 L283.7,652.7 L282.5,661.8 L279.3,685.9 L277.1,702.3 L276.4,707.2 L265.2,724.7 L251.2,748.8 L249.2,752.0 L236.9,773.8 L234.6,777.1 L231.8,783.5 L220.8,801.1 L219.2,803.8 L216.9,807.9 L202.2,832.5 L201.0,834.6 L201.1,836.9 L201.8,862.5 L202.1,870.0"/>
+<path class="rd" stroke-width="6" d="M425.1,708.8 L425.7,679.1 L425.8,675.2 L426.5,640.5 L427.2,605.4"/>
+<path class="rd" stroke-width="6" d="M246.7,256.0 L267.5,274.4 L273.9,276.7 L324.9,276.1"/>
+<path class="rd" stroke-width="6" d="M339.0,355.1 L274.0,353.6"/>
+<path class="rd" stroke-width="6" d="M158.5,366.2 L179.6,377.5 L224.1,384.3 L335.7,401.8"/>
+<path class="rd" stroke-width="6" d="M477.2,145.1 L469.2,144.9 L466.2,144.8 L418.5,143.4"/>
+<path class="rd" stroke-width="6" d="M225.4,316.9 L209.2,316.5 L197.1,316.1 L183.8,333.4 L172.5,348.0 L158.5,366.2 L152.1,374.3 L138.1,396.6 L129.1,410.7 L108.4,447.3 L91.2,477.7 L86.3,486.2 L84.3,494.0"/>
+<path class="rd" stroke-width="6" d="M72.8,557.3 L79.5,516.3 L80.6,508.5"/>
+<path class="rd" stroke-width="6" d="M157.9,290.4 L168.7,278.3 L224.3,279.6"/>
+<path class="rd" stroke-width="6" d="M891.7,953.7 L887.5,948.9 L870.6,923.1 L842.6,880.8 L835.5,868.8 L831.9,864.7 L815.2,841.1 L807.9,830.4 L800.3,823.2 L783.6,784.4 L770.9,744.8 L757.0,705.7 L749.9,684.9"/>
+<path class="rd" stroke-width="6" d="M749.9,684.9 L748.6,712.4 L746.9,743.6 L744.8,777.6"/>
+<path class="rd" stroke-width="6" d="M475.6,742.2 L481.6,742.3 L498.0,742.6 L512.3,743.0"/>
+<path class="rd" stroke-width="6" d="M749.9,684.9 L751.0,668.9 L751.8,656.2 L753.5,633.1 L756.2,588.1 L755.1,582.1"/>
+<path class="rd" stroke-width="6" d="M819.5,905.1 L845.6,933.4 L848.5,936.5"/>
+<path class="rd" stroke-width="6" d="M773.1,852.5 L775.8,859.1 L785.8,869.8 L800.7,885.7 L819.5,905.1"/>
+<path class="rd" stroke-width="6" d="M132.2,-32.3 L132.2,-29.6 L132.0,1.2 L131.7,10.3 L130.7,47.8 L129.7,85.6 L129.2,114.6 L128.6,125.6 L129.6,140.3 L129.2,162.4 L129.0,187.6 L128.8,194.4"/>
+<path class="rd" stroke-width="6" d="M335.7,401.8 L414.8,403.6"/>
+<path class="rd" stroke-width="6" d="M274.0,353.6 L224.7,352.9"/>
+<path class="rd" stroke-width="6" d="M324.9,276.1 L375.0,279.2 L384.6,279.8 L418.8,280.9 L464.1,281.6 L466.5,281.7 L474.6,282.0"/>
+<path class="rd" stroke-width="6" d="M396.9,116.2 L416.2,102.6 L432.5,92.9 L450.8,88.6 L467.7,88.8 L470.6,88.9 L478.1,89.0 L489.0,90.0"/>
+<path class="rd" stroke-width="6" d="M197.1,316.1 L194.2,314.3 L157.9,290.4 L113.5,261.4 L51.2,215.8 L51.1,190.1"/>
+<path class="rd" stroke-width="6" d="M128.8,194.4 L129.0,199.4 L129.4,236.5"/>
+<path class="rd" stroke-width="6" d="M283.7,214.4 L288.9,209.6 L330.4,171.0 L343.1,160.7 L362.5,145.0 L396.9,116.2"/>
+<path class="rd" stroke-width="6" d="M202.8,526.0 L204.9,512.1 L206.2,503.4 L212.2,463.6 L218.2,423.7 L224.1,384.3 L224.6,359.3 L224.7,352.9 L224.9,342.7 L225.1,331.5 L225.4,316.9"/>
+<path class="rd" stroke-width="6" d="M224.3,279.6 L225.6,312.2 L225.4,316.9"/>
+<path class="rd" stroke-width="6" d="M338.6,48.7 L339.5,12.0 L339.8,-27.7"/>
+<path class="rd" stroke-width="6" d="M759.0,493.2 L758.8,498.4 L757.4,527.1"/>
+<path class="rd" stroke-width="6" d="M757.4,527.1 L753.9,526.6 L673.9,522.0"/>
+<path class="rd" stroke-width="6" d="M757.4,527.1 L755.0,567.2 L754.4,571.8 L755.1,582.1"/>
+<path class="rd" stroke-width="6" d="M127.7,729.2 L134.8,705.1 L135.1,703.1 L137.3,683.3 L139.9,663.2 L146.4,619.3 L147.9,608.8 L152.6,573.6 L153.2,569.5 L158.8,528.1 L159.9,519.9"/>
+<path class="rd" stroke-width="6" d="M209.5,676.2 L206.9,693.3 L212.2,696.9"/>
+<path class="rd" stroke-width="6" d="M117.3,564.1 L117.3,547.8 L113.5,532.7 L114.3,521.5 L115.5,513.5"/>
+<path class="rd" stroke-width="6" d="M617.5,49.5 L698.6,50.8"/>
+<path class="rd" stroke-width="6" d="M541.6,115.5 L534.1,115.3 L528.5,108.3 L518.4,77.8 L513.0,66.6 L503.6,53.5 L497.3,44.0 L489.8,42.6"/>
+<path class="rd" stroke-width="6" d="M537.4,23.0 L541.8,35.0 L503.6,53.5"/>
+<path class="rd" stroke-width="6" d="M541.6,115.5 L540.9,79.4"/>
+<path class="rd" stroke-width="6" d="M1013.4,916.2 L990.0,891.3 L986.6,887.7 L983.0,883.9"/>
+<path class="rd" stroke-width="6" d="M1013.4,916.2 L949.1,977.9 L930.1,989.0 L926.9,991.8 L920.9,997.7"/>
+<path class="rd" stroke-width="6" d="M869.1,247.6 L869.1,239.7 L869.1,193.8 L868.8,188.9 L866.1,136.8 L867.2,78.6 L867.3,71.5 L867.9,-12.9 L867.9,-17.6 L867.8,-24.4 L867.4,-58.1 L867.4,-90.7 L868.0,-117.9 L868.3,-126.9 L869.8,-219.4 L869.9,-227.7"/>
+<path class="rd" stroke-width="6" d="M474.7,792.3 L480.6,792.4 L510.5,792.9"/>
+<path class="rd" stroke-width="6" d="M224.9,196.1 L225.3,238.2 L224.3,279.6"/>
+<path class="rd" stroke-width="6" d="M416.5,321.1 L418.8,280.9 L419.1,224.7"/>
+<path class="rd" stroke-width="6" d="M234.6,777.1 L229.0,773.5 L141.8,710.1 L134.8,705.1"/>
+<path class="rd" stroke-width="6" d="M1006.4,371.6 L1003.3,368.4 L960.5,366.5 L956.0,366.3 L950.1,365.9"/>
+<path class="rd" stroke-width="6" d="M744.8,777.6 L751.3,795.8 L773.1,852.5"/>
+<path class="rd" stroke-width="6" d="M848.5,936.5 L873.1,962.3 L877.5,966.8"/>
+<path class="rd" stroke-width="6" d="M131.4,828.1 L144.4,837.1 L144.3,843.3 L143.9,860.8 L143.7,867.2"/>
+<path class="rd" stroke-width="6" d="M201.0,834.6 L196.8,832.0 L155.2,802.5 L147.6,797.2"/>
+<path class="rd" stroke-width="6" d="M159.4,686.0 L157.4,682.7 L160.7,659.8"/>
+<path class="rd" stroke-width="6" d="M305.8,318.5 L274.2,317.9 L225.4,316.9"/>
+<path class="rd" stroke-width="6" d="M331.5,480.8 L357.4,485.0 L412.9,493.9 L418.4,494.8"/>
+<path class="rd" stroke-width="6" d="M113.5,261.4 L91.6,291.6"/>
+<path class="rd" stroke-width="6" d="M948.7,482.2 L954.9,482.7 L1013.4,486.5 L1037.4,486.8 L1042.7,485.8"/>
+<path class="rd" stroke-width="6" d="M970.0,844.0 L953.7,844.0 L946.1,844.0"/>
+<path class="rd" stroke-width="6" d="M1075.2,908.8 L1043.2,927.3 L1031.7,934.5"/>
+<path class="rd" stroke-width="6" d="M421.5,876.7 L421.6,869.9 L422.0,852.8 L422.4,832.2 L423.1,799.5"/>
+<path class="rd" stroke-width="6" d="M423.1,799.5 L423.8,767.0 L424.4,737.6 L425.1,708.8"/>
+<path class="rd" stroke-width="6" d="M427.2,605.4 L428.0,568.4 L428.2,558.5"/>
+<path class="rd" stroke-width="6" d="M159.4,686.0 L199.4,714.6"/>
+<path class="rd" stroke-width="6" d="M414.8,403.6 L444.3,404.3 L461.2,404.6 L463.8,404.6 L471.7,404.9"/>
+<path class="rd" stroke-width="6" d="M418.4,494.8 L425.4,494.8 L459.3,495.0 L463.3,495.0 L469.6,495.0"/>
+<path class="rd" stroke-width="6" d="M84.3,494.0 L80.6,508.5"/>
+<path class="rd" stroke-width="6" d="M856.7,498.9 L858.6,467.5 L858.9,462.3 L861.2,425.4 L862.2,393.5 L865.3,353.9 L865.6,352.1 L868.0,313.5 L869.0,278.1 L869.1,253.8 L869.1,247.6"/>
+<path class="rd" stroke-width="6" d="M949.9,371.8 L956.0,372.1 L1002.8,373.7 L1006.4,371.6"/>
+<path class="rd" stroke-width="6" d="M1006.4,371.6 L1018.1,371.6 L1024.1,371.1"/>
+<path class="rd" stroke-width="6" d="M141.8,710.1 L146.0,704.3 L159.4,686.0"/>
+<path class="rd" stroke-width="6" d="M127.7,729.2 L132.4,722.8 L141.8,710.1"/>
+<path class="rd major" stroke-width="10" d="M692.2,-231.5 L692.2,-221.8 L692.5,-200.7 L693.6,-179.4 L694.7,-154.8 L694.7,-146.4 L696.1,-119.9 L697.4,-87.4 L697.8,-77.6 L699.0,-47.1 L699.7,-21.6 L698.6,50.8 L697.8,83.4 L697.0,118.0 L696.4,136.4 L696.2,154.4 L694.5,189.6"/>
+<path class="rd major" stroke-width="10" d="M7.3,184.8 L12.4,189.6 L51.1,190.1 L64.1,190.4 L122.9,192.9 L128.8,194.4"/>
+<path class="rd major" stroke-width="10" d="M1063.9,601.6 L1066.5,590.9 L1067.5,584.6 L1055.6,515.7 L1054.8,511.6 L1048.9,477.5 L1042.3,439.7 L1040.9,431.9 L1030.9,364.2 L1030.1,359.9 L1021.4,320.3 L1019.5,304.1 L1019.7,292.0 L1021.7,278.4 L1024.1,269.4 L1025.2,266.7 L1027.7,259.6 L1032.3,250.1 L1032.8,249.2 L1038.6,240.2 L1047.8,229.0 L1059.0,217.9 L1099.9,177.7 L1109.3,168.3 L1119.7,158.5 L1150.9,127.3 L1176.7,103.1 L1182.4,96.3 L1194.8,84.0 L1210.3,68.9 L1239.9,39.7 L1242.7,37.0 L1245.2,33.8 L1246.4,31.2 L1247.5,24.4 L1247.5,21.9 L1248.3,-13.0 L1248.5,-22.5 L1249.2,-53.0 L1249.8,-79.7 L1250.0,-86.8 L1250.8,-124.1 L1251.9,-172.3"/>
+<path class="rd major" stroke-width="10" d="M228.2,-30.0 L227.9,10.5"/>
+<path class="rd major" stroke-width="10" d="M932.5,-15.1 L911.2,-16.1 L906.7,-16.7 L898.4,-16.9 L872.6,-17.5 L867.9,-17.6 L864.0,-17.6 L779.9,-17.2 L699.7,-21.6"/>
+<path class="rd major" stroke-width="10" d="M695.6,238.5 L693.5,238.5 L687.9,238.2 L639.0,236.2 L615.9,233.3 L571.2,230.4 L531.3,228.2 L496.6,226.4 L486.2,226.7 L475.8,226.1"/>
+<path class="rd major" stroke-width="10" d="M475.8,226.1 L467.1,226.3 L464.5,226.2 L419.1,224.7"/>
+<path class="rd major" stroke-width="10" d="M419.1,224.7 L379.2,223.9 L372.7,223.8 L341.4,223.1 L324.7,222.7 L298.3,221.9 L286.3,220.4"/>
+<path class="rd major" stroke-width="10" d="M224.9,196.1 L262.2,195.8 L261.8,196.7"/>
+<path class="rd major" stroke-width="10" d="M261.8,196.7 L279.4,211.0 L283.7,214.4"/>
+<path class="rd major" stroke-width="10" d="M283.7,214.4 L286.3,220.4 L290.9,232.1 L304.9,250.8 L307.9,254.6 L324.9,276.1"/>
+<path class="rd major" stroke-width="10" d="M227.0,48.4 L226.4,78.1 L226.2,87.3 L226.2,116.0 L226.1,124.7 L225.7,146.5 L225.5,154.8 L224.9,196.1"/>
+<path class="rd major" stroke-width="10" d="M227.9,10.5 L227.0,48.4"/>
+<path class="rd major" stroke-width="10" d="M694.5,189.6 L695.1,215.9 L695.6,228.9 L695.6,236.6 L695.6,238.1 L695.6,238.5"/>
+<path class="rd major" stroke-width="10" d="M324.9,276.1 L342.3,301.0 L341.6,319.3 L339.6,346.7 L339.0,355.1 L337.7,374.0 L335.7,401.8 L330.1,440.8 L330.9,463.7 L331.5,480.8 L332.3,497.0 L332.2,498.4 L332.9,523.1 L333.3,531.3 L331.6,544.6"/>
+<path class="rd major" stroke-width="10" d="M1059.1,791.4 L1055.3,787.3 L1028.1,761.3 L1027.1,752.8 L1031.0,711.6 L1034.1,648.5 L1037.1,605.1 L1037.4,600.5"/>
+<path class="rd major" stroke-width="10" d="M1106.2,159.8 L1093.6,171.0 L1055.6,208.3 L1043.5,219.9 L1035.3,228.6 L1028.5,237.3 L1025.8,242.9 L1023.4,245.4 L1016.9,258.9 L1015.9,266.0 L1010.3,283.0 L1009.0,299.8 L1009.9,313.8 L1022.1,361.1 L1024.1,371.1 L1032.9,433.3 L1034.9,441.9 L1042.7,485.8 L1048.4,511.1"/>
+<path class="rd major" stroke-width="10" d="M1168.9,-13.9 L1162.5,-13.9 L1101.9,-14.1 L1048.7,-14.2 L1039.9,-14.2 L1018.8,-14.3 L966.5,-14.4 L959.2,-14.5 L953.0,-14.4 L932.5,-15.1"/>
+<path class="rd major" stroke-width="10" d="M869.1,247.6 L861.3,246.9 L803.3,243.3 L781.1,242.7 L773.9,242.2 L769.1,242.2 L703.5,239.0 L701.2,238.8 L696.0,238.6 L695.6,238.5"/>
+<path class="rd major" stroke-width="10" d="M1134.6,246.9 L1126.2,249.6 L1086.3,262.7 L1038.9,259.9 L1027.7,259.6 L1016.9,258.9 L1014.1,259.0 L967.4,256.3 L962.4,256.0 L957.0,255.6 L950.7,255.1 L929.9,253.0"/>
+<path class="rd major" stroke-width="10" d="M128.8,194.4 L135.5,195.1 L224.9,196.1"/>
+<path class="rd major" stroke-width="10" d="M929.9,253.0 L909.1,251.5 L903.0,250.8 L897.9,250.3 L874.1,248.0 L869.1,247.6"/>
+<path class="rd major" stroke-width="14" d="M472.4,922.1 L472.7,905.2"/>
+<path class="rd major" stroke-width="14" d="M945.7,900.8 L932.6,913.4 L927.6,918.2"/>
+<path class="rd major" stroke-width="14" d="M920.3,950.1 L925.9,937.4 L926.3,927.2"/>
+<path class="rd major" stroke-width="14" d="M932.8,-141.0 L932.6,-27.0 L932.6,-22.0 L932.5,-15.1"/>
+<path class="rd major" stroke-width="14" d="M945.6,924.2 L963.2,905.0 L966.9,901.0 L972.8,894.7 L983.0,883.9 L997.0,868.6 L1049.3,817.6 L1063.1,800.2"/>
+<path class="rd major" stroke-width="14" d="M-7.8,778.1 L-5.3,785.4 L1.6,800.9 L29.7,845.5 L71.0,873.3 L86.3,880.7 L102.2,886.6 L116.8,890.5 L135.1,894.2 L152.1,895.7 L280.2,899.5 L373.4,902.5"/>
+<path class="rd major" stroke-width="14" d="M945.6,924.2 L945.7,906.5 L945.7,900.8"/>
+<path class="rd major" stroke-width="14" d="M627.8,959.9 L607.1,941.8 L584.3,926.3 L559.9,913.8 L534.1,904.3 L507.3,898.0 L480.7,895.2 L478.3,894.9 L473.0,894.7"/>
+<path class="rd major" stroke-width="14" d="M473.0,894.7 L462.7,894.4"/>
+<path class="rd major" stroke-width="14" d="M472.7,905.2 L477.9,905.4 L495.7,906.1 L511.2,908.1 L526.5,911.5 L541.4,916.2 L555.9,922.2 L569.7,929.5 L582.8,938.0 L595.2,947.6 L606.6,958.3 L617.0,970.0"/>
+<path class="rd major" stroke-width="14" d="M774.0,1093.8 L778.9,1089.3 L780.9,1086.8 L817.3,1052.4 L886.3,984.0 L897.1,974.1 L920.3,950.1"/>
+<path class="rd major" stroke-width="14" d="M479.0,565.0 L489.0,565.6 L511.3,567.0 L520.4,567.6 L587.4,571.8 L606.1,572.9 L617.7,573.6 L625.8,574.1 L630.7,574.5 L714.3,579.7 L755.1,582.1"/>
+<path class="rd major" stroke-width="14" d="M468.5,551.7 L457.1,550.0 L407.4,542.6 L373.8,537.5 L338.2,532.2 L333.3,531.3"/>
+<path class="rd major" stroke-width="14" d="M479.0,565.0 L479.9,553.6"/>
+<path class="rd major" stroke-width="14" d="M468.5,551.7 L468.7,563.9"/>
+<path class="rd major" stroke-width="14" d="M925.7,920.1 L914.3,931.8 L904.2,942.3"/>
+<path class="rd major" stroke-width="14" d="M925.7,920.1 L926.1,925.1 L926.3,927.2"/>
+<path class="rd major" stroke-width="14" d="M947.6,594.8 L956.5,595.4 L998.8,597.8 L1037.4,600.5 L1054.3,600.9 L1063.9,601.6"/>
+<path class="rd major" stroke-width="14" d="M947.6,594.8 L947.9,583.9"/>
+<path class="rd major" stroke-width="14" d="M906.4,592.4 L906.3,603.4 L906.1,641.7 L906.0,657.7 L905.9,662.3 L905.8,676.7 L905.5,697.2 L905.4,743.1 L905.4,748.1 L905.4,751.2 L905.5,762.7 L904.6,872.3 L904.3,917.1 L904.3,922.6 L904.2,931.5 L904.2,942.3"/>
+<path class="rd major" stroke-width="14" d="M906.4,592.4 L915.5,593.0 L926.2,593.5"/>
+<path class="rd major" stroke-width="14" d="M947.9,583.9 L926.3,582.5"/>
+<path class="rd major" stroke-width="14" d="M947.9,583.9 L947.9,577.2 L948.5,506.0 L948.7,482.2 L949.6,387.4 L949.6,382.2 L949.6,377.0 L949.9,371.8 L950.1,365.9 L949.8,357.3 L950.6,270.2 L950.6,265.2 L950.6,262.3 L950.7,255.1 L950.8,244.6 L951.1,205.9 L951.5,161.2 L951.8,124.4 L952.1,95.4 L952.1,89.7 L952.2,79.7"/>
+<path class="rd major" stroke-width="14" d="M468.7,563.9 L468.7,573.8 L468.1,598.8 L466.3,679.6"/>
+<path class="rd major" stroke-width="14" d="M468.7,563.9 L479.0,565.0"/>
+<path class="rd major" stroke-width="14" d="M479.9,553.6 L480.1,544.4 L481.4,477.5 L481.9,449.0 L482.8,406.9 L482.8,402.6 L483.0,394.4 L484.3,326.1 L485.1,290.0 L485.1,288.4 L486.1,235.0 L486.2,226.7 L486.5,219.0 L487.2,179.0 L487.7,156.3 L487.8,152.5 L488.9,92.3 L489.0,90.0 L489.2,81.1 L489.4,68.2 L489.8,42.6 L490.7,4.2 L491.1,-19.9 L491.3,-26.6 L491.3,-29.5 L491.8,-51.6 L492.1,-69.7 L492.3,-76.5 L493.7,-148.9 L494.5,-190.3 L495.1,-221.5 L495.4,-235.7"/>
+<path class="rd major" stroke-width="14" d="M479.9,553.6 L468.5,551.7"/>
+<path class="rd major" stroke-width="14" d="M906.4,581.4 L895.9,581.3 L852.3,578.1 L827.5,576.6 L815.9,575.9 L754.4,571.8"/>
+<path class="rd major" stroke-width="14" d="M906.4,581.4 L906.4,592.4"/>
+<path class="rd major" stroke-width="14" d="M475.8,226.1 L475.7,235.0 L474.6,282.0 L474.5,288.4 L473.7,321.9 L472.2,385.3 L472.0,394.0 L471.7,404.9 L471.7,407.8 L470.7,447.7 L469.6,495.0 L468.5,542.8 L468.5,551.7"/>
+<path class="rd major" stroke-width="14" d="M80.6,508.5 L85.6,509.2 L115.5,513.5 L159.9,519.9 L202.8,526.0 L299.0,539.9 L331.6,544.6 L336.7,545.3 L360.0,548.7 L428.2,558.5 L456.7,562.6 L468.7,563.9"/>
+<path class="rd major" stroke-width="14" d="M333.3,531.3 L284.0,523.9 L236.2,516.8 L204.9,512.1 L123.2,499.8 L108.4,497.6 L88.5,494.6 L84.3,494.0"/>
+<path class="rd major" stroke-width="14" d="M755.1,582.1 L818.2,586.5 L856.4,589.2 L886.9,591.3 L892.9,591.7 L895.6,592.2 L906.4,592.4"/>
+<path class="rd major" stroke-width="14" d="M754.4,571.8 L717.3,569.2 L681.6,566.9 L625.2,563.2 L618.5,562.8 L607.0,562.0 L592.6,561.1 L588.3,560.8 L559.9,558.9 L524.0,556.5 L509.8,555.6 L489.8,554.2 L479.9,553.6"/>
+<path class="rd major" stroke-width="14" d="M462.9,878.1 L455.2,877.6 L421.5,876.7 L338.9,874.1 L281.1,872.2 L272.9,872.1 L213.3,870.3 L202.1,870.0 L163.9,868.6 L143.7,867.2 L132.1,865.1 L117.9,861.6 L100.3,855.8 L79.8,845.1 L62.2,833.6 L55.3,828.1"/>
+<path class="rd major" stroke-width="14" d="M467.7,922.0 L472.4,922.1"/>
+<path class="rd major" stroke-width="14" d="M904.2,942.3 L891.7,953.7 L877.5,966.8 L842.8,998.5 L797.0,1041.2 L763.9,1072.3 L762.2,1073.6 L757.7,1077.6"/>
+<path class="rd major" stroke-width="14" d="M483.3,-236.0 L483.1,-221.6 L482.6,-183.2 L482.0,-154.9 L481.2,-103.3 L480.0,-29.8 L480.0,-26.6 L479.9,-19.8 L478.8,49.4 L478.3,80.6 L478.1,89.0 L478.0,94.1 L477.6,119.6 L477.2,145.1 L477.1,152.6 L476.1,219.1 L475.8,226.1"/>
+<path class="rd major" stroke-width="14" d="M462.4,921.9 L467.7,922.0"/>
+<path class="rd major" stroke-width="14" d="M473.3,878.6 L473.4,870.2 L474.2,823.6 L474.7,792.3 L475.1,768.2 L475.6,742.2 L476.5,688.2 L476.6,682.7 L478.3,574.2 L479.0,565.0"/>
+<path class="rd major" stroke-width="14" d="M1055.9,794.4 L1039.9,807.3 L987.5,858.3 L966.0,880.0 L962.6,883.4 L961.6,884.4 L957.7,888.0 L945.7,900.8"/>
+<path class="rd major" stroke-width="14" d="M1060.3,590.4 L1054.6,590.1 L994.2,586.7 L965.2,585.1 L959.6,584.8 L956.5,584.6 L947.9,583.9"/>
+<path class="rd major" stroke-width="14" d="M464.8,768.1 L463.2,861.8 L463.1,867.5 L463.1,869.9 L462.9,878.1"/>
+<path class="rd major" stroke-width="14" d="M617.0,970.0 L709.0,1066.0"/>
+<path class="rd major" stroke-width="14" d="M561.5,941.7 L576.2,950.5 L586.1,957.4 L607.0,977.4 L634.0,1006.4 L647.5,1020.9 L661.8,1036.3"/>
+<path class="rd major" stroke-width="14" d="M15.8,851.5 L22.4,859.2 L30.6,865.3 L38.4,870.6 L48.9,877.5 L59.8,883.8 L69.8,889.4 L80.1,894.5 L98.0,901.1 L118.1,906.2 L127.1,908.5 L140.5,910.7 L155.2,911.5 L253.7,914.7 L279.8,915.5 L286.6,915.7 L331.8,917.4 L336.9,917.5 L443.9,921.3 L449.0,921.5 L454.4,921.7 L462.4,921.9"/>
+<path class="rd major" stroke-width="14" d="M2.1,496.1 L11.1,497.5 L24.7,499.7 L45.6,503.0 L69.0,506.6 L80.6,508.5"/>
+<path class="rd major" stroke-width="14" d="M462.5,905.3 L462.4,921.9"/>
+<path class="rd major" stroke-width="14" d="M462.5,905.3 L472.7,905.2"/>
+<path class="rd major" stroke-width="14" d="M932.5,-15.1 L932.4,-8.0 L932.4,-3.0 L932.0,67.7 L932.0,70.9 L931.8,78.7"/>
+<path class="rd major" stroke-width="14" d="M928.6,375.4 L928.5,382.1 L927.2,502.2"/>
+<path class="rd major" stroke-width="14" d="M719.9,1055.0 L697.0,1031.8 L667.1,999.2 L627.8,959.9"/>
+<path class="rd major" stroke-width="14" d="M564.5,898.7 L551.6,893.4 L548.1,891.9 L530.0,885.4 L507.8,881.2"/>
+<path class="rd major" stroke-width="14" d="M927.6,918.2 L925.7,920.1"/>
+<path class="rd major" stroke-width="14" d="M920.3,950.1 L934.5,935.3"/>
+<path class="rd major" stroke-width="14" d="M934.5,935.3 L945.6,924.2"/>
+<path class="rd major" stroke-width="14" d="M613.1,928.2 L599.5,917.3 L573.8,903.5 L564.5,898.7"/>
+<path class="rd major" stroke-width="14" d="M473.3,878.6 L462.9,878.1"/>
+<path class="rd major" stroke-width="14" d="M462.9,878.1 L462.7,894.4"/>
+<path class="rd major" stroke-width="14" d="M466.3,679.6 L466.2,687.0 L465.3,739.6"/>
+<path class="rd major" stroke-width="14" d="M462.5,905.3 L472.4,922.1"/>
+<path class="rd major" stroke-width="14" d="M472.4,922.1 L477.3,922.1 L493.5,923.1 L511.4,925.7 L530.9,930.6 L547.0,936.2 L561.5,941.7"/>
+<path class="rd major" stroke-width="14" d="M473.0,894.7 L473.3,878.6"/>
+<path class="rd major" stroke-width="14" d="M472.7,905.2 L473.0,894.7"/>
+<path class="rd major" stroke-width="14" d="M462.7,894.4 L462.5,905.3"/>
+<path class="rd major" stroke-width="14" d="M462.7,894.4 L454.9,894.1 L280.6,888.0 L155.2,883.8 L133.7,882.3 L112.5,877.9 L91.2,869.6 L73.4,859.9 L42.0,839.5"/>
+<path class="rd major" stroke-width="14" d="M84.3,494.0 L71.9,492.2 L57.9,490.1 L39.6,487.3 L13.0,483.3 L2.7,481.8"/>
+<path class="rd major" stroke-width="14" d="M912.9,-226.8 L912.8,-214.4 L912.1,-126.5 L911.4,-30.2 L911.4,-26.1 L911.3,-22.5 L911.2,-16.1 L911.2,-7.7 L910.6,62.0 L910.6,67.4 L910.5,70.3 L910.5,78.8 L909.2,232.0 L909.2,237.3 L909.1,243.3 L909.1,251.5 L909.0,256.1 L908.6,313.6 L908.2,362.7 L908.1,368.9 L908.1,373.8 L907.7,425.5 L907.3,463.3 L907.0,501.2 L906.8,535.3 L906.6,565.8 L906.5,569.5 L906.5,572.0 L906.4,581.4"/>
+<path class="rd major" stroke-width="14" d="M926.3,582.5 L906.4,581.4"/>
+<path class="rd major" stroke-width="14" d="M926.3,582.5 L926.2,593.5"/>
+<path class="rd major" stroke-width="14" d="M926.2,593.5 L947.6,594.8"/>
+<path class="rd major" stroke-width="14" d="M926.2,593.5 L926.0,604.1 L926.0,607.5 L924.4,755.8 L924.4,761.5"/>
+<path class="rd major" stroke-width="14" d="M952.2,79.7 L952.5,71.4 L952.6,32.2 L952.8,-0.1 L952.8,-4.4 L952.9,-8.8 L953.0,-14.4 L953.0,-21.7 L953.3,-54.5 L954.0,-128.3 L954.3,-170.8 L954.6,-206.0"/>
+<path class="rd major" stroke-width="14" d="M924.4,761.5 L924.4,766.2 L924.3,878.5 L924.5,903.6 L925.0,911.0 L925.7,920.1"/>
+<path class="rd major" stroke-width="14" d="M927.2,502.2 L926.5,572.8 L926.4,575.9 L926.3,582.5"/>
+<path class="rd major" stroke-width="14" d="M931.8,78.7 L931.6,92.7 L930.1,236.6 L930.0,243.9 L929.9,253.0"/>
+<path class="rd major" stroke-width="14" d="M929.9,253.0 L929.8,258.8 L929.7,266.0 L928.6,368.6 L928.6,375.4"/>
+<path class="rd major" stroke-width="14" d="M507.8,881.2 L491.4,879.9 L484.6,879.4 L478.8,879.0 L473.3,878.6"/>
+<path class="rd major" stroke-width="14" d="M658.8,973.3 L622.5,935.7 L613.1,928.2"/>
+<path class="rd major" stroke-width="14" d="M373.4,902.5 L450.2,904.9 L454.7,905.1 L462.5,905.3"/>
+<path class="rd major" stroke-width="14" d="M465.3,739.6 L464.8,766.1 L464.8,768.1"/>
+<path class="rd major" stroke-width="14" d="M55.3,828.1 L50.3,823.3 L40.8,813.4 L32.0,801.7 L25.6,792.1 L22.2,787.0 L14.2,775.0 L11.2,768.6"/>
+<path class="rd major" stroke-width="14" d="M946.6,755.4 L947.1,662.7 L947.3,644.9 L947.5,611.7 L947.5,608.4 L947.5,604.8 L947.6,594.8"/>
+<path class="rd major" stroke-width="14" d="M945.7,900.8 L945.8,890.3 L946.1,844.0 L946.2,820.9 L946.4,794.5 L946.5,772.8 L946.5,767.3 L946.5,762.9 L946.6,755.4"/>
+<text class="rlabel" x="477" y="628" text-anchor="middle" dominant-baseline="central" transform="rotate(-89.1 477 628)">復興南路二段</text>
+<text class="rlabel" x="368" y="891" text-anchor="middle" dominant-baseline="central" transform="rotate(2.0 368 891)">辛亥路二段</text>
+<text class="rlabel" x="251" y="533" text-anchor="middle" dominant-baseline="central" transform="rotate(8.2 251 533)">和平東路二段</text>
+<text class="rlabel" x="910" y="155" text-anchor="middle" dominant-baseline="central" transform="rotate(-89.5 910 155)">敦化南路二段</text>
+<text class="rlabel" x="787" y="584" text-anchor="middle" dominant-baseline="central" transform="rotate(4.0 787 584)">和平東路三段</text>
+        <g id="svgpins"></g>
+      </svg>
+      <div class="maplegend" tabindex="0" role="group" aria-label="地圖圖例"><span><i style="background:var(--gA)"></i>A 很適合</span><span><i style="background:var(--gB)"></i>B 還可以</span><span><i style="background:var(--gC)"></i>C 勉強</span><span>數字圈＝相近的多家店</span><span>虛線圈：離起點 400 公尺</span><span>底圖 © 內政部國土測繪中心</span></div>
+    </div>
+  </div>
+</div></main>
+
+<footer><div class="wrap" id="foot"></div></footer>
+
+<div class="sheet-bg" id="sheetBg" hidden></div>
+<section class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" hidden>
+  <button class="grab" id="grab" aria-label="收合篩選"><span></span></button>
+  <div class="sh-head"><h2 id="sheetTitle">篩選與排序</h2><button class="btn sm" id="sheetClose" aria-label="關閉，不套用">✕</button></div>
+  <div class="sh-body" id="sheetBody">
+    <div class="sh-sec" data-for="origin"><div id="slotOrigin"></div><p class="sh-msg" id="sheetMsg" role="status"></p></div>
+    <div class="sh-sec" data-for="filter"><div class="lab">類型</div><div id="slotChips"></div></div>
+    <div class="sh-sec" data-for="filter"><div class="lab">條件</div><div id="slotCtl" style="display:flex;flex-direction:column;gap:12px"></div></div>
+  </div>
+  <div class="sh-foot" data-for="filter"><button class="btn" id="sheetReset">清除</button><button class="btn primary" id="sheetApply">顯示 0 家</button></div>
+</section>
+
+<nav class="tabbar" id="tabbar" aria-label="主要導覽">
+  <button class="tab" data-tab="list" aria-current="true"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.5" cy="6" r="1.2" fill="currentColor"/><circle cx="3.5" cy="12" r="1.2" fill="currentColor"/><circle cx="3.5" cy="18" r="1.2" fill="currentColor"/></svg></span>清單</button>
+  <button class="tab" data-tab="map" aria-current="false"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="m9 4-6 2.5v13.5l6-2.5 6 2.5 6-2.5V4l-6 2.5z"/><path d="M9 4v13.5M15 6.5V20"/></svg></span>地圖</button>
+  <button class="tab" data-tab="filter" aria-haspopup="dialog" aria-expanded="false"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg></span>篩選<span class="badge" id="fBadge"></span></button>
+  <button class="tab" data-tab="origin" aria-haspopup="dialog" aria-expanded="false"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><span id="tabOrigin">車站</span></button>
+</nav>
+
+<script>
+const PROJ={"lat0": 25.030799000000002, "lon0": 121.53788800000001, "kx": 85594.45347948205, "ky": 94463.10460813824};
+const STATION=[25.026099, 121.543666];
+const SHOPS=[{"id": "jiang", "name": "蔣記家薌麵", "cuisine": "眷村麵館", "type": "麵食", "addr": "台北市大安區四維路208巷18之1號", "ll": [25.02633, 121.546841], "pmin": 150, "pmax": 300, "pest": false, "hours": "11:30–14:30、17:30–20:30；週六公休，2026 年食記說週五也休（vocus.cc），出發前請打電話確認", "phone": "02-2707-6012", "verified": "2026 年仍有新評論", "slots": [{"d": [0, 1, 2, 3, 4], "o": "11:30", "c": "14:30"}, {"d": [0, 1, 2, 3, 4], "o": "17:30", "c": "20:30"}], "signature": ["蔣記熗鍋麵", "乾燒牛肉麵", "口水雞"], "items": [{"cat": "牛肉麵", "name": "乾燒牛肉麵（小，附牛骨湯）", "price": 210}, {"cat": "牛肉麵", "name": "清燉牛肉麵", "price": 220}, {"cat": "牛肉麵", "name": "水煮牛肉麵", "price": 260}, {"cat": "牛肉麵", "name": "紅燒牛肉麵", "price": null}, {"cat": "麵", "name": "蔣記熗鍋麵", "price": 200}, {"cat": "麵", "name": "椒麻乾拌麵", "price": 100}, {"cat": "麵", "name": "家薌魯子麵", "price": null}, {"cat": "麵", "name": "北方炸醬麵", "price": null}, {"cat": "水餃", "name": "三鮮水餃", "price": null}, {"cat": "小菜", "name": "口水雞", "price": 150}, {"cat": "小菜", "name": "粉蒸排骨", "price": 140}, {"cat": "小菜", "name": "腐皮捲", "price": 60}, {"cat": "小菜", "name": "豆魚", "price": 60}, {"cat": "小菜", "name": "茄子", "price": 40}, {"cat": "點心", "name": "蔥油餅（平日晚上限定）", "price": 50}, {"cat": "湯", "name": "酸辣湯", "price": 50}], "menu_source": "https://icecreamcat.tw/chiangs-hometown-noodles/", "menu_source_label": "食記 icecreamcat", "menu_source_date": "2026-04，部分取自 2025-07／2025-11 食記", "menu_link": "https://www.ubereats.com/tw/store/%E8%94%A3%E8%A8%98%E5%AE%B6%E8%96%8C%E9%BA%B5/gq2NiE-RTjSbSqaQyGy3XA", "menu_link_label": "Uber Eats 菜單", "note": "Uber Eats 外送價約比店內貴 15–20%。熗鍋麵有 200／210 兩種記錄。", "fit": {"order": "清燉牛肉麵＋豆魚", "price": 280, "protein": 37, "grade": "B", "why": "清燉湯頭不含糖，牛肉份量足；豆魚再補一份植物性蛋白質。", "avoid": "紅燒湯頭（加糖加醬）、蔥油餅、粉蒸排骨（裹粉偏油）。", "tip": "可以加牛肉就加，麵吃一半；豆魚先問是不是炸的。", "est": true}, "xcheck": "比對 5 個來源：營業 一致・時間 一致・價格 只有一個來源", "n": 1}, {"id": "niu", "name": "牛莊園牛肉麵", "cuisine": "清燉牛肉麵", "type": "麵食", "addr": "台北市大安區四維路170巷27號", "ll": [25.028324, 121.546865], "pmin": 215, "pmax": 430, "pest": false, "hours": "每日 11:30–14:00、17:30–20:20（2023–2024 食記）", "slots": [{"d": [0, 1, 2, 3, 4, 5, 6], "o": "11:30", "c": "14:00"}, {"d": [0, 1, 2, 3, 4, 5, 6], "o": "17:30", "c": "20:20"}], "signature": ["清燉莊園牛肉麵（5 種部位）", "紅燒半筋半肉麵", "椒麻雪花牛乾拌麵"], "items": [{"cat": "牛肉麵", "name": "清燉雪花牛肉麵", "price": 215}, {"cat": "牛肉麵", "name": "紅燒半筋半肉麵（小）", "price": 260}, {"cat": "牛肉麵", "name": "紅燒莊園牛肉麵", "price": 430}, {"cat": "牛肉麵", "name": "清燉莊園牛肉麵（小）", "price": 430}, {"cat": "其他麵", "name": "椒麻雪花牛乾拌麵（小，內用）", "price": 180}, {"cat": "其他麵", "name": "莊園雞肉麵", "price": 180}, {"cat": "小菜", "name": "牛湯滷蘿蔔", "price": 40}, {"cat": "小菜", "name": "有機手工滷豆干", "price": 40}, {"cat": "小菜", "name": "芝麻山葵黃瓜", "price": 40}, {"cat": "小菜", "name": "滷海帶", "price": 30}, {"cat": "小菜", "name": "皮蛋有機豆腐", "price": 40}, {"cat": "小菜", "name": "溏心蛋", "price": 30}, {"cat": "小菜", "name": "滷百頁", "price": 20}, {"cat": "飲料", "name": "冬瓜茶", "price": 30}], "menu_source": "https://hedonistjun.com/manorbeef/", "menu_source_label": "食記 hedonistjun", "menu_source_date": "2024-11，小菜部分取自 2023 年食記", "menu_link": "https://www.facebook.com/manorbeef/", "menu_link_label": "官方 FB", "note": "2026-04 食記寫清燉莊園牛肉麵 450 元，表上價格可能已調漲，這套點法可能超過 300 元。", "fit": {"order": "清燉雪花牛肉麵＋溏心蛋＋滷豆干", "price": 285, "protein": 35, "grade": "B", "why": "清燉湯頭少糖，牛肉＋蛋＋豆干三種蛋白質，一餐可達 40 g 以上。", "avoid": "紅燒湯頭、冬瓜茶（含糖）、滷百頁（加工品，油脂高）。", "tip": "雪花牛油花多，改點牛腱肉，蛋白質可多約 5 g。"}, "verified": "2026-04 PTT 食記提到最新價格；愛食記、OpenRice 沒有歇業標示", "xcheck": "比對 4 個來源：營業 一致・時間 一致・價格 只有一個來源", "n": 2}, {"id": "thai", "nudge": [-30, -28], "name": "這味泰泰 復南門市", "cuisine": "泰式便當・米線", "type": "異國", "addr": "台北市大安區復興南路二段181號1樓", "ll": [25.02683, 121.543679], "pmin": 188, "pmax": 300, "pest": false, "hours": "每日 11:00–21:00（愛食記、OSM；外送可能 20:30 停單）", "verified": "官網分店頁仍列出", "slots": [{"d": [0, 1, 2, 3, 4, 5, 6], "o": "11:00", "c": "21:00"}], "signature": ["東央酸辣麵／米線", "綠咖哩雞腿肉飯", "打拋豬肉飯"], "items": [{"cat": "飯（外送價）", "name": "打拋豬肉飯", "price": 218}, {"cat": "飯（外送價）", "name": "綠咖哩雞腿肉飯", "price": 228}, {"cat": "飯（外送價）", "name": "泰酥照燒雞腿排飯", "price": 248}, {"cat": "飯（外送價）", "name": "泰式椒麻雞腿排飯", "price": 258}, {"cat": "飯（外送價）", "name": "椒麻雞尬打拋豬雙拼", "price": 248}, {"cat": "飯（外送價）", "name": "泰式鮮味檸檬魚飯", "price": 318}, {"cat": "麵／米線（外送價）", "name": "東央酸辣麵／米線（香茅豬）", "price": 228}, {"cat": "麵／米線（外送價）", "name": "海鮮叻沙麵／米線", "price": 278}, {"cat": "小菜（外送價）", "name": "月亮蝦餅（6 片）", "price": 159}, {"cat": "店內價（2024-06）", "name": "打拋豬肉飯（店內）", "price": 188}], "menu_source": "https://whitneyblog.com/mrsthaithai-fuxingsouth", "menu_source_label": "食記 whitneyblog＋外送平台", "menu_source_date": "外送價：2026-11 搜尋快照；店內價：2024-06", "menu_link": "https://www.foodpanda.com.tw/en/restaurant/gt33/zhe-wei-tai-tai-mrs-thai-tai-bei-fu-nan-men-shi", "menu_link_label": "foodpanda 菜單", "note": "外送價比店內約貴 16%（打拋豬：外送 218，店內 188）。", "fit": {"order": "打拋豬肉飯（加荷包蛋、醬少一點、飯半碗）", "price": 200, "protein": 26, "grade": "B", "why": "絞肉份量足，價格實在。", "avoid": "泰式奶茶（高糖）、月亮蝦餅、椒麻雞腿排、照燒雞（油炸＋甜醬）。", "tip": "有打拋雞就改雞肉，脂肪比較少；檸檬魚飯蛋白質也高，但超過 300 元。", "est": true}, "xcheck": "比對 4 個來源：營業 一致・時間 來源不一（已取保守值）・價格 只有一個來源", "n": 3}, {"id": "penghu", "nudge": [40, 4], "name": "澎友 澎湖海鮮", "cuisine": "澎湖海鮮・魚頭湯", "type": "飯・粥", "addr": "台北市大安區復興南路二段193巷1號", "ll": [25.026592, 121.543864], "pmin": 130, "pmax": 250, "pest": false, "hours": "11:30–14:00、17:30–20:00（愛食記資料，公休日不明）", "phone": "0976-152-168", "unverified": "近年資料少，先打電話確認", "slots": [{"d": [0, 1, 2, 3, 4, 5, 6], "o": "11:30", "c": "14:00"}, {"d": [0, 1, 2, 3, 4, 5, 6], "o": "17:30", "c": "20:00"}], "signature": ["綜合海鮮麵線", "海鮮粥", "現燙小管"], "items": [{"cat": "麵", "name": "綜合海鮮麵線", "price": 150}, {"cat": "麵", "name": "海鮮醬乾拌麵", "price": 80}, {"cat": "麵", "name": "小管麵線", "price": null}, {"cat": "粥", "name": "海鮮粥", "price": 130}, {"cat": "湯", "name": "魚頭酸瓜湯", "price": 100}, {"cat": "小菜", "name": "現燙小管", "price": 120}, {"cat": "小菜", "name": "飛魚卵香腸", "price": 50}, {"cat": "套餐", "name": "超值套餐", "price": 200}, {"cat": "甜點", "name": "仙人掌冰", "price": 30}], "menu_source": "https://www.mirrormedia.mg/story/20230426food001", "menu_source_label": "鏡週刊", "menu_source_date": "2023-04（2023-09 更新）", "menu_link": "https://www.facebook.com/penghu.friends.seafood/", "menu_link_label": "官方 FB", "note": "價格是 2023 年的，可能已調漲。店家從 151 巷搬到 193 巷 1 號，最新營業狀態請先看 FB 確認。", "fit": {"order": "魚頭酸瓜湯＋白飯", "price": 115, "protein": 12, "grade": "C", "why": "店裡多是小管、蝦等海鮮，豬雞牛魚只有魚頭湯，蛋白質偏少。", "avoid": "小管、海鮮粥、海鮮麵線（非豬雞牛魚）；仙人掌冰（含糖）。", "tip": "比較適合想吃海鮮的時候。", "est": true}, "xcheck": "比對 3 個來源：營業 只有一個來源・時間 只有一個來源・價格 只有一個來源", "n": 4}, {"id": "sushi", "nudge": [-44, 6], "name": "爭鮮迴轉壽司 科技店", "cuisine": "迴轉壽司", "type": "異國", "addr": "台北市大安區復興南路二段191號", "ll": [25.02659, 121.543674], "pmin": 150, "pmax": 300, "pest": false, "hours": "每日 11:00–21:30（多數來源一致）", "phone": "02-2709-9117", "slots": [{"d": [0, 1, 2, 3, 4, 5, 6], "o": "11:00", "c": "21:30"}], "signature": ["鮭魚握壽司", "炙燒鮭魚", "茶碗蒸"], "items": [{"cat": "盤價", "name": "白盤（玉子燒、鮪魚、旗魚、稻荷等）", "price": 30}, {"cat": "盤價", "name": "粉紅盤（焦糖鮭魚、帆立貝、甜蝦）", "price": 40}, {"cat": "盤價", "name": "黑盤（厚切鮭魚、大赤蝦、干貝、鰻魚）", "price": 60}, {"cat": "盤價", "name": "木盤（豪華三拼、刺身盛合）", "price": 80}, {"cat": "握壽司", "name": "鮭魚握壽司（2 貫）", "price": 40}, {"cat": "軍艦", "name": "鮭魚軍艦（2 貫）", "price": 30}, {"cat": "湯・蒸物", "name": "味噌湯", "price": 30}, {"cat": "湯・蒸物", "name": "茶碗蒸", "price": 30}, {"cat": "麵", "name": "鮮味蝦貝麵（門市限定）", "price": 120}], "menu_source": "https://www.whbydcc.com/%E7%88%AD%E9%AE%AE%E4%B8%80%E7%9B%A4%E5%A4%9A%E5%B0%91/", "menu_source_label": "盤價整理文", "menu_source_date": "2026-02（非官方）", "menu_link": "https://www.sushiexpress.com.tw/sushi-express/Menu", "menu_link_label": "官方菜單", "note": "官方菜單頁無法自動讀取，盤價級距取自 2026-02 的整理文，各來源不太一致，以店內為準。", "fit": {"order": "鮭魚生魚片＋鮭魚握 2 盤＋鮪魚握 1 盤＋味噌湯", "price": 230, "protein": 27, "grade": "B", "why": "只挑鮭魚、鮪魚、旗魚，用盤數控制蛋白質的量。", "avoid": "甜蝦、帆立貝、干貝（非豬雞牛魚）；焦糖鮭魚、美乃滋軍艦、甜點。", "tip": "醋飯有加糖、飯量又多，可以多點生魚片、少點握壽司。", "est": true}, "unverified": "官網門市頁讀不到，找不到 2025–2026 年的紀錄；先用官網門市查詢或打電話確認", "xcheck": "比對 4 個來源：營業 一致・時間 一致・價格 只有一個來源", "n": 5}, {"id": "wujiu", "name": "五九麵館", "cuisine": "乾麵・雞腿・雪花牛", "type": "麵食", "addr": "台北市大安區和平東路二段118巷59號", "ll": [25.022472, 121.542928], "pmin": 60, "pmax": 150, "pest": false, "hours": "11:00–14:00、17:00–20:00，週日公休（愛食記；食記寫到 14:30、20:30，取較保守的時間）", "phone": "02-2736-6759", "slots": [{"d": [1, 2, 3, 4, 5], "o": "11:00", "c": "14:00"}, {"d": [1, 2, 3, 4, 5], "o": "17:00", "c": "20:00"}, {"d": [6], "o": "11:30", "c": "14:00"}, {"d": [6], "o": "17:00", "c": "20:00"}], "signature": ["怪味蔥醬麵加煙燻鴨", "五九招牌麵（雪花牛＋鴨血）"], "items": [{"cat": "乾麵", "name": "怪味蔥醬麵（小）", "price": 60}, {"cat": "乾麵", "name": "五九乾麵＋煙燻鴨（大）", "price": 75}, {"cat": "乾麵", "name": "五九招牌麵＋雪花牛＋鴨血（小）", "price": 80}, {"cat": "乾麵", "name": "雪花牛鴨血乾麵", "price": 85}, {"cat": "乾麵", "name": "怪味蔥醬麵加去骨雞腿排（小）", "price": 80}, {"cat": "加料", "name": "加煙燻鴨", "price": 30}, {"cat": "飯", "name": "牛丼飯", "price": 90}, {"cat": "小菜", "name": "燙青菜", "price": 30}, {"cat": "小菜", "name": "滷鴨血", "price": null}, {"cat": "湯", "name": "青菜豆腐湯", "price": 30}, {"cat": "湯", "name": "貢丸湯", "price": null}, {"cat": "飲料", "name": "紅茶（內用免費）", "price": 0}], "menu_source": "https://goodeat.tw/food/wujiu-noodle-house-heping-east-road-taipei/", "menu_source_label": "食記 goodeat", "menu_source_date": "2026-06，部分品項價格是 2019–2023 年的", "menu_link": null, "note": "部分價格是 2019–2020 年的，現在可能貴 10–20 元。118 巷有都更計畫（2023 年報導），出發前先打電話確認。", "fit": {"order": "怪味蔥醬麵加去骨雞腿排（小）＋青菜豆腐湯", "price": 110, "protein": 26, "grade": "A", "why": "雞腿排加豆腐湯，110 元就有 25 g 以上蛋白質，是全清單每百元蛋白質最多的。", "avoid": "鴨肉、鴨血（非豬雞牛魚）；免費紅茶有糖。", "tip": "再加一顆滷蛋，或改點牛丼飯（$90）加豆腐湯。"}, "verified": "2026-06 食記（goodeat）", "xcheck": "比對 4 個來源：營業 一致・時間 來源不一（已取保守值）・價格 只有一個來源", "n": 6}, {"id": "squid", "name": "小辣椒魷魚焿", "cuisine": "羹湯・嘴邊肉・滷味", "type": "小吃", "addr": "台北市大安區和平東路二段267之1號", "ll": [25.024939, 121.544064], "pmin": 80, "pmax": 200, "pest": false, "hours": "各來源不一：10:30–21:00（2023 食記）、12:00–20:00（Uber Eats）、11:00–22:00 週日休；以 Google 地圖為準", "phone": "02-2784-8586", "slots": [{"d": [1, 2, 3, 4, 5, 6], "o": "10:30", "c": "21:00"}], "signature": ["綜合魷魚羹加魚酥", "生魷魚羹", "自製三種辣椒醬"], "items": [{"cat": "店內（2023-12）", "name": "綜合羹湯＋魚酥", "price": 80}, {"cat": "店內（2023-12）", "name": "乾拌意麵", "price": 60}, {"cat": "店內（2023-12）", "name": "滷肉飯（大）", "price": 40}, {"cat": "店內（2023-12）", "name": "豆干／豆皮／海帶（各）", "price": 25}, {"cat": "店內（2023-12）", "name": "嘴邊肉", "price": 70}, {"cat": "外送價", "name": "生魷魚羹湯", "price": 100}, {"cat": "外送價", "name": "花枝羹湯", "price": 100}, {"cat": "外送價", "name": "綜合魷魚羹飯", "price": 120}, {"cat": "外送價", "name": "花枝羹米粉", "price": 120}, {"cat": "外送價", "name": "綜合粄條", "price": 130}, {"cat": "外送價", "name": "乾粄條", "price": 95}], "menu_source": "https://hedonistjun.com/small-pepper-squid-soup", "menu_source_label": "食記 hedonistjun＋Uber Eats", "menu_source_date": "店內價：2023-12；外送價：日期不明", "menu_link": "https://www.ubereats.com/tw/store/%E5%B0%8F%E8%BE%A3%E6%A4%92%E9%AD%B7%E9%AD%9A%E7%BE%B9%E9%BA%B5/AITPj4GfWy26RjLwzQ4Z2Q", "menu_link_label": "Uber Eats 菜單", "note": "外送價比店內貴約 20–40%。", "fit": {"order": "嘴邊肉＋滷肉飯（大）＋滷豆干", "price": 135, "protein": 25, "grade": "B", "why": "嘴邊肉是瘦豬肉，搭配豆干補蛋白質，135 元。", "avoid": "魷魚、花枝（非豬雞牛魚）；羹湯勾芡帶甜；魚酥是炸的。", "tip": "店裡的羹湯多半有魷魚，不在你的肉類清單裡；想喝湯就選清湯。"}, "unverified": "找不到 2025–2026 年的用餐紀錄，先打電話確認", "xcheck": "比對 4 個來源：營業 一致・時間 來源不一（已取保守值）・價格 只有一個來源", "n": 7}, {"id": "pie", "name": "巧房山東餡餅", "cuisine": "山東餡餅", "type": "小吃", "addr": "台北市大安區和平東路二段313號", "ll": [25.024922, 121.545198], "pmin": 80, "pmax": 160, "pest": false, "hours": "週一至六 12:00–19:30，週日公休（愛食記）", "phone": "02-2700-8901", "slots": [{"d": [1, 2, 3, 4, 5, 6], "o": "12:00", "c": "19:30"}], "signature": ["牛肉餡餅", "豬肉餡餅", "韭菜餅"], "items": [{"cat": "餡餅", "name": "牛肉餡餅", "price": 40}, {"cat": "餡餅", "name": "豬肉餡餅", "price": 40}, {"cat": "餡餅", "name": "蘿蔔絲餅", "price": 35}, {"cat": "餡餅", "name": "韭菜餅", "price": 35}, {"cat": "甜餅", "name": "紅豆餅", "price": 30}, {"cat": "餅", "name": "蔥油餅（不可加蛋）", "price": null}], "menu_source": "https://mibaoma.tw/technology-building-station-pie/", "menu_source_label": "食記 mibaoma", "menu_source_date": "2026-04", "menu_link": null, "note": "只賣餅，沒有湯和小菜。19:30 打烊。", "fit": {"order": "牛肉餡餅 ×3", "price": 120, "protein": 25, "grade": "C", "why": "便宜、方便外帶，但餅皮的油和澱粉多。", "avoid": "紅豆餅（含糖）。", "tip": "改成 2 個餡餅＋無糖豆漿或一顆滷蛋，蛋白質差不多，油和麵皮比較少。"}, "verified": "2026-04 食記（mibaoma）", "xcheck": "比對 3 個來源：營業 一致・時間 來源不一（已取保守值）・價格 一致", "n": 8}, {"id": "zhongcheng", "name": "忠誠山東蔥油餅", "cuisine": "蔥油餅・麵食", "type": "小吃", "addr": "台北市大安區和平東路二段118巷44號", "ll": [25.022922, 121.542797], "pmin": 60, "pmax": 150, "pest": true, "hours": "11:00–20:30，週五公休（2022-08 資料）", "slots": [{"d": [0, 1, 2, 3, 4, 6], "o": "11:00", "c": "20:30"}], "signature": ["蔥油餅加蛋", "蔥油厚餅", "大餅捲牛肉"], "items": [{"cat": "餅", "name": "蔥油餅 1/4 張", "price": 25}, {"cat": "餅", "name": "蔥油餅 半張", "price": 45}, {"cat": "餅", "name": "蔥油厚餅", "price": 45}, {"cat": "餅", "name": "1/4 張蔥油餅加蛋", "price": 35}, {"cat": "餅", "name": "半張蔥油餅＋雙蛋", "price": 60}, {"cat": "餅", "name": "大餅捲牛肉", "price": null}, {"cat": "麵", "name": "炸醬涼麵", "price": 45}, {"cat": "麵", "name": "炒麵", "price": 35}, {"cat": "湯", "name": "酸辣湯", "price": 30}, {"cat": "湯", "name": "鮮肉大餛飩湯", "price": 60}], "menu_source": "https://lordcat.net/archives/2967", "menu_source_label": "食記 lordcat", "menu_source_date": "2022-08，部分價格是 2018–2019 年的", "menu_link": null, "note": "資料是 2022 年的，價格多半已調漲（天母本店 2026-01：半張 60、1/4 張 35），部分品項可能停售。118 巷有都更計畫，出發前先打電話確認。", "phone": "02-2735-2821", "fit": {"order": "鮮肉大餛飩湯＋1/4 張蔥油餅加蛋", "price": 95, "protein": 21, "grade": "C", "why": "便宜；蛋白質主要來自鮮肉餛飩和蛋，蔥油餅是油煎的麵皮。", "avoid": "涼麵、炒麵、整張蔥油餅（油和麵皮多）。", "tip": "不想吃蔥油餅，就改加滷蛋或豆干。"}, "unverified": "資料停在 2022 年，可能已經不在，先打電話確認", "xcheck": "比對 4 個來源：營業 只有一個來源・時間 一致・價格 只有一個來源", "n": 9}, {"id": "getpower", "name": "GET POWER 給力盒子 和平店", "cuisine": "健康餐盒・有營養標示", "type": "健身餐", "addr": "台北市大安區和平東路二段311巷20-4號", "pmin": 225, "pmax": 280, "pest": false, "hours": "每日 10:30–14:00、15:30–19:30（OSM 2026-09；foodpanda 寫 15:00 開）", "slots": [{"d": [0, 1, 2, 3, 4, 5, 6], "o": "10:30", "c": "14:00"}, {"d": [0, 1, 2, 3, 4, 5, 6], "o": "15:30", "c": "19:30"}], "verified": "foodpanda 有 2026-03～10 的評論", "signature": ["南加州烤雞腿", "塔香烘烤雞胸", "大厚切烤鮭魚"], "items": [{"cat": "雞", "name": "南加州烤雞腿餐盒", "price": 250, "protein_g": "48"}, {"cat": "雞", "name": "塔香烘烤雞胸餐盒", "price": 230, "protein_g": "43"}, {"cat": "雞", "name": "泰式打拋雞胸餐盒", "price": null, "protein_g": "41"}, {"cat": "豬", "name": "蒜泥醬豬肉片餐盒", "price": 230, "protein_g": "38"}, {"cat": "牛", "name": "十三香滷牛腱餐盒", "price": 280, "protein_g": "34"}, {"cat": "魚", "name": "鹽烤馬加魚餐盒", "price": 225, "protein_g": "29"}, {"cat": "魚", "name": "大厚切烤鮭魚餐盒", "price": 380, "protein_g": "44"}], "menu_source": "https://www.foodpanda.com.tw/restaurant/r001/get-power-gei-li-he-zi-he-ping-dian", "menu_source_label": "foodpanda 店家頁", "menu_source_date": "2026-11（外送原價）", "menu_link": "https://www.ubereats.com/tw/store/get-power-%E7%B5%A6%E5%8A%9B%E7%9B%92%E5%AD%90-%E5%92%8C%E5%B9%B3%E5%BA%97/toPc4Qg3VoaNJ-9Tu0_RIw", "menu_link_label": "Uber Eats 菜單", "note": "蛋白質依店家營養標示。每盒碳水約 100 g，可以備註飯少；附無糖茶或豆漿。外送平台常打 8 折到 85 折，店內價以現場為準。19:30 打烊。 Uber Eats 上可能以「米卡蒸烤盒餐 和平店」的名稱上架，價格略有不同。", "fit": {"order": "南加州烤雞腿餐盒（飯少）", "price": 250, "protein": 48, "grade": "A", "why": "店家標示蛋白質 48 g，是全清單單餐最高；用烤的，不是炸的。", "avoid": "鮭魚餐盒（$380，超出預算）；醬料可以請店家另放。", "tip": "想省一點就點塔香雞胸（$230，43 g）。"}, "ll": [25.025384, 121.54506], "xcheck": "比對 3 個來源：營業 一致・時間 來源不一（已取保守值）・價格 一致", "n": 10}, {"id": "proteinbox", "name": "蛋白盒子 The Protein Box 科技大樓店", "cuisine": "高蛋白餐盒・有營養標示", "type": "健身餐", "addr": "台北市大安區和平東路二段285號", "pmin": 175, "pmax": 245, "pest": false, "hours": "週一至六 11:00–14:00、16:00–19:30；週日 11:00–14:00（OSM 2026-09）", "slots": [{"d": [1, 2, 3, 4, 5, 6], "o": "11:00", "c": "14:00"}, {"d": [1, 2, 3, 4, 5, 6], "o": "16:00", "c": "19:30"}, {"d": [0], "o": "11:00", "c": "14:00"}], "verified": "官方點餐頁列有此店，Uber Eats 4.8 分", "signature": ["減鹽味噌烤鱸魚", "薄鹽烤鮭魚", "香煎黑胡椒雞胸"], "items": [{"cat": "雞胸", "name": "香煎黑胡椒雞胸餐盒", "price": 175, "protein_g": "30"}, {"cat": "雞胸", "name": "青蔥海鹽雞胸餐盒", "price": 178, "protein_g": "30.1"}, {"cat": "雞腿", "name": "紐奧良雞腿排餐盒", "price": 185, "protein_g": "24.6"}, {"cat": "豬", "name": "香煎霜降松阪豬餐盒", "price": 205, "protein_g": "30.4"}, {"cat": "牛", "name": "壽喜牛五花餐盒", "price": 178, "protein_g": "32.1"}, {"cat": "魚", "name": "減鹽味噌烤鱸魚餐盒", "price": 215, "protein_g": "43.1"}, {"cat": "魚", "name": "薄鹽烤鮭魚餐盒", "price": 235, "protein_g": "40.8"}], "menu_source": "https://theproteinbox.com.tw/menu", "menu_source_label": "官網營養標示＋Uber Eats 價格", "menu_source_date": "2026-11", "menu_link": "https://order.ocard.co/theproteinbox/Qp6PJK", "menu_link_label": "官方線上點餐", "note": "蛋白質依官網 2026 年版營養標示。各來源價格差 0–10 元，部分時段有買一送一。19:15 打烊。 外送平台價格中英文頁不同（鱸魚 215／220）。", "fit": {"order": "減鹽味噌烤鱸魚餐盒", "price": 215, "protein": 43, "grade": "A", "why": "店家標示蛋白質 43.1 g；減鹽、用烤的。", "avoid": "壽喜牛五花（脂肪高、醬偏甜）。", "tip": "預算低一點就點黑胡椒雞胸（$175，約 30 g）。"}, "ll": [25.024957, 121.544525], "xcheck": "比對 3 個來源：營業 一致・時間 來源不一（已取保守值）・價格 來源不一（已取保守值）", "n": 11}, {"id": "jcz", "name": "人从众厚切牛排 科技大樓店", "cuisine": "平價牛排", "type": "異國", "addr": "台北市大安區復興南路二段275號", "pmin": 260, "pmax": 300, "pest": false, "hours": "每日 11:00–21:30（foodpanda；官網寫到 22:00）", "slots": [{"d": [0, 1, 2, 3, 4, 5, 6], "o": "11:00", "c": "21:30"}], "verified": "有 2026-02～07 的評論", "signature": ["厚切雪花沙朗 7oz", "黃金雞腿排", "厚切里肌豬排"], "items": [{"cat": "牛", "name": "沙朗牛排", "price": 260}, {"cat": "牛", "name": "厚切雪花沙朗 7oz", "price": 300}, {"cat": "牛", "name": "安格斯骰子牛排", "price": 300}, {"cat": "雞", "name": "黃金雞腿排", "price": 280}, {"cat": "豬", "name": "厚切里肌豬排", "price": 280}, {"cat": "魚", "name": "大比目魚排（扁鱈）", "price": 280}, {"cat": "牛", "name": "安格斯沙朗 10oz", "price": 400}, {"cat": "牛", "name": "頂級沙朗 16oz", "price": 599}], "menu_source": "https://www.foodpanda.com.tw/restaurant/b79s/ren-cong-zhong-hou-qie-niu-pai-ke-ji-da-lou-dian", "menu_source_label": "foodpanda（標示店內價）", "menu_source_date": "2026-11", "menu_link": "https://www.jencongzhong.com.tw/store-detail/Taipei_19__14/", "menu_link_label": "官網門市頁", "note": "在 2 樓，從車站走過去約 1 分鐘。附自助吧（濃湯、麵包、飲料、冰淇淋）。 店在 275 號 2 樓。Uber Eats 外送價雪花沙朗 7oz 是 320。", "fit": {"order": "厚切雪花沙朗 7oz（醬另放）", "price": 300, "protein": 35, "grade": "B", "why": "7 oz 牛排約 200 g 生重，一餐就有 35 g 左右的蛋白質，又在車站旁。", "avoid": "自助吧的玉米濃湯、麵包、冰淇淋；黑胡椒醬和蘑菇醬含糖。", "tip": "想省一點就點沙朗（$260）；雞腿排（$280）也可以，但脂肪比較高。"}, "ll": [25.025578, 121.543648], "xcheck": "比對 4 個來源：營業 一致・時間 來源不一（已取保守值）・價格 來源不一（已取保守值）", "n": 12}, {"id": "lehe", "name": "樂和牛排館", "cuisine": "平價牛排", "type": "異國", "addr": "台北市大安區和平東路二段118巷4弄2-1號", "pmin": 260, "pmax": 350, "pest": false, "hours": "每日 11:30–21:45（foodpanda）", "slots": [{"d": [0, 1, 2, 3, 4, 5, 6], "o": "11:30", "c": "21:45"}], "verified": "foodpanda 4.6 分，有 2025-12～2026-09 的評論", "signature": ["厚片沙朗牛排 10oz", "樂和雙拼", "菲力牛排"], "items": [{"cat": "牛", "name": "沙朗牛排", "price": 260}, {"cat": "牛", "name": "厚片沙朗牛排（10oz）", "price": 320}, {"cat": "牛", "name": "翼板牛排", "price": 340}, {"cat": "牛", "name": "菲力牛排", "price": 350}, {"cat": "豬", "name": "特製豬排", "price": 260}, {"cat": "豬", "name": "香煎厚切豬排", "price": 310}, {"cat": "雞", "name": "脆皮雞腿排", "price": 260}, {"cat": "魚", "name": "香煎魚排", "price": 280}, {"cat": "雙拼", "name": "樂和雙拼（雞腿排＋沙朗）", "price": 390}], "menu_source": "https://www.foodpanda.com.tw/restaurant/vbwu/le-he-niu-pai-guan", "menu_source_label": "foodpanda 店家頁", "menu_source_date": "2026-11", "menu_link": "https://www.foodpanda.com.tw/restaurant/vbwu/le-he-niu-pai-guan", "menu_link_label": "foodpanda 菜單", "note": "附玉米濃湯，醬料擇一；牛排固定七分熟，有評論說醬偏鹹。118 巷有都更計畫，出發前先確認。", "fit": {"order": "沙朗牛排（醬另放、濃湯不喝）", "price": 260, "protein": 28, "grade": "B", "why": "沙朗牛排 260 元在預算內，蛋白質來源單純。", "avoid": "玉米濃湯、醬料、麵；脆皮雞腿是炸的。", "tip": "10oz 厚片沙朗（$320）蛋白質約 45 g，但超出預算 20 元。"}, "ll": [25.024099, 121.542782], "xcheck": "比對 2 個來源：營業 一致・時間 只有一個來源・價格 只有一個來源", "n": 13}, {"id": "xinjiye", "name": "鑫吉野烤肉飯 大安和平店", "cuisine": "烤雞腿・烤肉便當", "type": "飯・粥", "addr": "台北市大安區和平東路二段118巷61之1號", "pmin": 145, "pmax": 165, "pest": false, "hours": "週一至六 10:00–20:15（foodpanda），週日未列", "slots": [{"d": [1, 2, 3, 4, 5, 6], "o": "10:00", "c": "20:15"}], "verified": "foodpanda 4.8 分，有 2026-02～10 的評論", "signature": ["烤雞腿飯便當", "烤雙寶飯（雞柳＋烤肉）"], "items": [{"cat": "雞", "name": "烤雞腿飯便當", "price": 165}, {"cat": "雞", "name": "烤雞排飯便當", "price": 155}, {"cat": "雞", "name": "烤雞柳飯便當", "price": 145}, {"cat": "雞", "name": "黑胡椒雞腿飯", "price": 165}, {"cat": "豬", "name": "烤肉飯", "price": 145}, {"cat": "豬", "name": "烤排骨飯便當", "price": 145}, {"cat": "豬", "name": "烤五花肉飯", "price": 145}, {"cat": "豬", "name": "滷排骨飯便當", "price": 145}, {"cat": "魚", "name": "黑胡椒魚排飯便當", "price": 145}], "menu_source": "https://www.foodpanda.com.tw/restaurant/tnsa/xin-ji-ye-kao-rou-fan-da-an-he-ping-dian", "menu_source_label": "foodpanda 店家頁", "menu_source_date": "2026-11（起價）", "menu_link": "https://www.foodpanda.com.tw/restaurant/tnsa/xin-ji-ye-kao-rou-fan-da-an-he-ping-dian", "menu_link_label": "foodpanda 菜單", "note": "表上是外送平台的起價，紅茶要另外加購；有評論說肉片偏薄。118 巷有都更計畫，出發前先確認。 地址請以 Google 地圖確認（118 巷 61 之 1 號或 54 弄 33 號）。", "fit": {"order": "烤雞腿飯便當（飯少、醬少）", "price": 165, "protein": 30, "grade": "B", "why": "一整隻烤雞腿，165 元，不炸。", "avoid": "烤五花、香酥炸物、紅茶；烤肉醬偏甜。", "tip": "烤肉醬請店家另放或少淋；可以加點一顆滷蛋。"}, "ll": [25.022342, 121.542926], "xcheck": "比對 2 個來源：營業 只有一個來源・時間 只有一個來源・價格 只有一個來源", "n": 14}, {"id": "chikopi", "name": "池先生 Kopitiam 大安店", "cuisine": "馬來西亞椰漿飯・肉骨茶", "type": "異國", "addr": "台北市大安區復興南路二段385號", "pmin": 220, "pmax": 250, "pest": false, "phone": "02-2738-9255", "hours": "每日 11:30–20:30（2023 食記）；2022 年報導寫平日 15:00–17:00 休息", "slots": [{"d": [0, 1, 2, 3, 4, 5, 6], "o": "11:30", "c": "20:30"}], "verified": "2025-08 食記", "signature": ["椰漿飯配紅咖哩雞", "大馬肉骨茶飯", "沙嗲雞椰漿飯"], "items": [{"cat": "椰漿飯", "name": "椰漿飯配紅咖哩雞", "price": 220}, {"cat": "椰漿飯", "name": "椰漿飯炸雞配參芭蝦仁", "price": 250}, {"cat": "椰漿飯", "name": "沙嗲雞椰漿飯", "price": null}, {"cat": "飯", "name": "大馬肉骨茶飯", "price": 240}, {"cat": "麵", "name": "咖哩叻沙湯麵（海鮮）", "price": 230}, {"cat": "炒", "name": "炒粿條", "price": 240}, {"cat": "湯", "name": "肉骨茶湯", "price": null}, {"cat": "點心", "name": "咖椰麵包", "price": null}, {"cat": "飲品", "name": "馬來式黑咖啡（含糖）", "price": 65}], "menu_source": "https://hedonistjun.com/chi-kopitiam/", "menu_source_label": "食記 hedonistjun", "menu_source_date": "2023-11（可能已調漲）", "menu_link": "https://www.facebook.com/274016432761128", "menu_link_label": "官方 FB", "note": "咖哩也有椰奶，熱量偏高。 愛食記另一筆寫大馬肉骨茶飯 200，價格在 200–240 之間。", "fit": {"order": "大馬肉骨茶飯（飯吃半碗）", "price": 240, "protein": 22, "grade": "B", "why": "豬排骨燉湯，不甜、不炸。", "avoid": "參芭蝦仁、叻沙（非豬雞牛魚）；椰漿飯（油多、熱量高）；馬來咖啡、咖椰麵包（含糖）。", "tip": "沙嗲雞椰漿飯的雞肉比較多，要點的話沙嗲醬另放、飯吃一半。"}, "ll": [25.022145, 121.54354], "xcheck": "比對 4 個來源：營業 一致・時間 一致・價格 來源不一（已取保守值）", "n": 15}, {"id": "tst", "name": "尖沙咀港點", "cuisine": "港式煲湯・點心", "type": "飯・粥", "addr": "台北市大安區復興南路二段286號", "pmin": 200, "pmax": 300, "pest": false, "phone": "02-2377-0100", "hours": "11:30–15:00、17:00–21:00（愛食記；食記寫到 21:30，取較早的時間）；週日公休只有一個來源", "slots": [{"d": [1, 2, 3, 4, 5, 6], "o": "11:30", "c": "15:00"}, {"d": [1, 2, 3, 4, 5, 6], "o": "17:00", "c": "21:00"}], "verified": "2026-08～10 有多篇食記", "signature": ["清燉牛腩煲湯", "神戶牛肉丸", "木桶飯套餐"], "items": [{"cat": "套餐", "name": "超值套餐 木桶飯（主菜＋飲料）", "price": 238}, {"cat": "飯", "name": "紙包臘味飯", "price": 68}, {"cat": "煲湯", "name": "清燉牛腩煲湯", "price": 118}, {"cat": "煲湯", "name": "菌菇雞腿煲湯", "price": 98}, {"cat": "煲湯", "name": "蓮子排骨煲湯", "price": 98}, {"cat": "點心", "name": "神戶牛肉丸", "price": 98}, {"cat": "點心", "name": "蜜汁叉燒包", "price": 98}, {"cat": "點心", "name": "蠔皇炆鳳爪", "price": 98}, {"cat": "點心", "name": "晶瑩鮮蝦餃", "price": 98}, {"cat": "點心", "name": "冰火菠蘿包", "price": 78}], "menu_source": "https://littlepu.tw/tsim-sha-tsui/", "menu_source_label": "食記 littlepu", "menu_source_date": "2026-09（另一篇寫牛腩煲 158 元）", "menu_link": null, "note": "內用低消每人 200 元，尖峰時段限時 120 分鐘。", "fit": {"order": "清燉牛腩煲湯＋菌菇雞腿煲湯", "price": 216, "protein": 25, "grade": "B", "why": "兩盅清燉肉湯，牛＋雞，不加糖；剛好達到低消。", "avoid": "叉燒包、菠蘿包（含糖）；臘味飯（加工肉）；蝦餃（非豬雞牛魚）。", "tip": "再加一份神戶牛肉丸（$98）可以多補 10 g 左右，但會超過 300 元。"}, "ll": [25.024097, 121.543238], "xcheck": "比對 3 個來源：營業 一致・時間 來源不一（已取保守值）・價格 只有一個來源", "n": 16}, {"id": "imbento", "name": "便當人 I.M BENTO 大安店", "cuisine": "台式便當・舒肥雞胸", "type": "飯・粥", "addr": "台北市大安區和平東路三段48號", "pmin": 120, "pmax": 205, "pest": false, "phone": "02-2377-3388", "hours": "週一至六 11:00–14:00、16:30–19:30，週日公休（OSM 2026-09）", "slots": [{"d": [1, 2, 3, 4, 5, 6], "o": "11:00", "c": "14:00"}, {"d": [1, 2, 3, 4, 5, 6], "o": "16:30", "c": "19:30"}], "unverified": "只有外送平台資料，找不到 2025–2026 年的用餐紀錄，先打電話確認", "signature": ["五福雞腿王", "銷魂烤雞腿", "舒肥雞胸肉便當"], "items": [{"cat": "便當（外送價）", "name": "銷魂烤雞腿", "price": 200}, {"cat": "便當（外送價）", "name": "一哥海南雞", "price": 205}, {"cat": "便當（外送價）", "name": "五福雞腿王", "price": 190}, {"cat": "便當（外送價）", "name": "三杯杏鮑菇", "price": 145}, {"cat": "便當（店內，2023）", "name": "舒肥雞胸肉便當", "price": 120}, {"cat": "便當（店內，2023）", "name": "銷魂烤雞腿", "price": 145}, {"cat": "便當（店內，2023）", "name": "阿嬤滷排骨", "price": 129}, {"cat": "便當（店內，2023）", "name": "升官炸排骨", "price": 119}, {"cat": "沙拉", "name": "舒肥雞胸沙拉", "price": null}], "menu_source": "https://www.ubereats.com/tw/store/%E4%BE%BF%E7%95%B6%E4%BA%BA-%E5%A4%A7%E5%AE%89%E5%BA%97/6xAbbl4XUx-aviFjP65OPg", "menu_source_label": "Uber Eats＋2023 食記", "menu_source_date": "外送價 2026-11；店內價 2023", "menu_link": "https://www.ubereats.com/tw/store/%E4%BE%BF%E7%95%B6%E4%BA%BA-%E5%A4%A7%E5%AE%89%E5%BA%97/6xAbbl4XUx-aviFjP65OPg", "menu_link_label": "Uber Eats 菜單", "note": "直線約 470 m，步行約 6–8 分鐘。舒肥雞胸便當 120 元是 2023 年的店內價。", "fit": {"order": "舒肥雞胸肉便當", "price": 120, "protein": 32, "grade": "A", "why": "舒肥雞胸油脂低，不炸也不甜。", "avoid": "炸排骨、三杯（醬含糖）。", "tip": "沒有舒肥雞胸就點銷魂烤雞腿。"}, "ll": [25.024471, 121.547971], "xcheck": "比對 4 個來源：營業 一致・時間 來源不一（已取保守值）・價格 只有一個來源", "n": 17}, {"id": "xjj", "name": "小姐姐麻辣食堂", "cuisine": "麻辣燙・秤重個人鍋（可選白湯）", "type": "鍋物", "addr": "台北市大安區和平東路二段118巷4弄2號", "phone": "02-2732-1649", "pmin": 80, "pmax": 200, "pest": true, "hours": "約每日 11:30–21:30（各來源 11:00–22:00 不一，取較保守的時間；有一說週日公休）", "slots": [{"d": [0, 1, 2, 3, 4, 5, 6], "o": "11:30", "c": "21:30"}], "verified": "2026-11 店家資料更新、Google 評論持續增加、愛食記顯示營業中", "unverified": "價格只有 2022–2023 年的資料，先打電話確認現在的秤重價格", "signature": ["白湯麻辣燙", "牛肉", "豬肉"], "items": [{"cat": "秤重", "name": "每 100 g（青菜、豆製品等）", "price": 40}, {"cat": "基本消費", "name": "最低消費", "price": 80}, {"cat": "肉類", "name": "豬肉（一份）", "price": 35}, {"cat": "肉類", "name": "牛肉（一份）", "price": 45}, {"cat": "肉類", "name": "肥腸", "price": 50}, {"cat": "配料", "name": "鴨血／豆腐", "price": 30}, {"cat": "配料", "name": "油條", "price": 20}, {"cat": "套餐", "name": "C 餐（2023）", "price": 150}], "menu_source": "https://www.gomaji.com/", "menu_source_label": "GOMAJI、hsiaomichelle 食記", "menu_source_date": "2022-10", "menu_link": "https://spinach.guide/", "menu_link_label": "店家資訊（2026-11 更新）", "note": "白飯、飲料免費吃到飽。可以選白湯、不辣。價格是 2022 年的，現在可能已調漲。118 巷有都更計畫。", "fit": {"order": "白湯不辣：牛肉＋豬肉＋豆腐，加大量青菜", "price": 130, "est": true, "protein": 28, "grade": "B", "why": "可以自己選肉和豆腐，湯底選白湯就不油不辣。", "avoid": "油條、王子麵、火鍋料（加工品）、肥腸、鴨血（非豬雞牛魚）。", "tip": "牛肉、豬肉各加一份，蛋白質可以多 10–15 g。"}, "ll": [25.024099, 121.542782], "n": 18}, {"id": "ameng", "name": "阿孟石碗燒河粉", "cuisine": "越南河粉・石鍋飯", "type": "異國", "addr": "台北市大安區和平東路二段118巷69號", "pmin": 110, "pmax": 220, "pest": false, "phone": "02-2738-0286", "hours": "11:00–14:00、17:00–20:00，週六公休（2025-10 食記）", "slots": [{"d": [0, 1, 2, 3, 4, 5], "o": "11:00", "c": "14:00"}, {"d": [0, 1, 2, 3, 4, 5], "o": "17:00", "c": "20:00"}], "verified": "2025-10 食記", "signature": ["石鍋牛肉河粉（生牛肉自己涮）", "石鍋豬肉飯"], "items": [{"cat": "主食", "name": "石鍋牛肉河粉", "price": 150}, {"cat": "主食", "name": "石鍋豬肉飯", "price": 110}, {"cat": "主食", "name": "涼拌米線", "price": null}, {"cat": "主食", "name": "石鍋拌飯", "price": null}, {"cat": "輕食", "name": "越式法國麵包", "price": null}, {"cat": "小菜", "name": "椒麻荷包蛋", "price": 30}, {"cat": "青菜", "name": "炒高麗菜", "price": 90}], "menu_source": "https://tenjo.tw/ameng/", "menu_source_label": "食記 tenjo", "menu_source_date": "2025-10（菜單是圖片，只有 4 樣有標價）", "menu_link": null, "note": "食記說主餐都不超過 160 元。118 巷有都更計畫，出發前先確認。", "fit": {"order": "石鍋豬肉飯＋椒麻荷包蛋", "price": 140, "protein": 28, "grade": "B", "why": "140 元就有豬肉加蛋，CP 值高。", "avoid": "續河粉、續白飯；法國麵包。", "tip": "想喝湯就改點石鍋牛肉河粉（$150），河粉吃一半、牛肉吃完。", "est": false}, "ll": [25.021935, 121.542921], "xcheck": "比對 3 個來源：營業 一致・時間 一致・價格 只有一個來源", "n": 19}, {"id": "maesai", "name": "湄賽雲泰料理", "cuisine": "雲泰簡餐", "type": "異國", "addr": "台北市大安區和平東路二段118巷39號", "pmin": 110, "pmax": 200, "pest": true, "phone": "02-2737-3451", "hours": "每日 11:30–14:00、17:00–20:00（2026-09 食記、OSM 2026-09）", "slots": [{"d": [0, 1, 2, 3, 4, 5, 6], "o": "11:30", "c": "14:00"}, {"d": [0, 1, 2, 3, 4, 5, 6], "o": "17:00", "c": "20:00"}], "verified": "2026-09 食記", "signature": ["招牌椒麻雞肉飯", "清蒸檸檬鱸魚"], "items": [{"cat": "簡餐", "name": "招牌椒麻雞肉飯", "price": 120}, {"cat": "簡餐", "name": "紅咖哩椰香脆皮雞肉飯", "price": 120}, {"cat": "單點", "name": "打拋炒豬肉", "price": null}, {"cat": "單點", "name": "清蒸檸檬鱸魚", "price": null}, {"cat": "單點", "name": "泰式酸辣海鮮湯", "price": null}, {"cat": "單點", "name": "泰式涼拌海鮮", "price": null}, {"cat": "單點", "name": "月亮蝦餅", "price": null}, {"cat": "單點", "name": "泰式炒河粉", "price": null}, {"cat": "甜點", "name": "椰香黑糯米", "price": null}], "menu_source": "https://www.tony60533.com/maesai-thai-cuisine/", "menu_source_label": "食記 tony60533", "menu_source_date": "2025-03（2026-09 食記確認仍營業）", "menu_link": "https://appletrees.tw/blog/post/maesai", "menu_link_label": "2026 食記", "note": "簡餐 110 元起，白飯、飲料無限續；飲料大多含糖。", "fit": {"order": "招牌椒麻雞肉飯（醬分開，飯不續）", "price": 120, "protein": 26, "grade": "C", "why": "120 元一整片雞腿排，量多又便宜；但椒麻雞是炸的。", "avoid": "無限續的含糖飲料和白飯；月亮蝦餅、海鮮類（非豬雞牛魚）。", "tip": "2 人以上可以加點清蒸檸檬鱸魚，不炸，蛋白質也多。"}, "ll": [25.023324, 121.54291], "xcheck": "比對 4 個來源：營業 一致・時間 一致・價格 一致", "n": 20}, {"id": "linji", "name": "林記海南雞飯 和平店", "cuisine": "新加坡海南雞飯", "type": "異國", "addr": "台北市大安區和平東路二段118巷65號", "pmin": 165, "pmax": 240, "pest": false, "phone": "02-2377-1155", "hours": "每日 11:00–21:00（愛食記）", "slots": [{"d": [0, 1, 2, 3, 4, 5, 6], "o": "11:00", "c": "21:00"}], "verified": "2025-04 食記，Uber Eats 仍上架", "signature": ["海南雞腿飯", "肉骨茶飯"], "items": [{"cat": "主餐", "name": "海南雞腿飯（單點）", "price": 170}, {"cat": "主餐", "name": "海南雞腿飯（套餐）", "price": 230}, {"cat": "主餐", "name": "肉骨茶飯／麵（單點）", "price": 165}, {"cat": "主餐", "name": "肉骨茶飯／麵（套餐）", "price": 225}, {"cat": "主餐", "name": "綠咖哩雞腿飯（單點）", "price": 170}, {"cat": "主餐", "name": "叻沙海鮮湯麵", "price": 190}, {"cat": "小菜", "name": "麻辣雞絲", "price": 50}, {"cat": "小菜", "name": "燙青菜", "price": 40}, {"cat": "湯", "name": "肉骨茶湯（小）", "price": 90}, {"cat": "飲品", "name": "凍檸茶", "price": 50}], "menu_source": "https://upssmile.com/199232/linji-hainanesechickenrice-daanhepingdian", "menu_source_label": "食記 upssmile＋連鎖菜單", "menu_source_date": "2023-09（部分是 2022 年連鎖價格）", "menu_link": "https://www.linji-hainanesechickenrice.com/menu.html", "menu_link_label": "官網菜單", "note": "價格是 2022–2023 年的店內價。Uber Eats 2026-11 的外送價：海南雞腿飯 230、套餐 310、單點雞腿 170，店內價應該較低。", "fit": {"order": "海南雞腿飯（單點，飯吃半碗、去雞皮）＋麻辣雞絲", "price": 220, "protein": 34, "grade": "A", "why": "海南雞是水煮的，脂肪低、不加糖；再加一份雞絲補蛋白質。", "avoid": "凍檸茶（含糖）、叻沙（非豬雞牛魚）。", "tip": "雞油飯可以改白飯。"}, "ll": [25.022092, 121.542921], "xcheck": "比對 3 個來源：營業 一致・時間 來源不一（已取保守值）・價格 只有一個來源", "n": 21}, {"id": "longhou", "name": "瀧厚炙燒熟成牛排 台北大安店", "cuisine": "熟成牛排・豬排", "type": "異國", "addr": "台北市大安區和平東路二段183號", "pmin": 290, "pmax": 700, "pest": false, "phone": "02-2701-5885", "hours": "每日 11:30–14:30、17:00–22:00", "slots": [{"d": [0, 1, 2, 3, 4, 5, 6], "o": "11:30", "c": "14:30"}, {"d": [0, 1, 2, 3, 4, 5, 6], "o": "17:00", "c": "22:00"}], "verified": "2026-10 食記", "signature": ["炙燒梅花豬排", "老饕菲力牛排", "番茄牛肉羅宋湯（自助吧）"], "items": [{"cat": "豬排", "name": "炙燒梅花豬排", "price": 290}, {"cat": "豬排", "name": "炙燒戰斧豬排 7oz", "price": 390}, {"cat": "豬排", "name": "炙燒丁骨豬排", "price": 430}, {"cat": "牛排", "name": "炙燒熟成肋眼牛排 10oz", "price": 650}, {"cat": "牛排", "name": "澳洲和牛霜降沙朗心", "price": 680}, {"cat": "牛排", "name": "老饕菲力牛排", "price": null}, {"cat": "燉飯", "name": "牛肝菌菇燉飯", "price": 200}, {"cat": "小點", "name": "炸物總匯拼盤", "price": 190}, {"cat": "小點", "name": "主廚沙拉", "price": 99}, {"cat": "湯", "name": "酥皮濃湯", "price": 60}], "menu_source": "https://almablog.tw/blog/post/184356", "menu_source_label": "食記 almablog", "menu_source_date": "2022-05（最低價 290 已由 2026-10 食記確認）", "menu_link": "https://www.facebook.com/longhou.steakhouse/", "menu_link_label": "官方 FB", "note": "預算內只有 290 元的梅花豬排，牛排大多 390 元起。附自助吧（羅宋湯、玉米濃湯、汽水、咖啡）和蒜香麵包。營業到 22:00。", "fit": {"order": "炙燒梅花豬排（醬另放）＋自助吧羅宋湯", "price": 290, "protein": 34, "grade": "B", "why": "豬排份量大；自助吧的番茄牛肉羅宋湯有牛肉塊，可以多補一點。", "avoid": "汽水、玉米濃湯、蒜香奶油麵包。", "tip": "梅花豬油花多，肥的部分可以切掉。"}, "ll": [25.025273, 121.541973], "xcheck": "比對 4 個來源：營業 一致・時間 一致・價格 只有一個來源", "n": 22}, {"id": "butcher", "name": "Butcher Lab 屠夫漢堡 大安店", "cuisine": "熟成牛肉漢堡", "type": "異國", "addr": "台北市大安區和平東路二段118巷4-1號", "pmin": 260, "pmax": 400, "pest": true, "phone": "02-2732-0070", "hours": "週一至五 11:00–14:00、17:30–20:30；週六日 11:00–20:30", "slots": [{"d": [1, 2, 3, 4, 5], "o": "11:00", "c": "14:00"}, {"d": [1, 2, 3, 4, 5], "o": "17:30", "c": "20:30"}, {"d": [0, 6], "o": "11:00", "c": "20:30"}], "verified": "2026-04 食記確認地址和營業時間", "signature": ["經典海鹽牛奶糖牛肉堡", "蒜味牛肉堡"], "items": [{"cat": "牛肉堡", "name": "經典海鹽牛奶糖牛肉堡", "price": null}, {"cat": "牛肉堡", "name": "牛肝菌菇牛肉堡", "price": null}, {"cat": "牛肉堡", "name": "蒜味牛肉堡", "price": null}, {"cat": "雞肉堡", "name": "秘製炸雞腿堡", "price": null}, {"cat": "海鮮堡", "name": "軟殼蟹堡", "price": null}, {"cat": "副餐", "name": "蒜味薯條", "price": null}, {"cat": "副餐", "name": "雞翅", "price": null}, {"cat": "飲品", "name": "奶昔", "price": null}], "menu_source": "https://upssmile.com/275270/butcher-lab-by-lanpengyoudaan", "menu_source_label": "食記 upssmile", "menu_source_date": "2026-04（只寫單點約 260–400 元，沒有逐項價格）", "menu_link": null, "note": "價格是估計的，以現場菜單為準。人氣高，建議先訂位。118 巷有都更計畫，出發前先確認。", "fit": {"order": "蒜味牛肉堡單點（不升級套餐）", "price": 280, "protein": 30, "grade": "B", "why": "熟成牛肉排，一個漢堡約 30 g 蛋白質。", "avoid": "海鹽牛奶糖醬（含糖）、薯條、奶昔、炸雞腿堡、軟殼蟹堡。", "tip": "麵包可以只吃一半。", "est": true}, "ll": [25.023777, 121.542789], "xcheck": "比對 4 個來源：營業 一致・時間 一致・價格 只有一個來源", "n": 23}, {"id": "xgypark", "name": "小公園牛肉麵", "cuisine": "紅燒牛肉麵", "type": "麵食", "addr": "台北市大安區瑞安街180巷1號", "phone": null, "pmin": 160, "pmax": 190, "pest": false, "hours": "週一至六 11:00–14:30、17:00–20:00；週日只開中午", "slots": [{"d": [1, 2, 3, 4, 5, 6], "o": "11:00", "c": "14:30"}, {"d": [1, 2, 3, 4, 5, 6], "o": "17:00", "c": "20:00"}, {"d": [0], "o": "11:00", "c": "14:30"}], "verified": "2026-10 食記（搬家後再訪）", "signature": ["紅燒牛肉麵（大塊牛肉）", "牛肉冬粉"], "items": [{"cat": "麵食", "name": "牛肉麵（大碗）", "price": 190}, {"cat": "麵食", "name": "牛肉麵（小碗）", "price": 160}, {"cat": "麵食", "name": "牛肉冬粉", "price": null}, {"cat": "麵食", "name": "牛肉湯麵", "price": null}, {"cat": "麵食", "name": "炸醬麵", "price": null}, {"cat": "小菜", "name": "牛頭皮", "price": null}, {"cat": "小菜", "name": "豬肚", "price": null}, {"cat": "小菜", "name": "油豆腐", "price": null}, {"cat": "小菜", "name": "小黃瓜", "price": null}, {"cat": "小菜", "name": "燙青菜", "price": null}], "menu_source": "https://auntie.tw/little-park-noodles/", "menu_source_label": "食記 auntie.tw", "menu_source_date": "2026-10", "menu_link": null, "note": "從泰順街搬到瑞安街，價格約漲 10 元。座位不多。只有牛肉麵有 2026 年的確認價格。 2026-10 評論說價格小漲，190 元可能偏低。", "fit": {"order": "大碗牛肉麵（麵吃一半）", "price": 190, "protein": 32, "grade": "A", "why": "牛肉塊大又多，不炸、不甜。", "avoid": "炸醬麵（醬偏甜）、花生。", "tip": "可以加一份油豆腐或豬肚小菜（現場價）。"}, "ll": [25.028704, 121.541146], "xcheck": "比對 3 個來源：營業 一致・時間 一致・價格 只有一個來源", "n": 24}, {"id": "sansi", "name": "山西御品刀削麵館", "cuisine": "刀削麵・牛肉麵", "type": "麵食", "addr": "台北市大安區瑞安街208巷24弄6號", "phone": "02-2707-5678", "pmin": 95, "pmax": 220, "pest": false, "hours": "週二至週日 11:00–14:00、17:00–20:00（炒麵到 19:50），週一公休", "slots": [{"d": [0, 2, 3, 4, 5, 6], "o": "11:00", "c": "14:00"}, {"d": [0, 2, 3, 4, 5, 6], "o": "17:00", "c": "20:00"}], "verified": "2026-04、2026-03 食記", "signature": ["番茄牛肉刀削麵", "木須炒刀削麵", "酢醬刀削麵"], "items": [{"cat": "麵", "name": "番茄牛肉刀削麵（2021 年價格）", "price": 140}, {"cat": "麵", "name": "木須炒刀削麵", "price": 150}, {"cat": "麵", "name": "酢醬刀削麵", "price": 95}, {"cat": "水餃", "name": "高麗菜水餃（10 個）", "price": 70}, {"cat": "小菜", "name": "小魚豆干", "price": 35}, {"cat": "小菜", "name": "干絲", "price": 35}, {"cat": "湯", "name": "酸辣湯（小）", "price": 40}, {"cat": "湯", "name": "大滷湯（小，2021 年價格）", "price": 30}], "menu_source": "https://mibaoma.tw/sansi-noodles/", "menu_source_label": "食記 mibaoma", "menu_source_date": "2026-03", "menu_link": "https://ifoodie.tw/restaurant/55a52fc2c03a10241de64fc0", "menu_link_label": "愛食記", "note": "有免費冬瓜茶和自助小菜。食記說牛筋沒有燉得很爛。 番茄牛肉刀削麵的價格是 2021 年的，現在約 160 元（估計）。", "fit": {"order": "番茄牛肉刀削麵＋小魚豆干＋干絲", "price": 230, "protein": 32, "grade": "A", "why": "牛肉塊大、不炸；兩樣豆干小菜再補一點蛋白質。", "avoid": "木須炒刀削麵（油、澱粉多）；冬瓜茶含糖。", "tip": "刀削麵可以吃一半。", "est": true}, "ll": [25.028666, 121.540236], "xcheck": "比對 4 個來源：營業 一致・時間 一致・價格 只有一個來源", "n": 25}, {"id": "uosakai", "name": "拉麵らぁ麺魚堺 大安店", "cuisine": "日式拉麵", "type": "麵食", "addr": "台北市大安區瑞安街260之3號", "phone": null, "pmin": 170, "pmax": 260, "pest": false, "hours": "11:30–13:30、17:00–20:00（愛食記；食記寫到 14:00、21:00，取較保守的時間）；週一、二可能只開中午", "slots": [{"d": [1, 2], "o": "11:30", "c": "13:30"}, {"d": [0, 3, 4, 5, 6], "o": "11:30", "c": "13:30"}, {"d": [0, 3, 4, 5, 6], "o": "17:00", "c": "20:00"}], "verified": "2025-05 食記", "unverified": "近期資料少，週一、二晚上是否營業不確定", "signature": ["醬油拉麵", "鹽味拉麵", "味玉雞白湯拉麵"], "items": [{"cat": "拉麵", "name": "醬油拉麵", "price": 170}, {"cat": "拉麵", "name": "鹽味拉麵", "price": 170}, {"cat": "拉麵", "name": "味玉醬油拉麵", "price": 200}, {"cat": "拉麵", "name": "味玉雞白湯拉麵", "price": null}, {"cat": "拉麵", "name": "味玉松露雞白湯拉麵", "price": null}, {"cat": "加點", "name": "溏心蛋", "price": 30}, {"cat": "加點", "name": "叉燒肉", "price": null}, {"cat": "加點", "name": "海苔", "price": null}], "menu_source": "https://gzifood.com/ramensakai-daan/", "menu_source_label": "食記 G子", "menu_source_date": "2025-05", "menu_link": "https://ifoodie.tw/restaurant/681caf83927f8058f795b55d", "menu_link_label": "愛食記", "note": "叉燒是煙燻的，片大但薄。可以免費加麵一次。", "fit": {"order": "味玉醬油拉麵（可加點叉燒）", "price": 200, "protein": 22, "grade": "B", "why": "叉燒加溏心蛋，200 元。", "avoid": "免費加麵（澱粉更多）；湯少喝。", "tip": "加點一份叉燒，蛋白質可以多約 8–10 g。"}, "ll": [25.026693, 121.539488], "xcheck": "比對 4 個來源：營業 一致・時間 來源不一（已取保守值）・價格 只有一個來源", "n": 26}, {"id": "longho", "name": "滝禾製麵所 大安瑞安店", "cuisine": "日式雞湯拉麵", "type": "麵食", "addr": "台北市大安區瑞安街130號", "phone": "02-2325-0259", "pmin": 150, "pmax": 300, "pest": true, "hours": "每日 11:30–21:00", "slots": [{"d": [0, 1, 2, 3, 4, 5, 6], "o": "11:30", "c": "21:00"}], "verified": "2026-04 食記；愛食記最新評論 2026-04", "signature": ["鹽味雞湯拉麵（舒肥雞胸）", "原味豚骨拉麵（赤肉叉燒）", "柚雞白湯拉麵"], "items": [{"cat": "拉麵", "name": "鹽味雞湯拉麵（舒肥雞胸）", "price": null}, {"cat": "拉麵", "name": "原味豚骨拉麵（赤肉叉燒）", "price": null}, {"cat": "拉麵", "name": "柚雞白湯拉麵（赤肉叉燒）", "price": null}, {"cat": "拉麵", "name": "赤蝦味噌拉麵（肋眼叉燒＋板腱牛）", "price": null}, {"cat": "拉麵", "name": "辛麻牛韻拉麵（海老）", "price": null}, {"cat": "炸物", "name": "唐揚雞", "price": null}, {"cat": "炸物", "name": "豬排", "price": null}], "menu_source": "https://jeremyfoodie.tw/longho-ramen-tp-ruian/", "menu_source_label": "食記 jeremyfoodie", "menu_source_date": "2026-04", "menu_link": "https://ifoodie.tw/restaurant/64a75a3e77b9e95ecc9bc20f", "menu_link_label": "愛食記", "note": "食記沒寫價格，價格範圍是依愛食記均消 150 元推估。營業到 21:00 不休息。 點法價格是依均消推估，以現場為準。", "fit": {"order": "鹽味雞湯拉麵（舒肥雞胸）", "price": 150, "protein": 22, "grade": "B", "why": "舒肥雞胸，不炸、不甜。", "avoid": "唐揚雞、豬排（炸的）；赤蝦拉麵（非豬雞牛魚）。", "tip": "麵可以吃一半，加點一份叉燒。", "est": true}, "ll": [25.029499, 121.542218], "xcheck": "比對 3 個來源：營業 一致・時間 一致・價格 只有一個來源", "n": 27}, {"id": "whatachicken", "name": "話一隻雞 大安店", "cuisine": "燉雞湯・雲川麵", "type": "麵食", "addr": "台北市大安區復興南路二段358號", "phone": "02-2737-5427", "pmin": 100, "pmax": 260, "pest": true, "hours": "11:30–14:00、17:00–20:00（公休日不明）", "slots": [{"d": [0, 1, 2, 3, 4, 5, 6], "o": "11:30", "c": "14:00"}, {"d": [0, 1, 2, 3, 4, 5, 6], "o": "17:00", "c": "20:00"}], "verified": "2025-09 食記", "signature": ["招牌燉雞湯", "怪味皮蛋麵"], "items": [{"cat": "湯", "name": "招牌燉雞湯", "price": 110}, {"cat": "麵", "name": "怪味皮蛋麵", "price": 100}, {"cat": "涼菜", "name": "雲南大薄片涼粉", "price": 150}], "menu_source": "https://salihaha.com/whatachicken/", "menu_source_label": "食記 莎莉哈", "menu_source_date": "2025-09", "menu_link": "https://ifoodie.tw/restaurant/68db96bc927f80d23fb3179b", "menu_link_label": "愛食記", "note": "完整菜單只有照片，文字只抄到 3 樣價格。雞湯跟主食一起點便宜 10 元。", "fit": {"order": "招牌燉雞湯＋怪味皮蛋麵（套點折 10 元）", "price": 200, "protein": 24, "grade": "B", "why": "燉雞湯不炸、不甜。", "avoid": "涼粉（幾乎都是澱粉）。", "tip": "雞湯是小碗，可以點兩碗。"}, "ll": [25.021965, 121.543202], "xcheck": "比對 3 個來源：營業 一致・時間 一致・價格 只有一個來源", "n": 28}, {"id": "younghwaru", "name": "永和樓 韓式中華料理", "cuisine": "韓式炸醬麵", "type": "異國", "addr": "台北市大安區和平東路二段118巷52弄3號", "phone": "02-2377-2077", "pmin": 170, "pmax": 300, "pest": true, "hours": "11:30–14:30、17:00–21:00，週一公休；用餐限 90 分鐘（愛食記）；付款方式各來源不一，建議帶現金", "slots": [{"d": [0, 2, 3, 4, 5, 6], "o": "11:30", "c": "14:30"}, {"d": [0, 2, 3, 4, 5, 6], "o": "17:00", "c": "21:00"}], "verified": "2025-05 愛食記評論", "signature": ["炸醬麵", "海鮮炒碼麵", "糖醋肉"], "items": [{"cat": "麵", "name": "炸醬麵", "price": 170}, {"cat": "麵", "name": "海鮮炒碼麵", "price": 195}, {"cat": "麵", "name": "半半麵（炸醬＋炒碼）", "price": null}, {"cat": "菜", "name": "糖醋肉", "price": 400}, {"cat": "菜", "name": "乾燒蝦", "price": 500}, {"cat": "套餐", "name": "2 人套餐", "price": 609}, {"cat": "飲料", "name": "韓國西瓜蘇打", "price": 55}], "menu_source": "https://hedonistjun.com/younghwaru/", "menu_source_label": "食記 hedonistjun（忠孝分店價格）", "menu_source_date": "2024-09", "menu_link": "https://ifoodie.tw/restaurant/631c90857cc7fc29b4ceb026", "menu_link_label": "愛食記", "note": "價格是同品牌忠孝分店的，這家可能不同。以麵和合菜為主，單人的肉類選擇少。", "fit": {"order": "炸醬麵", "price": 170, "protein": 16, "grade": "C", "why": "主要是麵，炸醬偏甜，肉只有肉丁。", "avoid": "糖醋肉（炸的又甜）、海鮮炒碼麵（非豬雞牛魚）。", "tip": "比較適合跟朋友一起吃合菜。"}, "ll": [25.022392, 121.542641], "xcheck": "比對 4 個來源：營業 一致・時間 一致・價格 只有一個來源", "n": 29}, {"id": "guixiang", "name": "貴香鹽酥雞", "cuisine": "台式鹽酥雞", "type": "小吃", "addr": "台北市大安區復興南路二段151巷24號", "phone": "0910-679-687", "pmin": 100, "pmax": 250, "pest": true, "hours": "週一至五 11:00–13:30、16:30–21:30；週六 16:30–22:30；週日公休", "slots": [{"d": [1, 2, 3, 4, 5], "o": "11:00", "c": "13:30"}, {"d": [1, 2, 3, 4, 5], "o": "16:30", "c": "21:30"}, {"d": [6], "o": "16:30", "c": "22:30"}], "verified": "2025-07 愛食記評論", "signature": ["鹽酥雞", "鍋包肉", "清麵線＋鹽酥雞"], "items": [{"cat": "炸物", "name": "鹽酥雞", "price": 70}, {"cat": "炸物", "name": "鍋包肉", "price": 70}, {"cat": "炸物", "name": "雞胗", "price": 30}, {"cat": "炸物", "name": "雞皮", "price": 40}, {"cat": "炸物", "name": "雞屁股", "price": 30}, {"cat": "炸物", "name": "酥炸魷魚鬚", "price": 70}, {"cat": "炸物", "name": "雞蛋豆腐", "price": 40}, {"cat": "套餐", "name": "清麵線＋招牌鹽酥雞", "price": 70}, {"cat": "其他", "name": "阿母ㄟ潛艇堡", "price": 85}], "menu_source": "https://nash.tw/guixiang2024/", "menu_source_label": "食記 Nash", "menu_source_date": "2024-11", "menu_link": "https://ifoodie.tw/restaurant/66d075dd927f80808c1a38fa", "menu_link_label": "愛食記", "note": "完整菜單是圖片，這裡只列文字寫出價格的品項。可以內用。 另一篇 2025 食記寫週一至五 12:00–23:00、週六日 16:00–23:00。", "fit": {"order": "鹽酥雞 ×2＋雞胗", "price": 170, "protein": 36, "grade": "C", "why": "雞肉份量多，每百元蛋白質高，但全部是炸的。", "avoid": "雞皮、雞屁股、甜不辣。", "tip": "胡椒鹽少一點；可以換成清麵線套餐配一份雞胗。"}, "ll": [25.028269, 121.544999], "xcheck": "比對 4 個來源：營業 一致・時間 來源不一（已取保守值）・價格 只有一個來源", "n": 30}, {"id": "qiaoqiao", "name": "巧巧香雞排", "cuisine": "古早味炸雞排", "type": "小吃", "addr": "台北市大安區瑞安街113號", "phone": "02-2784-4973", "pmin": 85, "pmax": 200, "pest": true, "hours": "週一至六約 15:50–21:50，週日公休（愛食記）", "slots": [{"d": [1, 2, 3, 4, 5, 6], "o": "15:50", "c": "21:50"}], "verified": "2025-06 食記", "signature": ["雞排", "大雞腿"], "items": [{"cat": "炸雞", "name": "雞排", "price": 85}, {"cat": "炸雞", "name": "大雞腿", "price": 95}, {"cat": "炸物", "name": "甜不辣", "price": 35}, {"cat": "炸雞", "name": "三節翅", "price": null}, {"cat": "炸雞", "name": "美式雞塊", "price": null}, {"cat": "炸雞", "name": "檸檬雞柳條", "price": null}, {"cat": "炸物", "name": "深海花枝丸", "price": null}, {"cat": "炸物", "name": "地瓜薯條", "price": null}], "menu_source": "https://nash.tw/chocho/", "menu_source_label": "食記 Nash", "menu_source_date": "2025-06", "menu_link": "https://ifoodie.tw/restaurant/641076c601ba337ad578e718", "menu_link_label": "愛食記", "note": "只抄到 3 樣價格。", "fit": {"order": "大雞腿＋雞排", "price": 180, "protein": 45, "grade": "C", "why": "兩大塊雞肉，蛋白質多，但都是炸的。", "avoid": "甜不辣、地瓜薯條、花枝丸。", "tip": "雞皮和麵衣可以剝掉一些。"}, "ll": [25.027321, 121.540132], "xcheck": "比對 3 個來源：營業 一致・時間 來源不一（已取保守值）・價格 只有一個來源", "n": 31}, {"id": "nanpho", "name": "南哥越南河粉", "cuisine": "越南河粉", "type": "異國", "addr": "台北市大安區和平東路二段311巷23號", "phone": "02-2705-5383", "pmin": 100, "pmax": 200, "pest": false, "hours": "每日 11:00–20:00（愛食記；食記寫到 20:30）", "slots": [{"d": [0, 1, 2, 3, 4, 5, 6], "o": "11:00", "c": "20:00"}], "verified": "2026-01、2025-06 食記", "signature": ["綜合牛肉河粉", "雲吞河粉"], "items": [{"cat": "河粉", "name": "綜合牛肉河粉／米線", "price": 160}, {"cat": "河粉", "name": "熟牛肉河粉", "price": 140}, {"cat": "河粉", "name": "生牛肉粉麵", "price": null}, {"cat": "河粉", "name": "雲吞河粉", "price": 100}, {"cat": "小菜", "name": "蘭花干", "price": null}, {"cat": "小菜", "name": "白蘿蔔小菜（招待）", "price": null}], "menu_source": "https://mayawang.site/13973", "menu_source_label": "食記 MayaWang", "menu_source_date": "2026-01", "menu_link": "https://ifoodie.tw/restaurant/684462db7be9c36b9e56375e", "menu_link_label": "愛食記", "note": "入座送白蘿蔔小菜。", "fit": {"order": "綜合牛肉河粉（河粉吃一半）", "price": 160, "protein": 22, "grade": "B", "why": "湯清、不炸，有生熟兩種牛肉。", "avoid": "蘭花干（炸豆干）。", "tip": "再點一碗熟牛肉河粉分著吃，牛肉加倍。"}, "ll": [25.025343, 121.545234], "xcheck": "比對 3 個來源：營業 一致・時間 來源不一（已取保守值）・價格 一致", "n": 32}, {"id": "luguang", "name": "陸光大姐", "cuisine": "眷村麵食・自夾滷味", "type": "麵食", "addr": "台北市大安區和平東路二段133號", "phone": "02-2703-6039", "pmin": 80, "pmax": 300, "pest": true, "hours": "11:30–14:00、17:30–20:30，週一公休；只收現金", "slots": [{"d": [0, 2, 3, 4, 5, 6], "o": "11:30", "c": "14:00"}, {"d": [0, 2, 3, 4, 5, 6], "o": "17:30", "c": "20:30"}], "verified": "2026-04 兩篇食記", "signature": ["自夾滷味", "雪菜肉絲麵", "紹子麵"], "items": [{"cat": "麵食", "name": "雪菜肉絲麵", "price": 80}, {"cat": "麵食", "name": "紹子麵", "price": 80}, {"cat": "熱炒", "name": "土豆肉絲", "price": 280}, {"cat": "熱炒", "name": "回鍋肉", "price": null}, {"cat": "熱炒", "name": "紅燒肉", "price": null}, {"cat": "蔬菜", "name": "炒青菜", "price": 120}, {"cat": "滷味", "name": "自夾滷味（一份約 10 樣）", "price": 260}, {"cat": "小菜", "name": "涼菜", "price": 40}], "menu_source": "https://kkmurmur.com/lu-guang-big-sister/", "menu_source_label": "食記 老K", "menu_source_date": "2026-09", "menu_link": "https://ifoodie.tw/restaurant/69cfbdb9927f807ca3251794", "menu_link_label": "愛食記", "note": "滷味自己夾，單品沒有標價，夾之前先問。熱炒大多 260–390 元，適合多人分。 熱炒只在平日晚上和假日供應。", "fit": {"order": "雪菜肉絲麵＋自夾滷味（滷蛋、大豆干、豬頭皮，約 150 元）", "price": 230, "protein": 30, "grade": "B", "why": "滷味可以自己挑蛋白質。", "avoid": "一個人點熱炒（一盤 260 元以上）。", "tip": "滷味多夾豆干和滷蛋，少夾海帶和蘿蔔。"}, "ll": [25.025433, 121.540822], "xcheck": "比對 4 個來源：營業 一致・時間 一致・價格 只有一個來源", "n": 33}, {"id": "s136", "name": "136海鮮麵 復興店", "cuisine": "清燉牛肉麵・白切肉", "type": "麵食", "addr": "台北市大安區復興南路二段148巷32弄2號", "phone": "02-2707-3136", "pmin": 160, "pmax": 300, "pest": false, "hours": "只開晚上：週二至六 17:00–21:00（賣完為止，會不定休，看 FB/IG）", "slots": [{"d": [2, 3, 4, 5, 6], "o": "17:00", "c": "21:00"}], "verified": "2026-04 兩篇食記", "signature": ["清燉半筋半肉麵", "日式滷牛肉丼飯", "白切嘴邊肉"], "items": [{"cat": "麵食", "name": "清燉半筋半肉麵", "price": 220}, {"cat": "飯", "name": "日式滷牛肉丼飯（附湯）", "price": 250}, {"cat": "麵食", "name": "紅油擔擔麵套餐（附湯）", "price": 160}, {"cat": "麵食", "name": "痛風超蝦海鮮麵", "price": 280}, {"cat": "小菜", "name": "白切嘴邊肉", "price": 70}, {"cat": "小菜", "name": "白切五花肉", "price": 70}, {"cat": "小菜", "name": "酸辣牛綜合", "price": 100}, {"cat": "小菜", "name": "酸辣泡菜", "price": 50}], "menu_source": "https://littlepu.tw/136-food-store/", "menu_source_label": "食記 littlepu", "menu_source_date": "2026-04", "menu_link": "https://ifoodie.tw/restaurant/69db83c5927f8046f5ec645a", "menu_link_label": "愛食記", "note": "跟安東市場只開午餐的那家不同。小菜每天寫在黑板上。", "fit": {"order": "清燉半筋半肉麵＋白切嘴邊肉", "price": 290, "protein": 36, "grade": "B", "why": "清燉湯頭，白切肉不炸不甜。", "avoid": "五花肉（偏肥）、海鮮麵（非豬雞牛魚）。", "tip": "賣完就收，建議 19:00 前到。"}, "ll": [25.028646, 121.541792], "xcheck": "比對 4 個來源：營業 一致・時間 一致・價格 只有一個來源", "n": 34}, {"id": "kadoya", "name": "角屋關東煮", "cuisine": "日式關東煮", "type": "小吃", "addr": "台北市大安區大安路二段141巷", "phone": "02-2702-6393", "pmin": 150, "pmax": 300, "pest": true, "hours": "只開週二至週四 12:00–14:00、17:00–21:40", "slots": [{"d": [2, 3, 4], "o": "12:00", "c": "14:00"}, {"d": [2, 3, 4], "o": "17:00", "c": "21:40"}], "verified": "2026-03 食記", "signature": ["牛筋肉串", "鱈魚豆腐", "日式大根煮"], "items": [{"cat": "關東煮", "name": "牛筋肉串", "price": 60}, {"cat": "關東煮", "name": "鱈魚豆腐", "price": 35}, {"cat": "關東煮", "name": "日式大根煮", "price": 30}, {"cat": "關東煮", "name": "帆立貝", "price": 35}, {"cat": "關東煮", "name": "蒟蒻卷", "price": 20}, {"cat": "單點", "name": "明太子玉子燒", "price": 95}, {"cat": "單點", "name": "日式唐揚雞塊", "price": 160}, {"cat": "單點", "name": "炙燒小卷", "price": 130}], "menu_source": "https://globalfoodelicious.com/kadoya-oden-taipei/", "menu_source_label": "食記 娜姐", "menu_source_date": "2026-03", "menu_link": "https://ifoodie.tw/restaurant/559ddd0cc03a103ee86cb693", "menu_link_label": "愛食記", "note": "在大安路二段 141 巷口轉角，地圖位置是巷子的位置。一週只開三天。", "fit": {"order": "牛筋肉串 ×2＋鱈魚豆腐＋明太子玉子燒＋大根", "price": 280, "protein": 26, "grade": "B", "why": "燉煮為主、不炸。", "avoid": "唐揚雞塊（炸的）、小卷、帆立貝（非豬雞牛魚）。", "tip": "每百元蛋白質偏低，比較適合偶爾換口味。"}, "ll": [25.028466, 121.546765], "xcheck": "比對 3 個來源：營業 一致・時間 一致・價格 只有一個來源", "n": 35}, {"id": "shanli", "name": "山立燻凍奇鷄", "cuisine": "鹽水雞・燻雞（外帶）", "type": "小吃", "addr": "台北市大安區和平東路二段311巷20之1號", "phone": "0923-511-319", "pmin": 100, "pmax": 330, "pest": true, "hours": "週一至五 15:00–19:30、週六 15:00–18:30，週日休；常 18:00 就賣完", "slots": [{"d": [1, 2, 3, 4, 5], "o": "15:00", "c": "19:30"}, {"d": [6], "o": "15:00", "c": "18:30"}], "verified": "2025-08 食記（2025-10 更新）；2026-07 懶人包仍收錄", "signature": ["鹽水雞（附雞凍）", "煙燻雞", "燻豬腳"], "items": [{"cat": "雞肉", "name": "雞肉切盤（半隻）", "price": 320}, {"cat": "雞肉", "name": "煙燻雞", "price": null}, {"cat": "雞雜", "name": "雞心、雞胗、雞卵（一包）", "price": null}, {"cat": "豬肉", "name": "燻豬腳切片", "price": null}, {"cat": "滷味", "name": "豆干＋海帶結", "price": null}, {"cat": "滷味", "name": "甜不辣", "price": null}, {"cat": "滷味", "name": "米血糕", "price": null}], "menu_source": "https://mayawang.site/12884", "menu_source_label": "食記 MayaWang", "menu_source_date": "2025-08", "menu_link": "https://ifoodie.tw/restaurant/6890c2ed927f8074166fff99", "menu_link_label": "愛食記", "note": "外帶店，價格大多是估的；半隻雞約 320 元。", "fit": {"order": "半隻鹽水雞切盤，分兩餐吃（一餐約 160 元）", "price": 160, "protein": 30, "grade": "A", "why": "純雞肉，不炸、不甜。", "avoid": "甜不辣、米血糕。", "tip": "18:00 前去買，不然可能賣完；要自己配飯或蔬菜。"}, "ll": [25.025237, 121.545051], "xcheck": "比對 3 個來源：營業 一致・時間 一致・價格 只有一個來源", "n": 36}, {"id": "lemi", "name": "樂米餐盒 LOVE ME BOX", "cuisine": "健康餐盒", "type": "健身餐", "addr": "台北市大安區和平東路二段125號", "phone": null, "pmin": 179, "pmax": 299, "pest": false, "hours": "週一至五 10:30–14:00、15:30–19:30，週六日公休（OSM 2026-09）", "slots": [{"d": [1, 2, 3, 4, 5], "o": "10:30", "c": "14:00"}, {"d": [1, 2, 3, 4, 5], "o": "15:30", "c": "19:30"}], "verified": "2026-11 Uber Eats 仍上架", "signature": ["水煮嫩雞胸餐盒", "清蒸鮮鱸魚餐盒", "日式壽喜牛餐盒"], "items": [{"cat": "餐盒（外送價）", "name": "水煮嫩雞胸餐盒", "price": 179}, {"cat": "餐盒（外送價）", "name": "清蒸鮮鱸魚餐盒", "price": 199}, {"cat": "餐盒（外送價）", "name": "香檸烤鯖魚餐盒", "price": 179}, {"cat": "餐盒（外送價）", "name": "台味蒜泥豬餐盒", "price": 179}, {"cat": "餐盒（外送價）", "name": "泰式打拋豬餐盒", "price": 179}, {"cat": "餐盒（外送價）", "name": "孜然燒烤豬餐盒", "price": 189}, {"cat": "餐盒（外送價）", "name": "叻沙咖哩雞餐盒", "price": 199}, {"cat": "餐盒（外送價）", "name": "照燒雞腿排餐盒", "price": 204}, {"cat": "餐盒（外送價）", "name": "日式壽喜牛餐盒", "price": 209}, {"cat": "套餐（外送價）", "name": "愛吃雞雙拼套餐（附蜂蜜檸檬汁）", "price": 299}, {"cat": "套餐（外送價）", "name": "雙魚雙拼套餐（附蜂蜜檸檬汁）", "price": 299}, {"cat": "單點（外送價）", "name": "水煮嫩雞胸", "price": 89}, {"cat": "單點（外送價）", "name": "日式壽喜牛", "price": 119}, {"cat": "單點（外送價）", "name": "溏心蛋", "price": 20}, {"cat": "單點（外送價）", "name": "藜麥飯", "price": 20}, {"cat": "單點（外送價）", "name": "加菜", "price": 45}], "menu_source": "https://www.ubereats.com/tw-en/store/%E6%A8%82%E7%B1%B3%E9%A4%90%E7%9B%92love-me-box/i768c1K-U024w4j1yCqqpw", "menu_source_label": "Uber Eats（搜尋摘要）", "menu_source_date": "2026-11", "menu_link": "https://www.ubereats.com/tw-en/store/%E6%A8%82%E7%B1%B3%E9%A4%90%E7%9B%92love-me-box/i768c1K-U024w4j1yCqqpw", "menu_link_label": "Uber Eats", "note": "價格是外送價，店內可能比較便宜。套餐附的蜂蜜檸檬汁含糖。", "fit": {"order": "水煮嫩雞胸餐盒＋單點水煮嫩雞胸＋溏心蛋", "price": 288, "protein": 50, "grade": "A", "why": "兩份水煮雞胸加一顆蛋，不炸、不甜。", "avoid": "套餐的蜂蜜檸檬汁；照燒、壽喜醬汁偏甜。", "tip": "想吃魚就改清蒸鮮鱸魚餐盒＋單點雞胸（$288）。"}, "ll": [25.025465, 121.540557], "xcheck": "比對 2 個來源：營業 一致・時間 來源不一（已取保守值）・價格 只有一個來源", "n": 37}, {"id": "laoge", "name": "老哥 雞肉飯 乾拌麵", "cuisine": "雞肉飯", "type": "飯・粥", "addr": "台北市大安區和平東路二段118巷36號", "phone": null, "pmin": 119, "pmax": 259, "pest": false, "hours": "週一至五 11:00–20:30；週六 11:00–14:00、17:00–20:30；週日可能公休（OSM 2026-09）", "slots": [{"d": [1, 2, 3, 4, 5], "o": "11:00", "c": "20:30"}, {"d": [6], "o": "11:00", "c": "14:00"}, {"d": [6], "o": "17:00", "c": "20:30"}], "verified": "2026-11 Uber Eats、foodpanda 仍上架", "signature": ["家鄉雞肉飯便當", "咖哩雞肉飯便當", "秘製飄香乾拌麵"], "items": [{"cat": "飯（外送價）", "name": "家鄉雞肉飯便當（有菜）", "price": 149}, {"cat": "飯（外送價）", "name": "家鄉雞肉飯（無菜）", "price": 119}, {"cat": "飯（外送價）", "name": "雙份雞肉飯便當套餐", "price": 259}, {"cat": "飯（外送價）", "name": "咖哩雞肉飯便當", "price": 169}, {"cat": "麵（外送價）", "name": "秘製飄香乾拌麵（辣）", "price": 99}, {"cat": "加點（外送價）", "name": "滷蛋", "price": 30}, {"cat": "加點（外送價）", "name": "秘製豆腐", "price": 60}, {"cat": "加點（外送價）", "name": "秘製鴨血", "price": 65}, {"cat": "湯（外送價）", "name": "香菇雞湯", "price": 85}, {"cat": "湯（外送價）", "name": "貢丸湯", "price": 60}], "menu_source": "https://www.ubereats.com/tw/store/%E8%80%81%E5%93%A5-%E9%9B%9E%E8%82%89%E9%A3%AF-%E4%B9%BE%E6%8B%8C%E9%BA%B5-%E5%A4%A7%E5%AE%89%E5%BA%97/RY6-6ksqUu-4p6T8GcQO3g", "menu_source_label": "Uber Eats（搜尋摘要）", "menu_source_date": "2026-11", "menu_link": "https://www.foodpanda.com.tw/en/restaurant/ri0l/lao-ge-ji-rou-fan-gan-ban-mian", "menu_link_label": "foodpanda", "note": "雞肉飯的雞肉量不多。118 巷有都更計畫，出發前先確認。", "fit": {"order": "家鄉雞肉飯便當（有菜）＋滷蛋＋香菇雞湯", "price": 264, "protein": 28, "grade": "B", "why": "不炸，雞肉、蛋、雞湯都有蛋白質。", "avoid": "乾拌麵（精緻澱粉）、含糖飲料。", "tip": "雙份雞肉飯套餐（$259）雞肉比較多，但白飯也跟著變多。"}, "ll": [25.023116, 121.542776], "xcheck": "比對 2 個來源：營業 一致・時間 來源不一（已取保守值）・價格 只有一個來源", "n": 38}, {"id": "fst", "name": "福勝亭 科技大樓店", "cuisine": "日式豬排・烤物定食", "type": "飯・粥", "addr": "台北市大安區復興南路二段277號", "phone": "02-2701-6746", "pmin": 170, "pmax": 290, "pest": false, "hours": "每日 11:00–21:30（最後點餐 21:00）；在 2 樓", "slots": [{"d": [0, 1, 2, 3, 4, 5, 6], "o": "11:00", "c": "21:30"}], "verified": "2026-11 官網門市資訊仍列出", "signature": ["開運豬排定食", "和風醬烤雞腿定食", "鹽烤鯖魚定食"], "items": [{"cat": "烤物定食", "name": "和風醬烤雞腿定食", "price": 220}, {"cat": "烤物定食", "name": "鹽烤鯖魚定食", "price": 260}, {"cat": "炸物定食", "name": "開運豬排定食", "price": 230}, {"cat": "炸物定食", "name": "香酥炸腰內肉定食", "price": 230}, {"cat": "炸物定食", "name": "和風咖哩豬排定食", "price": 250}, {"cat": "炸物定食", "name": "黃金魚排定食", "price": 230}, {"cat": "炸物定食", "name": "鮮嫩炸雞柳定食", "price": 230}, {"cat": "炸物定食", "name": "大阪燒豬排定食", "price": 270}, {"cat": "炸物定食", "name": "厚切活力豬排定食", "price": 290}, {"cat": "丼鍋定食", "name": "起司豬排丼定食", "price": 280}, {"cat": "丼鍋定食", "name": "卡滋豬排丼定食", "price": 270}, {"cat": "丼鍋定食", "name": "日式味噌烏龍麵定食", "price": 170}, {"cat": "小菜", "name": "茶碗蒸", "price": 55}, {"cat": "小菜", "name": "胡麻豆腐", "price": 55}, {"cat": "小菜", "name": "胡麻時蔬", "price": 55}, {"cat": "揚物", "name": "日式唐揚雞", "price": 65}], "menu_source": "https://www.tonkatsu.com.tw/menu/menu", "menu_source_label": "第三方價目整理（官網沒有公布價格）", "menu_source_date": "2026-11", "menu_link": "https://www.tonkatsu.com.tw/menu/menu", "menu_link_label": "官網菜單", "note": "定食附白飯、味噌湯、醬菜。從車站走過去約 1 分鐘。營業到 21:30。 官網只有品項，沒有價格；其他品項價格依官網舊價目，可能差 10 元。", "fit": {"order": "和風醬烤雞腿定食＋茶碗蒸", "price": 275, "protein": 34, "grade": "B", "why": "烤雞腿不炸；茶碗蒸再補一顆蛋。", "avoid": "所有炸豬排、魚排、雞柳和丼；和風醬偏甜，可以請店家另放。", "tip": "想完全不甜就改點鹽烤鯖魚定食（約 $260），但鯖魚油脂比較高。"}, "ll": [25.025501, 121.543647], "xcheck": "比對 2 個來源：營業 一致・時間 只有一個來源・價格 只有一個來源", "n": 39}, {"id": "jbw", "name": "雞霸王雞腿肉飯", "cuisine": "雞腿肉飯", "type": "飯・粥", "addr": "台北市大安區和平東路二段311巷17-1號", "phone": "02-2700-1277", "pmin": 110, "pmax": 180, "pest": false, "hours": "11:00–14:00、16:30–19:15；公休日來源不一（週日或週一），只收現金", "slots": [{"d": [1, 2, 3, 4, 5, 6], "o": "11:00", "c": "14:00"}, {"d": [1, 2, 3, 4, 5, 6], "o": "16:30", "c": "19:15"}], "verified": "2026-07 成功國宅美食懶人包仍收錄；愛食記顯示營業中", "signature": ["嫩雞飯", "雙倍嫩雞飯", "嫩烤雙拼飯"], "items": [{"cat": "飯", "name": "嫩雞飯", "price": 110}, {"cat": "飯", "name": "雙倍嫩雞飯", "price": 170}, {"cat": "飯", "name": "嫩烤雙拼飯", "price": 180}, {"cat": "飯", "name": "烤雞腿飯", "price": null}, {"cat": "湯", "name": "貢丸湯", "price": null}, {"cat": "湯", "name": "蘿蔔湯", "price": null}], "menu_source": "https://ctionkuni.pixnet.net/blog/post/346718176", "menu_source_label": "食記 川川視野", "menu_source_date": "2024-12", "menu_link": "https://mayawang.site/11869", "menu_link_label": "2026 懶人包", "note": "附半熟蛋和配菜。嫩烤雙拼限量，常常中午就賣完。 地址也有寫成 311 巷 17 號。", "fit": {"order": "雙倍嫩雞飯（醬少淋）", "price": 170, "protein": 40, "grade": "A", "why": "雞腿肉加倍、不炸，還有一顆半熟蛋。", "avoid": "醬油膏、蔥油少淋。", "tip": "預算少就點嫩雞飯（$110，約 28 g）。"}, "ll": [25.025228, 121.545225], "xcheck": "比對 4 個來源：營業 一致・時間 來源不一（已取保守值）・價格 來源不一（已取保守值）", "n": 40}, {"id": "tibet", "name": "西藏廚房 Tibet Kitchen", "cuisine": "西藏・印度料理", "type": "異國", "addr": "台北市大安區和平東路二段217號", "phone": "02-2705-4770", "pmin": 150, "pmax": 350, "pest": true, "hours": "週二至週日 11:30–14:00、17:00–21:00，週一公休（OSM 2026-09）；內用另收 10% 服務費", "slots": [{"d": [0, 2, 3, 4, 5, 6], "o": "11:30", "c": "14:00"}, {"d": [0, 2, 3, 4, 5, 6], "o": "17:00", "c": "21:00"}], "verified": "2025-06 食記更新營業時間；愛食記顯示營業中", "signature": ["石炭烤雞", "藏式牛肉饃饃"], "items": [{"cat": "主菜（外送價）", "name": "石炭烤雞（4 塊）", "price": 290}, {"cat": "主菜（外送價）", "name": "濃郁奶油香烤雞", "price": 350}, {"cat": "主菜（外送價）", "name": "咖哩羊肉", "price": 320}, {"cat": "點心（外送價）", "name": "藏式牛肉饃饃", "price": 150}, {"cat": "餅（外送價）", "name": "香蒜烤餅", "price": 70}, {"cat": "主菜", "name": "藏式燉肉", "price": null}, {"cat": "主菜", "name": "咖哩菠菜乳酪", "price": null}, {"cat": "點心", "name": "西藏炸牛肉餅", "price": null}], "menu_source": "https://www.ubereats.com/tw/store/tibet-kitchen-%E8%A5%BF%E8%97%8F%E5%BB%9A%E6%88%BF/mjr_Z6BvW2KaVHBLG_WKrA", "menu_source_label": "Uber Eats（搜尋摘要）", "menu_source_date": "2026-11", "menu_link": "https://wunweistories.com/food-tibet-kitchen-20230507/", "menu_link_label": "食記（2023 年內用價）", "note": "價格是外送價；2023 年內用碳烤雞是 270。 內用碳烤雞約 270＋10% 服務費 ≈ 297。", "fit": {"order": "石炭烤雞（4 塊）", "price": 290, "protein": 32, "grade": "B", "why": "優格醃過再窯烤，不炸、不甜。", "avoid": "咖哩羊肉（非豬雞牛魚）、奶油香烤雞（超出預算）、炸牛肉餅。", "tip": "兩個人可以分一份烤雞，再加一份牛肉饃饃。"}, "ll": [25.025179, 121.542653], "xcheck": "比對 5 個來源：營業 一致・時間 一致・價格 來源不一（已取保守值）", "n": 41}, {"id": "beef13", "name": "13香牛肉麵", "cuisine": "牛肉麵", "type": "麵食", "addr": "台北市大安區和平東路三段48之6號", "phone": "02-2733-8986", "pmin": 200, "pmax": 270, "pest": false, "hours": "週一至六 11:30–14:30、17:30–21:00，週日公休（愛食記）", "slots": [{"d": [1, 2, 3, 4, 5, 6], "o": "11:30", "c": "14:30"}, {"d": [1, 2, 3, 4, 5, 6], "o": "17:30", "c": "21:00"}], "verified": "2026-01 地區懶人包有收錄；愛食記顯示營業中", "unverified": "2025 年以後沒有實際用餐的食記", "signature": ["麻辣三寶牛肉麵", "白菜獅子頭麵"], "items": [{"cat": "麵", "name": "麻辣三寶牛肉麵", "price": 270}, {"cat": "麵", "name": "白菜獅子頭麵", "price": 200}, {"cat": "麵", "name": "紅燒牛肉麵", "price": null}, {"cat": "麵", "name": "清燉牛肉麵", "price": null}, {"cat": "小菜", "name": "滷大腸", "price": null}, {"cat": "小菜", "name": "椒麻四季豆", "price": null}], "menu_source": "https://upssmile.com/234535/13beef-noodles", "menu_source_label": "食記 upssmile", "menu_source_date": "2024-12", "menu_link": "https://taiwan17go.com/hepingefood/", "menu_link_label": "2026 懶人包", "note": "在範圍邊緣，比較靠近六張犁站。", "fit": {"order": "麻辣三寶牛肉麵（麵吃一半）", "price": 270, "protein": 28, "grade": "C", "why": "牛肉、牛筋、牛肚三樣，但每百元蛋白質偏低。", "avoid": "滷大腸（脂肪多）；湯不要喝完。", "tip": "清燉牛肉麵價格現場確認，比麻辣湯頭清爽。"}, "ll": [25.024517, 121.547951], "xcheck": "比對 4 個來源：營業 一致・時間 來源不一（已取保守值）・價格 只有一個來源", "n": 42}, {"id": "subway", "name": "SUBWAY 復興和平店", "cuisine": "潛艇堡・有營養標示", "type": "異國", "addr": "台北市大安區和平東路二段203號", "phone": "02-2705-4132", "pmin": 113, "pmax": 250, "pest": false, "hours": "每日 08:00–22:00", "slots": [{"d": [0, 1, 2, 3, 4, 5, 6], "o": "08:00", "c": "22:00"}], "verified": "2026-11 官網門市清單", "signature": ["香烤雞肉", "鮮嫩雞柳", "厚切嫩牛"], "items": [{"cat": "6 吋潛艇堡", "name": "香烤雞肉", "price": 128, "protein_g": "23"}, {"cat": "6 吋潛艇堡", "name": "鮮嫩雞柳", "price": 128, "protein_g": "23"}, {"cat": "6 吋潛艇堡", "name": "照燒雞肉", "price": 131, "protein_g": "27"}, {"cat": "6 吋潛艇堡", "name": "厚切嫩牛", "price": 157, "protein_g": "26"}, {"cat": "6 吋潛艇堡", "name": "燒烤牛肉", "price": 147, "protein_g": "21"}, {"cat": "6 吋潛艇堡", "name": "鮪魚", "price": 128, "protein_g": "22"}, {"cat": "6 吋潛艇堡", "name": "嫩切雞肉", "price": 113, "protein_g": "20"}, {"cat": "沙拉", "name": "鮮嫩雞柳沙拉", "price": 166, "protein_g": "19"}, {"cat": "沙拉", "name": "照燒雞肉沙拉", "price": 173, "protein_g": "21"}, {"cat": "沙拉", "name": "厚切嫩牛沙拉", "price": 195, "protein_g": "18"}, {"cat": "加料", "name": "雙份肉", "price": 55}], "menu_source": "https://www.money101.com.tw/blog/subway%E8%8F%9C%E5%96%AE%E5%83%B9%E6%A0%BC", "menu_source_label": "價目整理表（含 2026-08 調價）", "menu_source_date": "2026-09", "menu_link": "https://www.subway.com.tw/nutrition", "menu_link_label": "官網營養資訊", "note": "蛋白質依官網與 2023 年營養成分整理表（6 吋含麵包），以官網為準。官網沒有公布價格，價格取自第三方整理，各門市可能不同。營業到 22:00。", "fit": {"order": "6 吋鮮嫩雞柳＋雙份肉（醬選黃芥末）", "price": 183, "protein": 38, "grade": "A", "why": "依官網營養表，6 吋雞柳 25 g＋多一份肉約 15 g；整份的糖很少。", "avoid": "甜蔥醬、蜂蜜芥末醬、照燒（含糖）；鮪魚（美乃滋多）；餅乾。", "tip": "改點沙拉可以少吃麵包。"}, "ll": [25.025208, 121.542445], "xcheck": "比對 3 個來源：營業 一致・時間 只有一個來源・價格 只有一個來源", "n": 43}, {"id": "mos", "name": "摩斯漢堡 復興南路店", "cuisine": "漢堡・米漢堡・有營養標示", "type": "異國", "addr": "台北市大安區復興南路二段151巷47號", "phone": "02-2705-8524", "pmin": 70, "pmax": 250, "pest": false, "hours": "每日 06:00–22:00", "slots": [{"d": [0, 1, 2, 3, 4, 5, 6], "o": "06:00", "c": "22:00"}], "verified": "2026-11 官網店舖檢索", "signature": ["元氣牛肉珍珠堡", "輕檸雙牛堡", "摘鮮綠烤雞起司堡"], "items": [{"cat": "珍珠堡", "name": "元氣牛肉珍珠堡", "price": 110, "protein_g": "26.0"}, {"cat": "珍珠堡", "name": "超級大麥元氣牛肉珍珠堡", "price": 115, "protein_g": "25.3"}, {"cat": "珍珠堡", "name": "薑燒珍珠堡（豬）", "price": 70, "protein_g": "15.4"}, {"cat": "漢堡", "name": "輕檸雙牛堡", "price": 100, "protein_g": "23.2"}, {"cat": "漢堡", "name": "蜜汁烤雞起司堡", "price": 75, "protein_g": "20"}, {"cat": "漢堡", "name": "蜜汁烤雞堡", "price": 70, "protein_g": "18"}, {"cat": "漢堡", "name": "摩斯漢堡（牛）", "price": 70, "protein_g": "17.8"}, {"cat": "摘鮮綠", "name": "摘鮮綠烤雞起司堡", "price": 80, "protein_g": "15.4"}], "menu_source": "https://www.mos.com.tw/menu/set.aspx", "menu_source_label": "官網菜單", "menu_source_date": "2026-11", "menu_link": "https://www.mos.com.tw/menu/set.aspx", "menu_link_label": "官網菜單", "note": "蛋白質依官網各品項營養標示頁（菜單頁本身沒有營養資料）。營業到 22:00。", "fit": {"order": "輕檸雙牛堡＋元氣牛肉珍珠堡", "price": 210, "protein": 49, "grade": "B", "why": "依官網營養標示 23.2＋26.0 g，兩樣都不是炸的。", "avoid": "雞塊、和風炸雞、薯條、鱈魚堡、炸蝦堡、甜飲料；蜜汁烤雞偏甜。", "tip": "想少吃澱粉就把珍珠堡換成摘鮮綠烤雞起司堡（生菜包，$80）。"}, "ll": [25.028453, 121.545622], "xcheck": "比對 2 個來源：營業 一致・時間 只有一個來源・價格 只有一個來源", "n": 44}, {"id": "chuan", "name": "川味麵典", "cuisine": "川味牛肉麵・外省麵館", "type": "麵食", "addr": "台北市大安區四維路176巷17號", "pmin": 95, "pmax": 280, "pest": false, "phone": "02-2701-0202", "hours": "週一至五 12:00–14:00、17:30–20:00，週六日公休；會不定期長休（2025-11 食記），出發前先打電話", "slots": [{"d": [1, 2, 3, 4, 5], "o": "12:00", "c": "14:00"}, {"d": [1, 2, 3, 4, 5], "o": "17:30", "c": "20:00"}], "verified": "2026-04 仍有食記", "signature": ["肋排牛腩麵", "牛小排麵", "口水雞"], "items": [{"cat": "麵", "name": "肋排牛腩麵（川味／番茄／乾拌）", "price": 240}, {"cat": "麵", "name": "牛小排麵（不一定天天有）", "price": 200}, {"cat": "麵", "name": "川味擔擔麵", "price": 110}, {"cat": "麵", "name": "蕃茄哨子麵", "price": 95}, {"cat": "麵", "name": "養生汽鍋雞麵線", "price": 130}, {"cat": "主菜", "name": "口水雞", "price": 150}, {"cat": "抄手", "name": "紅油抄手", "price": 90}, {"cat": "小菜", "name": "紅油豬耳", "price": 40}, {"cat": "小菜", "name": "涼拌川耳", "price": 40}, {"cat": "小菜", "name": "胡麻秋葵", "price": 40}, {"cat": "小菜", "name": "麻辣豆干", "price": 30}], "menu_source": "https://anise.tw/282874", "menu_source_label": "食記 anise", "menu_source_date": "2025-11（2026-04 食記確認仍營業）", "menu_link": "https://nash.tw/letsgospicyndbeef2026/", "menu_link_label": "2026 食記", "note": "晚上只開到 20:00，常排隊。", "fit": {"order": "口水雞＋川味擔擔麵（麵減半）", "price": 260, "protein": 34, "grade": "B", "why": "口水雞是整份雞腿肉，比牛肉麵的肉量多。", "avoid": "紅油抄手、麻醬多的乾拌麵；口水雞的醬帶糖，少沾。", "tip": "牛小排麵（$200）＋麻辣豆干也可以，但牛小排油花多。"}, "ll": [25.027989, 121.547097], "xcheck": "比對 3 個來源：營業 一致・時間 一致・價格 只有一個來源", "n": 45}, {"id": "nihao", "name": "你好原汁牛肉麵", "cuisine": "平價牛肉麵", "type": "麵食", "addr": "台北市大安區四維路170巷43號", "pmin": 130, "pmax": 250, "pest": false, "phone": "02-2700-7755", "hours": "每日 11:00–20:50（愛食記、OpenRice）", "slots": [{"d": [0, 1, 2, 3, 4, 5, 6], "o": "11:00", "c": "20:50"}], "verified": "2025-04 食記", "signature": ["半筋半肉牛肉麵", "清燉牛肉湯", "牛雜飯"], "items": [{"cat": "麵", "name": "招牌牛肉麵", "price": 145}, {"cat": "麵", "name": "半筋半肉牛肉麵", "price": 145}, {"cat": "湯", "name": "清燉牛肉湯", "price": 130}, {"cat": "飯", "name": "北港滷肉飯", "price": 40}, {"cat": "飯", "name": "牛雜飯", "price": null}, {"cat": "飯", "name": "香噴噴牛滷飯", "price": null}, {"cat": "小菜", "name": "蒜蓉豬心", "price": 50}, {"cat": "小菜", "name": "皮蛋豆腐", "price": 40}, {"cat": "小菜", "name": "小黃瓜", "price": 40}, {"cat": "小菜", "name": "燙青菜", "price": 40}, {"cat": "小菜", "name": "豆干海帶", "price": 20}], "menu_source": "https://mayawang.site/11593", "menu_source_label": "食記 mayawang", "menu_source_date": "2025-04", "menu_link": "https://tw.openrice.com/zh-tw/taipei/r-%E4%BD%A0%E5%A5%BD%E5%8E%9F%E6%B1%81%E7%89%9B%E8%82%89%E9%BA%B5-%E5%A4%A7%E5%AE%89%E5%8D%80-%E9%BA%B5%E9%BB%9E-r1147254", "menu_link_label": "OpenRice", "note": "內用豆漿、紅茶免費。", "fit": {"order": "清燉牛肉湯＋蒜蓉豬心＋白飯半碗，加一杯免費豆漿", "price": 195, "protein": 34, "grade": "A", "why": "清燉牛肉湯不含麵，蛋白質比例高；豬心脂肪低；免費豆漿可再補 5–7 g。", "avoid": "紅茶（含糖）、滷肉飯。", "tip": "想吃麵就點招牌牛肉麵（$145），麵吃一半。", "est": true}, "ll": [25.028348, 121.546392], "xcheck": "比對 4 個來源：營業 一致・時間 一致・價格 只有一個來源", "n": 46}, {"id": "eling", "name": "餓菱居", "cuisine": "炒飯・抄手（鼎泰豐師傅）", "type": "飯・粥", "addr": "台北市大安區四維路170巷26號", "pmin": 70, "pmax": 250, "pest": false, "phone": "02-2706-8599", "hours": "週一至五 11:00–14:00、17:00–19:50，週六日公休；只收現金（愛食記）", "slots": [{"d": [1, 2, 3, 4, 5], "o": "11:00", "c": "14:00"}, {"d": [1, 2, 3, 4, 5], "o": "17:00", "c": "19:50"}], "verified": "2026-04、2026-08 仍有食記", "signature": ["排骨蛋炒飯", "鮮肉紅油抄手", "麻醬麵"], "items": [{"cat": "乾麵", "name": "麻醬麵", "price": 70}, {"cat": "乾麵", "name": "鮮肉乾拌抄手麵", "price": null}, {"cat": "抄手", "name": "鮮肉紅油抄手", "price": 90}, {"cat": "抄手", "name": "蝦肉乾拌抄手", "price": null}, {"cat": "炒飯", "name": "香蔥蛋炒飯", "price": 70}, {"cat": "炒飯", "name": "蝦仁蛋炒飯", "price": 140}, {"cat": "炒飯", "name": "排骨蛋炒飯", "price": 150}, {"cat": "湯", "name": "酸辣湯", "price": 60}, {"cat": "小菜", "name": "涼拌小黃瓜", "price": 50}, {"cat": "小菜", "name": "四季烤麩", "price": 50}], "menu_source": "https://nash.tw/hunglingju2024/", "menu_source_label": "食記 Nash", "menu_source_date": "2024-08（2026 年食記寫炒飯 70–170 元）", "menu_link": null, "note": "部分價格可能已調漲。19:50 打烊，只收現金。", "fit": {"order": "排骨蛋炒飯（飯吃一半）＋鮮肉紅油抄手", "price": 240, "protein": 34, "grade": "C", "why": "排骨、蛋、豬肉抄手三種蛋白質，但排骨是炸的，炒飯也偏油。", "avoid": "排骨是炸的，麵衣可以剝掉；炒飯油多；紅油少沾。", "tip": "想吃清淡一點，就點兩份抄手＋小黃瓜。"}, "ll": [25.028175, 121.546706], "xcheck": "比對 3 個來源：營業 一致・時間 來源不一（已取保守值）・價格 只有一個來源", "n": 47}, {"id": "tanzhuang", "name": "潭莊小卷米粉", "cuisine": "油雞便當・虱目魚肚", "type": "飯・粥", "addr": "台北市大安區復興南路二段336號", "pmin": 85, "pmax": 225, "pest": false, "phone": "02-2738-2676", "hours": "每日 10:00–22:00（另一來源寫到 21:30）", "slots": [{"d": [0, 1, 2, 3, 4, 5, 6], "o": "10:00", "c": "21:30"}], "verified": "foodpanda 仍上架；2025 年有團購券", "signature": ["小卷米粉", "魚肚粥", "無刺虱目魚肚湯"], "items": [{"cat": "麵", "name": "小卷米粉", "price": 135}, {"cat": "粥", "name": "魚肚粥", "price": 130}, {"cat": "便當", "name": "油雞便當", "price": 130}, {"cat": "便當", "name": "蝦捲便當", "price": 130}, {"cat": "便當", "name": "虱目魚肚便當（外送原價）", "price": 165}, {"cat": "湯", "name": "無刺虱目魚肚湯（外送原價）", "price": 130}, {"cat": "飯", "name": "魚肉滷肉飯（外送原價）", "price": 115}, {"cat": "小吃", "name": "蝦仁煎", "price": 85}, {"cat": "小吃", "name": "蚵仔煎（外送原價）", "price": 120}, {"cat": "麵", "name": "霸王海鮮麵（外送）", "price": 225}], "menu_source": "https://followmii.tw/blog/post/tan", "menu_source_label": "食記 followmii＋foodpanda", "menu_source_date": "2024-03（店內）；外送價日期不明", "menu_link": "https://www.foodpanda.com.tw/restaurant/j9bb/tan-zhuang-xiao-juan-mi-fen", "menu_link_label": "foodpanda 菜單", "note": "營業到 21:30 以後，晚下班也來得及。Google 評分 3.5，評價兩極。", "fit": {"order": "油雞便當（飯減半）＋無刺虱目魚肚湯", "price": 260, "protein": 40, "grade": "A", "why": "雞肉加虱目魚肚，兩份蛋白質。", "avoid": "小卷米粉、蝦捲、蚵仔煎（非豬雞牛魚）；油雞皮可以不吃。", "tip": "預算低就點虱目魚肚便當（約 $165）。"}, "ll": [25.022765, 121.543217], "xcheck": "比對 2 個來源：營業 一致・時間 只有一個來源・價格 只有一個來源", "n": 48}];
+const META={"footer": "<b>資料來源</b>：2026-11-04 整理。店家清單來自 OpenStreetMap、愛食記和美食部落格；每家都有 2025–2026 年仍在營業的紀錄。菜單價格取自卡片上標示的來源與日期，外送平台價通常比店內貴 10–40%。實際價格和營業時間以現場為準。店址用 ArcGIS 轉成座標；步行時間是直線距離 ×1.3 的估算，實際路線請按卡片上的「從…走過去」。<br><b>增肌適合度</b>：A＝不炸、不甜，而且每百元有 14 g 以上蛋白質；B＝還可以；C＝油炸或精緻澱粉多。點法只用豬、雞、牛、魚。蛋白質是依常見份量保守估計的，只有 GET POWER、蛋白盒子用的是店家公布的營養標示。<br><b>菜單照片</b>：Google 地圖上使用者上傳的菜單照片沒辦法自動擷取，請按「看菜單照片」。<br>已排除：阿英海產粥（台北店 2026-04-17 結束營業，<a href=\"https://www.nownews.com/news/6869960\" target=\"_blank\" rel=\"noopener\">NOWnews</a>）、吃你豆腐（外送平台 2026-05 起顯示停止營業）、BON 麵疙瘩（已歇業）、大馬廚房（搬到內湖）、小李子清粥（搬到 326 號，每人約 300–500 元）、熊天山牛肉麵、太one牛肉麵、韓喜堂、河內美食、正香馬來西亞餐室、韓蒔（已歇業）。另外有一批店因為找不到 2025–2026 年的營業紀錄，暫時沒有收錄，例如二師兄肉羹、馬祖麵館、春桂雞肉、營養師的光合廚房、史大華麵館；JJ's POKE 還在營業，但找不到 2024 年以後的價格；八方雲集、麥當勞的官網無法讀取，沒辦法確認分店；之後查到新資料再補上。", "coverage": "<b>涵蓋範圍</b>：比對了 OpenStreetMap（車站 800 公尺內 346 筆）和愛食記「捷運科技大樓站」列表（259 筆），去除重複後共約 530 家（兩邊店名寫法不同，少數可能重複計算）。其中 <b>48 家收錄</b>；290 家逐一查核後沒有收錄；190 家是早餐、咖啡甜點、素食、酒吧或高價餐廳，不屬於晚餐清單；尚未查核 0 家。<details><summary>查核後沒有收錄的店（依原因）</summary><p><b>找不到 2025–2026 年仍營業的紀錄（101）</b>：28麵堂、GOHAN 御飯食事处 敦南店、SuperVit 營養師的光合廚房、二師兄肉羹專賣店 復南店、二師兄肉羹復南店、佬窩好湯養生餐廳、佳興福州魚丸店、佶田日式涮涮鍋、八方雲集、八方雲集 (台北建南店)、力量拉麵、北方大陸餅、匠心滷 家傳豬腳、南庄香麵店、印渡風情、厚宅咖哩、古城古早麵、台越美食、史大華精緻麵館、史大華麵館、合益佳雞肉飯、和日一五號、咖哩廚房、喜川麵館、噹食麵、四川蜀渝小吃、四面八方、土托魚羹、壹之穴沾麵專門店、大埔鐵板燒、大安米粉湯、大易園、大易園早午餐、大李水餃、姊姊的廚房、宏冠魚土魠魚焿、小拾聚、小李子牛肉麵、山林美食館、巧味快餐、幸福村麵堂、憶馬當鮮馬來西亞風味料理、成口香美食館、文哥 巷仔口米粉湯、文哥巷子口古早味米粉湯、春桂雞肉、李記水餃、梧貳WUERFOODS(歐姆蛋包飯專賣店)、椰巍椰子雞鍋物、極品鹹水雞、樂利飯包、欽豪燒腊盒餐、波町弁當、泰米香 Thaid. Thaifood、溫州大混沌、溫州大餛飩、溫州大餛飩阿婆乾麵、滇味小廚、營養師的光合廚房、玉欣珍傳統美食坊、珍品佳盒餐、瑞安自助餐、瑞安雅廚、甲吧麵飯、笑嘻嘻港式現炒飯麵、米食 미식、綠之坊健康餐飲、美鄉拉麵屋、老胡記米粉湯60年老店-復興店、老龍牛肉麵大王、胖老爹美式炸雞、菁宏滷肉飯、萬家鄉、蔥燉牛肉麵、裸湯拉麵 雞白湯、親來食堂、豚太郎日式丼飯、豪品精牧川菜、輕燒臘、辛川屋、農粹、通化街米粉湯、遠東Café自助餐廳、邊田庄、邊田庄便當本舖、邦食堂、金城便當、金霸臭臭鍋、飯麵、餘記麵館、香料廚房、香港大中華燒臘、香港林師傅、馬祖麵館、鬍鬚張、麗如小吃店、麥當勞、麵屋一朗、麵屋壹の穴 ICHI、麵屋雞金、鼎貴小吃店</p><p><b>每人超過 300 元或合菜（42）</b>：11PASTA Trattoria 食義大安店、M Cuisine 老李的私廚料理、Toh-A桌藏、the Diner樂子、一流清粥小菜、二本松涮涮屋 本館、利休、利休日本料理、北平同慶樓、十三川、印加媽媽祕魯餐館、原川火鍋、大安站那邊精緻熱炒、大連風味館、大食鍋物 おおぐい 食べ放題、天辣麻辣、天辣麻辣火鍋、姥義麵 La pasta di nonna、宋室台菜、宋朝中餐廳、彌生軒 YAYOI 敦南和平店、拿坡里披薩、日日香小館、李白居、林居、樂子、樂食堂、橋山.壽喜燒 すき焼き專門店、泔米食堂、燒肉工房、神樂屋、神樂屋 酒•和食、禾豐涮涮鍋、胖肚肚燒肉、蘇江川小館、詹記麻辣火鍋、詹記麻辣火鍋 敦南店、雙月食品社 森林公園店、韓豐豆腐煲、饞食坊、饞食堂、魚韻日式料理</p><p><b>超出步行 10 分鐘（29）</b>：8鍋臭臭鍋、NoName咖哩、ONE GOOD 烤肉飯、Sate House、Uncle Burgers、すき家、丰食堂、元氣家族麵飯館、光復牛肉麵、北方餃子館、南川麵館、圓圓小籠湯包、好想見麵 大安信義店、安和擔仔麵、小南鄭記、岩谷新鐵板料理、我家牛排、東家美食館、江蘇老趙刀切麵、源士林粥品、王家刀切麵、珍品味泰式炭烤、磐石坊印度料理、粥師傅廣東粥、老鄒刀切麵、花麻辣、諺樂定食串燒熱炒、黑小串燒、龍華燒臘</p><p><b>不是豬雞牛魚為主（21）</b>：37號海鮮粥、37號海鮮粥/麵、Food二十食堂、仁里居、全國素食、卡帛素食烘培‧義式廚房(總店)、呈信鵝肉 科技大樓店、大叔蔬食、大水缸、大水缸養生甜品、就是果汁吧、慈心素食、日海生猛海鮮、明德素食園、海福岡日本料理海鮮熱炒、熱翻天生猛海鮮、素食、貞有緣素食、開心農場素食店、阿嬌海鮮料理、青山素食館</p><p><b>精緻澱粉、點心或油炸攤（20）</b>：29號館 義大利麵、ANTICO FORNO、Antico Forno 老烤箱、Eat foodie Pasta好好吃餐房、I'm Pasta、OGGI 歐奇窯烤披薩、吉米樂狗 Jimmy's Hotdog Club、哈爾濱東北蔥花大餅、大安煎包、山玖鍋貼水餃、師大附中水煎包、必勝客、格拉齊義大利麵食館、格芮潘義式創意廚房、發現義大利麵、盛味豐貼爐燒餅、老哥水煎包麵線、芝加哥比薩、貝拉小屋、貝菈小屋</p><p><b>查不到這家店（地圖資料過時）（20）</b>：18號咖啡、Namaste Indian、上鼎豐小籠湯包、卡瓦利印度料理、四維路麵攤、壹伍壹麵食館、大安大安18、小北方美食館、小地方、打醬油、木子日青、樂饕、輕津丸號、釀釀禾、韓風館、香吧佬、高和食堂、魯心麵、麵屋席登、麵攤</p><p><b>沒有晚餐時段（17）</b>：Mars Kitchen 馬師厨房 原創料理、中華一餅- 和平店、何記港式私房菜 （成功市場二樓22號攤）、双生炒飯、呂巷仔口麵食館、安東食園、彭家水餃、松田日式飯糰、津輕丸號、滷味灶咖、炒飯、瑞安油飯、瑞安油飯｜內用/外帶｜、胖姐牛肉麵、芝鄉涼麵、阿婆麵店、雞籠天婦羅</p><p><b>已歇業或搬走（16）</b>：Malaysia Kitchen in Taiwan 大馬廚房、依依平價火鍋、原涮 樂活鍋物 Love Pot、吃你豆腐、吉鴙拉麵、四維紅麵線、小李子清粥小菜、成都川菜小吃、揪食堂韓式餐館、樂町屋、正香馬來西亞餐室（原正香海南雞飯）、耍性子、能量先生水煮餐盒、赤牛城、韓喜堂、韓蒔HAN SHIH</p><p><b>還在營業，但找不到 2024 年以後的價格（12）</b>：JJ's POKE & CAFE 2號店、Mr. Smile好吃雞排、七里亭瑞安店、唯雞館、姐妹小吃、巷子李麵、羅胖子倉鍋麵、識食餐室、財哥那間滷味、香葉泰式料理、龍門客棧餃子館、龍門客棧餃子館(瑞安店)</p><p><b>酒吧、門市或不是餐館（12）</b>：23 Public Craft Beer 精釀啤酒、Barkers、Johnson's、Munchies Gastropub、SAKEMARU BAR 日本酒酒藏 瑞安店、nul taipei、協和切麵店、媽媽米亞、義美食品、謝記珍寶食品莊、阿玉水餃、馬修嚴選_敦南門市</p></details><details><summary>不屬於晚餐清單的店</summary><p><b>類型（43）</b>：96巷麵店、Boulangerie Ours、Butcher by Lanpengyou、COCOMAKER、Cypress & Chestnut、J FULL 賈福廚房、LOTUS CAFFÉ、MTB米堤銀行大安總行、ROYCE' Chocolate 生巧克力、SELF Oasis 綠洲、Stoppage Time 補時、TaSweet菓子屋、The Cake Room、The FOLKS、The Shed、noon、于家水餃、佇這、台北市公有成功市場、宅jài風格生活、小涼院霜淇淋專門店、小罐子點心鋪 敦南店、屏東空軍涼麵、山焙 SUNBAY 和平臥龍店、川雨、手工可口包子饅頭、提拉米蘇、搗飛豆花 Tofu Pudding、星巴克、東區紅麵線、梟夜、棉花田有機餐廳、浮生避難所、炸老大 瑞安店、無名麵攤、玖遛小売店 - Kyuu Roku Kouriten、珍珠窩復興店、甜逗、益生寵愛會館、盛味豐炭烤燒餅、蘇草salvia、諾蛙工作室 NOWA Studio、願有記</p><p><b>咖啡／甜點／飲料（40）</b>：85度C咖啡蛋糕飲料麵包 科技大樓店、Angle Cafe 自家烘焙咖啡館、Artco de cafe 典藏咖啡北教大店、BAKEsmith 大吉先生·職人烘焙、BeansLab coffee 豆研咖啡館、Boom咖啡館、CUPETIT 卡柏蒂精品甜點、Coffee Naps、Coffee Naps 蓁澄咖啡手作坊、HWC黑沃咖啡 大安和平店、L'sød dessert coffee、La Whale阿崴烘焙工坊、La fossette 老法的酒窩 法式甜點、RUFOUS COFFEE、The Quiet Light 默光咖啡、Wine café、兜麥咖啡 大安店、卡帛咖啡素食烘焙坊．義式廚房、台南周記冰鎮滷味、坵粼咖啡、小南通咖啡 café minami、找到咖啡義法料理 Findle Cafe、春山茶水舖 原 烏鐵茶水舖、曬貓咖啡、未央咖啡店、東京巴黎甜點 大安店、桃五咖啡、甜品屋、百合麵包園、老法的酒窩、聖瑪莉Merry Cafe、良果精緻烘焙坊、貝倫烘焙餐坊 (台北店)、賀運咖啡、阿富豆花瑞安店 下午茶 甜品 點心、雋美佳茶業公司、雪坊精品優格、雪球咖啡、麻吉迷你鯛魚燒、點亮咖啡</p><p><b>高價或合菜（每人超過 300）（28）</b>：Big Table、Ephernité、Kyoto Koji精肉店、La Clé D'or、Longtail、SEMINAR西餐廳、Seven Fine Days、The House Taipei、上海醉月樓、上海醉月樓 (香格里拉遠東飯店)、千松谷、卡奈基餐廳、原川日式精緻涮涮鍋、原鮨割烹、尚林鐵板燒餐廳、月之意大利餐廳、法國當代會館、燈燈庵、禾豐日式涮涮鍋、紅豆食府、紅豆食府 遠企店、葉公館、西班牙米其林2星MVSA木沙餐廳、馬可波羅、馬可波羅餐廳、鮨處律、鴻儒園、麒雲餐廳</p><p><b>早餐／早午餐（22）</b>：Sincere Rays貓本早午餐、劉家飯糰、台大黑飯糰、呷尚寶、呷尚寶早餐店、和平食光 早午餐 Coffee&Brunch、好初早餐 敦南、好食早餐、安好食 和平店、巨林美而美、昀吐司、晨間廚房、永和豆漿、永和豆漿大王、淺草日式飯糰、滿樂鐵板吐司、瑞安豆漿大王、真芳、蛋餅俱樂部－臺式脆皮蛋餅專賣店、賜福早午餐luckyou_brunch、馮家蔬菜蛋餅、麥味登</p><p><b>早餐／飲料（19）</b>：KURE8 - 8酵茶、九品早餐店、和平食光、哥萊早餐屋、大漢堡早餐店、好樹早午餐、好運來早餐店、小樽早餐店、展翔早餐吧、找餐 店、早安有喜-大安和平店、早餐&加熱滷味(安和路上)、早餐店、森之豆、熊熊吃到飽早餐、瑞安早餐吧、瑞麟美而美、福七、蔓食早午餐</p><p><b>非餐廳／不明（11）</b>：Open開房間桌遊餐館、The Unique、URBN culture🌱、badudu、le corner、xai xing de、協民隆有限公司、嘰嘰喳喳、婷亭翠玉、悠客3、愛家國際餐飲</p><p><b>酒吧／餐酒館（11）</b>：D’N 敦南酒窖、Open開房間桌遊餐酒館、Rialto da Bere 雅朵義式小酒館、Unwined Bar & Vintner、來賓 印度餐廳和酒吧、季肴酒 駄介 Dasuke by Sakemaru、小小餐館little bistro、弎弎川酒 · Sansan Bistro-大安餐酒館｜川菜、鐵匠 鉄板居酒屋、餃子酒場晴屋、馬可波羅酒廊 (香格里拉遠東飯店)</p><p><b>速食連鎖（另查）（4）</b>：摩斯漢堡(附中店)、漢堡王、漢堡王 敦南店、肯德基</p><p><b>均消 660（1）</b>：日海海鮮店</p><p><b>素食（1）</b>：素晴屋</p><p><b>均消 1500（1）</b>：CHEN'S NICE PLACE 陳氏好地方</p><p><b>均消 1180（1）</b>：TMJ TAIPEI （寵物友善)</p><p><b>均消 3500（1）</b>：earnestos</p><p><b>均消 3800（1）</b>：鈉 餐廳</p><p><b>均消 400（1）</b>：神樂市場</p><p><b>均消 2074（1）</b>：立秋 Li Chiu</p><p><b>均消 1000（1）</b>：Mama Inca印加媽媽秘魯餐館</p><p><b>均消 980（1）</b>：福寶寶</p><p><b>均消 1200（1）</b>：SOIL by FujinTree</p><p><b>均消 2000（1）</b>：ibuki 日料餐廳</p></details>"};
+const TYPES=["全部","健身餐","飯・粥","麵食","鍋物","異國","小吃"];
+const WD=["日","一","二","三","四","五","六"];
+const NONPREF=/鴨|鵝|羊|蝦|魷|花枝|小管|小卷|蛤|貝|蟹|章魚|中卷|蚵|牡蠣|海鮮|海產|飛魚卵|海老/;
+const ORIGINS={station:{label:"科技大樓站",ll:STATION,q:"捷運科技大樓站"},kagura:{label:"神樂屋",ll:[25.026634,121.54191],q:"台北市大安區和平東路二段175巷25號"},gps:null};
+const $=id=>document.getElementById(id);
+const esc=t=>String(t??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const RM=()=>matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const state={type:"全部",maxp:300,maxw:0,sort:"protein",openNow:false,q:"",origin:"station",active:null,view:"list"};
+const OPEN=new Set();
+try{const v=JSON.parse(localStorage.getItem("br08-v4")||"{}");["type","maxp","maxw","sort","openNow","view"].forEach(k=>{if(k in v)state[k]=v[k]});if(v.origin&&v.origin!=="gps")state.origin=v.origin}catch(e){}
+function save(){try{localStorage.setItem("br08-v4",JSON.stringify({type:state.type,maxp:state.maxp,maxw:state.maxw,sort:state.sort,openNow:state.openNow,view:state.view,origin:state.origin}))}catch(e){}}
+
+function meters(a,b){const R=6371000,t=Math.PI/180,dLat=(b[0]-a[0])*t,dLon=(b[1]-a[1])*t;const h=Math.sin(dLat/2)**2+Math.cos(a[0]*t)*Math.cos(b[0]*t)*Math.sin(dLon/2)**2;return 2*R*Math.asin(Math.sqrt(h))}
+const origin=()=>ORIGINS[state.origin]||ORIGINS.station;
+function recompute(){const o=origin().ll;SHOPS.forEach(s=>{s.walk=Math.round(meters(o,s.ll)*1.3/10)*10;s.min=Math.max(1,Math.round(s.walk/75))})}
+const cp=s=>s.fit?s.fit.protein/s.fit.price*100:0;
+const fprice=s=>s.fit?s.fit.price:s.pmin;
+const staleYear=s=>{const m=String(s.menu_source_date||'').match(/^(\d{4})/);return m&&+m[1]<2024?m[1]:null};
+
+function tp(){const d=new Date(new Date().toLocaleString("en-US",{timeZone:"Asia/Taipei"}));return{wd:d.getDay(),mins:d.getHours()*60+d.getMinutes(),d}}
+const hm=s=>{const[a,b]=s.split(":").map(Number);return a*60+b};
+function status(s){
+  if(!s.slots||!s.slots.length)return{cls:"ok",txt:"營業時間待確認",open:false};
+  const n=tp(),today=s.slots.filter(x=>x.d.includes(n.wd));
+  if(!today.length)return{cls:"closed",txt:"今天公休",open:false};
+  for(const x of today){const o=hm(x.o),c=hm(x.c);if(n.mins>=o&&n.mins<c){const left=c-n.mins;if(left<(s.min||0)+15)return{cls:"closed",txt:"走到時已近打烊・"+x.c,open:false,late:true};return{cls:left<=60?"later":"open",txt:left<=60?"快打烊・"+x.c:"營業中・到 "+x.c,open:true}}}
+  const next=today.filter(x=>hm(x.o)>n.mins).sort((a,b)=>hm(a.o)-hm(b.o))[0];
+  if(next)return{cls:"later",txt:"今天 "+next.o+" 開",open:false,soon:true};
+  return{cls:"closed",txt:"今天已打烊",open:false};
+}
+const gmSearch=s=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(s.name+" "+s.addr);
+const gmWalk=s=>"https://www.google.com/maps/dir/?api=1&origin="+encodeURIComponent(origin().q)+"&destination="+encodeURIComponent(s.name+" "+s.addr)+"&travelmode=walking";
+
+function matches(s,ignoreType){
+  if(!ignoreType&&state.type!=="全部"&&s.type!==state.type)return false;
+  if(fprice(s)>state.maxp)return false;
+  if(state.maxw&&s.min>state.maxw)return false;
+  if(state.openNow&&!status(s).open)return false;
+  if(state.q){const q=state.q.toLowerCase();const hay=(s.name+s.cuisine+(s.signature||[]).join("")+(s.items||[]).map(i=>i.name).join("")+(s.fit?s.fit.order:"")).toLowerCase();if(!hay.includes(q))return false}
+  return true;
+}
+const SORTS={fit:(a,b)=>(a.fit?.grade||"Z").localeCompare(b.fit?.grade||"Z")||(b.fit?.protein||0)-(a.fit?.protein||0)||cp(b)-cp(a),protein:(a,b)=>(b.fit?.protein||0)-(a.fit?.protein||0),cp:(a,b)=>cp(b)-cp(a),dist:(a,b)=>a.walk-b.walk,price:(a,b)=>fprice(a)-fprice(b)||a.walk-b.walk};
+const oRank=s=>{const x=status(s);return x.open?0:x.soon?1:2};
+const visible=()=>SHOPS.filter(s=>matches(s)).sort((a,b)=>oRank(a)-oRank(b)||(SORTS[state.sort]||SORTS.protein)(a,b));
+
+function proRow(s){
+  if(!s.fit)return"";const w=Math.min(100,s.fit.protein/50*100);
+  return '<span class="pro"><span class="grade '+s.fit.grade+'" title="增肌適合度">'+s.fit.grade+'</span><span class="meter '+s.fit.grade+'" title="滿格 50 g，虛線是 30 g"><span style="width:'+w+'%"></span></span><span class="pnum"><b>'+s.fit.protein+'</b> g 蛋白質'+(state.sort==="cp"?'・每百元 '+cp(s).toFixed(0)+' g':'')+'</span></span>';
+}
+function lcs(a,b){let m=0;for(let i=0;i<a.length;i++)for(let j=0;j<b.length;j++){let k=0;while(a[i+k]&&a[i+k]===b[j+k])k++;if(k>m)m=k}return m}
+function pickSet(s){
+  const out=new Set();if(!s.fit||!s.items)return out;
+  const toks=s.fit.order.split(/[＋+、，,]/).map(t=>t.trim()).filter(Boolean);
+  toks.forEach(raw=>{
+    const tb=raw.replace(/[（(].*?[)）]/g,"").replace(/\s*[×x]\s*\d+|\d+\s*(盤|份|顆|個|碗)/g,"").replace(/^(單點|加點|再加|加)/,"").trim();
+    if(tb.length<2)return;
+    let best=null,bs=0;
+    s.items.forEach(it=>{
+      const base=it.name.replace(/[（(].*?[)）]/g,"").trim(),par=(it.name.match(/[（(](.*?)[)）]/)||[])[1]||"";
+      let sc=lcs(base,tb);
+      if(base===tb)sc+=6;else if(tb.includes(base))sc+=2;else if(base.includes(tb))sc+=1;
+      if(par)par.split(/[，,、／/]/).forEach(p=>{p=p.trim();if(p.length>=2&&raw.includes(p))sc+=4;else if(p.length>=2&&tb.includes(p))sc+=3});
+      if(sc>bs){bs=sc;best=it.name}
+    });
+    if(best&&(bs>=4||(bs>=2&&tb.length<=3)))out.add(best);
+  });
+  return out;
+}
+function menuHTML(s){
+  if(!s.items||!s.items.length)return '<p class="note">還沒有文字菜單，可以按「看菜單照片」到 Google 地圖看。</p>';
+  const cats=[],by={};s.items.forEach(it=>{const c=it.cat||"餐點";if(!by[c]){by[c]=[];cats.push(c)}by[c].push(it)});
+  const sig=s.signature||[];
+  const PICK=pickSet(s);
+  const pick=n=>PICK.has(n);
+  return '<div class="menu">'+cats.map(c=>'<h3>'+esc(c)+'</h3>'+by[c].map(it=>{const np=NONPREF.test(it.name),sg=sig.some(x=>it.name.includes(x)||x.includes(it.name)),ov=it.price!=null&&it.price>state.maxp;
+    return '<div class="mi'+(sg?' sigi':'')+(np?' np':'')+(ov?' over':'')+(pick(it.name)?' pick':'')+'"><span class="n">'+esc(it.name)+(it.protein_g?'<span class="pg">蛋白質 '+esc(it.protein_g)+' g</span>':'')+(np?'<em class="nptag">非豬雞牛魚</em>':'')+'</span><span class="dots"></span><span class="p">'+(it.price==null?'—':'$'+esc(it.price))+'</span></div>'}).join("")).join("")+'</div>'+
+    '<div class="src">文字菜單來源：'+(s.menu_source?'<a href="'+esc(s.menu_source)+'" target="_blank" rel="noopener">'+esc(s.menu_source_label||"來源")+'</a>':'無')+'（'+esc(s.menu_source_date||"日期不明")+'）</div>';
+}
+function detailHTML(s){
+  const f=s.fit||{};
+  return '<div class="detail">'+
+    '<div class="menuwrap"><div class="lab">文字菜單</div>'+menuHTML(s)+'</div>'+
+    (s.fit?'<div class="sect"><div class="lab">點餐建議</div><div class="advice">'+(f.why?'<span><b>為什麼</b>'+esc(f.why)+'</span>':'')+(f.avoid?'<span class="avoid"><b>避開</b>'+esc(f.avoid)+'</span>':'')+(f.tip?'<span><b>小撇步</b>'+esc(f.tip)+'</span>':'')+'</div></div>':'')+
+    '<div class="sect"><div class="lab">店家資訊</div><dl class="info">'+(s.unverified?'<dt>注意</dt><dd class="warn">'+esc(s.unverified)+'</dd>':'')+'<dt>營業時間</dt><dd>'+esc(s.hours)+'</dd><dt>價位</dt><dd>店內每人 $'+s.pmin+'–'+s.pmax+(s.pest?'（估計）':'')+'</dd><dt>地址</dt><dd>'+esc(s.addr)+'</dd>'+(s.phone?'<dt>電話</dt><dd><a class="tel" href="tel:'+esc(s.phone.replace(/[^\d+]/g,""))+'">'+esc(s.phone)+'</a><button class="copy" data-copy="'+esc(s.phone)+'">複製</button></dd>':'')+(s.verified?'<dt>近況</dt><dd>'+esc(s.verified)+'</dd>':'')+(s.xcheck?'<dt>交叉比對</dt><dd>'+esc(s.xcheck)+'</dd>':'')+(s.note?'<dt>備註</dt><dd>'+esc(s.note)+'</dd>':'')+'</dl></div>'+
+    '<div class="actions"><a class="btn primary" href="'+gmWalk(s)+'" target="_blank" rel="noopener">從'+esc(origin().label)+'走過去</a><button class="btn onmap" data-id="'+s.id+'">在地圖上看</button><a class="btn" href="'+gmSearch(s)+'" target="_blank" rel="noopener">看菜單照片</a>'+(s.menu_link?'<a class="btn" href="'+esc(s.menu_link)+'" target="_blank" rel="noopener">'+esc(s.menu_link_label||"線上菜單")+'</a>':'')+'<button class="btn fold" data-id="'+s.id+'">收起 ▲</button></div></div>';
+}
+const statHTML=s=>{const f=s.fit,k=state.sort;return '<span class="stats">'+
+ '<span class="st'+(k==="price"?' on':'')+'"><b>'+(f?(f.est?'約':'')+'$'+f.price:'$'+s.pmin+'+')+'</b><small>'+(f?'建議點法':'店內價')+'</small></span>'+
+ '<span class="st g'+(f?f.grade:'C')+((k==="protein"||k==="cp"||k==="fit")?' on':'')+'"><b>'+(f?f.protein+'<i>g</i>':'—')+'</b><small>蛋白質'+(f?'・'+f.grade:'')+(k==="cp"&&f?'・每百元 '+cp(s).toFixed(0)+'g':'')+'</small></span>'+
+ '<span class="st'+(k==="dist"?' on':'')+'"><b>'+s.min+'<i>分</i></b><small>步行 '+s.walk+' m</small></span></span>'};
+const headLabel=(s,st)=>{const f=s.fit;return esc(s.name)+'，'+esc(st.txt)+(s.unverified?'，待確認':'')+(f?'，建議點法 '+esc(f.order)+'，'+(f.est?'約 ':'')+f.price+' 元，蛋白質 '+f.protein+' 克，等級 '+f.grade:'')+'，步行 '+s.min+' 分'};
+function cardHTML(s){
+  const st=status(s),on=state.active===s.id,ex=OPEN.has(s.id),shut=!(st.open||st.soon)&&st.cls!=="ok";
+  const fp=s.fit?((s.fit.est?'約 ':'')+'$'+s.fit.price):('$'+s.pmin+'–'+s.pmax);
+  return '<article class="card'+(on?' active':'')+(ex?' open':'')+(shut?' shut':'')+'" id="c-'+s.id+'">'+
+   '<h2 class="hh"><button class="head" data-id="'+s.id+'" aria-expanded="'+ex+'" aria-controls="d-'+s.id+'" aria-label="'+headLabel(s,st)+'，'+(ex?'收起':'看菜單')+'">'+
+    '<span class="num g'+(s.fit?s.fit.grade:"C")+'">'+s.rank+'</span>'+
+    '<span class="hmain"><span class="name">'+esc(s.name)+'</span><span class="meta"><span class="pill '+st.cls+'">'+st.txt+'</span>'+(s.unverified?'<span class="pill flag" title="'+esc(s.unverified)+'">待確認</span>':'')+(staleYear(s)?'<span class="pill ok" title="菜單價格來自 '+staleYear(s)+' 年，現在可能已經漲價">價格是 '+staleYear(s)+' 年的</span>':'')+'<span>'+esc(s.cuisine)+'</span></span></span>'+
+    statHTML(s)+
+    '<span class="body2">'+(s.fit?'<span class="ord">'+esc(s.fit.order)+'</span>':'')+'</span>'+
+    '<span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg><span>'+(ex?'收起':'看菜單')+'</span></span>'+
+   '</button></h2>'+
+   '<div class="collapse" id="d-'+s.id+'"><div class="cin">'+(ex?detailHTML(s):'')+'</div></div>'+
+  '</article>';
+}
+function render(quiet){
+  const v=visible();
+  if(!quiet){clearTimeout(render.t);render.t=setTimeout(()=>{const o=v.filter(s=>status(s).open).length;$("srCount").textContent=v.length+" 家符合，營業中 "+o+" 家"},600)}
+  SHOPS.forEach(s=>s.rank=null);v.forEach((s,i)=>s.rank=i+1);
+  $("listTitle").innerHTML=v.length+' 家 <small>營業中 '+v.filter(s=>status(s).open).length+' 家・營業中的排前面・'+({fit:"依增肌適合度",protein:"依蛋白質",cp:"依每百元蛋白質",dist:"依離"+origin().label+"遠近",price:"依價格"}[state.sort])+'</small>';
+  {const tags=[state.openNow&&"營業中",state.type!=="全部"&&state.type,state.maxp!==300&&"≤$"+state.maxp,state.maxw&&"步行 "+state.maxw+" 分內",state.q&&"「"+state.q+"」"].filter(Boolean);if(tags.length)$("listTitle").innerHTML+=' <button class="btn sm ftags" id="ftags">'+esc(tags.join("・"))+' ✎</button>'}
+  $("list").innerHTML=v.length?v.map(cardHTML).join(""):'<div class="empty">沒有符合條件的店，試試提高預算或換個類型。<br><button class="btn" id="reset">清除篩選</button></div>';
+  const ft=$("ftags");if(ft)ft.onclick=()=>{if(innerWidth<=900)openSheet("filter");else $("chips").scrollIntoView({block:"nearest"})};
+  const r=$("reset");if(r)r.onclick=()=>{Object.assign(state,{type:"全部",maxp:300,openNow:false,q:""});$("q").value="";sync();save();render()};
+  const ids=new Set(v.map(s=>s.id));
+  if(window.LM)LM.sync(ids);
+  if(typeof syncTabs==='function'&&$("sheetApply"))syncTabs();
+  document.querySelectorAll("#svgpins .pin").forEach(p=>{p.style.opacity=ids.has(p.dataset.id)?1:.2});
+  document.querySelectorAll(".chip").forEach(c=>{const t=c.dataset.t,n=SHOPS.filter(s=>matches(s,true)&&(t==="全部"||s.type===t)).length;c.querySelector(".c").textContent=n;c.disabled=n===0&&t!==state.type});
+}
+function setActive(id){
+  state.active=id;
+  document.querySelectorAll(".card.active").forEach(x=>x.classList.remove("active"));
+  const c=$("c-"+id);if(c)c.classList.add("active");
+  if(window.LM)LM.highlight(id);
+}
+function collapseNow(x){OPEN.delete(x);const o=$("c-"+x);if(!o)return;o.classList.add("instant");o.classList.remove("open");const oh=o.querySelector(".head");oh.setAttribute("aria-expanded","false");oh.setAttribute("aria-label",oh.getAttribute("aria-label").replace(/(看菜單|收起)$/,"看菜單"));o.querySelector(".chev span").textContent="看菜單";const ci=o.querySelector(".cin");if(ci)ci.inert=true;o.offsetHeight;o.classList.remove("instant")}
+function toggleCard(id,opts){
+  opts=opts||{};
+  const c=$("c-"+id);if(!c)return;
+  const b=c.querySelector(".head"),cin=c.querySelector(".cin"),open=!OPEN.has(id);
+  if(open&&innerWidth<=900)[...OPEN].forEach(x=>{if(x!==id)collapseNow(x)});
+  if(!open&&opts.instant){collapseNow(id)}else{
+    open?OPEN.add(id):OPEN.delete(id);
+    if(open&&!cin.firstChild)cin.innerHTML=detailHTML(SHOPS.find(s=>s.id===id));
+    cin.inert=!open;
+    requestAnimationFrame(()=>c.classList.toggle("open",open));
+    b.setAttribute("aria-expanded",open);
+    c.querySelector(".chev span").textContent=open?"收起":"看菜單";
+  }
+  b.setAttribute("aria-label",b.getAttribute("aria-label").replace(/(看菜單|收起)$/,open?"收起":"看菜單"));
+  setActive(id);if(window.LM)LM.peek(id);
+  if(open&&innerWidth<=900)requestAnimationFrame(()=>requestAnimationFrame(()=>c.scrollIntoView({block:"start",behavior:RM()?"auto":"smooth"})));
+}
+$("list").addEventListener("click",e=>{
+  const h=e.target.closest(".head");if(h){toggleCard(h.dataset.id);return}
+  const fd=e.target.closest(".fold");if(fd){const id=fd.dataset.id;toggleCard(id,{instant:true});const c=$("c-"+id);if(c){c.scrollIntoView({block:"start"});c.querySelector(".head").focus({preventScroll:true})}return}
+  const m=e.target.closest(".onmap");if(m){setActive(m.dataset.id);if(innerWidth<=900){state.view="map";sync();scrollTo({top:0})}if(window.LM)LM.focus(m.dataset.id);return}
+  const cp_=e.target.closest(".copy");if(cp_){const t=cp_.dataset.copy;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>{cp_.textContent="已複製";setTimeout(()=>{cp_.textContent="複製"},2000)},()=>{cp_.textContent="請手動選取"})}
+});
+$("list").addEventListener("mouseover",e=>{const c=e.target.closest(".card");if(c&&window.LM)LM.hover(c.id.slice(2))});
+$("list").addEventListener("mouseleave",()=>{if(window.LM)LM.hover(null)});
+function select(id,from){
+  const s=SHOPS.find(x=>x.id===id);
+  if(s&&!visible().includes(s)){Object.assign(state,{type:"全部",openNow:false,q:"",maxp:300});$("q").value="";}
+  if(innerWidth<=900)OPEN.clear();
+  OPEN.add(id);state.active=id;
+  if(from==="popup"||from==="svg")state.view="list";
+  sync();render();
+  const c=$("c-"+id);if(c)c.scrollIntoView({behavior:RM()?"auto":"smooth",block:"start"});
+}
+function sync(){
+  document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c.dataset.t===state.type));
+  document.querySelectorAll("#originSeg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.o===state.origin));
+  $("originSel").value=state.origin;
+  document.querySelectorAll("#viewTabs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===state.view));
+  $("grid").dataset.view=state.view;document.documentElement.dataset.view=state.view;
+  $("maxp").value=state.maxp;$("maxw").value=state.maxw;$("sort").value=state.sort;$("openNow").checked=state.openNow;
+  if(window.LM)setTimeout(()=>LM.resize(),60);
+  if(typeof syncTabs==='function'&&$("tabbar"))syncTabs();
+}
+let msgT;const msg=t=>{$("status").textContent=t||"";const sm=$("sheetMsg");if(sm)sm.textContent=t||"";requestAnimationFrame(barH);clearTimeout(msgT);if(t&&!/定位中/.test(t))msgT=setTimeout(()=>{$("status").textContent="";requestAnimationFrame(barH)},7000)};
+$("expandAll").onclick=()=>{visible().forEach(s=>OPEN.add(s.id));render()};
+$("collapseAll").onclick=()=>{OPEN.clear();render()};
+
+$("chips").innerHTML=TYPES.map(t=>'<button class="chip" data-t="'+t+'" aria-pressed="false">'+t+'<span class="c"></span></button>').join("");
+document.querySelectorAll(".chip").forEach(c=>c.onclick=()=>{state.type=c.dataset.t;sync();save();render()});
+$("maxp").onchange=e=>{state.maxp=+e.target.value;save();render()};
+$("maxw").onchange=e=>{state.maxw=+e.target.value;save();render()};
+$("sort").onchange=e=>{state.sort=e.target.value;save();render()};
+$("openNow").onchange=e=>{state.openNow=e.target.checked;save();render()};
+let qt;$("q").oninput=e=>{clearTimeout(qt);qt=setTimeout(()=>{state.q=e.target.value.trim();render()},120)};
+document.querySelectorAll("#viewTabs button").forEach(b=>b.onclick=()=>{state.view=b.dataset.v;sync();save();scrollTo({top:0})});
+document.querySelectorAll("#originSeg button").forEach(b=>b.onclick=()=>setOrigin(b.dataset.o));
+$("originSel").onchange=e=>setOrigin(e.target.value);
+function setOrigin(o){
+  if(o!=="gps"){state.origin=o;recompute();if(window.LM)LM.origin(origin().ll,true);sync();save();render();msg("距離改從「"+origin().label+"」計算。");return}
+  if(!navigator.geolocation){msg("這個瀏覽器不支援定位，請改用「神樂屋」當起點。");sync();return}
+  msg("定位中…瀏覽器詢問時請按「允許」。");
+  navigator.geolocation.getCurrentPosition(p=>{
+    const ll=[p.coords.latitude,p.coords.longitude];
+    ORIGINS.gps={label:"我的位置",ll,q:ll[0].toFixed(6)+","+ll[1].toFixed(6)};
+    state.origin="gps";recompute();if(window.LM){LM.me(ll,p.coords.accuracy);LM.origin(ll,true)}sync();render();if(!$("sheet").hidden)closeSheet(true);
+    msg("已定位，誤差約 "+Math.round(p.coords.accuracy)+" m。位置只在你的瀏覽器裡使用，不會上傳。"+(meters(ll,STATION)>3000?"你目前離科技大樓站超過 3 公里，距離僅供參考。":""));
+  },e=>{sync();msg((state.origin==="gps"?"距離仍用上一次定位的位置計算。":"")+(e.code===1?"沒有取得定位權限。可以改用「神樂屋」當起點，或在網址列旁允許位置存取。":"定位失敗，請稍後再試，或改用其他起點。"))},{enableHighAccuracy:true,timeout:15000,maximumAge:60000});
+}
+
+function initMap(){
+  if(!window.L){
+    $("lmap").hidden=true;
+    const P=(lat,lon)=>[(lon-PROJ.lon0)*PROJ.kx,(PROJ.lat0-lat)*PROJ.ky];
+    const[sx,sy]=P(STATION[0],STATION[1]);
+    $("svgpins").innerHTML='<g transform="translate('+sx+','+sy+')"><rect x="-70" y="-17" width="140" height="34" rx="6" fill="var(--brown)"/><text text-anchor="middle" dominant-baseline="central" fill="#fff" font-size="18" font-weight="700">BR08 科技大樓</text></g>'+
+      SHOPS.map(s=>{const[x,y]=P(s.ll[0],s.ll[1]);return '<g class="pin" data-id="'+s.id+'" transform="translate('+x+','+y+')" style="cursor:pointer"><circle r="15" fill="var(--g'+(s.fit?s.fit.grade:"C")+')" stroke="#fff" stroke-width="3"/><title>'+esc(s.name)+'</title></g>'}).join("");
+    document.querySelectorAll("#svgpins .pin").forEach(p=>{p.setAttribute("tabindex","0");p.setAttribute("role","button");p.onclick=()=>select(p.dataset.id,"svg");p.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();select(p.dataset.id,"svg")}}});
+    msg("地圖載入不了（可能沒有網路），先顯示簡易街道圖。");
+    return;
+  }
+  $("svgmap").style.display="none";$("lmap").hidden=false;
+  const map=L.map("lmap",{zoomControl:false,scrollWheelZoom:true});
+  L.control.zoom({zoomInTitle:"放大",zoomOutTitle:"縮小"}).addTo(map);
+  map.getContainer().setAttribute("role","region");map.getContainer().setAttribute("aria-label","店家地圖；同樣的店家與排序也在清單裡");
+  const TILE_SRC=[
+    ["https://wmts.nlsc.gov.tw/wmts/EMAP/default/GoogleMapsCompatible/{z}/{y}/{x}",'&copy; <a href="https://maps.nlsc.gov.tw/">內政部國土測繪中心</a> 臺灣通用電子地圖'],
+    ["https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",'&copy; Esri'],
+  ];
+  let ti=0,errs=0;
+  const tiles=L.tileLayer(TILE_SRC[0][0],{maxZoom:19,maxNativeZoom:19,attribution:TILE_SRC[0][1],referrerPolicy:"no-referrer"}).addTo(map);
+  tiles.on("tileerror",()=>{if(++errs>=4&&ti<TILE_SRC.length-1){ti++;errs=0;map.attributionControl.removeAttribution(TILE_SRC[ti-1][1]);tiles.options.attribution=TILE_SRC[ti][1];map.attributionControl.addAttribution(TILE_SRC[ti][1]);tiles.setUrl(TILE_SRC[ti][0]);const lg=document.querySelector(".maplegend span:last-child");if(lg)lg.textContent="底圖 © Esri";msg("地圖讀取不順，已換一個地圖來源。")}});
+  const mk={};
+  const layer=L.markerClusterGroup?L.markerClusterGroup({maxClusterRadius:36,disableClusteringAtZoom:17,spiderfyOnMaxZoom:true,showCoverageOnHover:false,iconCreateFunction:c=>L.divIcon({className:"",html:'<div class="lclu" role="img" aria-label="'+c.getChildCount()+' 家店，按 Enter 放大">'+c.getChildCount()+'<small>家</small></div>',iconSize:[46,26],iconAnchor:[23,13]})}):L.layerGroup();
+  layer.addTo(map);
+  const icon=s=>L.divIcon({className:"",html:'<div class="lpin g'+(s.fit?s.fit.grade:"C")+(s.id===state.active?' active':'')+'" data-lid="'+s.id+'"><span aria-hidden="true">'+(s.rank||'')+'</span><b class="sr-only">'+esc((s.rank?s.rank+'. ':'')+s.name+'，'+status(s).txt+'，步行 '+s.min+' 分')+'</b></div>',iconSize:[30,30],iconAnchor:[15,36],popupAnchor:[0,-36]});
+  const pop=s=>{const st=status(s);return '<div class="pop"><span class="t">'+esc(s.name)+'</span><span class="m">'+esc(st.txt)+'・步行 '+s.min+' 分</span>'+(s.fit?'<div>'+esc(s.fit.order)+'</div><div><b>'+s.fit.protein+' g</b> 蛋白質・'+(s.fit.est?'約 ':'')+'$'+s.fit.price+'</div>':'')+'<div class="b"><a class="p" href="'+gmWalk(s)+'" target="_blank" rel="noopener">步行路線</a><button data-more="'+s.id+'">看菜單</button></div></div>'};
+  SHOPS.forEach(s=>{const m=L.marker(s.ll,{icon:icon(s),title:s.name,keyboard:true,riseOnHover:true});layer.addLayer(m);
+    m.bindPopup(()=>pop(s),{autoPanPadding:[30,30]});
+    m.on("click",()=>{setActive(s.id);if(innerWidth>900){const c=$("c-"+s.id);if(c)c.scrollIntoView({behavior:RM()?"auto":"smooth",block:"nearest"})}});
+    mk[s.id]=m});
+  $("lmap").addEventListener("keydown",e=>{
+    if(e.key!=="Enter"&&e.key!==" ")return;
+    const icon=e.target.closest&&e.target.closest(".leaflet-marker-icon");if(!icon)return;
+    const pin=icon.querySelector(".lpin");
+    if(pin&&pin.dataset.lid){e.preventDefault();e.stopPropagation();const id=pin.dataset.lid;setActive(id);mk[id].openPopup();setTimeout(()=>{const a=document.querySelector(".leaflet-popup a, .leaflet-popup button");if(a)a.focus()},60);return}
+    if(icon.querySelector(".lclu")&&layer._featureGroup){e.preventDefault();e.stopPropagation();layer._featureGroup.eachLayer(l=>{if(l._icon===icon&&l.zoomToBounds){l.zoomToBounds({padding:[40,40]});map.once("moveend",()=>{const lm=$("lmap");lm.setAttribute("tabindex","0");lm.focus({preventScroll:true});msg("已放大，按 Tab 繼續選店家。")})}})}
+  },true);
+  map.on("popupopen",e=>{const el=e.popup.getElement(),src=e.popup._source&&e.popup._source.getElement&&e.popup._source.getElement();
+    el.setAttribute("role","dialog");el.setAttribute("aria-label",(el.querySelector(".t")||{}).textContent||"店家");
+    const x=el.querySelector(".leaflet-popup-close-button");if(x){x.setAttribute("aria-label","關閉");x.setAttribute("title","關閉")}
+    el.addEventListener("keydown",k=>{if(k.key==="Escape"){k.stopPropagation();k.preventDefault();map.closePopup();if(src)src.focus()}});
+    const b=el.querySelector("[data-more]");if(b)b.onclick=()=>{map.closePopup();select(b.dataset.more,"popup")}});
+  map.createPane("tags").style.zIndex=550;
+  const tag=(ll,txt,bg,kg)=>L.marker(ll,{icon:L.divIcon({className:"",html:'<span class="ltag'+(kg?' kg':'')+'" style="background:'+bg+'">'+txt+'</span>',iconSize:[0,0]}),interactive:false,keyboard:false,pane:"tags"}).addTo(map);
+  tag(STATION,"BR08 科技大樓","#8f5f17");tag(ORIGINS.kagura.ll,"神樂屋","#5b4a8a",true);
+  const ring=L.circle(origin().ll,{radius:400,color:"#a8701f",weight:1.5,dashArray:"5 6",fill:false,interactive:false}).addTo(map);
+  let me=null,acc=null,fitted=false;
+  const BOUNDS=L.latLngBounds(SHOPS.map(s=>s.ll).concat([STATION])).pad(0.04);
+  map.setView(STATION,16);
+  function fitIfVisible(){if(!fitted&&map.getSize().x>0){innerWidth<=900?map.setView(origin().ll,16):map.fitBounds(BOUNDS);fitted=true}}
+  fitIfVisible();
+  const lpinOf=id=>{const m=mk[id];const el=m&&m.getElement&&m.getElement();return el&&el.querySelector(".lpin")};
+  window.LM={
+    sync(ids){const vis=SHOPS.filter(s=>ids.has(s.id)).sort((a,b)=>a.rank-b.rank);layer.clearLayers();vis.forEach(s=>mk[s.id].setIcon(icon(s)));if(layer.addLayers)layer.addLayers(vis.map(s=>mk[s.id]));else vis.forEach(s=>layer.addLayer(mk[s.id]))},
+    highlight(id){SHOPS.forEach(s=>{const d=lpinOf(s.id);if(d)d.classList.toggle("active",s.id===id);mk[s.id].setZIndexOffset(s.id===id?1000:0)})},
+    hover(id){SHOPS.forEach(s=>{const d=lpinOf(s.id);if(d)d.classList.toggle("hover",s.id===id)})},
+    peek(id){const s=SHOPS.find(x=>x.id===id);if(!s)return;if(!map.getBounds().pad(-0.15).contains(s.ll))map.panTo(s.ll,{animate:!RM()});this.highlight(id)},
+    focus(id){const s=SHOPS.find(x=>x.id===id);if(!s)return;if(layer.zoomToShowLayer){layer.zoomToShowLayer(mk[s.id],()=>{if(map.getZoom()>17)map.setZoom(17);LM.highlight(id);mk[s.id].openPopup()})}else{map.flyTo(s.ll,17);mk[s.id].openPopup()}},
+    origin(ll,pan){ring.setLatLng(ll);if(pan)map.panTo(ll)},
+    me(ll,a){if(!me){me=L.marker(ll,{icon:L.divIcon({className:"",html:'<div class="lme"></div>',iconSize:[18,18],iconAnchor:[9,9]}),title:"我的位置",zIndexOffset:900}).addTo(map);acc=L.circle(ll,{radius:a,color:"#2b7bd6",weight:1,fillOpacity:.08,interactive:false}).addTo(map)}else{me.setLatLng(ll);acc.setLatLng(ll).setRadius(a)}},
+    resize(){map.invalidateSize();fitIfVisible()}
+  };
+  render();
+}
+
+// ---- bottom tab bar + filter sheet (phones / installed app) ----
+const MQ=matchMedia("(max-width:900px)");
+const homes={origin:[$("originWrap").parentNode,$("originWrap")],chips:[$("chips").parentNode,$("chips")]};
+const ctlEls=[...$("filterRow").querySelectorAll(":scope > .tog, :scope > .ctl:not(#originSelWrap)")];
+function placeControls(){
+  if(!MQ.matches&&!$("sheet").hidden)closeSheet(true);
+  if(MQ.matches){
+    $("slotOrigin").appendChild($("originSeg"));$("slotChips").appendChild($("chips"));ctlEls.forEach(e=>$("slotCtl").appendChild(e));
+  }else{
+    $("originWrap").appendChild($("originSeg"));$("filterRow").insertBefore($("chips"),$("filterRow").children[1]||null);ctlEls.forEach(e=>$("filterRow").appendChild(e));
+  }
+  barH();
+}
+function activeFilters(){return (state.type!=="全部")+(state.openNow?1:0)+(state.maxp!==300)+(state.maxw?1:0)}
+function syncTabs(){
+  document.querySelectorAll(".tab[data-tab=list],.tab[data-tab=map]").forEach(t=>t.setAttribute("aria-current",t.dataset.tab===state.view));
+  const n=activeFilters();$("fBadge").textContent=n?n:"";
+  document.querySelector(".tab[data-tab=filter]").setAttribute("aria-label","篩選"+(n?"，已套用 "+n+" 項":""));
+  const ol={station:"車站",kagura:"神樂屋",gps:"我的位置"}[state.origin]||"";$("tabOrigin").innerHTML='起點<small class="tsub">'+ol+'</small>';document.querySelector(".tab[data-tab=origin]").setAttribute("aria-label","起點："+origin().label);
+  $("sheetApply").textContent="顯示 "+visible().length+" 家";
+}
+let lastFocus=null,snap=null;
+const outside=()=>[document.querySelector("header"),$("bar"),document.querySelector("main"),document.querySelector("footer"),$("tabbar")];
+function openSheet(mode){
+  mode=mode||"filter";lastFocus=document.activeElement;snap={type:state.type,maxp:state.maxp,maxw:state.maxw,sort:state.sort,openNow:state.openNow};
+  const sh=$("sheet");sh.dataset.mode=mode;$("sheetTitle").textContent=mode==="origin"?"從哪裡出發":"篩選與排序";
+  $("sheetBg").hidden=false;sh.hidden=false;
+  requestAnimationFrame(()=>{$("sheetBg").classList.add("on");sh.classList.add("on")});
+  outside().forEach(e=>{if(e)e.inert=true});
+  document.querySelectorAll(".tab[aria-haspopup]").forEach(t=>t.setAttribute("aria-expanded",t.dataset.tab===mode));
+  syncTabs();setTimeout(()=>{const f=sh.querySelector(mode==="origin"?'#originSeg [aria-pressed="true"]':'.chip[aria-pressed="true"]')||sh.querySelector("button");if(f)f.focus()},60);
+  document.body.style.overflow="hidden";
+  history.pushState({sheet:mode},"");
+}
+function closeSheet(commit,fromPop){
+  const sh=$("sheet");if(sh.hidden||!sh.classList.contains("on"))return;
+  if(!fromPop&&history.state&&history.state.sheet)history.back();
+  if(!commit&&snap){Object.assign(state,snap);sync();render()}
+  save();snap=null;
+  $("sheetBg").classList.remove("on");sh.classList.remove("on");sh.style.transform="";
+  document.body.style.overflow="";outside().forEach(e=>{if(e)e.inert=false});
+  document.querySelectorAll(".tab[aria-haspopup]").forEach(t=>t.setAttribute("aria-expanded","false"));
+  setTimeout(()=>{if(!sh.classList.contains("on")){$("sheetBg").hidden=true;sh.hidden=true}},RM()?0:260);
+  const lf=(lastFocus&&document.contains(lastFocus))?lastFocus:document.querySelector(".tab[data-tab=\""+(sh.dataset.mode||"filter")+"\"]");if(lf&&lf.focus)lf.focus({preventScroll:true});
+}
+$("sheetBg").onclick=()=>closeSheet(true);$("sheetClose").onclick=()=>closeSheet(false);
+$("grab").addEventListener("click",()=>{if(!$("grab").dataset.dragged)closeSheet(true);delete $("grab").dataset.dragged});
+$("sheetApply").onclick=()=>{closeSheet(true);scrollTo({top:0,behavior:RM()?"auto":"smooth"})};
+$("sheetReset").onclick=()=>{Object.assign(state,{type:"全部",maxp:300,maxw:0,openNow:false,sort:"protein"});sync();render()};
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("sheet").hidden){e.preventDefault();closeSheet(false)}});
+$("sheet").setAttribute("tabindex","-1");
+$("originSeg").addEventListener("click",e=>{const b=e.target.closest("button");if(b&&$("sheet").dataset.mode==="origin"&&b.dataset.o!=="gps")setTimeout(()=>closeSheet(true),200)});
+(function(){let y0=null,t0=0,dy=0;const g=$("grab"),sh=$("sheet");
+  g.addEventListener("pointerdown",e=>{y0=e.clientY;t0=e.timeStamp;dy=0;g.setPointerCapture(e.pointerId);sh.style.transition="none"});
+  g.addEventListener("pointermove",e=>{if(y0==null)return;dy=Math.max(0,e.clientY-y0);if(dy>6)g.dataset.dragged=1;sh.style.transform="translateY("+dy+"px)"});
+  const end=e=>{if(y0==null)return;sh.style.transition="";const v=dy/Math.max(1,e.timeStamp-t0);y0=null;(dy>90||v>.6)?closeSheet(true):(sh.style.transform="")};
+  g.addEventListener("pointerup",end);g.addEventListener("pointercancel",end);
+})();
+document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>{
+  const k=t.dataset.tab;
+  if(k==="list"||k==="map"){if(state.view===k){if(k==="list")scrollTo({top:0,behavior:RM()?"auto":"smooth"});return}if(k==="map")history.pushState({view:"map"},"");else if(history.state&&history.state.view==="map")history.back();state.view=k;sync();save();scrollTo({top:0});return}
+  $("sheet").hidden?openSheet(k):closeSheet(false);
+});
+MQ.addEventListener("change",placeControls);
+addEventListener("popstate",e=>{
+  if(!$("sheet").hidden&&$("sheet").classList.contains("on")){closeSheet(true,true);return}
+  if(state.view==="map"&&!(e.state&&e.state.view==="map")){state.view="list";sync();save()}
+});
+function clock(){const n=tp();$("clock").innerHTML='台北時間<b>週'+WD[n.wd]+' '+String(n.d.getHours()).padStart(2,"0")+":"+String(n.d.getMinutes()).padStart(2,"0")+'</b>'}
+function barH(){const r=document.documentElement.style;r.setProperty("--barh",$("bar").offsetHeight+"px");const tb=$("tabbar");if(tb)r.setProperty("--tabh",(tb.offsetHeight||0)+"px")}
+$("foot").innerHTML=META.footer.split("<br>").map(p=>p.startsWith("已排除")?'<details><summary>重點排除說明</summary><p>'+p+'</p></details>':"<p>"+p+"</p>").join("")+(META.coverage?'<div class="cov"><p>'+META.coverage.replace(/<details>/,'</p><details>')+'</div>':'');
+if(location.hash==="#map")state.view="map";if(location.hash==="#open")state.openNow=true;
+addEventListener("offline",()=>msg("目前離線：營業狀態依手機時間計算，地圖只顯示看過的區域。"));
+addEventListener("online",()=>msg("已恢復連線。"));
+recompute();placeControls();sync();clock();barH();render();
+document.readyState==="loading"?addEventListener("DOMContentLoaded",initMap):initMap();
+addEventListener("resize",barH);
+function refreshStatus(){document.querySelectorAll("#list .card").forEach(c=>{const s=SHOPS.find(x=>"c-"+x.id===c.id);if(!s)return;const st=status(s),p=c.querySelector(".meta .pill");if(p&&p.textContent!==st.txt){p.className="pill "+st.cls;p.textContent=st.txt}c.classList.toggle("shut",!(st.open||st.soon)&&st.cls!=="ok")})}
+setInterval(()=>{clock();refreshStatus()},60000);
+</script>

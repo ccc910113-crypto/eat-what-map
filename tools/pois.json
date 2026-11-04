@@ -1,0 +1,5889 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-11-03T15:36:05Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 689489025,
+  "lat": 25.0256834,
+  "lon": 121.5436866,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "台北市大安區復興南路二段273號",
+    "addr:housenumber": "273",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段",
+    "amenity": "fast_food",
+    "brand": "麥當勞",
+    "brand:en": "McDonald's",
+    "brand:wikidata": "Q38076",
+    "brand:wikipedia": "zh:麥當勞",
+    "brand:zh": "麥當勞",
+    "brand:zh-Hant": "麥當勞",
+    "check_date": "2026-03-27",
+    "cuisine": "burger",
+    "name": "麥當勞",
+    "name:en": "McDonald's",
+    "name:zh": "麥當勞",
+    "name:zh-Hant": "麥當勞",
+    "opening_hours": "PH,Mo-Su 00:00-24:00",
+    "takeaway": "yes",
+    "wheelchair": "yes",
+    "wheelchair:description": "有服務鈴，有斜坡"
+  }
+},
+{
+  "type": "node",
+  "id": 2188231674,
+  "lat": 25.0230910,
+  "lon": 121.5432206,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區龍淵里2鄰復興南路二段326號",
+    "addr:hamlet": "龍淵里",
+    "addr:housenumber": "326",
+    "addr:neighbourhood": "2",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "check_date": "2026-09-08",
+    "check_date:opening_hours": "2026-09-08",
+    "disused:name": "欽利汽車",
+    "disused:shop": "car_repair",
+    "name": "小李子清粥小菜",
+    "opening_hours": "Tu-Su 17:00-06:00",
+    "payment:cash": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2188231676,
+  "lat": 25.0235292,
+  "lon": 121.5432095,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區復興南路二段314號",
+    "addr:housenumber": "314",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "diet:vegan": "yes",
+    "diet:vegetarian": "yes",
+    "name": "全國素食",
+    "opening_hours": "Mo-Su 10:30-14:00, 16:30-20:00",
+    "phone": "+886 2 2736 1168",
+    "toilets:wheelchair": "no",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 2473232853,
+  "lat": 25.0220761,
+  "lon": 121.5413100,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區和平東路二段118巷54弄35號",
+    "addr:housenumber": "35",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段118巷54弄",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "大李水餃",
+    "name:en": "Da Lee Dumpling",
+    "name:zh": "大李水餃"
+  }
+},
+{
+  "type": "node",
+  "id": 2473232860,
+  "lat": 25.0217177,
+  "lon": 121.5409429,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106631臺北市大安區辛亥路二段169號",
+    "addr:housenumber": "169",
+    "addr:postcode": "106631",
+    "addr:street": "辛亥路二段",
+    "amenity": "restaurant",
+    "cuisine": "curry",
+    "disused:name": "Zheng Da Beef Noodle",
+    "name": "厚宅咖哩"
+  }
+},
+{
+  "type": "node",
+  "id": 2473232863,
+  "lat": 25.0219291,
+  "lon": 121.5419272,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區和平東路二段118巷54弄24號",
+    "addr:housenumber": "24",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段118巷54弄",
+    "amenity": "restaurant",
+    "cuisine": "curry",
+    "disused:name": "馬鈴薯咖哩屋",
+    "disused:name:en": "Potato Curry",
+    "name": "菁宏滷肉飯",
+    "toilets:wheelchair": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2473232867,
+  "lat": 25.0220798,
+  "lon": 121.5413918,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區和平東路二段118巷54弄33號",
+    "addr:housenumber": "33",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段118巷54弄",
+    "amenity": "restaurant",
+    "name": "吉野烤肉飯",
+    "name:en": "Gold Town Barbecued",
+    "name:zh": "吉野烤肉飯"
+  }
+},
+{
+  "type": "node",
+  "id": 2473232878,
+  "lat": 25.0217255,
+  "lon": 121.5427610,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "disused:name": "有錢真好",
+    "disused:name:en": "So Good to Have Money",
+    "name": "印渡風情",
+    "toilets:wheelchair": "no",
+    "wheelchair": "yes",
+    "wheelchair:description": "門口很平緩，但走道較狹小"
+  }
+},
+{
+  "type": "node",
+  "id": 2473232881,
+  "lat": 25.0221248,
+  "lon": 121.5427517,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "disused:name": "坂本屋",
+    "disused:name:en": "Sakamoto House",
+    "name": "李記水餃",
+    "toilets:wheelchair": "no",
+    "wheelchair": "yes",
+    "wheelchair:description": "門口寬敞，平緩，店內空間也很寬敞，方便輪椅者移動"
+  }
+},
+{
+  "type": "node",
+  "id": 2473232885,
+  "lat": 25.0216763,
+  "lon": 121.5429045,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "大易園",
+    "name:en": "Sir Yi Barbecued",
+    "name:zh": "大易園",
+    "toilets:wheelchair": "no",
+    "wheelchair": "no",
+    "wheelchair:description": "門口有兩階臺階，店內空間有點窄"
+  }
+},
+{
+  "type": "node",
+  "id": 2473232889,
+  "lat": 25.0219534,
+  "lon": 121.5429260,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路二段118巷67號",
+    "addr:housenumber": "67",
+    "addr:street": "和平東路二段118巷",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "珍品味泰式炭烤",
+    "name:en": "Thai Barbecued",
+    "name:zh": "珍品味泰式炭烤",
+    "toilets:wheelchair": "no",
+    "wheelchair": "no",
+    "wheelchair:description": "有兩階臺階，門口空間不大"
+  }
+},
+{
+  "type": "node",
+  "id": 2473232892,
+  "lat": 25.0222353,
+  "lon": 121.5429367,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "name": "咖哩廚房",
+    "name:en": "Curry Kitchen",
+    "name:zh": "咖哩廚房",
+    "toilets:wheelchair": "no",
+    "wheelchair": "limited",
+    "wheelchair:description": "店門口有坡道，但店內空間較不方便輪椅者移動"
+  }
+},
+{
+  "type": "node",
+  "id": 2473232896,
+  "lat": 25.0223155,
+  "lon": 121.5429314,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "台北市大安區和平東路二段118巷61號",
+    "addr:housenumber": "61",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段118巷",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "name": "憶馬當鮮馬來西亞風味料理",
+    "name:en": "Malaysian Cuisine",
+    "name:zh": "憶馬當鮮馬來西亞風味料理",
+    "toilets:wheelchair": "no",
+    "wheelchair": "yes",
+    "wheelchair:description": "門口平緩，寬敞，店內空間也足夠"
+  }
+},
+{
+  "type": "node",
+  "id": 2473232903,
+  "lat": 25.0225817,
+  "lon": 121.5429246,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路二段118巷57號",
+    "addr:housenumber": "57",
+    "addr:street": "和平東路二段118巷",
+    "amenity": "restaurant",
+    "contact:facebook": "https://www.facebook.com/1051632558208210",
+    "cuisine": "chinese",
+    "name": "小李子牛肉麵",
+    "name:en": "Xiao Lee Zi Noodle",
+    "name:zh": "小李子牛肉麵",
+    "phone": "+886 2 2736 9505",
+    "toilets:wheelchair": "no",
+    "wheelchair": "no",
+    "wheelchair:description": "有2層臺階，入口也稍窄不方便輪椅者進出"
+  }
+},
+{
+  "type": "node",
+  "id": 2473232907,
+  "lat": 25.0225741,
+  "lon": 121.5427730,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-08-05",
+    "cuisine": "chinese",
+    "description": "Soup Noodle",
+    "name": "文哥巷子口古早味米粉湯"
+  }
+},
+{
+  "type": "node",
+  "id": 2473232913,
+  "lat": 25.0229426,
+  "lon": 121.5426283,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區和平東路二段118巷44號",
+    "addr:housenumber": "44",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段118巷",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "忠誠山東蔥油餅",
+    "name:en": "Zhongcheng Shandong Scallion Pancake",
+    "name:zh": "忠誠山東蔥油餅",
+    "phone": "+886 2 2735 2821",
+    "toilets:wheelchair": "no",
+    "wheelchair": "no",
+    "wheelchair:description": "有臺階，輪椅者無法進入，無店面，輪椅者也無法暫停在路邊購買"
+  }
+},
+{
+  "type": "node",
+  "id": 2473232920,
+  "lat": 25.0237550,
+  "lon": 121.5427597,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "台北市大安區和平東路二段118巷4號之1",
+    "addr:housenumber": "4號之1",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段118巷",
+    "amenity": "restaurant",
+    "check_date": "2026-04-12",
+    "disused:amenity": "restaurant",
+    "disused:diet:halal": "no",
+    "disused:diet:kosher": "no",
+    "disused:diet:vegan": "yes",
+    "disused:diet:vegetarian": "only",
+    "disused:name": "Ooh Cha Cha",
+    "disused:name:en": "Ooh Cha Cha",
+    "disused:name:zh": "Ooh Cha Cha",
+    "disused:opening_hours": "Mo-Su 11:30-00:00",
+    "disused:phone": "+886 2 2737 2994",
+    "disused:website": "https://oohchacha.com/",
+    "name": "Butcher Lab",
+    "wheelchair": "limited",
+    "wheelchair:description": "門口有一個階梯，店內也較擁擠不利輪椅通行。"
+  }
+},
+{
+  "type": "node",
+  "id": 2473232927,
+  "lat": 25.0241335,
+  "lon": 121.5428167,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-03-28",
+    "cuisine": "italian",
+    "name": "發現義大利麵",
+    "name:en": "Discovery Noodle",
+    "name:zh": "發現義大利麵",
+    "wheelchair": "yes",
+    "wheelchair:description": "店門口沒有階梯，輪椅可以順利進去，雖然店內有2層階梯，不過用餐區分2區，靠近外面這一區是不用上階梯的！"
+  }
+},
+{
+  "type": "node",
+  "id": 2473232937,
+  "lat": 25.0248772,
+  "lon": 121.5415446,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "badudu",
+    "opening_hours": "Mo-Su 04:30-14:00"
+  }
+},
+{
+  "type": "node",
+  "id": 2473232940,
+  "lat": 25.0228235,
+  "lon": 121.5412040,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "台北市大安區辛亥路二段171巷39號",
+    "addr:housenumber": "39",
+    "addr:street": "辛亥路二段171巷",
+    "amenity": "restaurant",
+    "disused:amenity": "restaurant",
+    "disused:name": "Jiu Ping Breakfast",
+    "name": "溫州大混沌"
+  }
+},
+{
+  "type": "node",
+  "id": 2473232943,
+  "lat": 25.0229447,
+  "lon": 121.5411937,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "台北市大安區辛亥路二段171巷27號",
+    "addr:housenumber": "27",
+    "addr:street": "辛亥路二段171巷",
+    "amenity": "restaurant",
+    "cuisine": "breakfast",
+    "disused:amenity": "restaurant",
+    "disused:name": "Mei Mei Breakfast",
+    "name": "九品早餐店"
+  }
+},
+{
+  "type": "node",
+  "id": 2473232946,
+  "lat": 25.0222803,
+  "lon": 121.5410337,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "北方大陸餅",
+    "name:en": "Northern Chinese Cake",
+    "name:zh": "北方大陸餅"
+  }
+},
+{
+  "type": "node",
+  "id": 2473232949,
+  "lat": 25.0233436,
+  "lon": 121.5412094,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區和平東路二段96巷15之1號",
+    "addr:housenumber": "15之1",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段96巷",
+    "amenity": "restaurant",
+    "disused:name": "Sheng Jing House",
+    "name": "台越美食",
+    "name:en": "Tai Yue Food",
+    "name:zh": "台越美食",
+    "opening_hours": "Mo-Su 11:00-14:30,17:00-20:30",
+    "phone": "+886 2 2735 1750"
+  }
+},
+{
+  "type": "node",
+  "id": 2473232953,
+  "lat": 25.0233962,
+  "lon": 121.5410135,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區和平東路二段96巷8之3號",
+    "addr:housenumber": "8之3",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段96巷",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "噹食麵"
+  }
+},
+{
+  "type": "node",
+  "id": 2473232960,
+  "lat": 25.0222439,
+  "lon": 121.5421075,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區和平東路二段118巷52弄14號",
+    "addr:housenumber": "14",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段118巷52弄",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "親來食堂",
+    "name:en": "Qing Lai Restaurant",
+    "name:zh": "親來食堂"
+  }
+},
+{
+  "type": "node",
+  "id": 2813030301,
+  "lat": 25.0236840,
+  "lon": 121.5430126,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區復興南路二段308巷5號",
+    "addr:housenumber": "5",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段308巷",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "diet:vegan": "yes",
+    "diet:vegetarian": "only",
+    "name": "卡帛咖啡素食烘焙坊．義式廚房",
+    "phone": "+886 2 2733 6819",
+    "website": "https://www.kapok-vege.com.tw/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2917693023,
+  "lat": 25.0226168,
+  "lon": 121.5426344,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "amenity": "fast_food",
+    "brand": "八方雲集",
+    "brand:en": "Bafang Dumpling",
+    "brand:wikidata": "Q28417381",
+    "brand:wikipedia": "zh:八方雲集",
+    "brand:zh": "八方雲集",
+    "cuisine": "dumplings",
+    "name": "八方雲集",
+    "name:en": "Bafang Dumpling",
+    "name:zh": "八方雲集",
+    "takeaway": "yes",
+    "website": "https://www.8way.com.tw/"
+  }
+},
+{
+  "type": "node",
+  "id": 2935820265,
+  "lat": 25.0222651,
+  "lon": 121.5435572,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區復興南路二段379號",
+    "addr:housenumber": "379",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "capacity": "30",
+    "contact:facebook": "https://www.facebook.com/1399577383679472",
+    "cuisine": "pizza",
+    "delivery": "yes",
+    "level": "1",
+    "name": "芝加哥比薩",
+    "name:en": "Chicago Pizza",
+    "name:ja": "シカゴピザ",
+    "name:zh": "芝加哥比薩",
+    "opening_hours": "11:00-20:00",
+    "phone": "+886-2-27072121",
+    "smoking": "no",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3004480399,
+  "lat": 25.0243896,
+  "lon": 121.5483490,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "10669臺北市大安區敦化南路二段164號",
+    "addr:housenumber": "164",
+    "addr:postcode": "10669",
+    "addr:street": "敦化南路二段",
+    "amenity": "fast_food",
+    "branch": "敦南店",
+    "brand": "漢堡王",
+    "brand:en": "Burger King",
+    "brand:wikidata": "Q177054",
+    "brand:zh": "漢堡王",
+    "cuisine": "burger",
+    "internet_access": "wlan",
+    "name": "漢堡王",
+    "name:en": "Burger King",
+    "name:ja": "バーガーキング",
+    "name:zh": "漢堡王",
+    "opening_hours": "Mo-Su 07:00-23:00",
+    "operator": "家城股份有限公司",
+    "phone": "+886-2-2377-2486",
+    "ref:vatin": "TW23309178",
+    "takeaway": "yes",
+    "toilets:wheelchair": "no",
+    "website": "http://www.burgerking.dachan.com/",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3012324261,
+  "lat": 25.0254370,
+  "lon": 121.5416642,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-03-27",
+    "name": "姐妹小吃"
+  }
+},
+{
+  "type": "node",
+  "id": 3027219944,
+  "lat": 25.0249669,
+  "lon": 121.5450258,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區和平東路二段311巷2號",
+    "addr:housenumber": "2",
+    "addr:street": "和平東路二段311巷",
+    "amenity": "fast_food",
+    "branch": "師院店",
+    "brand": "八方雲集",
+    "brand:en": "Bafang Dumpling",
+    "brand:wikidata": "Q28417381",
+    "brand:wikipedia": "zh:八方雲集",
+    "brand:zh": "八方雲集",
+    "check_date": "2026-03-28",
+    "cuisine": "dumplings",
+    "name": "八方雲集",
+    "name:en": "Bafang Dumpling",
+    "name:zh": "八方雲集",
+    "phone": "+886 2 2754 0220",
+    "takeaway": "yes",
+    "website": "https://www.8way.com.tw/",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 3076221612,
+  "lat": 25.0265884,
+  "lon": 121.5418892,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區和平東路二段175巷25號",
+    "addr:housenumber": "25",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段175巷",
+    "amenity": "restaurant",
+    "check_date": "2026-08-29",
+    "check_date:opening_hours": "2026-08-29",
+    "cuisine": "japanese",
+    "name": "神樂屋",
+    "opening_hours": "Mo-Su 11:30-14:00, 17:30-20:00",
+    "phone": "02 2755 1117"
+  }
+},
+{
+  "type": "node",
+  "id": 3077524845,
+  "lat": 25.0285632,
+  "lon": 121.5414758,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區瑞安街69號",
+    "addr:housenumber": "69",
+    "addr:postcode": "106",
+    "addr:street": "瑞安街",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "瑞安豆漿大王",
+    "opening_hours": "24/7",
+    "toilets:wheelchair": "no",
+    "wheelchair": "yes",
+    "wheelchair:description": "有斜坡可供輪椅使用者使用，但店內座位擁擠。"
+  }
+},
+{
+  "type": "node",
+  "id": 3078276696,
+  "lat": 25.0297961,
+  "lon": 121.5432948,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區復興南路二段102號",
+    "addr:housenumber": "102",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "brand": "永和豆漿",
+    "brand:en": "Yonghe Soy Milk",
+    "brand:wikidata": "Q11131335",
+    "brand:zh": "永和豆漿",
+    "cuisine": "chinese;breakfast",
+    "name": "永和豆漿",
+    "name:en": "Yonghe Soy Milk",
+    "name:zh": "永和豆漿",
+    "name:zh-Hans": "永和豆浆",
+    "name:zh-Hant": "永和豆漿",
+    "toilets:wheelchair": "no",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 3080933442,
+  "lat": 25.0216304,
+  "lon": 121.5427343,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區辛亥路二段217號",
+    "addr:housenumber": "217",
+    "addr:postcode": "106",
+    "addr:street": "辛亥路二段",
+    "amenity": "restaurant",
+    "name": "阿玉水餃",
+    "name:en": "Ayu Dumpling",
+    "name:zh": "阿玉水餃",
+    "phone": "+886 2 2736 5875",
+    "toilets:wheelchair": "no",
+    "website": "https://a-yu.tw/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3154666479,
+  "lat": 25.0226423,
+  "lon": 121.5502700,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "台北市大安區基隆路二段252號1樓",
+    "addr:housenumber": "252",
+    "addr:level": "1",
+    "addr:postcode": "106",
+    "addr:street": "基隆路二段",
+    "amenity": "restaurant",
+    "email": "cs@thevffvthe.com",
+    "facebook": "https://www.facebook.com/TheVFFVThe",
+    "name": "URBN culture🌱",
+    "opening_hours": "Mo-Tu 11:30-20:00; Fr-Su 11:30-22:00",
+    "phone": "+886-2-2738-8322",
+    "website": "https://www.thevffvthe.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 3154666481,
+  "lat": 25.0232653,
+  "lon": 121.5409696,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "台北市大安區和平東路二段96巷10弄1號",
+    "addr:housenumber": "1",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段96巷10弄",
+    "amenity": "restaurant",
+    "contact:facebook": "https://www.facebook.com/158115094247715",
+    "fax": "+886-2-2378-2955",
+    "name": "香料廚房",
+    "phone": "+886-2-2378-2955",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3210313412,
+  "lat": 25.0253520,
+  "lon": 121.5449967,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-03-28",
+    "name": "芝鄉涼麵",
+    "toilets:wheelchair": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3210313415,
+  "lat": 25.0250392,
+  "lon": 121.5450239,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-03-28",
+    "name": "羅胖子倉鍋麵",
+    "toilets:wheelchair": "no",
+    "wheelchair": "limited",
+    "wheelchair:description": "店外人行道狹窄，店內座位空間不大，桌椅可移動。"
+  }
+},
+{
+  "type": "node",
+  "id": 3248691592,
+  "lat": 25.0229565,
+  "lon": 121.5499438,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區樂業街37號",
+    "addr:housenumber": "37",
+    "addr:postcode": "106",
+    "addr:street": "樂業街",
+    "amenity": "restaurant",
+    "cuisine": "dumpling",
+    "name": "北方餃子館",
+    "phone": "+886-2-2735-7256"
+  }
+},
+{
+  "type": "node",
+  "id": 3377063669,
+  "lat": 25.0266211,
+  "lon": 121.5417424,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-03-28",
+    "cuisine": "breakfast",
+    "name": "森之豆"
+  }
+},
+{
+  "type": "node",
+  "id": 3377063671,
+  "lat": 25.0267741,
+  "lon": 121.5418907,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區和平東路二段175巷33號",
+    "addr:housenumber": "33",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段175巷",
+    "amenity": "restaurant",
+    "level": "0",
+    "name": "La Clé D'or",
+    "website": "https://www.facebook.com/lacledorcafe/"
+  }
+},
+{
+  "type": "node",
+  "id": 3377079807,
+  "lat": 25.0269731,
+  "lon": 121.5418817,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路二段175巷37號",
+    "addr:housenumber": "37",
+    "addr:street": "和平東路二段175巷",
+    "amenity": "fast_food",
+    "brand": "瑞麟美而美",
+    "brand:en": "Rueilin Mei & Mei",
+    "brand:wikidata": "Q105722191",
+    "brand:zh": "瑞麟美而美",
+    "check_date": "2026-09-14",
+    "cuisine": "breakfast",
+    "name": "蔓食早午餐",
+    "operator": "美而美餐飲連鎖企業集團",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3377079808,
+  "lat": 25.0253836,
+  "lon": 121.5416703,
+  "tags": {
+    "amenity": "fast_food",
+    "name": "萬家鄉"
+  }
+},
+{
+  "type": "node",
+  "id": 3596859025,
+  "lat": 25.0216309,
+  "lon": 121.5426436,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區辛亥路二段215號",
+    "addr:housenumber": "215",
+    "addr:postcode": "106",
+    "addr:street": "辛亥路二段",
+    "amenity": "restaurant",
+    "name": "喜川麵館",
+    "opening_hours": "Mo-Su 11:30-20:30",
+    "phone": "+886-2-2738-8188",
+    "toilets:wheelchair": "no",
+    "wheelchair": "limited",
+    "wheelchair:description": "門口有一小階階梯，除此以外，店內空間很寬敞，方便輪椅者移動"
+  }
+},
+{
+  "type": "node",
+  "id": 3597821294,
+  "lat": 25.0298156,
+  "lon": 121.5501091,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區敦化南路二段81巷20號",
+    "addr:housenumber": "20",
+    "addr:postcode": "106",
+    "addr:street": "敦化南路二段81巷",
+    "amenity": "restaurant",
+    "email": "service@toutouan.com.tw",
+    "fax": "+886-2-2705-0805",
+    "name": "燈燈庵",
+    "operator": "黑茶屋",
+    "phone": "+886-2-2705-0101",
+    "smoking": "no",
+    "website": "http://www.toutouan.com.tw"
+  }
+},
+{
+  "type": "node",
+  "id": 3721304896,
+  "lat": 25.0279645,
+  "lon": 121.5407680,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區瑞安街81巷85號",
+    "addr:housenumber": "85",
+    "addr:postcode": "106",
+    "addr:street": "瑞安街81巷",
+    "amenity": "restaurant",
+    "cuisine": "dumpling",
+    "name": "龍門客棧餃子館",
+    "toilets:wheelchair": "no",
+    "wheelchair": "limited",
+    "wheelchair:description": "有斜坡可供輪椅使用者使用，但店內擁擠。"
+  }
+},
+{
+  "type": "node",
+  "id": 3721304897,
+  "lat": 25.0279129,
+  "lon": 121.5408543,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "協和切麵店"
+  }
+},
+{
+  "type": "node",
+  "id": 3721304898,
+  "lat": 25.0280410,
+  "lon": 121.5406348,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區瑞安街204號",
+    "addr:housenumber": "204",
+    "addr:postcode": "106",
+    "addr:street": "瑞安街",
+    "amenity": "restaurant",
+    "name": "香港大中華燒臘",
+    "phone": "+886 2 2706-8252",
+    "toilets:wheelchair": "no",
+    "wheelchair": "yes",
+    "wheelchair:description": "有斜坡可供輪椅使用者使用，但門口太小，輪椅可能難以通行。"
+  }
+},
+{
+  "type": "node",
+  "id": 3721398572,
+  "lat": 25.0281647,
+  "lon": 121.5407418,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區瑞安街200號",
+    "addr:housenumber": "200",
+    "addr:postcode": "106",
+    "addr:street": "瑞安街",
+    "amenity": "restaurant",
+    "disused:name": "涼麵堂",
+    "name": "xai xing de",
+    "opening_hours": "Th-Fr 12:00-15:00,18:00-22:00;Sa-Su 11:00-15:00,18:00-22:00;Mo-Wd off",
+    "phone": "+886 2 2709 0104"
+  }
+},
+{
+  "type": "node",
+  "id": 3721407946,
+  "lat": 25.0283716,
+  "lon": 121.5409193,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區瑞安街192號",
+    "addr:housenumber": "192",
+    "addr:postcode": "106",
+    "addr:street": "瑞安街",
+    "amenity": "restaurant",
+    "cuisine": "breakfast",
+    "name": "瑞安早餐吧",
+    "phone": "+886 2 2707-0719"
+  }
+},
+{
+  "type": "node",
+  "id": 3722128695,
+  "lat": 25.0287100,
+  "lon": 121.5410957,
+  "tags": {
+    "amenity": "restaurant",
+    "disused:name": "北城脆皮烤鴨",
+    "disused:name:en": "North City Crispy Roast Duck",
+    "name": "瑞安雅廚",
+    "phone": "+886 2 2706-2733",
+    "toilets:wheelchair": "no",
+    "wheelchair": "limited",
+    "wheelchair:description": "有斜坡可供輪椅使用者使用，但店門口有小臺階。"
+  }
+},
+{
+  "type": "node",
+  "id": 3722128696,
+  "lat": 25.0286873,
+  "lon": 121.5411307,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區瑞安街180巷1號",
+    "addr:housenumber": "1",
+    "addr:postcode": "106",
+    "addr:street": "瑞安街180巷",
+    "amenity": "restaurant",
+    "name": "老圓環",
+    "toilets:wheelchair": "no",
+    "wheelchair": "yes",
+    "wheelchair:description": "有斜坡可供輪椅使用者使用。"
+  }
+},
+{
+  "type": "node",
+  "id": 3722681651,
+  "lat": 25.0273032,
+  "lon": 121.5401276,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區瑞安街113號",
+    "addr:housenumber": "113",
+    "addr:postcode": "106",
+    "addr:street": "瑞安街",
+    "amenity": "restaurant",
+    "name": "食為先餐坊"
+  }
+},
+{
+  "type": "node",
+  "id": 3722705746,
+  "lat": 25.0273394,
+  "lon": 121.5400320,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區瑞安街228號",
+    "addr:housenumber": "228",
+    "addr:postcode": "106",
+    "addr:street": "瑞安街",
+    "amenity": "restaurant",
+    "name": "小地方"
+  }
+},
+{
+  "type": "node",
+  "id": 3722747322,
+  "lat": 25.0286664,
+  "lon": 121.5415786,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區瑞安街67號",
+    "addr:housenumber": "67",
+    "addr:postcode": "106",
+    "addr:street": "瑞安街",
+    "amenity": "restaurant",
+    "check_date": "2026-09-16",
+    "check_date:opening_hours": "2026-09-16",
+    "name": "麗如小吃店",
+    "opening_hours": "Mo-Su 11:30-21:30"
+  }
+},
+{
+  "type": "node",
+  "id": 3722754930,
+  "lat": 25.0266037,
+  "lon": 121.5436786,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區復興南路二段191號",
+    "addr:housenumber": "191",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "brand": "爭鮮",
+    "brand:en": "Sushi Express",
+    "brand:wikidata": "Q15920674",
+    "brand:zh": "爭鮮",
+    "cuisine": "sushi",
+    "name": "爭鮮",
+    "name:en": "Sushi Express",
+    "name:ko": "스시익스프레스",
+    "name:zh": "爭鮮",
+    "opening_hours": "PH,Mo-Su 11:00-21:30",
+    "operator": "爭鮮股份有限公司",
+    "operator:en": "Sushi Express Co., Ltd.",
+    "operator:wikidata": "Q130214144",
+    "operator:zh": "爭鮮股份有限公司",
+    "phone": "+886 2 2709-9117",
+    "toilets:wheelchair": "no",
+    "website": "https://sushiexpress.com.tw/",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 3723976539,
+  "lat": 25.0272463,
+  "lon": 121.5436861,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區復興南路二段175-1號",
+    "addr:housenumber": "175-1",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "大連風味館",
+    "phone": "+886 2 2325 4877"
+  }
+},
+{
+  "type": "node",
+  "id": 3723983306,
+  "lat": 25.0268281,
+  "lon": 121.5436761,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區復興南路二段181號",
+    "addr:housenumber": "181",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "check_date": "2026-09-14",
+    "check_date:opening_hours": "2026-09-14",
+    "cuisine": "thai",
+    "disused:name": "胡麻園",
+    "disused:shop": "confectionery",
+    "name": "這味泰泰",
+    "opening_hours": "Mo-Su 11:00-21:00",
+    "phone": "02-2709-8359"
+  }
+},
+{
+  "type": "node",
+  "id": 3723983307,
+  "lat": 25.0267862,
+  "lon": 121.5436761,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區復興南路二段183號",
+    "addr:housenumber": "183",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段",
+    "amenity": "fast_food",
+    "brand": "肯德基",
+    "brand:en": "KFC",
+    "brand:wikidata": "Q524757",
+    "brand:zh": "肯德基",
+    "check_date": "2026-09-14",
+    "check_date:opening_hours": "2026-09-14",
+    "cuisine": "chicken",
+    "disused:amenity": "cafe",
+    "disused:name": "舞豆咖啡",
+    "disused:name:en": "Dancing Bean",
+    "disused:name:zh": "舞豆咖啡",
+    "name": "肯德基",
+    "name:en": "KFC",
+    "name:zh": "肯德基",
+    "opening_hours": "Mo-Su 10:00-23:00",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3723983308,
+  "lat": 25.0267430,
+  "lon": 121.5436768,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區復興南路二段185號",
+    "addr:housenumber": "185",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "disused:name": "玉和皮鞋",
+    "disused:shop": "shoes",
+    "name": "The House Taipei",
+    "name:en": "The House Taipei",
+    "name:zh": "小閣樓",
+    "toilets:wheelchair": "no",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 3724512046,
+  "lat": 25.0265905,
+  "lon": 121.5420440,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-03-28",
+    "name": "巷子李麵"
+  }
+},
+{
+  "type": "node",
+  "id": 3725668855,
+  "lat": 25.0231867,
+  "lon": 121.5435730,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區和平東路二段219巷21號",
+    "addr:housenumber": "349",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段",
+    "amenity": "fast_food",
+    "check_date": "2026-03-27",
+    "check_date:opening_hours": "2026-03-27",
+    "contact:facebook": "380314421996507",
+    "cuisine": "chicken",
+    "name": "Mr. Smile好吃雞排",
+    "opening_hours": "Mo-Sa 15:00-00:00",
+    "phone": "0980 232 039",
+    "toilets:wheelchair": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3743078431,
+  "lat": 25.0286399,
+  "lon": 121.5404601,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "瑞安自助餐",
+    "name:en": "Ruei An Taiwan Buffet",
+    "name:zh": "瑞安自助餐",
+    "toilets:wheelchair": "no",
+    "wheelchair": "no",
+    "wheelchair:description": "門口有三階臺階。"
+  }
+},
+{
+  "type": "node",
+  "id": 3748632776,
+  "lat": 25.0265848,
+  "lon": 121.5396020,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區瑞安街145號",
+    "addr:housenumber": "145",
+    "addr:postcode": "106",
+    "addr:street": "瑞安街",
+    "amenity": "restaurant",
+    "check_date": "2026-10-30",
+    "name": "樂子",
+    "name:en": "the Diner",
+    "phone": "+886 2 2700-1680",
+    "website": "https://www.thediner.com.tw/",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 3750223147,
+  "lat": 25.0249602,
+  "lon": 121.5466471,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區和平東路三段1巷6-3號",
+    "addr:housenumber": "6-3",
+    "addr:postcode": "106",
+    "addr:street": "和平東路三段1巷",
+    "amenity": "fast_food",
+    "cuisine": "breakfast",
+    "name": "找餐 店",
+    "name:en": "Breakfast stall",
+    "name:zh": "早餐店",
+    "opening_hours": "07:30-15:00",
+    "phone": "+886 2 2755 0567",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3787970995,
+  "lat": 25.0251839,
+  "lon": 121.5426451,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區和平東路二段217號",
+    "addr:housenumber": "217",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段",
+    "amenity": "restaurant",
+    "check_date": "2026-09-18",
+    "check_date:opening_hours": "2026-09-18",
+    "fax": "+886 2 2705 4799",
+    "name": "西藏廚房",
+    "name:en": "Tibet Kitchen",
+    "name:zh": "西藏廚房",
+    "opening_hours": "Tu-Su 11:30-14:00, 17:00-21:00",
+    "phone": "+886 2 2705 4770",
+    "smoking": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3832679351,
+  "lat": 25.0217290,
+  "lon": 121.5405940,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106621臺北市大安區辛亥路二段159號",
+    "addr:housenumber": "159",
+    "addr:postcode": "106621",
+    "addr:street": "辛亥路二段",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "level": "1",
+    "name": "貝拉小屋",
+    "phone": "+886 2 2736 8478",
+    "smoking": "no",
+    "takeaway": "yes",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 3923847450,
+  "lat": 25.0278427,
+  "lon": 121.5406228,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "beef_noodle",
+    "name": "小公園牛肉麵",
+    "toilets:wheelchair": "no",
+    "wheelchair": "no",
+    "wheelchair:description": "旁邊有斜坡但道路擁擠難以通行。"
+  }
+},
+{
+  "type": "node",
+  "id": 3923847451,
+  "lat": 25.0252235,
+  "lon": 121.5423103,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區和平東路二段201號",
+    "addr:housenumber": "201",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段",
+    "amenity": "restaurant",
+    "check_date": "2026-09-08",
+    "check_date:opening_hours": "2026-09-08",
+    "disused:amenity": "veterinary",
+    "disused:name": "常民動物醫院",
+    "name": "能量先生水煮餐盒",
+    "opening_hours": "Mo-Fr 11:00-14:00, 16:00-20:00",
+    "phone": "+886 2 2708 6728"
+  }
+},
+{
+  "type": "node",
+  "id": 3923847458,
+  "lat": 25.0251353,
+  "lon": 121.5436570,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區復興南路二段291號",
+    "addr:housenumber": "291",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "check_date": "2026-09-15",
+    "check_date:opening_hours": "2026-09-15",
+    "cuisine": "taiwanese",
+    "name": "玉欣珍傳統美食坊",
+    "opening_hours": "24/7",
+    "phone": "+886 2 2755 1084",
+    "toilets:wheelchair": "no",
+    "wheelchair": "yes",
+    "wheelchair:description": "通道較窄，旁邊有燒菜的地方，經過時要小心注意安全。"
+  }
+},
+{
+  "type": "node",
+  "id": 3939158001,
+  "lat": 25.0241561,
+  "lon": 121.5483528,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區敦化南路二段168號",
+    "addr:housenumber": "168",
+    "addr:postcode": "106",
+    "addr:street": "敦化南路二段",
+    "amenity": "restaurant",
+    "name": "北平同慶樓"
+  }
+},
+{
+  "type": "node",
+  "id": 3939158052,
+  "lat": 25.0283253,
+  "lon": 121.5414816,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "10664臺北市大安區復興南路二段148巷43號",
+    "addr:housenumber": "43",
+    "addr:postcode": "10664",
+    "addr:street": "復興南路二段148巷",
+    "amenity": "restaurant",
+    "branch": "復興門市",
+    "fax": "+886 2 2709 8705",
+    "name": "法國當代會館",
+    "phone": "+886 2 2709 9199",
+    "website": "https://bbrcatering.com.tw/"
+  }
+},
+{
+  "type": "node",
+  "id": 3939158501,
+  "lat": 25.0241320,
+  "lon": 121.5483547,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區敦化南路二段170號",
+    "addr:housenumber": "170",
+    "addr:postcode": "106",
+    "addr:street": "敦化南路二段",
+    "amenity": "restaurant",
+    "cuisine": "chicken",
+    "name": "椰巍椰子雞鍋物",
+    "name:en": "Yatsugi Coconut + Chicken",
+    "name:zh": "椰巍椰子雞鍋物",
+    "opening_hours": "Tu-Su 11:30-14:30, 17:30-22:30",
+    "phone": "+886 2 27367666",
+    "smoking": "no",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 4056310602,
+  "lat": 25.0251019,
+  "lon": 121.5504146,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區安和路二段233號",
+    "addr:housenumber": "233",
+    "addr:postcode": "106",
+    "addr:street": "安和路二段",
+    "amenity": "restaurant",
+    "cuisine": "french",
+    "name": "Ephernité",
+    "opening_hours": "We-Su 18:30-00:00; Mo-Tu off",
+    "phone": "+886 227 320 732",
+    "takeaway": "no",
+    "website": "https://www.ephernite.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 4089408089,
+  "lat": 25.0323308,
+  "lon": 121.5440914,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區瑞安街5號",
+    "addr:housenumber": "5",
+    "addr:postcode": "106",
+    "addr:street": "瑞安街",
+    "amenity": "restaurant",
+    "name": "Wine café",
+    "phone": "+886 2 2325 8555",
+    "website": "http://facebook.com/adriansvineyard/",
+    "wheelchair": "yes",
+    "wheelchair:description": "Portable ramp for front gate available at request(highly recommend calling in advance. Front gate is usually closed and the door bell height may be problematic)."
+  }
+},
+{
+  "type": "node",
+  "id": 4107002491,
+  "lat": 25.0252590,
+  "lon": 121.5452220,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "越南牛肉河粉",
+    "toilets:wheelchair": "no",
+    "wheelchair": "no",
+    "wheelchair:description": "桌椅可移動。"
+  }
+},
+{
+  "type": "node",
+  "id": 4107045990,
+  "lat": 25.0255636,
+  "lon": 121.5455354,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區和平東路二段311巷43弄24號",
+    "addr:housenumber": "24",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段311巷43弄",
+    "amenity": "restaurant",
+    "check_date": "2026-03-28",
+    "cuisine": "hotpot",
+    "name": "原川火鍋",
+    "toilets:wheelchair": "no",
+    "wheelchair": "limited",
+    "wheelchair:description": "桌子不可移，椅子可移。;桌子不可移；椅子可移。"
+  }
+},
+{
+  "type": "node",
+  "id": 4108947169,
+  "lat": 25.0224186,
+  "lon": 121.5404027,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區和平東路二段76巷23弄9號",
+    "addr:housenumber": "9",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段76巷23弄",
+    "amenity": "restaurant",
+    "fax": "+886 2 2377 0950",
+    "name": "Toh-A桌藏",
+    "phone": "+886 2 2377 0952",
+    "website": "http://www.toh-a.com",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 4116017190,
+  "lat": 25.0238176,
+  "lon": 121.5429573,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路二段118巷5-1號",
+    "addr:housenumber": "5-1",
+    "addr:street": "和平東路二段118巷",
+    "amenity": "restaurant",
+    "name": "格芮潘義式創意廚房",
+    "toilets:wheelchair": "no",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 4116861389,
+  "lat": 25.0249784,
+  "lon": 121.5442363,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:postcode": "106",
+    "amenity": "restaurant",
+    "check_date": "2026-03-28",
+    "name": "佳興福州魚丸店",
+    "phone": "+886 2 2705 0758",
+    "shop": "deli",
+    "toilets:wheelchair": "no",
+    "wheelchair": "limited",
+    "wheelchair:description": "桌子高度太高，對於使用輪椅的身心障礙者不太方便"
+  }
+},
+{
+  "type": "node",
+  "id": 4254654848,
+  "lat": 25.0225783,
+  "lon": 121.5431146,
+  "tags": {
+    "amenity": "restaurant",
+    "description": "輕食",
+    "name": "Seven Fine Days"
+  }
+},
+{
+  "type": "node",
+  "id": 4254654855,
+  "lat": 25.0230406,
+  "lon": 121.5429403,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區和平東路二段118巷43號",
+    "addr:housenumber": "43",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段118巷",
+    "amenity": "restaurant",
+    "name": "巧味快餐"
+  }
+},
+{
+  "type": "node",
+  "id": 4254654858,
+  "lat": 25.0218686,
+  "lon": 121.5427660,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "curry",
+    "name": "池先生咖哩屋"
+  }
+},
+{
+  "type": "node",
+  "id": 4254654887,
+  "lat": 25.0236569,
+  "lon": 121.5432128,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區復興南路二段306號",
+    "addr:housenumber": "306",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "check_date": "2026-09-11",
+    "name": "財哥那間滷味"
+  }
+},
+{
+  "type": "node",
+  "id": 4254655289,
+  "lat": 25.0245697,
+  "lon": 121.5432296,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區復興南路二段268號",
+    "addr:housenumber": "268",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "name": "136海鮮麵"
+  }
+},
+{
+  "type": "node",
+  "id": 4360380425,
+  "lat": 25.0220718,
+  "lon": 121.5419921,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區和平東路二段118巷54弄21號",
+    "addr:housenumber": "21",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段118巷54弄",
+    "amenity": "restaurant",
+    "check_date": "2026-07-22",
+    "check_date:opening_hours": "2026-07-22",
+    "name": "耍性子",
+    "opening_hours": "Mo-Fr 18:00-20:00"
+  }
+},
+{
+  "type": "node",
+  "id": 4360380427,
+  "lat": 25.0230261,
+  "lon": 121.5411965,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區辛亥路二段171巷31號",
+    "addr:housenumber": "31",
+    "addr:postcode": "106",
+    "addr:street": "辛亥路二段171巷",
+    "amenity": "restaurant",
+    "name": "山林美食館"
+  }
+},
+{
+  "type": "node",
+  "id": 4360380431,
+  "lat": 25.0230999,
+  "lon": 121.5427863,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路二段118巷36號",
+    "addr:housenumber": "36",
+    "addr:street": "和平東路二段118巷",
+    "amenity": "restaurant",
+    "check_date": "2026-09-09",
+    "check_date:opening_hours": "2026-09-09",
+    "disused:amenity": "restaurant",
+    "disused:cuisine": "japanese",
+    "disused:name": "日式拉麵專門店",
+    "name": "老哥雞肉飯 乾拌麵",
+    "opening_hours": "Mo-Fr 11:00-20:30; Sa 11:00-14:00, 17:00-20:30",
+    "payment:cash": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4360380433,
+  "lat": 25.0238541,
+  "lon": 121.5429767,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區和平東路二段118巷5號",
+    "addr:housenumber": "5",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段118巷",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "name": "松田日式飯糰"
+  }
+},
+{
+  "type": "node",
+  "id": 4360380435,
+  "lat": 25.0232948,
+  "lon": 121.5411936,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區辛亥路二段171巷1之1號",
+    "addr:housenumber": "1之1",
+    "addr:postcode": "106",
+    "addr:street": "辛亥路二段171巷",
+    "amenity": "restaurant",
+    "name": "甲吧麵飯"
+  }
+},
+{
+  "type": "node",
+  "id": 4360380440,
+  "lat": 25.0244641,
+  "lon": 121.5428258,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-03-28",
+    "check_date:opening_hours": "2026-03-28",
+    "cuisine": "italian",
+    "disused:amenity": "restaurant",
+    "disused:name": "義式鄉村料理",
+    "name": "11PASTA Trattoria 食義大安店",
+    "name:en": "11PASTA Trattoria",
+    "opening_hours": "Mo-Su 11:30-14:30, 17:30-21:30",
+    "phone": "02 2377 6186"
+  }
+},
+{
+  "type": "node",
+  "id": 4360380442,
+  "lat": 25.0240800,
+  "lon": 121.5428095,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路二段118巷4弄2號",
+    "addr:housenumber": "2",
+    "addr:street": "和平東路二段118巷4弄",
+    "amenity": "restaurant",
+    "check_date": "2026-08-05",
+    "disused:amenity": "restaurant",
+    "disused:name": "我家吃麵",
+    "name": "樂和牛排"
+  }
+},
+{
+  "type": "node",
+  "id": 4360380443,
+  "lat": 25.0229358,
+  "lon": 121.5425523,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區和平東路二段96巷17弄28號",
+    "addr:housenumber": "28",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段96巷17弄",
+    "amenity": "restaurant",
+    "name": "邦食堂"
+  }
+},
+{
+  "type": "node",
+  "id": 4360380445,
+  "lat": 25.0220778,
+  "lon": 121.5416164,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區和平東路二段118巷54弄29號",
+    "addr:housenumber": "29",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段118巷54弄",
+    "amenity": "restaurant",
+    "contact:facebook": "https://www.facebook.com/114742952038817",
+    "name": "韓喜堂",
+    "phone": "+886 2 2733 0268"
+  }
+},
+{
+  "type": "node",
+  "id": 4360380446,
+  "lat": 25.0226374,
+  "lon": 121.5412391,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區辛亥路二段171巷25號",
+    "addr:housenumber": "25",
+    "addr:postcode": "106",
+    "addr:street": "辛亥路二段171巷",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "disused:name": "黑川手創日本料理",
+    "name": "揪食堂韓式餐館"
+  }
+},
+{
+  "type": "node",
+  "id": 4427396476,
+  "lat": 25.0239894,
+  "lon": 121.5467436,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區敦化南路二段172巷34號",
+    "addr:housenumber": "34",
+    "addr:street": "敦化南路二段172巷",
+    "amenity": "restaurant",
+    "check_date": "2026-10-11",
+    "cuisine": "thai",
+    "name": "香葉泰式料理"
+  }
+},
+{
+  "type": "node",
+  "id": 4481939001,
+  "lat": 25.0252846,
+  "lon": 121.5419321,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "台北市大安區和平東路二段183號",
+    "addr:housenumber": "183",
+    "addr:street": "和平東路二段",
+    "amenity": "restaurant",
+    "branch": "台北大安店",
+    "check_date": "2026-03-27",
+    "cuisine": "steak_house",
+    "disused:name": "布列德",
+    "disused:shop": "bakery",
+    "name": "瀧厚炙燒熟成牛排",
+    "name:en": "Long-hou Steak House",
+    "name:zh": "瀧厚炙燒熟成牛排",
+    "phone": "+886 2 2705 5885"
+  }
+},
+{
+  "type": "node",
+  "id": 4524863572,
+  "lat": 25.0258942,
+  "lon": 121.5391531,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-04-12",
+    "name": "馬祖麵館"
+  }
+},
+{
+  "type": "node",
+  "id": 4524864051,
+  "lat": 25.0294327,
+  "lon": 121.5432470,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "通化街米粉湯",
+    "toilets:wheelchair": "no",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 4524864566,
+  "lat": 25.0253315,
+  "lon": 121.5384389,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路二段54號",
+    "addr:housenumber": "54",
+    "addr:street": "和平東路二段",
+    "amenity": "restaurant",
+    "disused:name": "鞋全家福",
+    "disused:shop": "shoes",
+    "name": "8鍋臭臭鍋"
+  }
+},
+{
+  "type": "node",
+  "id": 4538276222,
+  "lat": 25.0331481,
+  "lon": 121.5443456,
+  "tags": {
+    "amenity": "restaurant",
+    "brand": "永和豆漿",
+    "brand:en": "Yonghe Soy Milk",
+    "brand:wikidata": "Q11131335",
+    "cuisine": "chinese;breakfast",
+    "name": "永和豆漿",
+    "name:en": "Yonghe Soy Milk",
+    "name:zh": "永和豆漿",
+    "name:zh-Hans": "永和豆浆",
+    "name:zh-Hant": "永和豆漿"
+  }
+},
+{
+  "type": "node",
+  "id": 4596799754,
+  "lat": 25.0281368,
+  "lon": 121.5512670,
+  "tags": {
+    "amenity": "restaurant",
+    "kitchen": "Indonesian",
+    "name": "Sate House"
+  }
+},
+{
+  "type": "node",
+  "id": 4605333184,
+  "lat": 25.0281792,
+  "lon": 121.5415157,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區瑞安街71巷5號",
+    "addr:housenumber": "5",
+    "addr:postcode": "106",
+    "addr:street": "瑞安街71巷",
+    "amenity": "restaurant",
+    "level": "0",
+    "name": "打醬油"
+  }
+},
+{
+  "type": "node",
+  "id": 4605333185,
+  "lat": 25.0280568,
+  "lon": 121.5416616,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區瑞安街71巷5弄2號",
+    "addr:housenumber": "2",
+    "addr:postcode": "106",
+    "addr:street": "瑞安街71巷5弄",
+    "amenity": "restaurant",
+    "level": "0",
+    "name": "The Unique",
+    "website": "https://www.facebook.com/TheUnique7152"
+  }
+},
+{
+  "type": "node",
+  "id": 4754476216,
+  "lat": 25.0264281,
+  "lon": 121.5493107,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:floor": "B2",
+    "addr:full": "106臺北市大安區敦化南路二段203號B2樓",
+    "addr:housenumber": "203",
+    "addr:postcode": "106",
+    "addr:street": "敦化南路二段",
+    "amenity": "restaurant",
+    "branch": "遠企店",
+    "fax": "+886 2 8732 1538",
+    "name": "紅豆食府",
+    "phone": "+886 2 8732 1536"
+  }
+},
+{
+  "type": "node",
+  "id": 4837986345,
+  "lat": 25.0244045,
+  "lon": 121.5477996,
+  "tags": {
+    "addr:street": "和平東路三段",
+    "amenity": "fast_food",
+    "brand": "瑞麟美而美",
+    "brand:en": "Rueilin Mei & Mei",
+    "brand:wikidata": "Q105722191",
+    "brand:zh": "瑞麟美而美",
+    "cuisine": "breakfast",
+    "name": "瑞麟美而美",
+    "name:en": "Rueilin Mei & Mei",
+    "name:zh": "瑞麟美而美",
+    "operator": "美而美餐飲連鎖企業集團",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4837986347,
+  "lat": 25.0252188,
+  "lon": 121.5423710,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區和平東路二段203號",
+    "addr:housenumber": "203",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段",
+    "amenity": "fast_food",
+    "brand": "Subway",
+    "brand:wikidata": "Q244457",
+    "brand:wikipedia": "en:Subway (restaurant)",
+    "cuisine": "sandwich",
+    "name": "Subway",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4837986421,
+  "lat": 25.0225627,
+  "lon": 121.5501762,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區基隆路二段256號",
+    "addr:housenumber": "256",
+    "addr:postcode": "106",
+    "addr:street": "基隆路二段",
+    "amenity": "restaurant",
+    "name": "花麻辣"
+  }
+},
+{
+  "type": "node",
+  "id": 4842666129,
+  "lat": 25.0265012,
+  "lon": 121.5494259,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "李白居",
+    "name:en": "Li Bai lounge",
+    "name:zh": "李白居"
+  }
+},
+{
+  "type": "node",
+  "id": 5110348657,
+  "lat": 25.0262591,
+  "lon": 121.5477547,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "餘記麵館"
+  }
+},
+{
+  "type": "node",
+  "id": 5110348795,
+  "lat": 25.0280530,
+  "lon": 121.5513100,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "磐石坊印度料理"
+  }
+},
+{
+  "type": "node",
+  "id": 5149054421,
+  "lat": 25.0298068,
+  "lon": 121.5503114,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "西班牙米其林2星MVSA木沙餐廳"
+  }
+},
+{
+  "type": "node",
+  "id": 5422399124,
+  "lat": 25.0275988,
+  "lon": 121.5495253,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:floor": "1",
+    "addr:full": "106台北市大安區安和路二段118號一樓",
+    "addr:housenumber": "118",
+    "addr:postcode": "106",
+    "addr:street": "安和路二段",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "level": "1",
+    "name": "葉公館",
+    "name:ja": "イエゴングァン",
+    "opening_hours": "Mo-Su 11:30-14:30, 17:30-21:30",
+    "phone": "+886 2 2736 1999"
+  }
+},
+{
+  "type": "node",
+  "id": 5436859493,
+  "lat": 25.0328108,
+  "lon": 121.5430192,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區復興南路二段12巷1號",
+    "addr:housenumber": "1",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段12巷",
+    "amenity": "restaurant",
+    "name": "le corner",
+    "toilets:wheelchair": "no",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 5463352821,
+  "lat": 25.0326778,
+  "lon": 121.5433381,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "大安煎包"
+  }
+},
+{
+  "type": "node",
+  "id": 5483729837,
+  "lat": 25.0328440,
+  "lon": 121.5447247,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區信義路四段30巷5號",
+    "addr:housenumber": "5",
+    "addr:postcode": "106",
+    "addr:street": "信義路四段30巷",
+    "amenity": "fast_food",
+    "brand": "Subway",
+    "brand:wikidata": "Q244457",
+    "brand:wikipedia": "en:Subway (restaurant)",
+    "cuisine": "sandwich",
+    "name": "Subway",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5483729841,
+  "lat": 25.0331495,
+  "lon": 121.5443900,
+  "tags": {
+    "amenity": "restaurant",
+    "brand": "鬍鬚張魯肉飯",
+    "check_date": "2026-09-27",
+    "name": "鬍鬚張",
+    "name:en": "Formosa chang",
+    "name:ja": "ひげちょう るうろうはん",
+    "name:zh": "鬍鬚張"
+  }
+},
+{
+  "type": "node",
+  "id": 5551865624,
+  "lat": 25.0330727,
+  "lon": 121.5419758,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:floor": "1",
+    "addr:full": "180臺北市大安區信義路三段166巷2號一樓",
+    "addr:housenumber": "2",
+    "addr:postcode": "180",
+    "addr:street": "信義路三段166巷",
+    "amenity": "restaurant",
+    "level": "1",
+    "name": "岩谷新鐵板料理",
+    "toilets:wheelchair": "no",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 5551867521,
+  "lat": 25.0329646,
+  "lon": 121.5418372,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "台北市大安區信義路三段166巷4號",
+    "addr:housenumber": "4",
+    "addr:street": "信義路三段166巷",
+    "amenity": "restaurant",
+    "branch": "大安店",
+    "disused:name": "Five & Fantast",
+    "disused:office": "ngo",
+    "name": "給力盒子",
+    "name:en": "GET POWER",
+    "name:zh": "給力盒子",
+    "wheelchair": "yes",
+    "wheelchair:description": "沒有對外開放的廁所 有坡道"
+  }
+},
+{
+  "type": "node",
+  "id": 5551876521,
+  "lat": 25.0308395,
+  "lon": 121.5433208,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-09-12",
+    "name": "天辣麻辣",
+    "toilets:wheelchair": "no",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 5551897905,
+  "lat": 25.0276198,
+  "lon": 121.5432336,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區復興南路二段166號",
+    "addr:housenumber": "166",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "check_date": "2026-09-08",
+    "name": "謝記珍寶食品莊",
+    "toilets:wheelchair": "no",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 5551938751,
+  "lat": 25.0249645,
+  "lon": 121.5453470,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "盛味豐貼爐燒餅",
+    "toilets:wheelchair": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5551944273,
+  "lat": 25.0278415,
+  "lon": 121.5432526,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區復興南路二段158號",
+    "addr:housenumber": "158",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "brand": "大埔鐵板燒",
+    "brand:wikidata": "Q108541437",
+    "cuisine": "teppanyaki",
+    "name": "大埔鐵板燒",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5551944276,
+  "lat": 25.0249663,
+  "lon": 121.5451870,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "巧房餡餅蔥油餅",
+    "toilets:wheelchair": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5698897064,
+  "lat": 25.0326173,
+  "lon": 121.5437852,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區復興南路二段11號",
+    "addr:housenumber": "11",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "disused:amenity": "restaurant",
+    "disused:branch": "大安店",
+    "disused:cuisine": "japanese",
+    "disused:name": "鮪一繙",
+    "disused:phone": "+886 2 2707 6167",
+    "name": "林居"
+  }
+},
+{
+  "type": "node",
+  "id": 5699174871,
+  "lat": 25.0288163,
+  "lon": 121.5407167,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "香吧佬"
+  }
+},
+{
+  "type": "node",
+  "id": 5699174877,
+  "lat": 25.0293716,
+  "lon": 121.5421209,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "七里亭瑞安店",
+    "opening_hours": "Tu-Su 11:00-14:30,17:00-20:30"
+  }
+},
+{
+  "type": "node",
+  "id": 5699174879,
+  "lat": 25.0296803,
+  "lon": 121.5425527,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Munchies Gastropub"
+  }
+},
+{
+  "type": "node",
+  "id": 5699174886,
+  "lat": 25.0328589,
+  "lon": 121.5446075,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區信義路四段30巷4號",
+    "addr:housenumber": "4",
+    "addr:street": "信義路四段30巷",
+    "amenity": "restaurant",
+    "name": "元氣家族麵飯館"
+  }
+},
+{
+  "type": "node",
+  "id": 5699174887,
+  "lat": 25.0329091,
+  "lon": 121.5446104,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區信義路四段30巷2號",
+    "addr:housenumber": "2",
+    "addr:street": "信義路四段30巷",
+    "amenity": "restaurant",
+    "cuisine": "beef_noodle",
+    "name": "光復牛肉麵"
+  }
+},
+{
+  "type": "node",
+  "id": 5699174893,
+  "lat": 25.0326343,
+  "lon": 121.5439971,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "饞食坊"
+  }
+},
+{
+  "type": "node",
+  "id": 5699174910,
+  "lat": 25.0308298,
+  "lon": 121.5439609,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區瑞安街31巷1-1號",
+    "addr:housenumber": "1-1",
+    "addr:postcode": "106",
+    "addr:street": "瑞安街31巷",
+    "amenity": "restaurant",
+    "cuisine": "peruvian",
+    "name": "印加媽媽祕魯餐館",
+    "name:en": "Mama Inca",
+    "name:zh": "印加媽媽祕魯餐館",
+    "phone": "+886 2 2709 2832"
+  }
+},
+{
+  "type": "node",
+  "id": 5699174911,
+  "lat": 25.0308626,
+  "lon": 121.5439354,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "老哥水煎包麵線"
+  }
+},
+{
+  "type": "node",
+  "id": 5699180230,
+  "lat": 25.0319323,
+  "lon": 121.5438201,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區復興南路二段25號",
+    "addr:housenumber": "25",
+    "addr:street": "復興南路二段",
+    "amenity": "fast_food",
+    "brand": "すき家",
+    "brand:en": "Sukiya",
+    "brand:ja": "すき家",
+    "brand:wikidata": "Q6137375",
+    "brand:zh": "食其家",
+    "check_date": "2026-09-24",
+    "cuisine": "beef_bowl",
+    "name": "すき家",
+    "name:en": "Sukiya",
+    "name:ja": "すき家",
+    "name:zh": "食其家",
+    "takeaway": "yes",
+    "website": "https://www.sukiya-jp.com.tw/",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 5699180231,
+  "lat": 25.0322959,
+  "lon": 121.5439012,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "丰食堂"
+  }
+},
+{
+  "type": "node",
+  "id": 5699180233,
+  "lat": 25.0324983,
+  "lon": 121.5437867,
+  "tags": {
+    "amenity": "restaurant",
+    "contact:facebook": "https://www.facebook.com/487916651416278",
+    "disused:amenity": "restaurant",
+    "disused:name": "Meetup",
+    "name": "大安站那邊精緻熱炒",
+    "phone": "+886 2 2707 8188",
+    "website": "https://linktr.ee/daan.overthere_"
+  }
+},
+{
+  "type": "node",
+  "id": 5699180234,
+  "lat": 25.0325523,
+  "lon": 121.5437865,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區復興南路一段13號",
+    "addr:housenumber": "13",
+    "addr:postcode": "106",
+    "addr:street": "復興南路一段",
+    "amenity": "restaurant",
+    "branch": "大安店",
+    "contact:facebook": "https://www.facebook.com/101931109340392",
+    "disused:amenity": "restaurant",
+    "disused:name": "花漁新和風料理",
+    "name": "黑小串燒",
+    "phone": "+886 2 2325 0234",
+    "website": "https://lin.ee/3sjsycs"
+  }
+},
+{
+  "type": "node",
+  "id": 5839638859,
+  "lat": 25.0244204,
+  "lon": 121.5473291,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "diet:vegetarian": "only",
+    "internet_access": "wlan",
+    "level": "0",
+    "name": "來賓 印度餐廳和酒吧",
+    "name:en": "Atithi Indian Restaurant & Bar",
+    "payment:american_express": "yes",
+    "payment:credit_cards": "yes",
+    "payment:jcb": "yes",
+    "payment:mastercard": "yes",
+    "payment:visa": "yes",
+    "smoking": "no",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 5839790179,
+  "lat": 25.0284901,
+  "lon": 121.5442981,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "大水缸"
+  }
+},
+{
+  "type": "node",
+  "id": 5839792243,
+  "lat": 25.0275547,
+  "lon": 121.5459249,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "breakfast",
+    "name": "大漢堡早餐店"
+  }
+},
+{
+  "type": "node",
+  "id": 5839980067,
+  "lat": 25.0252986,
+  "lon": 121.5483716,
+  "tags": {
+    "amenity": "fast_food",
+    "brand": "Subway",
+    "brand:wikidata": "Q244457",
+    "brand:wikipedia": "en:Subway (restaurant)",
+    "check_date": "2026-03-27",
+    "cuisine": "sandwich",
+    "name": "Subway",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5842743664,
+  "lat": 25.0258810,
+  "lon": 121.5468509,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:floor": "1",
+    "addr:full": "106102臺北市大安區和平東路三段1巷27號1樓",
+    "addr:housenumber": "27",
+    "addr:postcode": "106102",
+    "addr:street": "和平東路三段1巷",
+    "amenity": "restaurant",
+    "cuisine": "chinese;noodle",
+    "name": "老龍牛肉麵大王",
+    "name:zh": "老龍牛肉麵大王"
+  }
+},
+{
+  "type": "node",
+  "id": 5845066129,
+  "lat": 25.0262620,
+  "lon": 121.5473530,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "name": "Johnson's"
+  }
+},
+{
+  "type": "node",
+  "id": 5845066130,
+  "lat": 25.0262659,
+  "lon": 121.5475147,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-03-28",
+    "cuisine": "chinese",
+    "name": "蘇江川小館"
+  }
+},
+{
+  "type": "node",
+  "id": 5845066131,
+  "lat": 25.0262643,
+  "lon": 121.5471199,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區四維路208巷1號",
+    "addr:housenumber": "1",
+    "addr:street": "四維路208巷",
+    "amenity": "restaurant",
+    "check_date": "2026-09-15",
+    "cuisine": "chinese",
+    "name": "蔣記家薌麵"
+  }
+},
+{
+  "type": "node",
+  "id": 5845316854,
+  "lat": 25.0249575,
+  "lon": 121.5456868,
+  "tags": {
+    "amenity": "restaurant",
+    "brand": "溫州大餛飩",
+    "cuisine": "chinese",
+    "name": "溫州大餛飩阿婆乾麵"
+  }
+},
+{
+  "type": "node",
+  "id": 5845316855,
+  "lat": 25.0249649,
+  "lon": 121.5453892,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "劉家飯糰"
+  }
+},
+{
+  "type": "node",
+  "id": 5845316856,
+  "lat": 25.0248952,
+  "lon": 121.5462311,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-03-28",
+    "name": "土托魚羹"
+  }
+},
+{
+  "type": "node",
+  "id": 5845316857,
+  "lat": 25.0249608,
+  "lon": 121.5456308,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "辛川屋"
+  }
+},
+{
+  "type": "node",
+  "id": 5845316859,
+  "lat": 25.0249396,
+  "lon": 121.5458970,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "鴻儒園"
+  }
+},
+{
+  "type": "node",
+  "id": 5845347535,
+  "lat": 25.0258063,
+  "lon": 121.5450724,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-10-25",
+    "name": "晨間廚房",
+    "name:en": "LaMorning",
+    "name:zh": "晨間廚房",
+    "phone": "02 2701 8821"
+  }
+},
+{
+  "type": "node",
+  "id": 5847760117,
+  "lat": 25.0278358,
+  "lon": 121.5483887,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "昀吐司"
+  }
+},
+{
+  "type": "node",
+  "id": 5853563029,
+  "lat": 25.0279320,
+  "lon": 121.5432578,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-03-28",
+    "cuisine": "seafood;asian",
+    "name": "熱翻天生猛海鮮"
+  }
+},
+{
+  "type": "node",
+  "id": 5853563030,
+  "lat": 25.0278861,
+  "lon": 121.5432536,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "胖肚肚燒肉"
+  }
+},
+{
+  "type": "node",
+  "id": 5856220174,
+  "lat": 25.0244325,
+  "lon": 121.5480831,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區和平東路三段48-6號",
+    "addr:housenumber": "48-6",
+    "addr:postcode": "106",
+    "addr:street": "和平東路三段",
+    "amenity": "restaurant",
+    "check_date": "2026-03-28",
+    "cuisine": "chinese;noodle",
+    "name": "十三香",
+    "phone": "+886 2 2733 8986"
+  }
+},
+{
+  "type": "node",
+  "id": 5856227158,
+  "lat": 25.0248708,
+  "lon": 121.5467563,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106102臺北市大安區和平東路三段3號",
+    "addr:housenumber": "3",
+    "addr:postcode": "106102",
+    "addr:street": "和平東路三段",
+    "amenity": "restaurant",
+    "name": "雪坊精品優格",
+    "name:en": "Snow Factory",
+    "name:zh": "雪坊精品優格"
+  }
+},
+{
+  "type": "node",
+  "id": 5864552977,
+  "lat": 25.0271534,
+  "lon": 121.5460416,
+  "tags": {
+    "amenity": "fast_food",
+    "check_date": "2026-03-27",
+    "name": "呷尚寶早餐店"
+  }
+},
+{
+  "type": "node",
+  "id": 6114700753,
+  "lat": 25.0229908,
+  "lon": 121.5411943,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "便當",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6114700754,
+  "lat": 25.0220540,
+  "lon": 121.5424481,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "合益佳雞肉飯"
+  }
+},
+{
+  "type": "node",
+  "id": 6114700755,
+  "lat": 25.0220199,
+  "lon": 121.5429282,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路二段118巷65-4號",
+    "addr:housenumber": "65-4",
+    "addr:street": "和平東路二段118巷",
+    "amenity": "restaurant",
+    "name": "28麵堂"
+  }
+},
+{
+  "type": "node",
+  "id": 6114714477,
+  "lat": 25.0221427,
+  "lon": 121.5429148,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路二段118巷63號",
+    "addr:housenumber": "63",
+    "addr:street": "和平東路二段118巷",
+    "amenity": "restaurant",
+    "name": "師大附中水煎包"
+  }
+},
+{
+  "type": "node",
+  "id": 6114714478,
+  "lat": 25.0222034,
+  "lon": 121.5429161,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "甜品屋"
+  }
+},
+{
+  "type": "node",
+  "id": 6114714479,
+  "lat": 25.0223638,
+  "lon": 121.5429282,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "disused:name": "佳家日式臭臭鍋",
+    "name": "大易園早午餐"
+  }
+},
+{
+  "type": "node",
+  "id": 6114714480,
+  "lat": 25.0224343,
+  "lon": 121.5429295,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "笑嘻嘻港式現炒飯麵"
+  }
+},
+{
+  "type": "node",
+  "id": 6153989173,
+  "lat": 25.0297295,
+  "lon": 121.5432635,
+  "tags": {
+    "amenity": "restaurant",
+    "disused:name": "紅邊桌",
+    "name": "一流清粥小菜",
+    "toilets:wheelchair": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6165782097,
+  "lat": 25.0328332,
+  "lon": 121.5450517,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區信義路四段30巷7弄11號",
+    "addr:housenumber": "11",
+    "addr:postcode": "106",
+    "addr:street": "信義路四段30巷7弄",
+    "amenity": "restaurant",
+    "name": "山玖鍋貼水餃",
+    "phone": "+886 2 2706 6763"
+  }
+},
+{
+  "type": "node",
+  "id": 6189925710,
+  "lat": 25.0252387,
+  "lon": 121.5422281,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "oriental",
+    "name": "邊田庄"
+  }
+},
+{
+  "type": "node",
+  "id": 6317546194,
+  "lat": 25.0217242,
+  "lon": 121.5407400,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106631臺北市大安區辛亥路二段163號",
+    "addr:housenumber": "163",
+    "addr:postcode": "106631",
+    "addr:street": "辛亥路二段",
+    "amenity": "restaurant",
+    "cuisine": "taiwanese",
+    "level": "1",
+    "name": "鼎貴小吃店",
+    "outdoor_seating": "no",
+    "phone": "+886 2 2736 8478",
+    "smoking": "no",
+    "takeaway": "yes",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 6329100517,
+  "lat": 25.0265870,
+  "lon": 121.5493559,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:floor": "38",
+    "addr:full": "106臺北市大安區敦化南路二段201號三十八樓",
+    "addr:housenumber": "201",
+    "addr:postcode": "106",
+    "addr:street": "敦化南路二段",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "name": "馬可波羅",
+    "phone": "+886 2 2378 8888 #6950"
+  }
+},
+{
+  "type": "node",
+  "id": 6376059483,
+  "lat": 25.0316304,
+  "lon": 121.5437765,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-09-12",
+    "cuisine": "breakfast",
+    "name": "小樽早餐店"
+  }
+},
+{
+  "type": "node",
+  "id": 6376062389,
+  "lat": 25.0251938,
+  "lon": 121.5425534,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路二段209號",
+    "addr:housenumber": "209",
+    "addr:street": "和平東路二段",
+    "amenity": "fast_food",
+    "check_date": "2026-09-08",
+    "description": "蛋餅吐司紅茶牛奶",
+    "disused:name": "黛欣調整型內衣",
+    "disused:shop": "clothes",
+    "name": "真芳",
+    "name:en": "Zhen Fang",
+    "name:zh": "真芳"
+  }
+},
+{
+  "type": "node",
+  "id": 6545010117,
+  "lat": 25.0243468,
+  "lon": 121.5491511,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "hotpot",
+    "name": "詹記麻辣火鍋"
+  }
+},
+{
+  "type": "node",
+  "id": 6571077021,
+  "lat": 25.0283381,
+  "lon": 121.5468085,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區四維路170巷27號",
+    "addr:housenumber": "27",
+    "addr:postcode": "106",
+    "addr:street": "四維路170巷",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "牛莊園牛肉麵",
+    "name:en": "Mano Beef Noodle",
+    "name:zh": "牛莊園牛肉麵",
+    "opening_hours": "Mo-Su 11:30-14:00, 17:30-20:20",
+    "phone": "+886 2 27012009"
+  }
+},
+{
+  "type": "node",
+  "id": 6585779686,
+  "lat": 25.0328649,
+  "lon": 121.5418370,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區信義路三段166巷4號",
+    "addr:housenumber": "4",
+    "addr:postcode": "106",
+    "addr:street": "信義路三段166巷",
+    "amenity": "restaurant",
+    "cuisine": "curry",
+    "name": "NoName咖哩"
+  }
+},
+{
+  "type": "node",
+  "id": 6604320350,
+  "lat": 25.0268866,
+  "lon": 121.5432212,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區復興南路二段198號",
+    "addr:housenumber": "198",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "name": "金城便當",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6679978785,
+  "lat": 25.0283255,
+  "lon": 121.5467667,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區四維路170巷27號",
+    "addr:housenumber": "27",
+    "addr:postcode": "106",
+    "addr:street": "四維路170巷",
+    "amenity": "restaurant",
+    "cuisine": "beef_noodle",
+    "name": "牛莊園蔬果湯頭牛肉麵",
+    "phone": "+886 2 2012009"
+  }
+},
+{
+  "type": "node",
+  "id": 6697187509,
+  "lat": 25.0229651,
+  "lon": 121.5476006,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區敦化南路二段200巷13號",
+    "addr:housenumber": "13",
+    "addr:postcode": "106",
+    "addr:street": "敦化南路二段200巷",
+    "amenity": "restaurant",
+    "name": "千松谷"
+  }
+},
+{
+  "type": "node",
+  "id": 6697187510,
+  "lat": 25.0229700,
+  "lon": 121.5476730,
+  "tags": {
+    "amenity": "restaurant",
+    "brand": "麥味登",
+    "brand:en": "My Warn Day",
+    "brand:wikidata": "Q108830023",
+    "brand:zh": "麥味登",
+    "cuisine": "american;breakfast",
+    "name": "麥味登",
+    "name:en": "My Warn Day Care & Brunch",
+    "name:zh": "麥味登",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6703646973,
+  "lat": 25.0252266,
+  "lon": 121.5426533,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:floor": "2",
+    "addr:full": "106臺北市大安區和平東路二段217號二樓",
+    "addr:housenumber": "217",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段",
+    "amenity": "restaurant",
+    "fax": "+886 2 2700 7651",
+    "level": "2",
+    "name": "麒雲餐廳",
+    "opening_hours": "Mo-Su 11:30-21:00",
+    "phone": "+886 2 2700 0052"
+  }
+},
+{
+  "type": "node",
+  "id": 7021849195,
+  "lat": 25.0255560,
+  "lon": 121.5483516,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:floor": "1",
+    "addr:full": "臺北市大安區敦化南路二段144號1樓",
+    "addr:housenumber": "144",
+    "addr:street": "敦化南路二段",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "level": "1",
+    "name": "利休",
+    "website": "https://www.rikyu.tw/"
+  }
+},
+{
+  "type": "node",
+  "id": 7022030517,
+  "lat": 25.0285222,
+  "lon": 121.5504572,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區安和路二段155號",
+    "addr:housenumber": "155",
+    "addr:street": "安和路二段",
+    "amenity": "restaurant",
+    "name": "鮨處律",
+    "opening_hours": "Mo-Su 12:00-14:00,18:30-22:00",
+    "phone": "+886 2 2732 5282"
+  }
+},
+{
+  "type": "node",
+  "id": 7022030522,
+  "lat": 25.0283059,
+  "lon": 121.5502372,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區安和路二段165號",
+    "addr:housenumber": "165",
+    "addr:street": "安和路二段",
+    "amenity": "restaurant",
+    "cuisine": "ramen",
+    "name": "力量拉麵"
+  }
+},
+{
+  "type": "node",
+  "id": 7022030523,
+  "lat": 25.0282391,
+  "lon": 121.5509534,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "樂利飯包"
+  }
+},
+{
+  "type": "node",
+  "id": 7022030524,
+  "lat": 25.0287094,
+  "lon": 121.5506677,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區安和路二段145號",
+    "addr:housenumber": "145",
+    "addr:street": "安和路二段",
+    "amenity": "restaurant",
+    "name": "史大華精緻麵館"
+  }
+},
+{
+  "type": "node",
+  "id": 7022030528,
+  "lat": 25.0282488,
+  "lon": 121.5501916,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區安和路二段167號",
+    "addr:housenumber": "167",
+    "addr:street": "安和路二段",
+    "amenity": "restaurant",
+    "name": "諺樂定食串燒熱炒"
+  }
+},
+{
+  "type": "node",
+  "id": 7022030535,
+  "lat": 25.0281638,
+  "lon": 121.5507469,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "豪品精牧川菜"
+  }
+},
+{
+  "type": "node",
+  "id": 7056026977,
+  "lat": 25.0221764,
+  "lon": 121.5435491,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區復興南路二段385號",
+    "addr:housenumber": "385",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "branch": "大安店",
+    "contact:facebook": "https://www.facebook.com/274016432761128",
+    "cuisine": "malaysian",
+    "name": "池先生馬來西亞傳統料理",
+    "name:en": "Mr. Chee Kopitiam",
+    "name:zh": "池先生馬來西亞傳統料理",
+    "phone": "+886 2 2738 9255",
+    "website": "https://www.kopitiamdaan.oddle.me/zh_TW"
+  }
+},
+{
+  "type": "node",
+  "id": 7056032338,
+  "lat": 25.0238802,
+  "lon": 121.5435719,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:floor": "1",
+    "addr:full": "台北市大安區復興南路二段325號一樓",
+    "addr:housenumber": "325",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "branch": "本舖",
+    "cuisine": "japanese",
+    "level": "1",
+    "name": "樂町屋",
+    "phone": "+886 2 2736 7335"
+  }
+},
+{
+  "type": "node",
+  "id": 7066896685,
+  "lat": 25.0239553,
+  "lon": 121.5483305,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "台北市大安區敦化南路二段 174 號",
+    "addr:full:en": "No. 174號, Section 2, Dunhua South Road, Da’an District, Taipei City, Taiwan",
+    "addr:housenumber": "174",
+    "addr:postcode": "106",
+    "addr:street": "敦化南路二段",
+    "amenity": "restaurant",
+    "name": "Longtail",
+    "name:en": "Longtail",
+    "name:nan": "Longtail",
+    "name:zh": "Longtail",
+    "phone": "+886 2 2732 6616",
+    "website": "https://longtail.com.tw"
+  }
+},
+{
+  "type": "node",
+  "id": 7112865688,
+  "lat": 25.0207023,
+  "lon": 121.5481524,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "breakfast",
+    "name": "早餐店",
+    "name:en": "Breakfast",
+    "name:zh": "早餐店"
+  }
+},
+{
+  "type": "node",
+  "id": 7174571369,
+  "lat": 25.0217268,
+  "lon": 121.5406520,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106631臺北市大安區辛亥路二段161號",
+    "addr:housenumber": "161",
+    "addr:postcode": "106631",
+    "addr:street": "辛亥路二段",
+    "amenity": "restaurant",
+    "cuisine": "hotpot",
+    "disused:name": "美美平價火鍋",
+    "name": "依依平價火鍋",
+    "phone": "+886 2 2378 7979",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 7175334730,
+  "lat": 25.0312158,
+  "lon": 121.5479454,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "breakfast",
+    "name": "展翔早餐吧"
+  }
+},
+{
+  "type": "node",
+  "id": 7175334735,
+  "lat": 25.0313752,
+  "lon": 121.5461473,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "韓風館"
+  }
+},
+{
+  "type": "node",
+  "id": 7175334775,
+  "lat": 25.0281265,
+  "lon": 121.5466799,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "赤牛城"
+  }
+},
+{
+  "type": "node",
+  "id": 7175334781,
+  "lat": 25.0281373,
+  "lon": 121.5465979,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "滿樂鐵板吐司"
+  }
+},
+{
+  "type": "node",
+  "id": 7175344505,
+  "lat": 25.0303913,
+  "lon": 121.5458291,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "大安大安18"
+  }
+},
+{
+  "type": "node",
+  "id": 7175344556,
+  "lat": 25.0284358,
+  "lon": 121.5462521,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "金霸臭臭鍋"
+  }
+},
+{
+  "type": "node",
+  "id": 7175344562,
+  "lat": 25.0284527,
+  "lon": 121.5458619,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "珍品佳盒餐"
+  }
+},
+{
+  "type": "node",
+  "id": 7175344582,
+  "lat": 25.0300862,
+  "lon": 121.5459212,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區大安路二段124號",
+    "addr:housenumber": "124",
+    "addr:street": "大安路二段",
+    "amenity": "restaurant",
+    "cuisine": "steak_house",
+    "name": "我家牛排"
+  }
+},
+{
+  "type": "node",
+  "id": 7175344626,
+  "lat": 25.0272056,
+  "lon": 121.5460103,
+  "tags": {
+    "amenity": "fast_food",
+    "brand": "呷尚寶",
+    "brand:en": "JSP",
+    "brand:wikidata": "Q109996570",
+    "brand:zh": "呷尚寶",
+    "check_date": "2026-09-29",
+    "cuisine": "burger",
+    "name": "呷尚寶",
+    "name:en": "JSP",
+    "name:zh": "呷尚寶",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7175344631,
+  "lat": 25.0283013,
+  "lon": 121.5469085,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "木子日青"
+  }
+},
+{
+  "type": "node",
+  "id": 7175344643,
+  "lat": 25.0284510,
+  "lon": 121.5452173,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-03-28",
+    "name": "欽豪燒腊盒餐"
+  }
+},
+{
+  "type": "node",
+  "id": 7175344655,
+  "lat": 25.0311053,
+  "lon": 121.5479492,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "四維路麵攤"
+  }
+},
+{
+  "type": "node",
+  "id": 7175344662,
+  "lat": 25.0287317,
+  "lon": 121.5460897,
+  "tags": {
+    "amenity": "fast_food",
+    "brand": "瑞麟美而美",
+    "brand:en": "Rueilin Mei & Mei",
+    "brand:wikidata": "Q105722191",
+    "brand:zh": "瑞麟美而美",
+    "cuisine": "breakfast",
+    "name": "瑞麟美而美",
+    "name:en": "Rueilin Mei & Mei",
+    "name:zh": "瑞麟美而美",
+    "operator": "美而美餐飲連鎖企業集團",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7175344707,
+  "lat": 25.0283497,
+  "lon": 121.5467466,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "name": "海福岡日本料理海鮮熱炒"
+  }
+},
+{
+  "type": "node",
+  "id": 7175344713,
+  "lat": 25.0285096,
+  "lon": 121.5459842,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "角屋關東煮"
+  }
+},
+{
+  "type": "node",
+  "id": 7175344730,
+  "lat": 25.0310730,
+  "lon": 121.5474809,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "原涮 樂活鍋物 Love Pot"
+  }
+},
+{
+  "type": "node",
+  "id": 7175344736,
+  "lat": 25.0298230,
+  "lon": 121.5459028,
+  "tags": {
+    "amenity": "restaurant",
+    "brand": "麥味登",
+    "brand:en": "My Warn Day",
+    "brand:wikidata": "Q108830023",
+    "brand:zh": "麥味登",
+    "cuisine": "american;breakfast",
+    "name": "麥味登",
+    "name:en": "My Warn Day Care & Brunch",
+    "name:zh": "麥味登",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7175344778,
+  "lat": 25.0281236,
+  "lon": 121.5467233,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "四維紅麵線"
+  }
+},
+{
+  "type": "node",
+  "id": 7175344782,
+  "lat": 25.0283602,
+  "lon": 121.5461466,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "breakfast",
+    "name": "哥萊早餐屋"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007941,
+  "lat": 25.0263683,
+  "lon": 121.5394514,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "name": "Food二十食堂"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007942,
+  "lat": 25.0263969,
+  "lon": 121.5394662,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-04-05",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "internet_access:ssid": "VENITA153",
+    "name": "嘰嘰喳喳",
+    "opening_hours": "Mo-Su 11:30-20:30"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007944,
+  "lat": 25.0263361,
+  "lon": 121.5392174,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "上鼎豐小籠湯包"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007945,
+  "lat": 25.0259545,
+  "lon": 121.5391691,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-04-12",
+    "cuisine": "vietnamese",
+    "name": "越南河粉"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007947,
+  "lat": 25.0259980,
+  "lon": 121.5391755,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-03-27",
+    "name": "溫州大餛飩"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007952,
+  "lat": 25.0252880,
+  "lon": 121.5387520,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "山林美食館"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007955,
+  "lat": 25.0218161,
+  "lon": 121.5427626,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "高和食堂"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007957,
+  "lat": 25.0220610,
+  "lon": 121.5427083,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "beef_noodle",
+    "name": "蔥燉牛肉麵"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007958,
+  "lat": 25.0219115,
+  "lon": 121.5429215,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路二段118巷69號",
+    "addr:housenumber": "69",
+    "addr:street": "和平東路二段118巷",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "紫牛平價牛排"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007959,
+  "lat": 25.0218398,
+  "lon": 121.5429229,
+  "tags": {
+    "amenity": "restaurant",
+    "brand": "源士林粥品",
+    "name": "源士林粥品"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007960,
+  "lat": 25.0222737,
+  "lon": 121.5429309,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "釀釀禾"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007962,
+  "lat": 25.0224657,
+  "lon": 121.5429282,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "五九麵館"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007969,
+  "lat": 25.0225167,
+  "lon": 121.5427726,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路二段118巷50號",
+    "addr:housenumber": "50",
+    "addr:street": "和平東路二段118巷",
+    "amenity": "restaurant",
+    "name": "I'm Pasta"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007970,
+  "lat": 25.0227233,
+  "lon": 121.5427767,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "ONE GOOD 烤肉飯"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007971,
+  "lat": 25.0227841,
+  "lon": 121.5427780,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "滇味小廚"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007972,
+  "lat": 25.0228594,
+  "lon": 121.5427740,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "name": "卡瓦利印度料理"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007973,
+  "lat": 25.0226176,
+  "lon": 121.5430228,
+  "tags": {
+    "amenity": "restaurant",
+    "diet:vegetarian": "only",
+    "name": "貞有緣素食"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007974,
+  "lat": 25.0226176,
+  "lon": 121.5429711,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-09-15",
+    "name": "麵屋席登"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007975,
+  "lat": 25.0227263,
+  "lon": 121.5429356,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-08-05",
+    "name": "台南周記冰鎮滷味"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007976,
+  "lat": 25.0227950,
+  "lon": 121.5429376,
+  "tags": {
+    "amenity": "restaurant",
+    "diet:vegetarian": "only",
+    "name": "慈心素食"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007977,
+  "lat": 25.0228418,
+  "lon": 121.5429477,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-08-05",
+    "name": "馬祖麵館"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007979,
+  "lat": 25.0229135,
+  "lon": 121.5429416,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路二段118巷47號",
+    "addr:housenumber": "47",
+    "addr:street": "和平東路二段118巷",
+    "amenity": "restaurant",
+    "diet:vegetarian": "yes",
+    "name": "大叔蔬食"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007981,
+  "lat": 25.0230933,
+  "lon": 121.5429477,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路二段118巷41號",
+    "addr:housenumber": "41",
+    "addr:street": "和平東路二段118巷",
+    "amenity": "restaurant",
+    "name": "成都川菜小吃"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007982,
+  "lat": 25.0231322,
+  "lon": 121.5429510,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Barkers"
+  }
+},
+{
+  "type": "node",
+  "id": 7213007984,
+  "lat": 25.0232610,
+  "lon": 121.5429383,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路二段118巷39號",
+    "addr:housenumber": "39",
+    "addr:street": "和平東路二段118巷",
+    "amenity": "restaurant",
+    "check_date": "2026-09-15",
+    "check_date:opening_hours": "2026-09-15",
+    "cuisine": "thai",
+    "name": "湄賽雲泰料理",
+    "opening_hours": "Mo-Su 11:30-14:00, 17:00-20:00"
+  }
+},
+{
+  "type": "node",
+  "id": 7213037285,
+  "lat": 25.0239349,
+  "lon": 121.5429289,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2024-05-28",
+    "disused:amenity": "restaurant",
+    "disused:name": "好好吃麵",
+    "name": "魯心麵"
+  }
+},
+{
+  "type": "node",
+  "id": 7213037286,
+  "lat": 25.0238146,
+  "lon": 121.5427706,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2024-05-28",
+    "disused:amenity": "cafe",
+    "disused:name": "人間革命",
+    "disused:name:en": "Revo Cafe",
+    "disused:name:zh": "人間革命",
+    "name": "裸湯拉麵 雞白湯"
+  }
+},
+{
+  "type": "node",
+  "id": 7213037287,
+  "lat": 25.0241064,
+  "lon": 121.5428253,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-08-05",
+    "name": "小姊妹麻辣食堂"
+  }
+},
+{
+  "type": "node",
+  "id": 7594595992,
+  "lat": 25.0265779,
+  "lon": 121.5439957,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區復興南路二段193巷5號",
+    "addr:housenumber": "5",
+    "addr:street": "復興南路二段193巷",
+    "amenity": "restaurant",
+    "check_date": "2026-09-14",
+    "cuisine": "japanese",
+    "name": "麵屋一朗"
+  }
+},
+{
+  "type": "node",
+  "id": 7647240944,
+  "lat": 25.0314532,
+  "lon": 121.5461428,
+  "tags": {
+    "amenity": "restaurant",
+    "brand": "必勝客",
+    "brand:en": "Pizza Hut",
+    "brand:wikidata": "Q191615",
+    "brand:zh": "必勝客",
+    "check_date": "2026-09-27",
+    "cuisine": "pizza",
+    "name": "必勝客",
+    "name:en": "Pizza Hut",
+    "name:zh": "必勝客",
+    "operator": "富利餐飲股份有限公司",
+    "operator:en": "JARDINE FOOD SERVICES (TAIWAN) CO., LTD.",
+    "operator:zh": "富利餐飲股份有限公司"
+  }
+},
+{
+  "type": "node",
+  "id": 7647240953,
+  "lat": 25.0316112,
+  "lon": 121.5445282,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區信義路四段30巷58號",
+    "addr:housenumber": "58",
+    "addr:street": "信義路四段30巷",
+    "air_conditioning": "yes",
+    "amenity": "restaurant",
+    "indoor_seating": "yes",
+    "name": "饞食堂",
+    "outdoor_seating": "no",
+    "smoking": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7647240955,
+  "lat": 25.0316871,
+  "lon": 121.5445450,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區信義路四段30巷52號",
+    "addr:housenumber": "52",
+    "addr:street": "信義路四段30巷",
+    "alt_name": "吉米樂狗",
+    "alt_name:en": "Jimmy's Hotdog Club",
+    "amenity": "fast_food",
+    "cuisine": "hot_dog",
+    "name": "吉米樂狗 Jimmy's Hotdog Club"
+  }
+},
+{
+  "type": "node",
+  "id": 7647240956,
+  "lat": 25.0330207,
+  "lon": 121.5447213,
+  "tags": {
+    "amenity": "restaurant",
+    "diet:vegetarian": "only",
+    "name": "素食"
+  }
+},
+{
+  "type": "node",
+  "id": 7647240957,
+  "lat": 25.0329417,
+  "lon": 121.5447588,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區信義路四段30巷1號",
+    "addr:housenumber": "1",
+    "addr:postcode": "106",
+    "addr:street": "信義路四段30巷",
+    "amenity": "restaurant",
+    "cuisine": "breakfast",
+    "name": "熊熊吃到飽早餐",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7647240958,
+  "lat": 25.0329442,
+  "lon": 121.5447226,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區信義路四段30巷1號",
+    "addr:housenumber": "1",
+    "addr:postcode": "106",
+    "addr:street": "信義路四段30巷",
+    "amenity": "restaurant",
+    "name": "炒飯",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7647240959,
+  "lat": 25.0329004,
+  "lon": 121.5447213,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區信義路四段30巷3號",
+    "addr:housenumber": "3",
+    "addr:postcode": "106",
+    "addr:street": "信義路四段30巷",
+    "amenity": "restaurant",
+    "name": "Kyoto Koji精肉店",
+    "opening_hours": "Mo-Su 11:00-14:00, 16:00-21:30",
+    "payment:cash": "yes",
+    "phone": "+886 2 2708 7357",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7647240960,
+  "lat": 25.0329563,
+  "lon": 121.5445966,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "飯麵"
+  }
+},
+{
+  "type": "node",
+  "id": 7695463325,
+  "lat": 25.0273198,
+  "lon": 121.5400965,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "巧巧香雞排"
+  }
+},
+{
+  "type": "node",
+  "id": 7695463326,
+  "lat": 25.0267165,
+  "lon": 121.5396868,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-04-05",
+    "name": "ANTICO FORNO"
+  }
+},
+{
+  "type": "node",
+  "id": 7695463327,
+  "lat": 25.0280932,
+  "lon": 121.5385404,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "四川蜀渝小吃"
+  }
+},
+{
+  "type": "node",
+  "id": 7695463328,
+  "lat": 25.0286900,
+  "lon": 121.5386560,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區建國南路二段151巷18號",
+    "addr:housenumber": "18",
+    "addr:street": "建國南路二段151巷",
+    "amenity": "fast_food",
+    "branch": "建南店",
+    "brand": "八方雲集",
+    "brand:en": "Bafang Dumpling",
+    "brand:wikidata": "Q28417381",
+    "brand:wikipedia": "zh:八方雲集",
+    "brand:zh": "八方雲集",
+    "cuisine": "dumplings",
+    "name": "八方雲集",
+    "name:en": "Bafang Dumpling",
+    "name:zh": "八方雲集",
+    "phone": "+886 2 2707 1495",
+    "takeaway": "yes",
+    "website": "https://www.8way.com.tw/"
+  }
+},
+{
+  "type": "node",
+  "id": 7695463329,
+  "lat": 25.0286643,
+  "lon": 121.5385764,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區建國南路二段151巷16號",
+    "addr:housenumber": "16",
+    "addr:street": "建國南路二段151巷",
+    "amenity": "restaurant",
+    "contact:facebook": "https://www.facebook.com/322663668153596",
+    "diet:vegan": "yes",
+    "diet:vegetarian": "yes",
+    "name": "仁里居",
+    "name:en": "Yuli Your Home",
+    "name:zh": "仁里居",
+    "phone": "+886 2 2706 2522"
+  }
+},
+{
+  "type": "node",
+  "id": 7695463330,
+  "lat": 25.0286651,
+  "lon": 121.5386262,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "壹伍壹麵食館"
+  }
+},
+{
+  "type": "node",
+  "id": 7695801660,
+  "lat": 25.0300368,
+  "lon": 121.5459220,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "steak_house",
+    "name": "麻吉迷你鯛魚燒"
+  }
+},
+{
+  "type": "node",
+  "id": 7695801662,
+  "lat": 25.0321703,
+  "lon": 121.5458623,
+  "tags": {
+    "amenity": "fast_food",
+    "brand": "胖老爹美式炸雞",
+    "brand:en": "Fat Daddy American Fried Chicken",
+    "brand:wikidata": "Q66768745",
+    "brand:zh": "胖老爹美式炸雞",
+    "cuisine": "chicken",
+    "name": "胖老爹美式炸雞",
+    "name:en": "Fat Daddy American Fried Chicken",
+    "name:zh": "胖老爹美式炸雞",
+    "takeaway": "only"
+  }
+},
+{
+  "type": "node",
+  "id": 7695801663,
+  "lat": 25.0323507,
+  "lon": 121.5460937,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "name": "阿嬌海鮮料理"
+  }
+},
+{
+  "type": "node",
+  "id": 7695801664,
+  "lat": 25.0323756,
+  "lon": 121.5458879,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "小南鄭記"
+  }
+},
+{
+  "type": "node",
+  "id": 7695801665,
+  "lat": 25.0325827,
+  "lon": 121.5458651,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "圓圓小籠湯包"
+  }
+},
+{
+  "type": "node",
+  "id": 7695801666,
+  "lat": 25.0327167,
+  "lon": 121.5458579,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "noodle",
+    "name": "王家刀切麵"
+  }
+},
+{
+  "type": "node",
+  "id": 7695801667,
+  "lat": 25.0326523,
+  "lon": 121.5458600,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "粥師傅廣東粥"
+  }
+},
+{
+  "type": "node",
+  "id": 7695801668,
+  "lat": 25.0327760,
+  "lon": 121.5458509,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "noodle",
+    "name": "江蘇老趙刀切麵"
+  }
+},
+{
+  "type": "node",
+  "id": 7695801669,
+  "lat": 25.0328336,
+  "lon": 121.5458480,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-09-27",
+    "cuisine": "noodle",
+    "name": "老鄒刀切麵"
+  }
+},
+{
+  "type": "node",
+  "id": 7695801670,
+  "lat": 25.0328938,
+  "lon": 121.5458424,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "小北方美食館"
+  }
+},
+{
+  "type": "node",
+  "id": 7695801671,
+  "lat": 25.0329780,
+  "lon": 121.5458329,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "東家美食館"
+  }
+},
+{
+  "type": "node",
+  "id": 7749857323,
+  "lat": 25.0285004,
+  "lon": 121.5499167,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "卡奈基餐廳"
+  }
+},
+{
+  "type": "node",
+  "id": 7749857324,
+  "lat": 25.0284931,
+  "lon": 121.5492287,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "OGGI 歐奇窯烤披薩"
+  }
+},
+{
+  "type": "node",
+  "id": 7765187649,
+  "lat": 25.0217006,
+  "lon": 121.5398237,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "SEMINAR西餐廳"
+  }
+},
+{
+  "type": "node",
+  "id": 7765187788,
+  "lat": 25.0242846,
+  "lon": 121.5509253,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "綠之坊健康餐飲"
+  }
+},
+{
+  "type": "node",
+  "id": 7765187791,
+  "lat": 25.0251377,
+  "lon": 121.5391993,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "呂巷仔口麵食館"
+  }
+},
+{
+  "type": "node",
+  "id": 7765187837,
+  "lat": 25.0245386,
+  "lon": 121.5506597,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "南川麵館"
+  }
+},
+{
+  "type": "node",
+  "id": 7765187892,
+  "lat": 25.0246905,
+  "lon": 121.5504552,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "breakfast",
+    "name": "早餐&加熱滷味(安和路上)"
+  }
+},
+{
+  "type": "node",
+  "id": 7765187924,
+  "lat": 25.0242676,
+  "lon": 121.5511184,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "breakfast",
+    "name": "好運來早餐店"
+  }
+},
+{
+  "type": "node",
+  "id": 7765187996,
+  "lat": 25.0217187,
+  "lon": 121.5399993,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-09-22",
+    "name": "Open開房間桌遊餐館"
+  }
+},
+{
+  "type": "node",
+  "id": 7765188004,
+  "lat": 25.0245131,
+  "lon": 121.5413853,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區龍淵里6鄰和平東路二段96巷5號",
+    "addr:hamlet": "龍淵里",
+    "addr:housenumber": "5",
+    "addr:neighbourhood": "6",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段96巷",
+    "amenity": "restaurant",
+    "contact:facebook": "https://www.facebook.com/212655098745418",
+    "name": "成口香美食館",
+    "phone": "+886 2 2738 8099"
+  }
+},
+{
+  "type": "node",
+  "id": 7765188023,
+  "lat": 25.0217052,
+  "lon": 121.5397253,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "協民隆有限公司"
+  }
+},
+{
+  "type": "node",
+  "id": 7765188437,
+  "lat": 25.0249560,
+  "lon": 121.5391913,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "麵攤"
+  }
+},
+{
+  "type": "node",
+  "id": 7765188459,
+  "lat": 25.0246632,
+  "lon": 121.5508502,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "悠客3"
+  }
+},
+{
+  "type": "node",
+  "id": 7765188471,
+  "lat": 25.0291180,
+  "lon": 121.5407101,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "日日香小館"
+  }
+},
+{
+  "type": "node",
+  "id": 7779795810,
+  "lat": 25.0220671,
+  "lon": 121.5423897,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市和平東路二段118巷54弄9號之1",
+    "addr:housenumber": "9號之1",
+    "addr:street": "和平東路二段118巷54弄",
+    "amenity": "restaurant",
+    "cuisine": "cantonese",
+    "name": "香港林師傅",
+    "start_date": "2020-08-03",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7787593823,
+  "lat": 25.0286683,
+  "lon": 121.5387752,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "name": "格拉齊義大利麵食館"
+  }
+},
+{
+  "type": "node",
+  "id": 7787593826,
+  "lat": 25.0286441,
+  "lon": 121.5391237,
+  "tags": {
+    "amenity": "restaurant",
+    "diet:vegetarian": "yes",
+    "name": "明德素食園"
+  }
+},
+{
+  "type": "node",
+  "id": 7787631182,
+  "lat": 25.0216673,
+  "lon": 121.5497746,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區基隆路二段285號",
+    "addr:housenumber": "285",
+    "addr:postcode": "106",
+    "addr:street": "基隆路二段",
+    "amenity": "restaurant",
+    "cuisine": "breakfast",
+    "internet_access": "wlan",
+    "level": "1",
+    "name": "好樹早午餐",
+    "name:en": "Bon Tree",
+    "name:zh": "好樹早午餐",
+    "phone": "+886 2 2737 3082"
+  }
+},
+{
+  "type": "node",
+  "id": 7787823099,
+  "lat": 25.0286032,
+  "lon": 121.5400511,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "台北市大安區瑞安街208巷24弄14號",
+    "addr:housenumber": "14",
+    "addr:street": "瑞安街208巷24弄",
+    "amenity": "restaurant",
+    "name": "魚韻日式料理"
+  }
+},
+{
+  "type": "node",
+  "id": 7791613826,
+  "lat": 25.0286217,
+  "lon": 121.5402549,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "台北市大安區瑞安街208巷24弄6號",
+    "addr:housenumber": "6",
+    "addr:street": "瑞安街208巷24弄",
+    "amenity": "restaurant",
+    "name": "山西御品刀削麵館",
+    "phone": "+886 2 2707 5678"
+  }
+},
+{
+  "type": "node",
+  "id": 7791617593,
+  "lat": 25.0256927,
+  "lon": 121.5358572,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "樂饕"
+  }
+},
+{
+  "type": "node",
+  "id": 7791617606,
+  "lat": 25.0284533,
+  "lon": 121.5451736,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區復興南路二段151巷37號",
+    "addr:housenumber": "37號",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段151巷",
+    "amenity": "restaurant",
+    "cuisine": "taiwanese",
+    "name": "二師兄肉羹復南店",
+    "phone": "+886 2 2703 5199"
+  }
+},
+{
+  "type": "node",
+  "id": 7817910516,
+  "lat": 25.0321862,
+  "lon": 121.5445522,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區信義路四段30巷32號",
+    "addr:housenumber": "32",
+    "addr:postcode": "106",
+    "addr:street": "信義路四段30巷",
+    "amenity": "restaurant",
+    "cuisine": "cantonese",
+    "name": "龍華燒臘",
+    "payment:cash": "yes",
+    "phone": "+886 2 2708 5028"
+  }
+},
+{
+  "type": "node",
+  "id": 7817910518,
+  "lat": 25.0321420,
+  "lon": 121.5445470,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區信義路四段30巷32號",
+    "addr:housenumber": "34",
+    "addr:postcode": "106",
+    "addr:street": "信義路四段30巷",
+    "air_conditioning": "yes",
+    "amenity": "restaurant",
+    "name": "Big Table",
+    "opening_hours": "Mo-Fr 09:00-17:00, Sa-Su 09:00-18:00",
+    "outdoor_seating": "no",
+    "payment:cash": "yes",
+    "phone": "+886 2 2708 8577",
+    "reservation": "required",
+    "smoking": "outside"
+  }
+},
+{
+  "type": "node",
+  "id": 7836943248,
+  "lat": 25.0252550,
+  "lon": 121.5500215,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "安和擔仔麵"
+  }
+},
+{
+  "type": "node",
+  "id": 7836943249,
+  "lat": 25.0253590,
+  "lon": 121.5496782,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區敦化南路二段265巷8號",
+    "addr:housenumber": "8",
+    "addr:postcode": "106",
+    "addr:street": "敦化南路二段265巷",
+    "amenity": "restaurant",
+    "breakfast": "yes",
+    "cuisine": "sandwich;burger",
+    "name": "好初早餐 敦南",
+    "opening_hours": "Mo-Su 08:00-15:30",
+    "phone": "+886 2-23770187",
+    "website": "https://www.instagram.com/hoochuu__breakfast/"
+  }
+},
+{
+  "type": "node",
+  "id": 7836943250,
+  "lat": 25.0252052,
+  "lon": 121.5500272,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Namaste Indian"
+  }
+},
+{
+  "type": "node",
+  "id": 7836943251,
+  "lat": 25.0253362,
+  "lon": 121.5499881,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "婷亭翠玉"
+  }
+},
+{
+  "type": "node",
+  "id": 7836943252,
+  "lat": 25.0254903,
+  "lon": 121.5498336,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "韓豐豆腐煲",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 7836943253,
+  "lat": 25.0254916,
+  "lon": 121.5497129,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "鐵匠 鉄板居酒屋"
+  }
+},
+{
+  "type": "node",
+  "id": 7836943254,
+  "lat": 25.0254988,
+  "lon": 121.5495519,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "燒肉工房"
+  }
+},
+{
+  "type": "node",
+  "id": 7836943255,
+  "lat": 25.0255049,
+  "lon": 121.5493669,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "月之意大利餐廳"
+  }
+},
+{
+  "type": "node",
+  "id": 7836943256,
+  "lat": 25.0264760,
+  "lon": 121.5492031,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "上海醉月樓"
+  }
+},
+{
+  "type": "node",
+  "id": 7836943257,
+  "lat": 25.0265284,
+  "lon": 121.5492875,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "遠東Café自助餐廳"
+  }
+},
+{
+  "type": "node",
+  "id": 8145680553,
+  "lat": 25.0330620,
+  "lon": 121.5418372,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "吉鴙拉麵"
+  }
+},
+{
+  "type": "node",
+  "id": 8385313630,
+  "lat": 25.0321710,
+  "lon": 121.5461030,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區大安路二段23號",
+    "addr:housenumber": "23",
+    "addr:street": "大安路二段",
+    "amenity": "fast_food",
+    "branch": "大安二店",
+    "brand": "八方雲集",
+    "brand:en": "Bafang Dumpling",
+    "brand:wikidata": "Q28417381",
+    "brand:wikipedia": "zh:八方雲集",
+    "brand:zh": "八方雲集",
+    "cuisine": "dumplings",
+    "name": "八方雲集",
+    "name:en": "Bafang Dumpling",
+    "name:zh": "八方雲集",
+    "phone": "+886 2 2754 9848",
+    "takeaway": "yes",
+    "website": "https://www.8way.com.tw/"
+  }
+},
+{
+  "type": "node",
+  "id": 8973186970,
+  "lat": 25.0257151,
+  "lon": 121.5450634,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:floor": "1",
+    "addr:full": "106台北市大安區和平東路二段311巷36號一樓",
+    "addr:housenumber": "36",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段311巷",
+    "amenity": "restaurant",
+    "check_date": "2026-09-29",
+    "check_date:opening_hours": "2026-09-29",
+    "cuisine": "breakfast",
+    "diet:早午餐": "yes",
+    "name": "和平食光",
+    "opening_hours": "Mo-Su 07:00-14:45",
+    "phone": "+886 2 2700 0533",
+    "website:menu": "https://customer.posky.net/store/c00fb9cc-2abd-417d-a295-93ac8a9c1745/menu?openExternalBrowser=1"
+  }
+},
+{
+  "type": "node",
+  "id": 10161168318,
+  "lat": 25.0234795,
+  "lon": 121.5429278,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區復興南路二段308巷5號",
+    "addr:housenumber": "5",
+    "addr:street": "復興南路二段308巷",
+    "amenity": "restaurant",
+    "check_date": "2024-05-28",
+    "disused:name": "卡帛咖啡素食烘培坊",
+    "disused:name:en": "Kapok Vegetarian Cafe & Restaurant",
+    "disused:name:zh": "卡帛咖啡素食烘培坊",
+    "disused:shop": "bakery",
+    "name": "唯雞館"
+  }
+},
+{
+  "type": "node",
+  "id": 11207310293,
+  "lat": 25.0281629,
+  "lon": 121.5468157,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-03-28",
+    "name": "春桂雞肉"
+  }
+},
+{
+  "type": "node",
+  "id": 11951580626,
+  "lat": 25.0230656,
+  "lon": 121.5427969,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2024-05-28",
+    "name": "餃子酒場晴屋"
+  }
+},
+{
+  "type": "node",
+  "id": 11951580629,
+  "lat": 25.0266307,
+  "lon": 121.5393809,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2024-05-31",
+    "name": "拉麵 らぁ麺-魚堺"
+  }
+},
+{
+  "type": "node",
+  "id": 12064212785,
+  "lat": 25.0258450,
+  "lon": 121.5468491,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:floor": "1",
+    "addr:full": "106102臺北市大安區和平東路三段1巷27號1樓",
+    "addr:housenumber": "27",
+    "addr:postcode": "106102",
+    "addr:street": "和平東路三段1巷",
+    "amenity": "fast_food",
+    "cuisine": "american;breakfast",
+    "name": "媽媽米亞",
+    "name:zh": "媽媽米亞",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12064212787,
+  "lat": 25.0261977,
+  "lon": 121.5469086,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:floor": "1",
+    "addr:full": "106102臺北市大安區和平東路三段1巷37號1樓",
+    "addr:housenumber": "37",
+    "addr:postcode": "106102",
+    "addr:street": "和平東路三段1巷",
+    "amenity": "restaurant",
+    "name": "37號海鮮粥",
+    "name:zh": "37號海鮮粥"
+  }
+},
+{
+  "type": "node",
+  "id": 12198801992,
+  "lat": 25.0331291,
+  "lon": 121.5426865,
+  "tags": {
+    "amenity": "fast_food",
+    "check_date": "2026-10-04",
+    "cuisine": "burger",
+    "name": "摩斯漢堡(附中店)"
+  }
+},
+{
+  "type": "node",
+  "id": 12395478201,
+  "lat": 25.0255707,
+  "lon": 121.5399429,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區和平東路二段95-1號",
+    "addr:housenumber": "95-1",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段",
+    "amenity": "fast_food",
+    "branch": "和平店",
+    "brand": "拿坡里披薩",
+    "brand:en": "Napoli Pizza",
+    "brand:wikidata": "Q48927936",
+    "brand:zh": "拿坡里披薩",
+    "cuisine": "pizza;fried_chicken",
+    "name": "拿坡里披薩",
+    "name:en": "Napoli Pizza",
+    "name:zh": "拿坡里披薩",
+    "opening_hours": "Mo-Su 11:00-21:30",
+    "operator": "三商企業集團",
+    "operator:en": "Mercuries Group",
+    "operator:wikidata": "Q10865578",
+    "operator:zh": "三商企業集團",
+    "phone": "+886 2 27071068",
+    "takeaway": "yes",
+    "website": "https://www.0800076666.com.tw/"
+  }
+},
+{
+  "type": "node",
+  "id": 12475356603,
+  "lat": 25.0255013,
+  "lon": 121.5405625,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:floor": "2",
+    "addr:full": "106臺北市大安區龍生里7鄰和平東路二段117號二樓",
+    "addr:hamlet": "龍生里",
+    "addr:housenumber": "117",
+    "addr:neighbourhood": "7",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段107巷",
+    "amenity": "restaurant",
+    "cuisine": "breakfast",
+    "name": "早安有喜-大安和平店",
+    "opening_hours": "Mo-Su 06:00-13:30",
+    "phone": "+886 2 2325 0335"
+  }
+},
+{
+  "type": "node",
+  "id": 12840260252,
+  "lat": 25.0235137,
+  "lon": 121.5432117,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區復興南路二段316號",
+    "addr:housenumber": "316",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "check_date": "2026-09-08",
+    "check_date:opening_hours": "2026-09-08",
+    "cuisine": "taiwanese",
+    "name": "大安米粉湯",
+    "opening_hours": "Mo-Su 10:30-03:00"
+  }
+},
+{
+  "type": "node",
+  "id": 12882720201,
+  "lat": 25.0234732,
+  "lon": 121.5412425,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "台北市大安區和平東路二段96巷15之1號",
+    "addr:housenumber": "15之1",
+    "addr:street": "和平東路二段96巷15弄",
+    "amenity": "restaurant",
+    "name": "和日一五號"
+  }
+},
+{
+  "type": "node",
+  "id": 13108188463,
+  "lat": 25.0327681,
+  "lon": 121.5437993,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區住安里1鄰復興南路二段7號",
+    "addr:hamlet": "住安里",
+    "addr:housenumber": "7",
+    "addr:neighbourhood": "1",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段",
+    "amenity": "fast_food",
+    "contact:facebook": "https://www.facebook.com/112964798335588",
+    "cuisine": "juice",
+    "name": "KURE8 - 8酵茶",
+    "phone": "+886 2 2325 0738",
+    "website": "https://www.kure8kombucha.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 13149217922,
+  "lat": 25.0328761,
+  "lon": 121.5447241,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:floor": "1",
+    "addr:full": "106臺北市大安區信義路四段30巷3號一樓",
+    "addr:housenumber": "3",
+    "addr:postcode": "106",
+    "addr:street": "信義路四段30巷",
+    "amenity": "restaurant",
+    "cuisine": "japanese;curry;定食;豬排;泡芙",
+    "name": "農粹"
+  }
+},
+{
+  "type": "node",
+  "id": 13149231938,
+  "lat": 25.0332023,
+  "lon": 121.5427476,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區信義路三段186號",
+    "addr:housenumber": "186",
+    "addr:postcode": "106",
+    "addr:street": "信義路三段",
+    "amenity": "restaurant",
+    "cuisine": "noodle;水餃",
+    "diet:local": "yes",
+    "name": "好想見麵 大安信義店",
+    "opening_hours": "Mo-Sa 10:30-21:00",
+    "phone": "+886 02 2755 0566"
+  }
+},
+{
+  "type": "node",
+  "id": 13183361810,
+  "lat": 25.0249772,
+  "lon": 121.5445930,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-09-08",
+    "check_date:opening_hours": "2026-09-08",
+    "name": "輕燒臘",
+    "opening_hours": "Mo-Sa 11:00-14:00, 16:00-19:30"
+  }
+},
+{
+  "type": "node",
+  "id": 13404055801,
+  "lat": 25.0316329,
+  "lon": 121.5445450,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區信義路四段30巷50號",
+    "addr:housenumber": "50",
+    "addr:street": "信義路四段30巷",
+    "amenity": "restaurant",
+    "cuisine": "asian;noodles;regional;sandwich;tea",
+    "name": "識食餐室",
+    "name:en": "Zest Diner",
+    "name:zh": "識食餐室",
+    "phone": "+886 2-27844016"
+  }
+},
+{
+  "type": "node",
+  "id": 13404078401,
+  "lat": 25.0283428,
+  "lon": 121.5414034,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區復興南路二段148巷43號",
+    "addr:housenumber": "43",
+    "addr:street": "復興南路二段148巷",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "name": "吃你豆腐",
+    "phone": "+886 2-27001021",
+    "website": "http://instagram.com/chini_tofu"
+  }
+},
+{
+  "type": "node",
+  "id": 13460179301,
+  "lat": 25.0281761,
+  "lon": 121.5411804,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "輕津丸號"
+  }
+},
+{
+  "type": "node",
+  "id": 13545771901,
+  "lat": 25.0244950,
+  "lon": 121.5474106,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路三段26號",
+    "addr:housenumber": "26",
+    "addr:street": "和平東路三段",
+    "amenity": "fast_food",
+    "check_date": "2026-09-14",
+    "cuisine": "burger",
+    "name": "Uncle Burgers"
+  }
+},
+{
+  "type": "node",
+  "id": 13580311401,
+  "lat": 25.0254394,
+  "lon": 121.5408329,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區和平東路二段133號",
+    "addr:housenumber": "133",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段",
+    "amenity": "restaurant",
+    "cuisine": "local",
+    "name": "陸光大姐"
+  }
+},
+{
+  "type": "node",
+  "id": 13580662801,
+  "lat": 25.0253744,
+  "lon": 121.5413408,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區和平東路二段157號",
+    "addr:housenumber": "157",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段",
+    "amenity": "restaurant",
+    "diet:vegetarian": "yes",
+    "name": "青山素食館"
+  }
+},
+{
+  "type": "node",
+  "id": 13685790204,
+  "lat": 25.0258001,
+  "lon": 121.5382696,
+  "tags": {
+    "amenity": "fast_food",
+    "check_date": "2026-03-28",
+    "cuisine": "burger",
+    "name": "摩斯漢堡"
+  }
+},
+{
+  "type": "node",
+  "id": 13685901101,
+  "lat": 25.0251459,
+  "lon": 121.5428827,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路二段227號",
+    "addr:housenumber": "227",
+    "addr:street": "和平東路二段",
+    "amenity": "restaurant",
+    "check_date": "2026-09-15",
+    "cuisine": "breakfast",
+    "name": "福七",
+    "name:en": "Fuchi"
+  }
+},
+{
+  "type": "node",
+  "id": 13686269501,
+  "lat": 25.0250107,
+  "lon": 121.5437335,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區和平東路二段255號",
+    "addr:housenumber": "255",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段",
+    "amenity": "restaurant",
+    "check_date": "2026-03-28",
+    "check_date:opening_hours": "2026-03-28",
+    "cuisine": "japanese",
+    "name": "麵屋雞金",
+    "opening_hours": "Mo-Su 11:30-03:00",
+    "phone": "+886 2 2701 0258",
+    "website": "https://menya-torikin.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 13687291302,
+  "lat": 25.0249702,
+  "lon": 121.5445173,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區和平東路二段285號",
+    "addr:housenumber": "285",
+    "addr:postcode": "106",
+    "addr:street": "和平東路二段",
+    "amenity": "fast_food",
+    "check_date": "2026-09-08",
+    "check_date:opening_hours": "2026-09-08",
+    "name": "蛋白盒子",
+    "name:en": "The Protein Box",
+    "opening_hours": "Mo-Sa 11:00-14:00, 16:00-19:30; Su 11:00-14:00"
+  }
+},
+{
+  "type": "node",
+  "id": 13687291305,
+  "lat": 25.0250164,
+  "lon": 121.5450237,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路二段311巷16號",
+    "addr:housenumber": "16",
+    "addr:street": "和平東路二段311巷",
+    "amenity": "restaurant",
+    "check_date": "2026-09-10",
+    "check_date:opening_hours": "2026-09-10",
+    "name": "馬祖麵館",
+    "opening_hours": "Mo-Su 11:00-21:00"
+  }
+},
+{
+  "type": "node",
+  "id": 13687299301,
+  "lat": 25.0249880,
+  "lon": 121.5450253,
+  "tags": {
+    "amenity": "fast_food",
+    "check_date": "2026-09-08",
+    "check_date:opening_hours": "2026-09-08",
+    "name": "米卡盒餐",
+    "opening_hours": "Mo-Su 10:30-14:00, 15:00-19:30"
+  }
+},
+{
+  "type": "node",
+  "id": 13705228901,
+  "lat": 25.0271181,
+  "lon": 121.5432427,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區復興南路二段190號",
+    "addr:housenumber": "190",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "check_date": "2026-09-08",
+    "check_date:opening_hours": "2026-09-08",
+    "name": "古城古早麵",
+    "opening_hours": "Mo-Su 11:30-20:30",
+    "phone": "+886 2 2703 5711"
+  }
+},
+{
+  "type": "node",
+  "id": 13711015001,
+  "lat": 25.0277359,
+  "lon": 121.5383554,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區瑞安街256巷29號",
+    "addr:housenumber": "29",
+    "addr:street": "瑞安街256巷",
+    "amenity": "restaurant",
+    "check_date": "2026-04-06",
+    "name": "Coffee Naps"
+  }
+},
+{
+  "type": "node",
+  "id": 13776166033,
+  "lat": 25.0282954,
+  "lon": 121.5441636,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區復興南路二段151巷6號",
+    "addr:housenumber": "6",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段151巷",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "name": "日海生猛海鮮",
+    "phone": "+886 2 2701 8884"
+  }
+},
+{
+  "type": "node",
+  "id": 13776177518,
+  "lat": 25.0284436,
+  "lon": 121.5456057,
+  "tags": {
+    "addr:city": "台北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106台北市大安區復興南路二段151巷47號",
+    "addr:housenumber": "47號",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段151巷",
+    "amenity": "fast_food",
+    "brand": "摩斯漢堡",
+    "brand:en": "MOS Burger",
+    "brand:wikidata": "Q1204169",
+    "brand:zh": "摩斯漢堡",
+    "cuisine": "burger",
+    "name": "摩斯漢堡",
+    "name:en": "MOS Burger",
+    "name:zh": "摩斯漢堡",
+    "phone": "+886 2 2705 8524",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 14038979802,
+  "lat": 25.0216725,
+  "lon": 121.5421390,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區辛亥路二段199號",
+    "addr:housenumber": "199",
+    "addr:street": "辛亥路二段",
+    "amenity": "restaurant",
+    "check_date": "2026-07-22",
+    "check_date:opening_hours": "2026-07-22",
+    "name": "JJ's POKE & CAFE 2號店",
+    "opening_hours": "Mo-Su 11:00-20:00"
+  }
+},
+{
+  "type": "node",
+  "id": 14065974101,
+  "lat": 25.0254836,
+  "lon": 121.5405877,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "10664臺北市大安區和平東路二段125號",
+    "addr:housenumber": "125",
+    "addr:postcode": "10664",
+    "addr:street": "和平東路二段",
+    "amenity": "restaurant",
+    "check_date": "2026-09-08",
+    "check_date:opening_hours": "2026-09-08",
+    "name": "樂米餐盒",
+    "opening_hours": "Mo-Fr 10:30-14:00, 15:30-19:30"
+  }
+},
+{
+  "type": "node",
+  "id": 14065976201,
+  "lat": 25.0248392,
+  "lon": 121.5466509,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路三段1巷2號",
+    "addr:housenumber": "2",
+    "addr:street": "和平東路三段1巷",
+    "amenity": "restaurant",
+    "check_date": "2026-08-01",
+    "name": "邊田庄便當本舖"
+  }
+},
+{
+  "type": "node",
+  "id": 14075950501,
+  "lat": 25.0329087,
+  "lon": 121.5433701,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區龍圖里8鄰復興南路二段6號",
+    "addr:hamlet": "龍圖里",
+    "addr:housenumber": "6",
+    "addr:neighbourhood": "8",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "name": "十三川",
+    "name:en": "River13"
+  }
+},
+{
+  "type": "node",
+  "id": 14080140201,
+  "lat": 25.0244795,
+  "lon": 121.5479786,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路三段48號",
+    "addr:housenumber": "48",
+    "addr:street": "和平東路三段",
+    "amenity": "restaurant",
+    "check_date": "2026-09-08",
+    "check_date:opening_hours": "2026-09-08",
+    "name": "便當人 I'M BENTO",
+    "opening_hours": "Mo-Sa 11:00-14:00, 16:30-19:30"
+  }
+},
+{
+  "type": "node",
+  "id": 14081843002,
+  "lat": 25.0222117,
+  "lon": 121.5431949,
+  "tags": {
+    "amenity": "restaurant",
+    "contact:instagram": "ichi_ramen",
+    "cuisine": "ramen",
+    "name": "麵屋壹の穴 ICHI",
+    "opening_hours": "Mo-Su 12:00-20:30",
+    "phone": "0227114319",
+    "self_service": "partially"
+  }
+},
+{
+  "type": "node",
+  "id": 14085543743,
+  "lat": 25.0227941,
+  "lon": 121.5432043,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "106臺北市大安區龍淵里2鄰復興南路二段336號",
+    "addr:hamlet": "龍淵里",
+    "addr:housenumber": "336",
+    "addr:neighbourhood": "2",
+    "addr:postcode": "106",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "check_date": "2026-09-15",
+    "name": "潭莊小卷米粉"
+  }
+},
+{
+  "type": "node",
+  "id": 14100653001,
+  "lat": 25.0255079,
+  "lon": 121.5404303,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-09-08",
+    "check_date:opening_hours": "2026-09-08",
+    "name": "波町弁當",
+    "opening_hours": "Mo-Fr 10:00-18:00"
+  }
+},
+{
+  "type": "node",
+  "id": 14113755301,
+  "lat": 25.0253820,
+  "lon": 121.5450354,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路二段311巷20-4號",
+    "addr:housenumber": "20-4",
+    "addr:street": "和平東路二段311巷",
+    "amenity": "restaurant",
+    "check_date": "2026-09-08",
+    "check_date:opening_hours": "2026-09-08",
+    "name": "GET POWER 給力盒子",
+    "opening_hours": "Mo-Su 10:30-14:00, 15:30-19:30"
+  }
+},
+{
+  "type": "node",
+  "id": 14161496101,
+  "lat": 25.0284695,
+  "lon": 121.5427372,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區復興南路二段148巷16號",
+    "addr:housenumber": "16",
+    "addr:street": "復興南路二段148巷",
+    "amenity": "restaurant",
+    "check_date": "2026-09-08",
+    "check_date:opening_hours": "2026-09-08",
+    "name": "禾豐涮涮鍋",
+    "opening_hours": "Tu-Su 11:30-22:00"
+  }
+},
+{
+  "type": "node",
+  "id": 14180782301,
+  "lat": 25.0242300,
+  "lon": 121.5467468,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區臥龍街11號",
+    "addr:housenumber": "11",
+    "addr:street": "臥龍街",
+    "amenity": "restaurant",
+    "check_date": "2026-09-14",
+    "check_date:opening_hours": "2026-09-14",
+    "contact:facebook": "100063860931082",
+    "cuisine": "japanese",
+    "image:menu": "018e5115-4d0f-475d-ad64-326198135ff0",
+    "name": "樂食堂",
+    "opening_hours": "Mo-Su 11:30-20:30",
+    "panoramax": "1ea5723f-1270-455d-a5b1-612e7d5d101b",
+    "phone": "+886 2-2377-0000"
+  }
+},
+{
+  "type": "node",
+  "id": 14180889901,
+  "lat": 25.0257963,
+  "lon": 121.5418414,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路二段175巷7號",
+    "addr:housenumber": "7",
+    "addr:street": "和平東路二段175巷",
+    "amenity": "restaurant",
+    "check_date": "2026-09-14",
+    "name": "愛家國際餐飲",
+    "name:en": "Loving Hut"
+  }
+},
+{
+  "type": "node",
+  "id": 14180969560,
+  "lat": 25.0255271,
+  "lon": 121.5416366,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "泔米食堂"
+  }
+},
+{
+  "type": "node",
+  "id": 14183303601,
+  "lat": 25.0254921,
+  "lon": 121.5437119,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區復興南路二段277號",
+    "addr:housenumber": "277",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "check_date": "2026-09-15",
+    "cuisine": "japanese",
+    "level": "1",
+    "name": "福勝亭"
+  }
+},
+{
+  "type": "node",
+  "id": 14183315801,
+  "lat": 25.0257149,
+  "lon": 121.5448656,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路二段311巷34弄5號",
+    "addr:housenumber": "5",
+    "addr:street": "和平東路二段311巷34弄",
+    "amenity": "restaurant",
+    "check_date": "2026-09-15",
+    "check_date:opening_hours": "2026-09-15",
+    "name": "營養師的光合廚房",
+    "opening_hours": "Mo-Fr 11:00-20:00"
+  }
+},
+{
+  "type": "node",
+  "id": 14184579801,
+  "lat": 25.0248165,
+  "lon": 121.5494255,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路三段65巷4號",
+    "addr:housenumber": "4",
+    "addr:street": "和平東路三段65巷",
+    "amenity": "restaurant",
+    "check_date": "2026-09-16",
+    "name": "史大華麵館"
+  }
+},
+{
+  "type": "node",
+  "id": 14209461401,
+  "lat": 25.0255673,
+  "lon": 121.5437115,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區復興南路二段275號",
+    "addr:housenumber": "275",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "check_date": "2026-09-23",
+    "level": "1",
+    "name": "人从众厚切牛排"
+  }
+},
+{
+  "type": "node",
+  "id": 14211237404,
+  "lat": 25.0306481,
+  "lon": 121.5440904,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區瑞安街31巷3-2號",
+    "addr:housenumber": "3-2",
+    "addr:street": "瑞安街31巷",
+    "amenity": "restaurant",
+    "check_date": "2026-09-24",
+    "check_date:opening_hours": "2026-09-24",
+    "contact:instagram": "ruianyoufan",
+    "name": "瑞安油飯",
+    "opening_hours": "Mo-Sa 07:30-14:00",
+    "phone": "+886 903 870 521"
+  }
+},
+{
+  "type": "node",
+  "id": 14211270901,
+  "lat": 25.0250220,
+  "lon": 121.5439792,
+  "tags": {
+    "addr:street": "和平東路二段265巷",
+    "amenity": "fast_food",
+    "check_date": "2026-09-24",
+    "name": "極品鹹水雞"
+  }
+},
+{
+  "type": "node",
+  "id": 14211270903,
+  "lat": 25.0249955,
+  "lon": 121.5440731,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路二段267-1號",
+    "addr:housenumber": "267-1",
+    "addr:street": "和平東路二段",
+    "amenity": "restaurant",
+    "check_date": "2026-09-24",
+    "name": "小辣椒魷魚羹"
+  }
+},
+{
+  "type": "node",
+  "id": 14225952401,
+  "lat": 25.0269686,
+  "lon": 121.5432348,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區復興南路二段194號",
+    "addr:housenumber": "194",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "check_date": "2026-09-28",
+    "name": "幸福村麵堂"
+  }
+},
+{
+  "type": "node",
+  "id": 14229762701,
+  "lat": 25.0262009,
+  "lon": 121.5416720,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區和平東路二段107巷23弄17號",
+    "addr:housenumber": "17",
+    "addr:street": "和平東路二段107巷23弄",
+    "amenity": "restaurant",
+    "check_date": "2026-09-29",
+    "name": "宋室台菜"
+  }
+},
+{
+  "type": "node",
+  "id": 14231919001,
+  "lat": 25.0224396,
+  "lon": 121.5431813,
+  "tags": {
+    "addr:city": "臺北市",
+    "addr:country": "TW",
+    "addr:district": "大安區",
+    "addr:full": "臺北市大安區復興南路二段344號",
+    "addr:housenumber": "344",
+    "addr:street": "復興南路二段",
+    "amenity": "restaurant",
+    "check_date": "2026-09-29",
+    "name": "小姊姊の麻辣小屋"
+  }
+},
+{
+  "type": "node",
+  "id": 14322425204,
+  "lat": 25.0254732,
+  "lon": 121.5406877,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-10-25",
+    "name": "巨林美而美"
+  }
+},
+{
+  "type": "node",
+  "id": 14322425404,
+  "lat": 25.0253694,
+  "lon": 121.5413911,
+  "tags": {
+    "amenity": "restaurant",
+    "check_date": "2026-10-25",
+    "name": "老法的酒窩"
+  }
+}
+
+  ]
+}

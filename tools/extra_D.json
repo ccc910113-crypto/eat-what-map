@@ -1,0 +1,483 @@
+[
+ {
+  "id": "getpower",
+  "name": "GET POWER 給力盒子 和平店",
+  "cuisine": "健康餐盒・有營養標示",
+  "type": "健身餐",
+  "addr": "台北市大安區和平東路二段311巷20-4號",
+  "pmin": 225,
+  "pmax": 280,
+  "pest": false,
+  "hours": "每日 10:30–14:00、15:00–19:30（foodpanda 店家頁）",
+  "slots": [
+   {
+    "d": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "o": "10:30",
+    "c": "14:00"
+   },
+   {
+    "d": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "o": "15:00",
+    "c": "19:30"
+   }
+  ],
+  "verified": "foodpanda 有 2026-03～10 的評論",
+  "signature": [
+   "南加州烤雞腿",
+   "塔香烘烤雞胸",
+   "大厚切烤鮭魚"
+  ],
+  "items": [
+   {
+    "cat": "雞",
+    "name": "南加州烤雞腿餐盒",
+    "price": 250,
+    "protein_g": "48"
+   },
+   {
+    "cat": "雞",
+    "name": "塔香烘烤雞胸餐盒",
+    "price": 230,
+    "protein_g": "43"
+   },
+   {
+    "cat": "雞",
+    "name": "泰式打拋雞胸餐盒",
+    "price": null,
+    "protein_g": "41"
+   },
+   {
+    "cat": "豬",
+    "name": "蒜泥醬豬肉片餐盒",
+    "price": 230,
+    "protein_g": "38"
+   },
+   {
+    "cat": "牛",
+    "name": "十三香滷牛腱餐盒",
+    "price": 280,
+    "protein_g": "34"
+   },
+   {
+    "cat": "魚",
+    "name": "鹽烤馬加魚餐盒",
+    "price": 225,
+    "protein_g": "29"
+   },
+   {
+    "cat": "魚",
+    "name": "大厚切烤鮭魚餐盒",
+    "price": 380,
+    "protein_g": "44"
+   }
+  ],
+  "menu_source": "https://www.foodpanda.com.tw/restaurant/r001/get-power-gei-li-he-zi-he-ping-dian",
+  "menu_source_label": "foodpanda 店家頁",
+  "menu_source_date": "2026-11（外送原價）",
+  "menu_link": "https://www.ubereats.com/tw/store/get-power-%E7%B5%A6%E5%8A%9B%E7%9B%92%E5%AD%90-%E5%92%8C%E5%B9%B3%E5%BA%97/toPc4Qg3VoaNJ-9Tu0_RIw",
+  "menu_link_label": "Uber Eats 菜單",
+  "note": "蛋白質是店家公布的營養標示。外送平台常有 8–85 折，店內價以現場為準。每盒碳水約 100 g，可以備註飯少。附無糖茶或豆漿。",
+  "fit": {
+   "order": "南加州烤雞腿餐盒（飯少）",
+   "price": 250,
+   "protein": 48,
+   "grade": "A",
+   "why": "店家標示蛋白質 48 g，是這份清單裡單餐蛋白質最高的；烤的不是炸的。",
+   "avoid": "醬料另放；鮭魚餐盒 380 元超出預算。",
+   "tip": "想省錢就點塔香雞胸（$230，43 g）；19:30 就打烊。"
+  }
+ },
+ {
+  "id": "proteinbox",
+  "name": "蛋白盒子 The Protein Box 科技大樓店",
+  "cuisine": "高蛋白餐盒・有營養標示",
+  "type": "健身餐",
+  "addr": "台北市大安區和平東路二段285號",
+  "pmin": 175,
+  "pmax": 245,
+  "pest": false,
+  "hours": "週一至六 11:00–13:45、16:00–19:15（Uber Eats；另一版本的時段不同，建議先確認）",
+  "slots": [
+   {
+    "d": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "o": "11:00",
+    "c": "13:45"
+   },
+   {
+    "d": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "o": "16:00",
+    "c": "19:15"
+   }
+  ],
+  "verified": "官方點餐頁列有此店，Uber Eats 4.8 分",
+  "signature": [
+   "減鹽味噌烤鱸魚",
+   "薄鹽烤鮭魚",
+   "香煎黑胡椒雞胸"
+  ],
+  "items": [
+   {
+    "cat": "雞胸",
+    "name": "香煎黑胡椒雞胸餐盒",
+    "price": 175,
+    "protein_g": "30"
+   },
+   {
+    "cat": "雞胸",
+    "name": "青蔥海鹽雞胸餐盒",
+    "price": 178,
+    "protein_g": "30.1"
+   },
+   {
+    "cat": "雞腿",
+    "name": "紐奧良雞腿排餐盒",
+    "price": 185,
+    "protein_g": "24.6"
+   },
+   {
+    "cat": "豬",
+    "name": "香煎霜降松阪豬餐盒",
+    "price": 205,
+    "protein_g": "30.4"
+   },
+   {
+    "cat": "牛",
+    "name": "壽喜牛五花餐盒",
+    "price": 178,
+    "protein_g": "32.1"
+   },
+   {
+    "cat": "魚",
+    "name": "減鹽味噌烤鱸魚餐盒",
+    "price": 215,
+    "protein_g": "43.1"
+   },
+   {
+    "cat": "魚",
+    "name": "薄鹽烤鮭魚餐盒",
+    "price": 235,
+    "protein_g": "40.8"
+   }
+  ],
+  "menu_source": "https://theproteinbox.com.tw/menu",
+  "menu_source_label": "官網營養標示＋Uber Eats 價格",
+  "menu_source_date": "2026-11",
+  "menu_link": "https://order.ocard.co/theproteinbox/Qp6PJK",
+  "menu_link_label": "官方線上點餐",
+  "note": "蛋白質照抄官網 2026 年版的營養標示。各快照的價格差 0–10 元，部分時段有買一送一。壽喜牛五花的脂肪較高。",
+  "fit": {
+   "order": "減鹽味噌烤鱸魚餐盒",
+   "price": 215,
+   "protein": 43,
+   "grade": "A",
+   "why": "官方標示蛋白質 43.1 g，減鹽、烤的，每百元的蛋白質是全清單最高之一。",
+   "avoid": "壽喜牛五花（脂肪高、醬偏甜）。",
+   "tip": "預算再低一點，選黑胡椒雞胸（$175，約 30 g）。19:15 就打烊。"
+  }
+ },
+ {
+  "id": "jcz",
+  "name": "人从众厚切牛排 科技大樓店",
+  "cuisine": "平價牛排",
+  "type": "異國",
+  "addr": "台北市大安區復興南路二段275號",
+  "pmin": 260,
+  "pmax": 300,
+  "pest": false,
+  "hours": "每日 11:00–21:30（foodpanda；官網寫到 22:00）",
+  "slots": [
+   {
+    "d": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "o": "11:00",
+    "c": "21:30"
+   }
+  ],
+  "verified": "有 2026-02～07 的評論",
+  "signature": [
+   "厚切雪花沙朗 7oz",
+   "黃金雞腿排",
+   "厚切里肌豬排"
+  ],
+  "items": [
+   {
+    "cat": "牛",
+    "name": "沙朗牛排",
+    "price": 260
+   },
+   {
+    "cat": "牛",
+    "name": "厚切雪花沙朗 7oz",
+    "price": 300
+   },
+   {
+    "cat": "牛",
+    "name": "安格斯骰子牛排",
+    "price": 300
+   },
+   {
+    "cat": "雞",
+    "name": "黃金雞腿排",
+    "price": 280
+   },
+   {
+    "cat": "豬",
+    "name": "厚切里肌豬排",
+    "price": 280
+   },
+   {
+    "cat": "魚",
+    "name": "大比目魚排（扁鱈）",
+    "price": 280
+   },
+   {
+    "cat": "牛",
+    "name": "安格斯沙朗 10oz",
+    "price": 400
+   },
+   {
+    "cat": "牛",
+    "name": "頂級沙朗 16oz",
+    "price": 599
+   }
+  ],
+  "menu_source": "https://www.foodpanda.com.tw/restaurant/b79s/ren-cong-zhong-hou-qie-niu-pai-ke-ji-da-lou-dian",
+  "menu_source_label": "foodpanda（標示店內價）",
+  "menu_source_date": "2026-11",
+  "menu_link": "https://www.jencongzhong.com.tw/store-detail/Taipei_19__14/",
+  "menu_link_label": "官網門市頁",
+  "note": "在 2 樓，從車站走過去約 1 分鐘。附自助吧（濃湯、麵包、飲料、冰淇淋），要避糖就別拿濃湯和甜點，醬料另放。",
+  "fit": {
+   "order": "厚切雪花沙朗 7oz（醬另放）",
+   "price": 300,
+   "protein": 35,
+   "grade": "A",
+   "why": "7 oz 牛排約 200 g 生重，一餐就有 35 g 左右的蛋白質，又在車站旁。",
+   "avoid": "自助吧的玉米濃湯、麵包、冰淇淋；黑胡椒和蘑菇醬含糖。",
+   "tip": "雞腿排（$280）也可以，但脂肪比較高；預算抓緊一點就點沙朗（$260）。"
+  }
+ },
+ {
+  "id": "lehe",
+  "name": "樂和牛排館",
+  "cuisine": "平價牛排",
+  "type": "異國",
+  "addr": "台北市大安區和平東路二段118巷4弄2-1號",
+  "pmin": 260,
+  "pmax": 350,
+  "pest": false,
+  "hours": "每日 11:30–21:45（foodpanda）",
+  "slots": [
+   {
+    "d": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "o": "11:30",
+    "c": "21:45"
+   }
+  ],
+  "verified": "foodpanda 4.6 分，有 2025-12～2026-09 的評論",
+  "signature": [
+   "厚片沙朗牛排 10oz",
+   "樂和雙拼",
+   "菲力牛排"
+  ],
+  "items": [
+   {
+    "cat": "牛",
+    "name": "沙朗牛排",
+    "price": 260
+   },
+   {
+    "cat": "牛",
+    "name": "厚片沙朗牛排（10oz）",
+    "price": 320
+   },
+   {
+    "cat": "牛",
+    "name": "翼板牛排",
+    "price": 340
+   },
+   {
+    "cat": "牛",
+    "name": "菲力牛排",
+    "price": 350
+   },
+   {
+    "cat": "豬",
+    "name": "特製豬排",
+    "price": 260
+   },
+   {
+    "cat": "豬",
+    "name": "香煎厚切豬排",
+    "price": 310
+   },
+   {
+    "cat": "雞",
+    "name": "脆皮雞腿排",
+    "price": 260
+   },
+   {
+    "cat": "魚",
+    "name": "香煎魚排",
+    "price": 280
+   },
+   {
+    "cat": "雙拼",
+    "name": "樂和雙拼（雞腿排＋沙朗）",
+    "price": 390
+   }
+  ],
+  "menu_source": "https://www.foodpanda.com.tw/restaurant/vbwu/le-he-niu-pai-guan",
+  "menu_source_label": "foodpanda 店家頁",
+  "menu_source_date": "2026-11",
+  "menu_link": "https://www.foodpanda.com.tw/restaurant/vbwu/le-he-niu-pai-guan",
+  "menu_link_label": "foodpanda 菜單",
+  "note": "附玉米濃湯，醬料擇一。牛排固定七分熟，有評論說醬偏鹹、肉量偏少。118 巷正在整合都更。",
+  "fit": {
+   "order": "沙朗牛排（醬另放、濃湯不喝）",
+   "price": 260,
+   "protein": 28,
+   "grade": "B",
+   "why": "牛排加蛋，260 元在預算內。",
+   "avoid": "玉米濃湯、醬料、麵；脆皮雞腿是炸的。",
+   "tip": "預算可以多一點的話，10oz 厚片沙朗（$320）的蛋白質約 45 g。"
+  }
+ },
+ {
+  "id": "xinjiye",
+  "name": "鑫吉野烤肉飯 大安和平店",
+  "cuisine": "烤雞腿・烤肉便當",
+  "type": "飯・粥",
+  "addr": "台北市大安區和平東路二段118巷61之1號",
+  "pmin": 145,
+  "pmax": 165,
+  "pest": false,
+  "hours": "週一至六 10:00–20:15（foodpanda），週日未列",
+  "slots": [
+   {
+    "d": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "o": "10:00",
+    "c": "20:15"
+   }
+  ],
+  "verified": "foodpanda 4.8 分，有 2026-02～10 的評論",
+  "signature": [
+   "烤雞腿飯便當",
+   "烤雙寶飯（雞柳＋烤肉）"
+  ],
+  "items": [
+   {
+    "cat": "雞",
+    "name": "烤雞腿飯便當",
+    "price": 165
+   },
+   {
+    "cat": "雞",
+    "name": "烤雞排飯便當",
+    "price": 155
+   },
+   {
+    "cat": "雞",
+    "name": "烤雞柳飯便當",
+    "price": 145
+   },
+   {
+    "cat": "雞",
+    "name": "黑胡椒雞腿飯",
+    "price": 165
+   },
+   {
+    "cat": "豬",
+    "name": "烤肉飯",
+    "price": 145
+   },
+   {
+    "cat": "豬",
+    "name": "烤排骨飯便當",
+    "price": 145
+   },
+   {
+    "cat": "豬",
+    "name": "烤五花肉飯",
+    "price": 145
+   },
+   {
+    "cat": "豬",
+    "name": "滷排骨飯便當",
+    "price": 145
+   },
+   {
+    "cat": "魚",
+    "name": "黑胡椒魚排飯便當",
+    "price": 145
+   }
+  ],
+  "menu_source": "https://www.foodpanda.com.tw/restaurant/tnsa/xin-ji-ye-kao-rou-fan-da-an-he-ping-dian",
+  "menu_source_label": "foodpanda 店家頁",
+  "menu_source_date": "2026-11（起價）",
+  "menu_link": "https://www.foodpanda.com.tw/restaurant/tnsa/xin-ji-ye-kao-rou-fan-da-an-he-ping-dian",
+  "menu_link_label": "foodpanda 菜單",
+  "note": "表上是外送平台的起價，紅茶要另外加購。烤肉醬可能偏甜，有評論說肉片偏薄。118 巷正在整合都更。",
+  "fit": {
+   "order": "烤雞腿飯便當（飯少、醬少）",
+   "price": 165,
+   "protein": 30,
+   "grade": "A",
+   "why": "一整隻烤雞腿，165 元，每百元蛋白質很高。",
+   "avoid": "烤五花、香酥炸物、紅茶；烤肉醬偏甜。",
+   "tip": "可以加點一顆滷蛋；烤雞排（$155）也可以。"
+  }
+ }
+]

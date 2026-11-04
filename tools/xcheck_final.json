@@ -1,0 +1,639 @@
+{
+ "results": [
+  {
+   "id": "jiang",
+   "sources": [
+    "https://icecreamcat.tw/chiangs-hometown-noodles/",
+    "https://ifoodie.tw/restaurant/55a68092c03a104df53ca724",
+    "ifoodie_all.json",
+    "pois.json",
+    "https://en.footinder.app/places/6429a11d8ff191e039e74d91"
+   ],
+   "open": "一致",
+   "addr": "一致（愛食記寫「18號之1」，FooTinder 寫「18之1」，同一址；pois.json 寫「208巷1號」應為 OSM 錯誤）",
+   "hours": "一致：11:30–14:30、17:30–20:30，週六公休（愛食記店頁同）；「週五也休」查無第二來源",
+   "price": "只有單一來源：愛食記店頁沒有清燉牛肉麵、豆魚的價格（只列熗鍋麵 160、水煮牛肉麵 200，比資料檔的 200／260 低，可能是舊價）",
+   "fix": ""
+  },
+  {
+   "id": "niu",
+   "sources": [
+    "https://hedonistjun.com/manorbeef/",
+    "https://ifoodie.tw/restaurant/5b3917952756dd22ee47b25f",
+    "ifoodie_all.json",
+    "pois.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "一致：資料檔、愛食記、OSM 都是每日 11:30–14:00、17:30–20:20",
+   "price": "只有單一來源",
+   "fix": ""
+  },
+  {
+   "id": "thai",
+   "sources": [
+    "https://whitneyblog.com/mrsthaithai-fuxingsouth",
+    "https://ifoodie.tw/restaurant/62fa60f27cc7fc6741923ae5",
+    "ifoodie_all.json",
+    "pois.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "衝突：資料檔寫每日 11:00–20:30（外送平台）；OSM（2026-09-14）寫 Mo-Su 11:00-21:00；愛食記寫 11:00-21:00",
+   "price": "只有單一來源",
+   "fix": "每日 11:00–21:00（外送可能 20:30 停單）"
+  },
+  {
+   "id": "penghu",
+   "sources": [
+    "https://www.mirrormedia.mg/story/20230426food001",
+    "https://ifoodie.tw/restaurant/5af1e64f2756dd6a5c7c1424",
+    "ifoodie_all.json"
+   ],
+   "open": "單一來源",
+   "addr": "一致",
+   "hours": "單一來源：愛食記店頁沒有營業時間，資料檔的 11:30–14:00、17:30–20:00 找不到第二來源",
+   "price": "只有單一來源",
+   "fix": "愛食記最新評論是 2017 年，找不到 2025–2026 年仍營業的證據；建議標註「營業狀態未確認」，或先打電話、看 Google 地圖確認"
+  },
+  {
+   "id": "sushi",
+   "sources": [
+    "https://www.whbydcc.com/%E7%88%AD%E9%AE%AE%E4%B8%80%E7%9B%A4%E5%A4%9A%E5%B0%91/",
+    "https://ifoodie.tw/restaurant/55a67d1ec03a104df53ca62f",
+    "ifoodie_all.json",
+    "pois.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "一致：資料檔、愛食記、OSM 都是每日 11:00–21:30",
+   "price": "只有單一來源（官網回 403）",
+   "fix": ""
+  },
+  {
+   "id": "wujiu",
+   "sources": [
+    "https://goodeat.tw/food/wujiu-noodle-house-heping-east-road-taipei/",
+    "https://ifoodie.tw/restaurant/6a2ffb58927f804b9edea398",
+    "ifoodie_all.json",
+    "pois.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "衝突：資料檔寫週一至五 11:00–14:30、17:00–20:30；愛食記寫 11:00-14:00、17:00-20:00；OSM 沒有時間",
+   "price": "只有單一來源",
+   "fix": "11:00–14:00、17:00–20:00（依愛食記），註明出發前確認"
+  },
+  {
+   "id": "squid",
+   "sources": [
+    "https://hedonistjun.com/small-pepper-squid-soup",
+    "https://ifoodie.tw/restaurant/55a50faac03a10241de644e1",
+    "ifoodie_all.json",
+    "pois.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "衝突（資料檔已註明）：愛食記寫 10:30-21:00；Uber Eats 寫 12:00–20:00；另一說 11:00–22:00 週日休；OSM 沒有時間",
+   "price": "只有單一來源",
+   "fix": ""
+  },
+  {
+   "id": "pie",
+   "sources": [
+    "https://mibaoma.tw/technology-building-station-pie/",
+    "https://ifoodie.tw/restaurant/5ae93bcd23679c1748ddf35d",
+    "ifoodie_all.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "衝突：資料檔寫週一至六 11:00–19:30；愛食記寫 12:00–19:30，週日公休",
+   "price": "一致：牛肉餡餅 40（愛食記 2025-04 評論）",
+   "fix": "週一至六 12:00–19:30，週日公休"
+  },
+  {
+   "id": "zhongcheng",
+   "sources": [
+    "https://lordcat.net/archives/2967",
+    "https://ifoodie.tw/restaurant/559dbe22c03a103ee86ca3ba",
+    "ifoodie_all.json",
+    "pois.json"
+   ],
+   "open": "單一來源",
+   "addr": "一致",
+   "hours": "一致：都是 11:00–20:30；週五公休查無第二來源",
+   "price": "只有單一來源",
+   "fix": "愛食記最新評論是 2020 年，OSM 沒有 check_date，找不到 2025–2026 年仍營業的證據；建議先確認"
+  },
+  {
+   "id": "getpower",
+   "sources": [
+    "https://www.foodpanda.com.tw/restaurant/r001/get-power-gei-li-he-zi-he-ping-dian",
+    "https://www.ubereats.com/tw/store/get-power-%E7%B5%A6%E5%8A%9B%E7%9B%92%E5%AD%90-%E5%92%8C%E5%B9%B3%E5%BA%97/toPc4Qg3VoaNJ-9Tu0_RIw",
+    "pois.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "衝突：資料檔（foodpanda）寫每日 10:30–14:00、15:00–19:30；OSM（2026-09-08）寫 Mo-Su 10:30-14:00, 15:30-19:30",
+   "price": "一致：Uber Eats 搜尋摘要寫南加州烤雞腿餐盒原價 250",
+   "fix": "下午時段改從 15:30 開始（依 OSM，待確認）"
+  },
+  {
+   "id": "proteinbox",
+   "sources": [
+    "https://theproteinbox.com.tw/menu",
+    "https://www.ubereats.com/tw/store/%E8%9B%8B%E7%99%BD%E7%9B%92%E5%AD%90%E5%81%A5%E5%BA%B7%E9%A4%90%E7%9B%92-the-protein-box-%E7%A7%91%E6%8A%80%E5%A4%A7%E6%A8%93%E5%BA%97/POHYN5CdWHi20sAu0sAYGA",
+    "pois.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "衝突：資料檔（Uber Eats）寫週一至六 11:00–13:45、16:00–19:15；OSM（2026-09-08）寫 Mo-Sa 11:00-14:00, 16:00-19:30; Su 11:00-14:00",
+   "price": "衝突：Uber Eats 中文頁 215，英文頁 220；官網沒標價",
+   "fix": "週一至六 11:00–14:00、16:00–19:30，週日 11:00–14:00；價格寫 215–220"
+  },
+  {
+   "id": "jcz",
+   "sources": [
+    "https://www.foodpanda.com.tw/restaurant/b79s/ren-cong-zhong-hou-qie-niu-pai-ke-ji-da-lou-dian",
+    "https://www.jencongzhong.com.tw/store-detail/Taipei_19__14/",
+    "https://www.ubereats.com/tw/store/%E4%BA%BA%E4%BB%8E%E4%BC%97%E5%8E%9A%E5%88%87%E7%89%9B%E6%8E%92-%E7%A7%91%E6%8A%80%E5%A4%A7%E6%A8%93/QogvSfaFXc6Xto4wT4VqBw",
+    "pois.json"
+   ],
+   "open": "一致",
+   "addr": "一致（官網寫 275號2樓，資料檔沒寫樓層）",
+   "hours": "衝突（資料檔已註明）：foodpanda 寫 11:00–21:30；官網寫 11:00–22:00",
+   "price": "衝突：資料檔 300（foodpanda）；Uber Eats 厚切雪花沙朗 7oz 寫 320（外送價）",
+   "fix": "地址加「2樓」；價格寫 300–320"
+  },
+  {
+   "id": "lehe",
+   "sources": [
+    "https://www.foodpanda.com.tw/restaurant/vbwu/le-he-niu-pai-guan",
+    "pois.json"
+   ],
+   "open": "一致",
+   "addr": "衝突：資料檔寫 118巷4弄2-1號；OSM（2026-08-05）寫 118巷4弄2號，可能只差在「之1」",
+   "hours": "單一來源：只有 foodpanda 寫每日 11:30–21:45，OSM 沒有時間",
+   "price": "只有單一來源",
+   "fix": ""
+  },
+  {
+   "id": "xinjiye",
+   "sources": [
+    "https://www.foodpanda.com.tw/restaurant/tnsa/xin-ji-ye-kao-rou-fan-da-an-he-ping-dian",
+    "pois.json"
+   ],
+   "open": "單一來源",
+   "addr": "衝突：資料檔寫 118巷61之1號；OSM 有「吉野烤肉飯」在 118巷54弄33號（沒有 check_date，可能是舊點或別家分店）",
+   "hours": "單一來源：只有 foodpanda 寫週一至六 10:00–20:15",
+   "price": "只有單一來源",
+   "fix": "地址請先用 Google 地圖確認是 118巷61之1號 還是 118巷54弄33號"
+  },
+  {
+   "id": "chikopi",
+   "sources": [
+    "https://hedonistjun.com/chi-kopitiam/",
+    "https://ifoodie.tw/restaurant/578fbf282756dd01dcf7d481",
+    "ifoodie_all.json",
+    "pois.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "一致：每日 11:30–20:30；沒有來源提到 15:00–17:00 休息",
+   "price": "衝突：大馬肉骨茶飯，資料檔 240，愛食記店頁 200",
+   "fix": "大馬肉骨茶飯寫 200–240，fit.price 跟著調整，或請使用者確認"
+  },
+  {
+   "id": "tst",
+   "sources": [
+    "https://littlepu.tw/tsim-sha-tsui/",
+    "https://ifoodie.tw/restaurant/6a91877a927f80fbd255a2bd",
+    "ifoodie_all.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "衝突：資料檔寫 11:30–15:00、17:00–21:30，週日公休；愛食記寫 11:30–15:00、17:00–21:00，沒標公休",
+   "price": "只有單一來源",
+   "fix": "晚上打烊改成 21:00；週日公休只有食記這一個來源"
+  },
+  {
+   "id": "imbento",
+   "sources": [
+    "https://www.ubereats.com/tw/store/%E4%BE%BF%E7%95%B6%E4%BA%BA-%E5%A4%A7%E5%AE%89%E5%BA%97/6xAbbl4XUx-aviFjP65OPg",
+    "https://ifoodie.tw/restaurant/64c0998977b9e964e09007e2",
+    "ifoodie_all.json",
+    "pois.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "衝突：資料檔寫每日 11:00–14:00、16:30–19:30；OSM（2026-09-08）寫 Mo-Sa（週日休）；愛食記沒有分星期",
+   "price": "只有單一來源",
+   "fix": "週一至六 11:00–14:00、16:30–19:30，週日公休"
+  },
+  {
+   "id": "ameng",
+   "sources": [
+    "https://tenjo.tw/ameng/",
+    "https://ifoodie.tw/restaurant/68ecfc7a927f802b7dab5414",
+    "ifoodie_all.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "一致：11:00–14:00、17:00–20:00；週六公休只有食記這一個來源",
+   "price": "只有單一來源",
+   "fix": ""
+  },
+  {
+   "id": "maesai",
+   "sources": [
+    "https://www.tony60533.com/maesai-thai-cuisine/",
+    "https://appletrees.tw/blog/post/maesai",
+    "https://ifoodie.tw/restaurant/664b4dc2927f804a73b56e58",
+    "pois.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "一致：11:30–14:00、17:00–20:00；OSM（2026-09-15）寫 Mo-Su，appletrees 2026-09 也寫每天營業",
+   "price": "一致：招牌椒麻雞肉飯 120（appletrees 2026-09）",
+   "fix": "公休日改成「每日營業」"
+  },
+  {
+   "id": "linji",
+   "sources": [
+    "https://upssmile.com/199232/linji-hainanesechickenrice-daanhepingdian",
+    "https://ifoodie.tw/restaurant/65fa7c117be9c3fac6555271",
+    "ifoodie_all.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "衝突：資料檔寫每日 11:30–21:00；愛食記寫 11:00–21:00",
+   "price": "只有單一來源（官網回 403）",
+   "fix": "開門時間改成 11:00"
+  },
+  {
+   "id": "longhou",
+   "sources": [
+    "https://almablog.tw/blog/post/184356",
+    "https://ifoodie.tw/restaurant/600c3985d6895d526d6456d5",
+    "ifoodie_all.json",
+    "pois.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "一致：11:30–14:30、17:00–22:00",
+   "price": "只有單一來源",
+   "fix": ""
+  },
+  {
+   "id": "butcher",
+   "sources": [
+    "https://upssmile.com/275270/butcher-lab-by-lanpengyoudaan",
+    "https://ifoodie.tw/restaurant/5edefedc8c906d4b0bc51831",
+    "ifoodie_all.json",
+    "pois.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "一致：平日 11:00–14:00、17:30–20:30；週末全天營業沒有第二來源",
+   "price": "只有單一來源（蒜味牛肉堡兩邊都沒標價）",
+   "fix": ""
+  },
+  {
+   "id": "xgypark",
+   "sources": [
+    "https://auntie.tw/little-park-noodles/",
+    "https://ifoodie.tw/restaurant/6ad3757473ccef01e39eab3f",
+    "ifoodie_all.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "一致：11:00–14:30、17:00–20:00；週日只開中午沒有第二來源",
+   "price": "只有單一來源（愛食記 2026-10-17 評論說價格小漲）",
+   "fix": "備註加上「2026-10 評論說價格小漲，190 可能偏低」"
+  },
+  {
+   "id": "sansi",
+   "sources": [
+    "https://mibaoma.tw/sansi-noodles/",
+    "https://ifoodie.tw/restaurant/55a52fc2c03a10241de64fc0",
+    "ifoodie_all.json",
+    "https://en.footinder.app/places/6429bbfea99b7dfe5fea0370"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "一致：11:00–14:00、17:00–20:00，週一公休",
+   "price": "只有單一來源（番茄牛肉刀削麵 140 是 2021 年的價格）",
+   "fix": ""
+  },
+  {
+   "id": "uosakai",
+   "sources": [
+    "https://gzifood.com/ramensakai-daan/",
+    "https://ifoodie.tw/restaurant/681caf83927f8058f795b55d",
+    "ifoodie_all.json",
+    "pois.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "衝突：資料檔寫週三至日 11:30–14:00、17:00–21:00；愛食記寫 11:30–13:30、17:00–20:00；OSM 沒有時間",
+   "price": "只有單一來源",
+   "fix": "11:30–13:30、17:00–20:00（依愛食記），註明出發前確認"
+  },
+  {
+   "id": "longho",
+   "sources": [
+    "https://jeremyfoodie.tw/longho-ramen-tp-ruian/",
+    "https://ifoodie.tw/restaurant/64a75a3e77b9e95ecc9bc20f",
+    "ifoodie_all.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "一致：每日 11:30–21:00",
+   "price": "只有單一來源",
+   "fix": ""
+  },
+  {
+   "id": "whatachicken",
+   "sources": [
+    "https://salihaha.com/whatachicken/",
+    "https://ifoodie.tw/restaurant/68db96bc927f80d23fb3179b",
+    "ifoodie_all.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "一致：11:30–14:00、17:00–20:00",
+   "price": "只有單一來源",
+   "fix": ""
+  },
+  {
+   "id": "younghwaru",
+   "sources": [
+    "https://hedonistjun.com/younghwaru/",
+    "https://ifoodie.tw/restaurant/631c90857cc7fc29b4ceb026",
+    "ifoodie_all.json",
+    "https://www.twreporter.org/a/the-reporter-feature-korean-chinese-restaurant-in-taipei"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "一致：11:30–14:30、17:00–21:00",
+   "price": "只有單一來源",
+   "fix": "「只收現金」改成「付款方式各來源不一，建議帶現金」（愛食記上 2024-03 的食記說只收現金，報導者 2024-02 說可刷卡）"
+  },
+  {
+   "id": "guixiang",
+   "sources": [
+    "https://nash.tw/guixiang2024/",
+    "https://ifoodie.tw/restaurant/66d075dd927f80808c1a38fa",
+    "ifoodie_all.json",
+    "https://mayawang.site/12838"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "衝突：資料檔與愛食記都是 11:00–13:30、16:30–21:30；mayawang 2025-07 寫週一至五 12:00–23:00、週六日 16:00–23:00",
+   "price": "只有單一來源",
+   "fix": "加註「另一篇食記寫週一至五 12:00–23:00、週六日 16:00–23:00，週日是否公休不確定」"
+  },
+  {
+   "id": "qiaoqiao",
+   "sources": [
+    "https://nash.tw/chocho/",
+    "https://ifoodie.tw/restaurant/641076c601ba337ad578e718",
+    "ifoodie_all.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "衝突：資料檔寫週一至六 16:00–22:00；愛食記寫 15:50–21:50，週日公休",
+   "price": "只有單一來源",
+   "fix": "週一至六約 15:50–21:50，週日公休"
+  },
+  {
+   "id": "nanpho",
+   "sources": [
+    "https://mayawang.site/13973",
+    "https://ifoodie.tw/restaurant/684462db7be9c36b9e56375e",
+    "ifoodie_all.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "衝突：資料檔寫每日 11:00–20:30；愛食記寫 11:00–20:00",
+   "price": "一致：綜合牛肉河粉 160（愛食記店頁）",
+   "fix": "打烊改成 20:00"
+  },
+  {
+   "id": "luguang",
+   "sources": [
+    "https://kkmurmur.com/lu-guang-big-sister/",
+    "https://ifoodie.tw/restaurant/69cfbdb9927f807ca3251794",
+    "ifoodie_all.json",
+    "pois.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "一致：11:30–14:00、17:30–20:30；週一公休沒有第二來源",
+   "price": "只有單一來源",
+   "fix": ""
+  },
+  {
+   "id": "s136",
+   "sources": [
+    "https://littlepu.tw/136-food-store/",
+    "https://ifoodie.tw/restaurant/69db83c5927f8046f5ec645a",
+    "ifoodie_all.json",
+    "pois.json"
+   ],
+   "open": "一致",
+   "addr": "衝突：資料檔與愛食記（2026）都是復興南路二段148巷32弄2號；OSM 寫復興南路二段268號（可能是舊址）",
+   "hours": "一致：17:00–21:00",
+   "price": "只有單一來源",
+   "fix": ""
+  },
+  {
+   "id": "kadoya",
+   "sources": [
+    "https://globalfoodelicious.com/kadoya-oden-taipei/",
+    "https://ifoodie.tw/restaurant/559ddd0cc03a103ee86cb693",
+    "ifoodie_all.json"
+   ],
+   "open": "一致",
+   "addr": "一致（愛食記寫「141巷口」）",
+   "hours": "一致：愛食記寫週五六日一休息，等於只開週二至四 12:00–14:00、17:00–21:40",
+   "price": "只有單一來源",
+   "fix": ""
+  },
+  {
+   "id": "shanli",
+   "sources": [
+    "https://mayawang.site/12884",
+    "https://ifoodie.tw/restaurant/6890c2ed927f8074166fff99",
+    "ifoodie_all.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "一致（愛食記只列當天 15:00–19:30）",
+   "price": "只有單一來源",
+   "fix": ""
+  },
+  {
+   "id": "lemi",
+   "sources": [
+    "https://www.ubereats.com/tw-en/store/%E6%A8%82%E7%B1%B3%E9%A4%90%E7%9B%92love-me-box/i768c1K-U024w4j1yCqqpw",
+    "pois.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "衝突：資料檔（Uber Eats）寫平日 10:30–14:00、15:30–19:00；OSM（2026-09-08）寫 Mo-Fr 10:30-14:00, 15:30-19:30，週末沒有列",
+   "price": "只有單一來源",
+   "fix": "平日 10:30–14:00、15:30–19:30，週六日公休"
+  },
+  {
+   "id": "laoge",
+   "sources": [
+    "https://www.ubereats.com/tw/store/%E8%80%81%E5%93%A5-%E9%9B%9E%E8%82%89%E9%A3%AF-%E4%B9%BE%E6%8B%8C%E9%BA%B5-%E5%A4%A7%E5%AE%89%E5%BA%97/RY6-6ksqUu-4p6T8GcQO3g",
+    "pois.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "衝突：資料檔寫「營業時間未查到」；OSM（2026-09-09）寫 Mo-Fr 11:00-20:30; Sa 11:00-14:00, 17:00-20:30",
+   "price": "只有單一來源",
+   "fix": "週一至五 11:00–20:30；週六 11:00–14:00、17:00–20:30；週日可能公休"
+  },
+  {
+   "id": "fst",
+   "sources": [
+    "https://www.tonkatsu.com.tw/menu/menu",
+    "pois.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "單一來源：只有資料檔寫每日 11:00–21:30；OSM 和官網菜單頁都沒有時間",
+   "price": "只有單一來源（官網沒有價格）",
+   "fix": ""
+  },
+  {
+   "id": "jbw",
+   "sources": [
+    "https://ctionkuni.pixnet.net/blog/post/346718176",
+    "https://ifoodie.tw/restaurant/64edf6ba6f2e3140f717c329",
+    "ifoodie_all.json",
+    "https://mayawang.site/7440"
+   ],
+   "open": "一致",
+   "addr": "衝突：資料檔寫 311巷17-1號；愛食記和 mayawang 都寫 311巷17號",
+   "hours": "衝突：資料檔寫 11:00–14:00、16:30–19:30，週日公休；愛食記寫 11:00–14:00、16:30–19:15；mayawang 2023 寫 11:00–14:00、15:30–19:30，週一公休",
+   "price": "衝突：雙倍嫩雞飯 170 只有單一來源；mayawang 2023 只寫嫩雞飯 110、雙蛋嫩雞飯 120",
+   "fix": "地址改成和平東路二段311巷17號；公休日註明「週日或週一（來源不一）」；最新營業證據是 2024-12，偏弱"
+  },
+  {
+   "id": "tibet",
+   "sources": [
+    "https://www.ubereats.com/tw/store/tibet-kitchen-%E8%A5%BF%E8%97%8F%E5%BB%9A%E6%88%BF/mjr_Z6BvW2KaVHBLG_WKrA",
+    "https://ifoodie.tw/restaurant/5655cfca2756dd1d7a1afdaf",
+    "ifoodie_all.json",
+    "pois.json",
+    "https://wunweistories.com/food-tibet-kitchen-20230507/"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "一致：11:30–14:00、17:00–21:00；OSM（2026-09-18）另寫 Tu-Su，等於週一公休",
+   "price": "衝突：Uber Eats 寫 290（外送價）；wunwei 寫內用石炭烤雞（4 塊）270，另收 10% 服務費",
+   "fix": "週二至週日 11:30–14:00、17:00–21:00，週一公休；價格註明內用 270＋10% 服務費 ≈ 297"
+  },
+  {
+   "id": "beef13",
+   "sources": [
+    "https://upssmile.com/234535/13beef-noodles",
+    "https://ifoodie.tw/restaurant/570944f82756dd5b1184a050",
+    "ifoodie_all.json",
+    "https://taiwan17go.com/hepingefood/"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "衝突：資料檔寫 11:30–14:30、17:30–21:30，週日公休；愛食記寫 11:30–14:30、17:30–21:00",
+   "price": "只有單一來源",
+   "fix": "週一至六 11:30–14:30、17:30–21:00，週日公休"
+  },
+  {
+   "id": "subway",
+   "sources": [
+    "https://www.money101.com.tw/blog/subway%E8%8F%9C%E5%96%AE%E5%83%B9%E6%A0%BC",
+    "pois.json",
+    "https://www.subway.com.tw/nutrition"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "單一來源：只有資料檔寫 08:00–22:00，OSM 沒有時間",
+   "price": "只有單一來源",
+   "fix": ""
+  },
+  {
+   "id": "mos",
+   "sources": [
+    "https://www.mos.com.tw/menu/set.aspx",
+    "pois.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "單一來源：OSM 沒有時間",
+   "price": "只有單一來源（重抓官網：輕檸雙牛堡 100、元氣牛肉珍珠堡 110，但跟 menu_source 是同一個來源）",
+   "fix": ""
+  },
+  {
+   "id": "chuan",
+   "sources": [
+    "https://anise.tw/282874",
+    "https://ifoodie.tw/restaurant/578bca522756dd59c2315874",
+    "https://nash.tw/letsgospicyndbeef2026/"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "一致：nash 2026-04 寫 12:00–14:00、17:30–20:00，六日公休",
+   "price": "只有單一來源",
+   "fix": ""
+  },
+  {
+   "id": "nihao",
+   "sources": [
+    "https://mayawang.site/11593",
+    "https://ifoodie.tw/restaurant/680e3a80927f8005ac591cd3",
+    "ifoodie_all.json",
+    "https://tw.openrice.com/zh-tw/taipei/r-%E4%BD%A0%E5%A5%BD%E5%8E%9F%E6%B1%81%E7%89%9B%E8%82%89%E9%BA%B5-%E5%A4%A7%E5%AE%89%E5%8D%80-%E9%BA%B5%E9%BB%9E-r1147254"
+   ],
+   "open": "一致",
+   "addr": "一致：愛食記和 OpenRice 都寫 170巷43號",
+   "hours": "一致：每日 11:00–20:50",
+   "price": "只有單一來源",
+   "fix": "把營業時間備註裡「地址為 170巷24號」的說法刪掉"
+  },
+  {
+   "id": "eling",
+   "sources": [
+    "https://nash.tw/hunglingju2024/",
+    "https://ifoodie.tw/restaurant/630448bc7cc7fc0cb9ca7091",
+    "ifoodie_all.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "衝突：資料檔寫週六營業與否不確定；愛食記寫 11:00–14:00、17:00–19:50，週六日公休",
+   "price": "只有單一來源",
+   "fix": "週一至五 11:00–14:00、17:00–19:50，週六日公休；只收現金"
+  },
+  {
+   "id": "tanzhuang",
+   "sources": [
+    "https://followmii.tw/blog/post/tan",
+    "pois.json"
+   ],
+   "open": "一致",
+   "addr": "一致",
+   "hours": "單一來源：OSM 沒有時間；資料檔寫 10:00–22:00 或到 21:30",
+   "price": "只有單一來源",
+   "fix": ""
+  }
+ ],
+ "summary": {
+  "two_source_ok": 1,
+  "conflicts": 24,
+  "single_source": 22,
+  "note": "判定：4 項都一致才算 two_source_ok；任一項有衝突算 conflicts；其餘有任一項只有單一來源的算 single_source。品項價格是主要瓶頸：47 家中只有 7 家找到第二個價格來源（pie、getpower、maesai、nanpho 一致；proteinbox、jcz、tibet 有出入）。原因是 Uber Eats、foodpanda 直接抓都回 403，愛食記店頁多半只列均消。penghu、zhongcheng 找不到 2025–2026 年仍營業的證據。WebSearch 共用 20 次（上限 25）。沒有修改任何資料檔。"
+ }
+}

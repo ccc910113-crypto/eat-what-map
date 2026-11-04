@@ -1,0 +1,38 @@
+import json
+def I(c,n,p): return {"cat":c,"name":n,"price":p}
+A=[0,1,2,3,4,5,6]
+E=[
+dict(id="chuan",name="川味麵典",cuisine="川味牛肉麵・外省麵館",type="麵食",addr="台北市大安區四維路176巷17號",pmin=95,pmax=280,pest=False,phone="02-2701-0202",
+ hours="週一至五 12:00–14:00、17:30–20:00，週六日公休；會不定期長休（2025-11 食記），出發前先打電話",
+ slots=[{"d":[1,2,3,4,5],"o":"12:00","c":"14:00"},{"d":[1,2,3,4,5],"o":"17:30","c":"20:00"}],verified="2026-04 仍有食記",
+ signature=["肋排牛腩麵","牛小排麵","口水雞"],
+ items=[I("麵","肋排牛腩麵（川味／番茄／乾拌）",240),I("麵","牛小排麵（不一定天天有）",200),I("麵","川味擔擔麵",110),I("麵","蕃茄哨子麵",95),I("麵","養生汽鍋雞麵線",130),I("主菜","口水雞",150),I("抄手","紅油抄手",90),I("小菜","紅油豬耳",40),I("小菜","涼拌川耳",40),I("小菜","胡麻秋葵",40),I("小菜","麻辣豆干",30)],
+ menu_source="https://anise.tw/282874",menu_source_label="食記 anise",menu_source_date="2025-11（2026-04 食記確認仍營業）",menu_link="https://nash.tw/letsgospicyndbeef2026/",menu_link_label="2026 食記",
+ note="晚上只開到 20:00，常排隊。",
+ fit=dict(order="口水雞＋川味擔擔麵（麵減半）",price=260,protein=34,grade="B",why="口水雞是整份雞腿肉，比牛肉麵的肉量多。",avoid="紅油抄手、麻醬多的乾拌麵；口水雞的醬帶糖，少沾。",tip="牛小排麵（$200）＋麻辣豆干也可以，但牛小排油花多。")),
+dict(id="nihao",name="你好原汁牛肉麵",cuisine="平價牛肉麵",type="麵食",addr="台北市大安區四維路170巷43號",pmin=130,pmax=250,pest=False,phone="02-2700-7755",
+ hours="每日 11:00–20:50（另一來源寫週日公休、地址為 170巷24號，請先查 Google 地圖）",
+ slots=[{"d":A,"o":"11:00","c":"20:50"}],verified="2025-04 食記",unverified="地址與公休日來源不一",
+ signature=["半筋半肉牛肉麵","清燉牛肉湯","牛雜飯"],
+ items=[I("麵","招牌牛肉麵",145),I("麵","半筋半肉牛肉麵",145),I("湯","清燉牛肉湯",130),I("飯","北港滷肉飯",40),I("飯","牛雜飯",None),I("飯","香噴噴牛滷飯",None),I("小菜","蒜蓉豬心",50),I("小菜","皮蛋豆腐",40),I("小菜","小黃瓜",40),I("小菜","燙青菜",40),I("小菜","豆干海帶",20)],
+ menu_source="https://mayawang.site/11593",menu_source_label="食記 mayawang",menu_source_date="2025-04",menu_link="https://tw.openrice.com/zh-tw/taipei/r-%E4%BD%A0%E5%A5%BD%E5%8E%9F%E6%B1%81%E7%89%9B%E8%82%89%E9%BA%B5-%E5%A4%A7%E5%AE%89%E5%8D%80-%E9%BA%B5%E9%BB%9E-r1147254",menu_link_label="OpenRice",
+ note="內用可以免費喝豆漿、紅茶，紅茶有糖。",
+ fit=dict(order="清燉牛肉湯＋蒜蓉豬心＋白飯半碗，加一杯免費豆漿",price=220,protein=34,grade="A",why="清燉牛肉湯不含麵，蛋白質比例高；豬心是瘦內臟；免費豆漿可以再補 5–7 g。",avoid="紅茶（含糖）、滷肉飯。",tip="想吃麵就點招牌牛肉麵（$145），麵吃一半。")),
+dict(id="eling",name="餓菱居",cuisine="炒飯・抄手（鼎泰豐師傅）",type="飯・粥",addr="台北市大安區四維路170巷26號",pmin=70,pmax=250,pest=False,phone="02-2706-8599",
+ hours="平日 11:00–14:00、17:00–19:50；週六有一說營業、有一說公休，週日公休；只收現金",
+ slots=[{"d":[1,2,3,4,5],"o":"11:00","c":"14:00"},{"d":[1,2,3,4,5],"o":"17:00","c":"19:50"}],verified="2026-04、2026-08 仍有食記",
+ signature=["排骨蛋炒飯","鮮肉紅油抄手","麻醬麵"],
+ items=[I("乾麵","麻醬麵",70),I("乾麵","鮮肉乾拌抄手麵",None),I("抄手","鮮肉紅油抄手",90),I("抄手","蝦肉乾拌抄手",None),I("炒飯","香蔥蛋炒飯",70),I("炒飯","蝦仁蛋炒飯",140),I("炒飯","排骨蛋炒飯",150),I("湯","酸辣湯",60),I("小菜","涼拌小黃瓜",50),I("小菜","四季烤麩",50)],
+ menu_source="https://nash.tw/hunglingju2024/",menu_source_label="食記 Nash",menu_source_date="2024-08（2026 年食記寫炒飯 70–170 元）",menu_link=None,
+ note="部分價格可能已調漲。晚上 19:50 就收。",
+ fit=dict(order="排骨蛋炒飯（飯吃一半）＋鮮肉紅油抄手",price=240,protein=34,grade="B",why="排骨、蛋、豬肉抄手三種蛋白質。",avoid="排骨是炸的、炒飯油多；紅油少沾。",tip="想減脂就只點抄手兩份＋小黃瓜。")),
+dict(id="tanzhuang",name="潭莊小卷米粉",cuisine="油雞便當・虱目魚肚",type="飯・粥",addr="台北市大安區復興南路二段336號",pmin=85,pmax=225,pest=False,phone="02-2738-2676",
+ hours="每日 10:00–22:00（另一來源寫到 21:30）",
+ slots=[{"d":A,"o":"10:00","c":"21:30"}],verified="foodpanda 仍上架；2025 年有團購券",
+ signature=["小卷米粉","魚肚粥","無刺虱目魚肚湯"],
+ items=[I("麵","小卷米粉",135),I("粥","魚肚粥",130),I("便當","油雞便當",130),I("便當","蝦捲便當",130),I("便當","虱目魚肚便當（外送原價）",165),I("湯","無刺虱目魚肚湯（外送原價）",130),I("飯","魚肉滷肉飯（外送原價）",115),I("小吃","蝦仁煎",85),I("小吃","蚵仔煎（外送原價）",120),I("麵","霸王海鮮麵（外送）",225)],
+ menu_source="https://followmii.tw/blog/post/tan",menu_source_label="食記 followmii＋foodpanda",menu_source_date="2024-03（店內）；外送價日期不明",menu_link="https://www.foodpanda.com.tw/restaurant/j9bb/tan-zhuang-xiao-juan-mi-fen",menu_link_label="foodpanda 菜單",
+ note="營業到 21:30 以後，適合晚下班。Google 評分 3.5，評價兩極。",
+ fit=dict(order="油雞便當（飯減半）＋無刺虱目魚肚湯",price=260,protein=40,grade="A",why="雞肉＋虱目魚肚兩份蛋白質，又營業到很晚。",avoid="小卷米粉、蝦捲、蚵仔煎（不在你的肉類清單）；油雞皮可以不吃。",tip="預算低就點虱目魚肚便當（約 $165）。")),
+]
+json.dump(E,open("extra_noodle.json","w"),ensure_ascii=False,indent=1)

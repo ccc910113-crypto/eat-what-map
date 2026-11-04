@@ -1,0 +1,215 @@
+[
+ {
+  "id": "subway",
+  "name": "SUBWAY 復興和平店",
+  "cuisine": "潛艇堡・有營養標示",
+  "type": "異國",
+  "addr": "台北市大安區和平東路二段203號",
+  "phone": "02-2705-4132",
+  "pmin": 113,
+  "pmax": 250,
+  "pest": false,
+  "hours": "每日 08:00–22:00",
+  "slots": [
+   {
+    "d": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "o": "08:00",
+    "c": "22:00"
+   }
+  ],
+  "verified": "2026-11 官網門市清單",
+  "signature": [
+   "香烤雞肉",
+   "鮮嫩雞柳",
+   "厚切嫩牛"
+  ],
+  "items": [
+   {
+    "cat": "6 吋潛艇堡",
+    "name": "香烤雞肉",
+    "price": 128,
+    "protein_g": "23"
+   },
+   {
+    "cat": "6 吋潛艇堡",
+    "name": "鮮嫩雞柳",
+    "price": 128,
+    "protein_g": "25"
+   },
+   {
+    "cat": "6 吋潛艇堡",
+    "name": "照燒雞肉",
+    "price": 131,
+    "protein_g": "27"
+   },
+   {
+    "cat": "6 吋潛艇堡",
+    "name": "厚切嫩牛",
+    "price": 157,
+    "protein_g": "26"
+   },
+   {
+    "cat": "6 吋潛艇堡",
+    "name": "燒烤牛肉",
+    "price": 147,
+    "protein_g": "21"
+   },
+   {
+    "cat": "6 吋潛艇堡",
+    "name": "鮪魚",
+    "price": 128,
+    "protein_g": "22"
+   },
+   {
+    "cat": "6 吋潛艇堡",
+    "name": "嫩切雞肉",
+    "price": 113,
+    "protein_g": "20"
+   },
+   {
+    "cat": "沙拉",
+    "name": "鮮嫩雞柳沙拉",
+    "price": 166,
+    "protein_g": "19"
+   },
+   {
+    "cat": "沙拉",
+    "name": "照燒雞肉沙拉",
+    "price": 173,
+    "protein_g": "21"
+   },
+   {
+    "cat": "沙拉",
+    "name": "厚切嫩牛沙拉",
+    "price": 195,
+    "protein_g": "18"
+   },
+   {
+    "cat": "加料",
+    "name": "雙份肉",
+    "price": 55
+   }
+  ],
+  "menu_source": "https://www.money101.com.tw/blog/subway%E8%8F%9C%E5%96%AE%E5%83%B9%E6%A0%BC",
+  "menu_source_label": "價目整理表（含 2026-08 調價）",
+  "menu_source_date": "2026-09",
+  "menu_link": "https://www.subway.com.tw/nutrition",
+  "menu_link_label": "官網營養資訊",
+  "note": "蛋白質照抄官網營養表（6 吋含麵包）。官網沒有公布價格，價格取自第三方整理，各門市可能不同。營業到 22:00。",
+  "fit": {
+   "order": "6 吋鮮嫩雞柳＋雙份肉（醬選黃芥末）",
+   "price": 183,
+   "protein": 40,
+   "grade": "A",
+   "why": "依官網營養表，6 吋雞柳 25 g＋多一份肉約 15 g；整份的糖很少。",
+   "avoid": "甜蔥醬、蜂蜜芥末醬、照燒（含糖）；鮪魚（美乃滋多）；餅乾。",
+   "tip": "改點沙拉可以少吃麵包。"
+  }
+ },
+ {
+  "id": "mos",
+  "name": "摩斯漢堡 復興南路店",
+  "cuisine": "漢堡・米漢堡・有營養標示",
+  "type": "異國",
+  "addr": "台北市大安區復興南路二段151巷47號",
+  "phone": "02-2705-8524",
+  "pmin": 70,
+  "pmax": 250,
+  "pest": false,
+  "hours": "每日 06:00–22:00",
+  "slots": [
+   {
+    "d": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "o": "06:00",
+    "c": "22:00"
+   }
+  ],
+  "verified": "2026-11 官網店舖檢索",
+  "signature": [
+   "元氣牛肉珍珠堡",
+   "輕檸雙牛堡",
+   "摘鮮綠烤雞起司堡"
+  ],
+  "items": [
+   {
+    "cat": "珍珠堡",
+    "name": "元氣牛肉珍珠堡",
+    "price": 110,
+    "protein_g": "26.0"
+   },
+   {
+    "cat": "珍珠堡",
+    "name": "超級大麥元氣牛肉珍珠堡",
+    "price": 115,
+    "protein_g": "25.3"
+   },
+   {
+    "cat": "珍珠堡",
+    "name": "薑燒珍珠堡（豬）",
+    "price": 70,
+    "protein_g": "15.4"
+   },
+   {
+    "cat": "漢堡",
+    "name": "輕檸雙牛堡",
+    "price": 100,
+    "protein_g": "23.2"
+   },
+   {
+    "cat": "漢堡",
+    "name": "蜜汁烤雞起司堡",
+    "price": 75,
+    "protein_g": "20"
+   },
+   {
+    "cat": "漢堡",
+    "name": "蜜汁烤雞堡",
+    "price": 70,
+    "protein_g": "18"
+   },
+   {
+    "cat": "漢堡",
+    "name": "摩斯漢堡（牛）",
+    "price": 70,
+    "protein_g": "17.8"
+   },
+   {
+    "cat": "摘鮮綠",
+    "name": "摘鮮綠烤雞起司堡",
+    "price": 80,
+    "protein_g": "15.4"
+   }
+  ],
+  "menu_source": "https://www.mos.com.tw/menu/set.aspx",
+  "menu_source_label": "官網菜單",
+  "menu_source_date": "2026-11",
+  "menu_link": "https://www.mos.com.tw/menu/set.aspx",
+  "menu_link_label": "官網菜單",
+  "note": "蛋白質照抄官網營養標示。營業到 22:00。",
+  "fit": {
+   "order": "輕檸雙牛堡＋元氣牛肉珍珠堡",
+   "price": 210,
+   "protein": 49,
+   "grade": "B",
+   "why": "依官網營養標示 23.2＋26.0 g，兩樣都不是炸的。",
+   "avoid": "雞塊、和風炸雞、薯條、鱈魚堡、炸蝦堡、甜飲料；蜜汁烤雞偏甜。",
+   "tip": "想少吃澱粉就把珍珠堡換成摘鮮綠烤雞起司堡（生菜包，$80）。"
+  }
+ }
+]

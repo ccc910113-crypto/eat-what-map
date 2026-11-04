@@ -1,0 +1,118 @@
+[
+ {
+  "id": "xgypark",
+  "name": "小公園牛肉麵",
+  "cuisine": "紅燒牛肉麵",
+  "type": "麵食",
+  "addr": "台北市大安區瑞安街180巷1號",
+  "phone": null,
+  "pmin": 160,
+  "pmax": 190,
+  "pest": false,
+  "hours": "週一至六 11:00–14:30、17:00–20:00；週日只開中午",
+  "slots": [
+   {
+    "d": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "o": "11:00",
+    "c": "14:30"
+   },
+   {
+    "d": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "o": "17:00",
+    "c": "20:00"
+   },
+   {
+    "d": [
+     0
+    ],
+    "o": "11:00",
+    "c": "14:30"
+   }
+  ],
+  "verified": "2026-10 食記（搬家後再訪）",
+  "signature": [
+   "紅燒牛肉麵（大塊牛肉）",
+   "牛肉冬粉"
+  ],
+  "items": [
+   {
+    "cat": "麵食",
+    "name": "牛肉麵（大碗）",
+    "price": 190
+   },
+   {
+    "cat": "麵食",
+    "name": "牛肉麵（小碗）",
+    "price": 160
+   },
+   {
+    "cat": "麵食",
+    "name": "牛肉冬粉",
+    "price": null
+   },
+   {
+    "cat": "麵食",
+    "name": "牛肉湯麵",
+    "price": null
+   },
+   {
+    "cat": "麵食",
+    "name": "炸醬麵",
+    "price": null
+   },
+   {
+    "cat": "小菜",
+    "name": "牛頭皮",
+    "price": null
+   },
+   {
+    "cat": "小菜",
+    "name": "豬肚",
+    "price": null
+   },
+   {
+    "cat": "小菜",
+    "name": "油豆腐",
+    "price": null
+   },
+   {
+    "cat": "小菜",
+    "name": "小黃瓜",
+    "price": null
+   },
+   {
+    "cat": "小菜",
+    "name": "燙青菜",
+    "price": null
+   }
+  ],
+  "menu_source": "https://auntie.tw/little-park-noodles/",
+  "menu_source_label": "食記 auntie.tw",
+  "menu_source_date": "2026-10",
+  "menu_link": null,
+  "note": "從泰順街搬到瑞安街，價格約漲 10 元。座位不多。只有牛肉麵有 2026 年的確認價格。",
+  "fit": {
+   "order": "大碗牛肉麵（麵吃一半）",
+   "price": 190,
+   "protein": 32,
+   "grade": "A",
+   "why": "牛肉塊大又多，不炸、不甜。",
+   "avoid": "炸醬麵（醬偏甜）、花生。",
+   "tip": "可以加一份油豆腐或豬肚小菜（現場價）。"
+  }
+ }
+]

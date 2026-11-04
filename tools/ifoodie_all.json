@@ -1,0 +1,4131 @@
+[
+ {
+  "page": 1,
+  "rank": 1,
+  "name": "東京巴黎甜點 大安店",
+  "tags": [
+   "甜點",
+   "下午茶",
+   "蛋糕"
+  ],
+  "avg": 400,
+  "addr": "臺北市大安區復興南路二段212號",
+  "hours_today": "11:00-21:15",
+  "rating": 3.7,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/66a33703927f80bc8d4aca21-%E6%9D%B1%E4%BA%AC%E5%B7%B4%E9%BB%8E%E7%94%9C%E9%BB%9E-%E5%A4%A7%E5%AE%89%E5%BA%97"
+ },
+ {
+  "page": 1,
+  "rank": 2,
+  "name": "爭鮮迴轉壽司 科技店",
+  "tags": [
+   "日本料理",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 300,
+  "addr": "臺北市大安區復興南路二段191號",
+  "hours_today": "11:00-21:30",
+  "rating": 4.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/55a67d1ec03a104df53ca62f-%E7%88%AD%E9%AE%AE%E8%BF%B4%E8%BD%89%E5%A3%BD%E5%8F%B8-%E7%A7%91%E6%8A%80%E5%BA%97"
+ },
+ {
+  "page": 1,
+  "rank": 3,
+  "name": "星巴克",
+  "tags": [
+   "咖啡",
+   "甜點",
+   "下午茶"
+  ],
+  "avg": 160,
+  "addr": "臺北市大安區復興南路二段275號",
+  "hours_today": "07:00-21:30",
+  "rating": 4.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5894c6e02756dd0c587d68a2-%E6%98%9F%E5%B7%B4%E5%85%8B"
+ },
+ {
+  "page": 1,
+  "rank": 4,
+  "name": "Malaysia Kitchen in Taiwan 大馬廚房",
+  "tags": [
+   "咖哩",
+   "約會餐廳",
+   "午餐"
+  ],
+  "avg": 190,
+  "addr": "臺北市大安區復興南路二段200號",
+  "hours_today": "17:30-20:30",
+  "rating": 4.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5f7055332261390c80c5e8fa-Malaysia-Kitchen-in-"
+ },
+ {
+  "page": 1,
+  "rank": 5,
+  "name": "澎友 澎湖海鮮特產",
+  "tags": [
+   "小吃",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": null,
+  "addr": "臺北市大安區復興南路二段193巷1號",
+  "hours_today": "今日休息",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5af1e64f2756dd6a5c7c1424-%E6%BE%8E%E5%8F%8B-%E6%BE%8E%E6%B9%96%E6%B5%B7%E9%AE%AE%E7%89%B9%E7%94%A2"
+ },
+ {
+  "page": 1,
+  "rank": 6,
+  "name": "La Whale阿崴烘焙工坊",
+  "tags": [
+   "甜點",
+   "烘焙坊"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區復興南路二段193巷3號",
+  "hours_today": "09:00-20:00",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/66ed16557be9c3d583923961-La-Whale%E9%98%BF%E5%B4%B4%E7%83%98%E7%84%99%E5%B7%A5%E5%9D%8A"
+ },
+ {
+  "page": 1,
+  "rank": 7,
+  "name": "益生寵愛會館",
+  "tags": [
+   "寵物友善",
+   "下午茶",
+   "咖啡"
+  ],
+  "avg": 200,
+  "addr": "臺北市大安區和平東路二段265巷7號",
+  "hours_today": "10:30-19:30",
+  "rating": 4.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5e8585bad6895d269daba17f-%E7%9B%8A%E7%94%9F%E5%AF%B5%E6%84%9B%E6%9C%83%E9%A4%A8"
+ },
+ {
+  "page": 1,
+  "rank": 8,
+  "name": "這味泰泰 復南門市",
+  "tags": [
+   "拉麵",
+   "合菜",
+   "午餐"
+  ],
+  "avg": 250,
+  "addr": "臺北市大安區復興南路二段181號1樓",
+  "hours_today": "11:00-21:00",
+  "rating": 3.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/62fa60f27cc7fc6741923ae5-%E9%80%99%E5%91%B3%E6%B3%B0%E6%B3%B0-%E5%BE%A9%E5%8D%97%E9%96%80%E5%B8%82"
+ },
+ {
+  "page": 1,
+  "rank": 9,
+  "name": "聖瑪莉Merry Cafe",
+  "tags": [
+   "咖啡",
+   "蛋糕",
+   "甜點"
+  ],
+  "avg": 50,
+  "addr": "臺北市大安區復興南路二段287號",
+  "hours_today": "07:30-21:30",
+  "rating": 4.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/61d1c0c17cc7fc0a38850c55-%E8%81%96%E7%91%AA%E8%8E%89Merry-Cafe"
+ },
+ {
+  "page": 1,
+  "rank": 10,
+  "name": "浮生避難所",
+  "tags": [
+   "咖啡",
+   "甜點",
+   "牛肉麵"
+  ],
+  "avg": 350,
+  "addr": "台北市大安區和平東路二段283巷4弄5號",
+  "hours_today": "11:00-19:00",
+  "rating": 4.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/616b85a9781cc074b857cd90-%E6%B5%AE%E7%94%9F%E9%81%BF%E9%9B%A3%E6%89%80"
+ },
+ {
+  "page": 1,
+  "rank": 11,
+  "name": "匠心滷 家傳豬腳",
+  "tags": [
+   "小吃",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區復興南路二段192之1號",
+  "hours_today": "11:00-14:00, 17:00-20:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5ee606add6895d745ffe0293-%E5%8C%A0%E5%BF%83%E6%BB%B7-%E5%AE%B6%E5%82%B3%E8%B1%AC%E8%85%B3"
+ },
+ {
+  "page": 1,
+  "rank": 12,
+  "name": "真芳 大安店",
+  "tags": [
+   "早餐",
+   "早午餐",
+   "午餐"
+  ],
+  "avg": 200,
+  "addr": "臺北市大安區和平東路二段209號",
+  "hours_today": "06:30-13:30",
+  "rating": 4.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/600c39c7d6895d526d6456f0-%E7%9C%9F%E8%8A%B3-%E5%A4%A7%E5%AE%89%E5%BA%97"
+ },
+ {
+  "page": 1,
+  "rank": 13,
+  "name": "大連風味館",
+  "tags": [
+   "火鍋",
+   "中式料理",
+   "熱炒"
+  ],
+  "avg": 530,
+  "addr": "臺北市大安區復興南路二段175之1號",
+  "hours_today": "11:00-14:00, 17:00-21:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/57cdb5312756dd05d885aa91-%E5%A4%A7%E9%80%A3%E9%A2%A8%E5%91%B3%E9%A4%A8"
+ },
+ {
+  "page": 1,
+  "rank": 14,
+  "name": "西藏廚房 - Tibet Kitchen",
+  "tags": [
+   "晚餐",
+   "午餐",
+   "印度料理"
+  ],
+  "avg": 350,
+  "addr": "臺北市大安區和平東路二段217號",
+  "hours_today": "11:30-14:00, 17:00-21:00",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5655cfca2756dd1d7a1afdaf-%E8%A5%BF%E8%97%8F%E5%BB%9A%E6%88%BF-Tibet-Kitchen"
+ },
+ {
+  "page": 2,
+  "rank": 16,
+  "name": "小辣椒魷魚羹",
+  "tags": [
+   "小吃",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 200,
+  "addr": "臺北市大安區和平東路二段267之1號",
+  "hours_today": "10:30-21:00",
+  "rating": 4.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/55a50faac03a10241de644e1-%E5%B0%8F%E8%BE%A3%E6%A4%92%E9%AD%B7%E9%AD%9A%E7%BE%B9"
+ },
+ {
+  "page": 2,
+  "rank": 17,
+  "name": "屏東空軍涼麵",
+  "tags": [
+   "小吃",
+   "早餐",
+   "午餐"
+  ],
+  "avg": null,
+  "addr": "臺北市大安區復興南路二段210巷17號",
+  "hours_today": "07:00-18:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5ae215942756dd33f9296f40-%E5%B1%8F%E6%9D%B1%E7%A9%BA%E8%BB%8D%E6%B6%BC%E9%BA%B5"
+ },
+ {
+  "page": 2,
+  "rank": 18,
+  "name": "雋美佳茶業公司",
+  "tags": [
+   "下午茶",
+   "飲料店",
+   "茶店"
+  ],
+  "avg": 200,
+  "addr": "臺北市大安區和平東路二段193號",
+  "hours_today": "08:30-20:00",
+  "rating": 4.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5fc83507d6895d2a0b5b39be-%E9%9B%8B%E7%BE%8E%E4%BD%B3%E8%8C%B6%E6%A5%AD%E5%85%AC%E5%8F%B8"
+ },
+ {
+  "page": 2,
+  "rank": 19,
+  "name": "SuperVit 營養師的光合廚房",
+  "tags": [
+   "午餐"
+  ],
+  "avg": 280,
+  "addr": "臺北市大安區和平東路二段311巷34弄5號",
+  "hours_today": "11:00-20:00",
+  "rating": 4.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559dc75ac03a103ee86ca97e-SuperVit-%E7%87%9F%E9%A4%8A%E5%B8%AB%E7%9A%84%E5%85%89%E5%90%88%E5%BB%9A%E6%88%BF"
+ },
+ {
+  "page": 2,
+  "rank": 20,
+  "name": "和平食光 早午餐 Coffee&Brunch",
+  "tags": [
+   "咖啡",
+   "早午餐"
+  ],
+  "avg": 180,
+  "addr": "臺北市大安區和平東路二段311巷36號一樓",
+  "hours_today": "07:00-14:45",
+  "rating": 1.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6252daff7cc7fc5609237881-%E5%92%8C%E5%B9%B3%E9%A3%9F%E5%85%89-%E6%97%A9%E5%8D%88%E9%A4%90-Coffee-Brun"
+ },
+ {
+  "page": 2,
+  "rank": 21,
+  "name": "神樂屋 酒•和食",
+  "tags": [
+   "日本料理",
+   "居酒屋",
+   "午餐"
+  ],
+  "avg": 500,
+  "addr": "臺北市大安區和平東路二段175巷25號",
+  "hours_today": "11:30-14:00, 17:30-21:00",
+  "rating": 4.7,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5a5503dd2756dd2c5dec665e-%E7%A5%9E%E6%A8%82%E5%B1%8B-%E9%85%92-%E5%92%8C%E9%A3%9F"
+ },
+ {
+  "page": 2,
+  "rank": 22,
+  "name": "良果精緻烘焙坊",
+  "tags": [
+   "甜點",
+   "烘焙坊"
+  ],
+  "avg": 50,
+  "addr": "臺北市大安區和平東路二段189號",
+  "hours_today": "07:30-21:30",
+  "rating": 3.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/600c39d32261392dc7bbb558-%E8%89%AF%E6%9E%9C%E7%B2%BE%E7%B7%BB%E7%83%98%E7%84%99%E5%9D%8A"
+ },
+ {
+  "page": 2,
+  "rank": 23,
+  "name": "芝鄉涼麵",
+  "tags": [
+   "小吃",
+   "午餐",
+   "早餐"
+  ],
+  "avg": 115,
+  "addr": "臺北市大安區和平東路二段311巷26號",
+  "hours_today": "06:30-19:30",
+  "rating": 4.7,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/55a5a4c3c03a10241de67785-%E8%8A%9D%E9%84%89%E6%B6%BC%E9%BA%B5"
+ },
+ {
+  "page": 2,
+  "rank": 24,
+  "name": "手工可口包子饅頭",
+  "tags": [
+   "小吃",
+   "早餐",
+   "午餐"
+  ],
+  "avg": 55,
+  "addr": "臺北市大安區和平東路二段295號",
+  "hours_today": "06:00-21:00",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/665b3f5eeb74c496a36083f3-%E6%89%8B%E5%B7%A5%E5%8F%AF%E5%8F%A3%E5%8C%85%E5%AD%90%E9%A5%85%E9%A0%AD"
+ },
+ {
+  "page": 2,
+  "rank": 25,
+  "name": "M Cuisine 老李的私廚料理",
+  "tags": [
+   "Fine Dining",
+   "精緻高級",
+   "約會餐廳"
+  ],
+  "avg": null,
+  "addr": "台北市大安區和平東路二段311巷34弄1號",
+  "hours_today": null,
+  "rating": 4.2,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/56c68c152756dd2412757572-M-Cuisine-%E8%80%81%E6%9D%8E%E7%9A%84%E7%A7%81%E5%BB%9A%E6%96%99%E7%90%86"
+ },
+ {
+  "page": 2,
+  "rank": 26,
+  "name": "瀧厚炙燒熟成牛排 台北大安店",
+  "tags": [
+   "牛排",
+   "約會餐廳",
+   "晚餐"
+  ],
+  "avg": 400,
+  "addr": "臺北市大安區和平東路二段183號",
+  "hours_today": "11:30-14:30, 17:00-22:00",
+  "rating": 4.6,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/600c3985d6895d526d6456d5-%E7%80%A7%E5%8E%9A%E7%82%99%E7%87%92%E7%86%9F%E6%88%90%E7%89%9B%E6%8E%92-%E5%8F%B0%E5%8C%97%E5%A4%A7%E5%AE%89%E5%BA%97"
+ },
+ {
+  "page": 2,
+  "rank": 27,
+  "name": "謝記珍寶食品莊",
+  "tags": [
+   "午餐"
+  ],
+  "avg": 540,
+  "addr": "臺北市大安區復興南路二段166號",
+  "hours_today": "10:00-19:00",
+  "rating": 4.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5f5729e62756dd155d8e5854-%E8%AC%9D%E8%A8%98%E7%8F%8D%E5%AF%B6%E9%A3%9F%E5%93%81%E8%8E%8A"
+ },
+ {
+  "page": 2,
+  "rank": 28,
+  "name": "泔 米食堂",
+  "tags": [
+   "日本料理",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 400,
+  "addr": "臺北市大安區和平東路二段153巷5弄8號",
+  "hours_today": "11:30-14:00, 17:30-20:00",
+  "rating": 4.3,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/599dc4cd2756dd5445bd891b-%E6%B3%94-%E7%B1%B3%E9%A3%9F%E5%A0%82"
+ },
+ {
+  "page": 3,
+  "rank": 31,
+  "name": "小南通咖啡 café minami",
+  "tags": [
+   "咖啡",
+   "小吃",
+   "下午茶"
+  ],
+  "avg": 200,
+  "addr": "臺北市大安區和平東路二段175巷24號1樓",
+  "hours_today": "12:00-20:00",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/60516a59873d7938b3ea0126-%E5%B0%8F%E5%8D%97%E9%80%9A%E5%92%96%E5%95%A1-caf-minami"
+ },
+ {
+  "page": 3,
+  "rank": 32,
+  "name": "宋朝中餐廳",
+  "tags": [
+   "中式料理",
+   "合菜",
+   "午餐"
+  ],
+  "avg": 400,
+  "addr": "臺北市大安區和平東路二段107巷23弄17號",
+  "hours_today": "12:00-15:00, 17:00-22:00",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/66dedb4a7be9c38e7b7bf2df-%E5%AE%8B%E6%9C%9D%E4%B8%AD%E9%A4%90%E5%BB%B3"
+ },
+ {
+  "page": 3,
+  "rank": 33,
+  "name": "曬貓咖啡",
+  "tags": [
+   "咖啡",
+   "早午餐",
+   "寵物友善"
+  ],
+  "avg": 250,
+  "addr": "臺北市大安區106和平東路2段107巷23弄17號1樓",
+  "hours_today": "08:00-16:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/59b57ece2756dd0ea1b2f938-%E6%9B%AC%E8%B2%93%E5%92%96%E5%95%A1"
+ },
+ {
+  "page": 3,
+  "rank": 34,
+  "name": "山立燻凍奇鷄",
+  "tags": [
+   "小吃"
+  ],
+  "avg": 330,
+  "addr": "臺北市大安區和平東路二段311巷20之1號",
+  "hours_today": "15:00-19:30",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6890c2ed927f8074166fff99-%E5%B1%B1%E7%AB%8B%E7%87%BB%E5%87%8D%E5%A5%87%E9%B7%84"
+ },
+ {
+  "page": 3,
+  "rank": 35,
+  "name": "提拉米蘇",
+  "tags": [
+   "甜點",
+   "下午茶",
+   "咖啡"
+  ],
+  "avg": 300,
+  "addr": "臺北市大安區復興南路二段162號",
+  "hours_today": "10:30-19:30",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/55a4f651c03a10241de63bf4-%E6%8F%90%E6%8B%89%E7%B1%B3%E8%98%87"
+ },
+ {
+  "page": 3,
+  "rank": 36,
+  "name": "11PASTA Trattoria 食義_大安店",
+  "tags": [
+   "義式料理",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 300,
+  "addr": "臺北市大安區龍淵裏和平東路二段118巷2弄1號1樓",
+  "hours_today": "11:30-14:30, 17:30-21:30",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6a7eac07eb74c415e0ceaf28--PASTA-Trattoria-%E9%A3%9F%E7%BE%A9-"
+ },
+ {
+  "page": 3,
+  "rank": 37,
+  "name": "Artco de cafe 典藏咖啡北教大店",
+  "tags": [
+   "咖啡",
+   "早午餐",
+   "下午茶"
+  ],
+  "avg": 250,
+  "addr": "臺北市大安區和平東路二段134號",
+  "hours_today": "08:00-21:00",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5d71b0d28c906d312af1a6c0-Artco-de-cafe-%E5%85%B8%E8%97%8F%E5%92%96%E5%95%A1%E5%8C%97%E6%95%99"
+ },
+ {
+  "page": 3,
+  "rank": 38,
+  "name": "蛋餅俱樂部－臺式脆皮蛋餅專賣店",
+  "tags": [
+   "小吃",
+   "早餐",
+   "午餐"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區群賢裏和平東路二段311巷19號",
+  "hours_today": "07:00-14:00",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6acfa69d0bfd45d5a16f9d54-%E8%9B%8B%E9%A4%85%E4%BF%B1%E6%A8%82%E9%83%A8-%E8%87%BA%E5%BC%8F%E8%84%86%E7%9A%AE%E8%9B%8B%E9%A4%85%E5%B0%88%E8%B3%A3%E5%BA%97"
+ },
+ {
+  "page": 3,
+  "rank": 39,
+  "name": "越南河粉 - 南哥越南河粉",
+  "tags": [
+   "午餐",
+   "晚餐",
+   "小吃"
+  ],
+  "avg": 150,
+  "addr": "臺北市大安區和平東路二段311巷23號",
+  "hours_today": "11:00-20:00",
+  "rating": 4.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/684462db7be9c36b9e56375e-%E8%B6%8A%E5%8D%97%E6%B2%B3%E7%B2%89-%E5%8D%97%E5%93%A5%E8%B6%8A%E5%8D%97%E6%B2%B3%E7%B2%89"
+ },
+ {
+  "page": 3,
+  "rank": 40,
+  "name": "發現義大利麵",
+  "tags": [
+   "義式料理",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區和平東路二段118巷2之2號",
+  "hours_today": "11:00-21:00",
+  "rating": 3.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5d542bd4d6895d6b704c791b-%E7%99%BC%E7%8F%BE%E7%BE%A9%E5%A4%A7%E5%88%A9%E9%BA%B5"
+ },
+ {
+  "page": 3,
+  "rank": 41,
+  "name": "雞霸王雞腿肉飯",
+  "tags": [
+   "小吃",
+   "午餐",
+   "餐盒"
+  ],
+  "avg": 120,
+  "addr": "臺北市大安區和平東路二段311巷17號",
+  "hours_today": "11:00-14:00, 16:30-19:15",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/64edf6ba6f2e3140f717c329-%E9%9B%9E%E9%9C%B8%E7%8E%8B%E9%9B%9E%E8%85%BF%E8%82%89%E9%A3%AF"
+ },
+ {
+  "page": 3,
+  "rank": 42,
+  "name": "巧房餡餅",
+  "tags": [
+   "小吃",
+   "午餐",
+   "下午茶"
+  ],
+  "avg": 40,
+  "addr": "臺北市大安區和平東路二段313號",
+  "hours_today": "12:00-19:30",
+  "rating": 3.9,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5ae93bcd23679c1748ddf35d-%E5%B7%A7%E6%88%BF%E9%A4%A1%E9%A4%85"
+ },
+ {
+  "page": 3,
+  "rank": 43,
+  "name": "胖肚肚燒肉 大安店",
+  "tags": [
+   "燒肉",
+   "吃到飽",
+   "宵夜"
+  ],
+  "avg": 800,
+  "addr": "臺北市大安區復興南路二段156號",
+  "hours_today": "12:00-00:00",
+  "rating": 4.6,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/638ede9801ba33228ecac81b-%E8%83%96%E8%82%9A%E8%82%9A%E7%87%92%E8%82%89-%E5%A4%A7%E5%AE%89%E5%BA%97"
+ },
+ {
+  "page": 3,
+  "rank": 44,
+  "name": "小姐姐麻辣食堂",
+  "tags": [
+   "午餐",
+   "晚餐",
+   "小吃"
+  ],
+  "avg": 150,
+  "addr": "臺北市大安區和平東路二段118巷4弄2號",
+  "hours_today": "11:00-21:30",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5fe0105902935e3f69649fa1-%E5%B0%8F%E5%A7%90%E5%A7%90%E9%BA%BB%E8%BE%A3%E9%A3%9F%E5%A0%82"
+ },
+ {
+  "page": 3,
+  "rank": 45,
+  "name": "梧貳WUERFOODS(歐姆蛋包飯專賣店)",
+  "tags": [
+   "咖哩",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 150,
+  "addr": "臺北市大安區和平東路二段311巷7號",
+  "hours_today": "11:00-14:00, 16:30-20:00",
+  "rating": 4.2,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/617bec46baf6d376c0a3a006-%E6%A2%A7%E8%B2%B3WUERFOODS-%E6%AD%90%E5%A7%86%E8%9B%8B%E5%8C%85%E9%A3%AF%E5%B0%88%E8%B3%A3%E5%BA%97"
+ },
+ {
+  "page": 4,
+  "rank": 46,
+  "name": "原川日式精緻涮涮鍋",
+  "tags": [
+   "日本料理",
+   "火鍋",
+   "午餐"
+  ],
+  "avg": 430,
+  "addr": "臺北市大安區和平東路二段311巷43弄24號",
+  "hours_today": "11:30-14:00, 17:00-21:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/56f42d272756dd21ea8f415a-%E5%8E%9F%E5%B7%9D%E6%97%A5%E5%BC%8F%E7%B2%BE%E7%B7%BB%E6%B6%AE%E6%B6%AE%E9%8D%8B"
+ },
+ {
+  "page": 4,
+  "rank": 47,
+  "name": "劉家飯糰",
+  "tags": [
+   "早餐"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區和平東路二段321號",
+  "hours_today": "06:30-13:00",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/66f4cdfb7be9c35de0dd433b-%E5%8A%89%E5%AE%B6%E9%A3%AF%E7%B3%B0"
+ },
+ {
+  "page": 4,
+  "rank": 48,
+  "name": "尖沙咀港點",
+  "tags": [
+   "港式料理",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 300,
+  "addr": "臺北市大安區復興南路二段286號1樓",
+  "hours_today": "11:30-15:00, 17:00-21:00",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6a91877a927f80fbd255a2bd-%E5%B0%96%E6%B2%99%E5%92%80%E6%B8%AF%E9%BB%9E"
+ },
+ {
+  "page": 4,
+  "rank": 49,
+  "name": "呈信鵝肉 科技大樓店",
+  "tags": [
+   "小吃",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 150,
+  "addr": "臺北市大安區和平東路二段100號",
+  "hours_today": "11:00-14:30, 16:00-20:30",
+  "rating": 4.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/600c39a82261392e0c39746d-%E5%91%88%E4%BF%A1%E9%B5%9D%E8%82%89-%E7%A7%91%E6%8A%80%E5%A4%A7%E6%A8%93%E5%BA%97"
+ },
+ {
+  "page": 4,
+  "rank": 50,
+  "name": "La fossette 老法的酒窩 法式甜點",
+  "tags": [
+   "甜點",
+   "咖啡",
+   "烘焙坊"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區和平東路二段157號",
+  "hours_today": "08:00-19:00",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/682b300b927f8058f7b022c1-La-fossette-%E8%80%81%E6%B3%95%E7%9A%84%E9%85%92%E7%AA%A9-%E6%B3%95%E5%BC%8F"
+ },
+ {
+  "page": 4,
+  "rank": 51,
+  "name": "坵粼咖啡",
+  "tags": [
+   "咖啡"
+  ],
+  "avg": 300,
+  "addr": "臺北市大安區和平東路二段157號2樓",
+  "hours_today": "14:00-23:20",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/68ff717d927f802b7dd69646-%E5%9D%B5%E7%B2%BC%E5%92%96%E5%95%A1"
+ },
+ {
+  "page": 4,
+  "rank": 52,
+  "name": "盛味豐炭烤燒餅",
+  "tags": [
+   "小吃",
+   "早餐",
+   "下午茶"
+  ],
+  "avg": 50,
+  "addr": "臺北市大安區和平東路二段321號",
+  "hours_today": "06:30-18:30",
+  "rating": 4.3,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5bdc5d7c2756dd2e2706ebdb-%E7%9B%9B%E5%91%B3%E8%B1%90%E7%82%AD%E7%83%A4%E7%87%92%E9%A4%85"
+ },
+ {
+  "page": 4,
+  "rank": 53,
+  "name": "中華一餅- 和平店",
+  "tags": [
+   "午餐",
+   "下午茶",
+   "小吃"
+  ],
+  "avg": 125,
+  "addr": "臺北市大安區和平東路二段311巷43弄26號",
+  "hours_today": "11:00-16:00",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6527f4500fbeb1c53fc23e40-%E4%B8%AD%E8%8F%AF%E4%B8%80%E9%A4%85-%E5%92%8C%E5%B9%B3%E5%BA%97"
+ },
+ {
+  "page": 4,
+  "rank": 54,
+  "name": "L'sød dessert coffee",
+  "tags": [
+   "咖啡",
+   "甜點",
+   "下午茶"
+  ],
+  "avg": 400,
+  "addr": "臺北市大安區和平東路二段175巷43號",
+  "hours_today": "12:30-19:00",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/654722db927f80a3824aa242-L-s-d-dessert-coffee"
+ },
+ {
+  "page": 4,
+  "rank": 55,
+  "name": "85度C咖啡蛋糕飲料麵包 科技大樓店",
+  "tags": [
+   "蛋糕",
+   "甜點"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區和平東路二段98號",
+  "hours_today": "07:00-21:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6308ca307cc7fc2b8600b7f2--%E5%BA%A6C%E5%92%96%E5%95%A1%E8%9B%8B%E7%B3%95%E9%A3%B2%E6%96%99%E9%BA%B5%E5%8C%85-%E7%A7%91%E6%8A%80%E5%A4%A7%E6%A8%93%E5%BA%97"
+ },
+ {
+  "page": 4,
+  "rank": 56,
+  "name": "松田日式飯糰",
+  "tags": [
+   "小吃",
+   "早餐",
+   "午餐"
+  ],
+  "avg": 50,
+  "addr": "臺北市大安區和平東路二段118巷5號",
+  "hours_today": "07:00-14:00, 17:00-19:00",
+  "rating": 4.7,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/57e4de352756dd0693cde925-%E6%9D%BE%E7%94%B0%E6%97%A5%E5%BC%8F%E9%A3%AF%E7%B3%B0"
+ },
+ {
+  "page": 4,
+  "rank": 57,
+  "name": "nul taipei",
+  "tags": [
+   "餐酒館",
+   "晚餐",
+   "宵夜"
+  ],
+  "avg": 1000,
+  "addr": "臺北市大安區復興南路二段160巷22號1F",
+  "hours_today": "00:00-01:00, 18:00-00:00",
+  "rating": 4.6,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/62ac4d25873d792ab0c6e701-nul-taipei"
+ },
+ {
+  "page": 4,
+  "rank": 58,
+  "name": "春山茶水舖 原 烏鐵茶水舖",
+  "tags": [
+   "飲料店",
+   "冰品飲料",
+   "茶店"
+  ],
+  "avg": 60,
+  "addr": "臺北市大安區復興南路二段323號",
+  "hours_today": "08:00-16:00",
+  "rating": 4.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559d5b30c03a103ee86c68ac-%E6%98%A5%E5%B1%B1%E8%8C%B6%E6%B0%B4%E8%88%96-%E5%8E%9F-%E7%83%8F%E9%90%B5%E8%8C%B6%E6%B0%B4%E8%88%96"
+ },
+ {
+  "page": 4,
+  "rank": 59,
+  "name": "MTB米堤銀行大安總行",
+  "tags": [
+   "飲料店",
+   "冰品飲料",
+   "茶店"
+  ],
+  "avg": 70,
+  "addr": "臺北市大安區復興南路二段327號",
+  "hours_today": "09:00-20:00",
+  "rating": 4.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5eb0253b2756dd0ba27661eb-MTB%E7%B1%B3%E5%A0%A4%E9%8A%80%E8%A1%8C%E5%A4%A7%E5%AE%89%E7%B8%BD%E8%A1%8C"
+ },
+ {
+  "page": 4,
+  "rank": 60,
+  "name": "小拾聚",
+  "tags": [
+   "午餐",
+   "晚餐",
+   "小吃"
+  ],
+  "avg": 150,
+  "addr": "臺北市大安區復興南路二段325號",
+  "hours_today": "11:30-21:30",
+  "rating": 4.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/62fa7137873d794582fe2607-%E5%B0%8F%E6%8B%BE%E8%81%9A"
+ },
+ {
+  "page": 5,
+  "rank": 61,
+  "name": "格芮潘義式創意廚房",
+  "tags": [
+   "義式料理",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區和平東路二段118巷5之1號",
+  "hours_today": "11:00-14:30, 16:30-21:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/565602912756dd1d7a1b01c5-%E6%A0%BC%E8%8A%AE%E6%BD%98%E7%BE%A9%E5%BC%8F%E5%89%B5%E6%84%8F%E5%BB%9A%E6%88%BF"
+ },
+ {
+  "page": 5,
+  "rank": 62,
+  "name": "雪球咖啡",
+  "tags": [
+   "早餐",
+   "早午餐",
+   "咖啡"
+  ],
+  "avg": 90,
+  "addr": "臺北市大安區復興南路二段331號",
+  "hours_today": "06:30-14:00",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/59aee8c92756dd711d7e5163-%E9%9B%AA%E7%90%83%E5%92%96%E5%95%A1"
+ },
+ {
+  "page": 5,
+  "rank": 63,
+  "name": "陸光大姐",
+  "tags": [
+   "小吃",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": null,
+  "addr": "臺北市大安區和平東路二段133號",
+  "hours_today": "11:30-14:00, 17:30-20:30",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/69cfbdb9927f807ca3251794-%E9%99%B8%E5%85%89%E5%A4%A7%E5%A7%90"
+ },
+ {
+  "page": 5,
+  "rank": 64,
+  "name": "Butcher by Lanpengyou",
+  "tags": [
+   "美式料理",
+   "餐酒館",
+   "早午餐"
+  ],
+  "avg": 400,
+  "addr": "臺北市大安區和平東路二段118巷4之1號1樓",
+  "hours_today": "11:00-14:00, 17:30-20:30",
+  "rating": 4.1,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5edefedc8c906d4b0bc51831-Butcher-by-Lanpengyo"
+ },
+ {
+  "page": 5,
+  "rank": 65,
+  "name": "Cypress & Chestnut",
+  "tags": [
+   "甜點",
+   "下午茶",
+   "蛋糕"
+  ],
+  "avg": 400,
+  "addr": "臺北市大安區復興南路二段148巷5號",
+  "hours_today": "11:00-18:00",
+  "rating": 4.4,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5a58f9d72756dd60a620ea52-Cypress-Chestnut"
+ },
+ {
+  "page": 5,
+  "rank": 66,
+  "name": "日海海鮮店",
+  "tags": [
+   "合菜",
+   "晚餐",
+   "宵夜"
+  ],
+  "avg": 660,
+  "addr": "臺北市大安區復興南路二段151巷6號",
+  "hours_today": "17:30-23:00",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/64a820b7faabb44445516711-%E6%97%A5%E6%B5%B7%E6%B5%B7%E9%AE%AE%E5%BA%97"
+ },
+ {
+  "page": 5,
+  "rank": 67,
+  "name": "卡帛素食烘培‧義式廚房(總店)",
+  "tags": [
+   "素食",
+   "義式料理",
+   "咖啡"
+  ],
+  "avg": 270,
+  "addr": "臺北市大安區復興南路二段308巷5號",
+  "hours_today": "08:00-21:30",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559d1be8c03a103ee86c3f9f-%E5%8D%A1%E5%B8%9B%E7%B4%A0%E9%A3%9F%E7%83%98%E5%9F%B9-%E7%BE%A9%E5%BC%8F%E5%BB%9A%E6%88%BF-%E7%B8%BD%E5%BA%97-"
+ },
+ {
+  "page": 5,
+  "rank": 68,
+  "name": "RUFOUS COFFEE",
+  "tags": [
+   "咖啡",
+   "甜點",
+   "蛋糕"
+  ],
+  "avg": 300,
+  "addr": "臺北市大安區復興南路二段339號",
+  "hours_today": "12:00-20:00",
+  "rating": 4.7,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559d1fbcc03a103ee86c41de-RUFOUS-COFFEE"
+ },
+ {
+  "page": 5,
+  "rank": 69,
+  "name": "Sincere Rays貓本早午餐",
+  "tags": [
+   "早午餐",
+   "咖啡",
+   "甜點"
+  ],
+  "avg": 400,
+  "addr": "臺北市大安區瑞安街71巷5弄2號",
+  "hours_today": "09:00-14:30",
+  "rating": 4.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5fd1dd36d6895d26b1bfe472-Sincere-Rays%E8%B2%93%E6%9C%AC%E6%97%A9%E5%8D%88%E9%A4%90"
+ },
+ {
+  "page": 5,
+  "rank": 70,
+  "name": "佬窩好湯養生餐廳",
+  "tags": [
+   "宵夜",
+   "晚餐"
+  ],
+  "avg": 170,
+  "addr": "臺北市大安區復興南路二段151巷5號",
+  "hours_today": "00:00-00:30, 18:30-00:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5f96c5b302935e482a760a40-%E4%BD%AC%E7%AA%A9%E5%A5%BD%E6%B9%AF%E9%A4%8A%E7%94%9F%E9%A4%90%E5%BB%B3"
+ },
+ {
+  "page": 5,
+  "rank": 71,
+  "name": "禾豐日式涮涮鍋",
+  "tags": [
+   "火鍋",
+   "日本料理",
+   "晚餐"
+  ],
+  "avg": 1010,
+  "addr": "臺北市大安區復興南路二段148巷16號",
+  "hours_today": "11:30-22:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559d4fabc03a103ee86c618b-%E7%A6%BE%E8%B1%90%E6%97%A5%E5%BC%8F%E6%B6%AE%E6%B6%AE%E9%8D%8B"
+ },
+ {
+  "page": 5,
+  "rank": 72,
+  "name": "貴香鹹酥雞",
+  "tags": [
+   "小吃",
+   "宵夜",
+   "寵物友善"
+  ],
+  "avg": 200,
+  "addr": "臺北市大安區復興南路二段151巷24號",
+  "hours_today": "11:00-13:30, 16:30-21:30",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/66d075dd927f80808c1a38fa-%E8%B2%B4%E9%A6%99%E9%B9%B9%E9%85%A5%E9%9B%9E"
+ },
+ {
+  "page": 5,
+  "rank": 73,
+  "name": "大食鍋物 おおぐい 食べ放題",
+  "tags": [
+   "吃到飽",
+   "火鍋",
+   "宵夜"
+  ],
+  "avg": 450,
+  "addr": "臺北市大安區復興南路二段144之3號",
+  "hours_today": "11:30-00:00",
+  "rating": 4.4,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/638d62dfd20d874e679bb27e-%E5%A4%A7%E9%A3%9F%E9%8D%8B%E7%89%A9-%E9%A3%9F-%E6%94%BE%E9%A1%8C"
+ },
+ {
+  "page": 5,
+  "rank": 74,
+  "name": "大安米粉湯",
+  "tags": [
+   "小吃",
+   "宵夜",
+   "午餐"
+  ],
+  "avg": 210,
+  "addr": "臺北市大安區復興南路二段316號",
+  "hours_today": "00:00-03:00, 10:30-00:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6703bf5eeb74c497e358e673-%E5%A4%A7%E5%AE%89%E7%B1%B3%E7%B2%89%E6%B9%AF"
+ },
+ {
+  "page": 5,
+  "rank": 75,
+  "name": "大水缸養生甜品",
+  "tags": [
+   "甜點",
+   "小吃",
+   "冰品飲料"
+  ],
+  "avg": 85,
+  "addr": "臺北市大安區復興南路二段151巷19號",
+  "hours_today": "10:00-21:30",
+  "rating": 4.6,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/55a6741fc03a104df53ca3a2-%E5%A4%A7%E6%B0%B4%E7%BC%B8%E9%A4%8A%E7%94%9F%E7%94%9C%E5%93%81"
+ },
+ {
+  "page": 6,
+  "rank": 76,
+  "name": "兜麥咖啡 大安店",
+  "tags": [
+   "咖啡"
+  ],
+  "avg": 140,
+  "addr": "臺北市大安區復興南路二段341號",
+  "hours_today": "09:30-21:30",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/624056a8781cc056997eae5a-%E5%85%9C%E9%BA%A5%E5%92%96%E5%95%A1-%E5%A4%A7%E5%AE%89%E5%BA%97"
+ },
+ {
+  "page": 6,
+  "rank": 77,
+  "name": "J FULL 賈福廚房",
+  "tags": [
+   "義式料理",
+   "餐酒館",
+   "早午餐"
+  ],
+  "avg": 500,
+  "addr": "臺北市大安區復興南路二段148巷27號",
+  "hours_today": "今日休息",
+  "rating": 4.4,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5932fad12756dd1a692fb85b-J-FULL-%E8%B3%88%E7%A6%8F%E5%BB%9A%E6%88%BF"
+ },
+ {
+  "page": 6,
+  "rank": 78,
+  "name": "早安有喜 大安和平店",
+  "tags": [
+   "早午餐",
+   "早餐",
+   "午餐"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區和平東路二段117號",
+  "hours_today": "06:00-13:30",
+  "rating": 4.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5e5b4bda22613961909e8c11-%E6%97%A9%E5%AE%89%E6%9C%89%E5%96%9C-%E5%A4%A7%E5%AE%89%E5%92%8C%E5%B9%B3%E5%BA%97"
+ },
+ {
+  "page": 6,
+  "rank": 79,
+  "name": "川雨",
+  "tags": [
+   "甜點",
+   "烘焙坊",
+   "輕食"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區復興南路二段345號",
+  "hours_today": "11:30-20:00",
+  "rating": 4.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/67fdd8a0eb74c4fd7c4882fd-%E5%B7%9D%E9%9B%A8"
+ },
+ {
+  "page": 6,
+  "rank": 80,
+  "name": "貝倫烘焙餐坊 (台北店)",
+  "tags": [
+   "蛋糕",
+   "甜點",
+   "烘焙坊"
+  ],
+  "avg": 120,
+  "addr": "臺北市大安區和平東路二段118巷37號",
+  "hours_today": "11:00-21:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/55a56060c03a10241de660e9-%E8%B2%9D%E5%80%AB%E7%83%98%E7%84%99%E9%A4%90%E5%9D%8A-%E5%8F%B0%E5%8C%97%E5%BA%97-"
+ },
+ {
+  "page": 6,
+  "rank": 81,
+  "name": "湄賽雲泰料理",
+  "tags": [
+   "合菜",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 280,
+  "addr": "臺北市大安區和平東路二段118巷39號",
+  "hours_today": "11:30-14:00, 17:00-20:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/664b4dc2927f804a73b56e58-%E6%B9%84%E8%B3%BD%E9%9B%B2%E6%B3%B0%E6%96%99%E7%90%86"
+ },
+ {
+  "page": 6,
+  "rank": 82,
+  "name": "Mr.Smile 好吃雞排",
+  "tags": [
+   "小吃",
+   "宵夜",
+   "晚餐"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區復興南路二段315號",
+  "hours_today": "15:00-00:00",
+  "rating": 3.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5b72e6b22756dd6553fd7ee4-Mr-Smile-%E5%A5%BD%E5%90%83%E9%9B%9E%E6%8E%92"
+ },
+ {
+  "page": 6,
+  "rank": 83,
+  "name": "宏冠魚土魠魚焿",
+  "tags": [
+   "小吃",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區和平東路二段355號",
+  "hours_today": "10:00-21:30",
+  "rating": 4.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/55a5bf2bc03a10241de67f97-%E5%AE%8F%E5%86%A0%E9%AD%9A%E5%9C%9F%E9%AD%A0%E9%AD%9A%E7%84%BF"
+ },
+ {
+  "page": 6,
+  "rank": 84,
+  "name": "佇這",
+  "tags": [
+   "酒吧",
+   "約會餐廳"
+  ],
+  "avg": null,
+  "addr": "臺北市大安區和平東路三段1巷10弄3號",
+  "hours_today": "00:00-03:00, 20:00-00:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6aa8b2bc2ba799be9f474916-%E4%BD%87%E9%80%99"
+ },
+ {
+  "page": 6,
+  "rank": 85,
+  "name": "佶田日式涮涮鍋",
+  "tags": [
+   "日本料理",
+   "火鍋",
+   "午餐"
+  ],
+  "avg": 370,
+  "addr": "台北市復興南路二段148巷37號",
+  "hours_today": "11:00-14:00, 17:00-21:30",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5ae75c682756dd5d801dabdc-%E4%BD%B6%E7%94%B0%E6%97%A5%E5%BC%8F%E6%B6%AE%E6%B6%AE%E9%8D%8B"
+ },
+ {
+  "page": 6,
+  "rank": 86,
+  "name": "小涼院霜淇淋專門店",
+  "tags": [
+   "甜點",
+   "冰品飲料",
+   "冰淇淋"
+  ],
+  "avg": 120,
+  "addr": "臺北市大安區復興南路二段148巷34號",
+  "hours_today": "今日休息",
+  "rating": 4.6,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559dcf09c03a103ee86cae17-%E5%B0%8F%E6%B6%BC%E9%99%A2%E9%9C%9C%E6%B7%87%E6%B7%8B%E5%B0%88%E9%96%80%E5%BA%97"
+ },
+ {
+  "page": 6,
+  "rank": 87,
+  "name": "二師兄肉羹專賣店 復南店",
+  "tags": [
+   "小吃",
+   "宵夜",
+   "午餐"
+  ],
+  "avg": 90,
+  "addr": "臺北市大安區復興南路二段151巷37號",
+  "hours_today": "24小時營業",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6052ba24baf6d36d9ce9e12b-%E4%BA%8C%E5%B8%AB%E5%85%84%E8%82%89%E7%BE%B9%E5%B0%88%E8%B3%A3%E5%BA%97-%E5%BE%A9%E5%8D%97%E5%BA%97"
+ },
+ {
+  "page": 6,
+  "rank": 88,
+  "name": "欽豪燒腊盒餐",
+  "tags": [
+   "港式料理",
+   "小吃",
+   "午餐"
+  ],
+  "avg": 130,
+  "addr": "臺北市大安區復興南路二段151巷37號",
+  "hours_today": "11:00-14:00, 17:00-20:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559d484cc03a103ee86c5cd1-%E6%AC%BD%E8%B1%AA%E7%87%92%E8%85%8A%E7%9B%92%E9%A4%90"
+ },
+ {
+  "page": 6,
+  "rank": 89,
+  "name": "小李子清粥小菜",
+  "tags": [
+   "宵夜",
+   "小吃",
+   "中式料理"
+  ],
+  "avg": 300,
+  "addr": "臺北市大安區復興南路二段326號",
+  "hours_today": "00:00-06:00, 17:00-00:00",
+  "rating": 3.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559d4e72c03a103ee86c60f0-%E5%B0%8F%E6%9D%8E%E5%AD%90%E6%B8%85%E7%B2%A5%E5%B0%8F%E8%8F%9C"
+ },
+ {
+  "page": 7,
+  "rank": 91,
+  "name": "Barkers",
+  "tags": [
+   "美式料理",
+   "酒吧",
+   "晚餐"
+  ],
+  "avg": 250,
+  "addr": "臺北市大安區和平東路二段118巷41號",
+  "hours_today": "11:00-14:30, 16:30-20:30",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/55a57f9ac03a10241de66b88-Barkers"
+ },
+ {
+  "page": 7,
+  "rank": 92,
+  "name": "山焙 SUNBAY 和平臥龍店",
+  "tags": [
+   "飲料店",
+   "甜點",
+   "茶店"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區和平東路二段363號",
+  "hours_today": "10:30-20:30",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5dca3499d6895d5c9e0fe2cb-%E5%B1%B1%E7%84%99-SUNBAY-%E5%92%8C%E5%B9%B3%E8%87%A5%E9%BE%8D%E5%BA%97"
+ },
+ {
+  "page": 7,
+  "rank": 93,
+  "name": "136海鮮麵",
+  "tags": [
+   "小吃",
+   "午餐",
+   "海鮮"
+  ],
+  "avg": 150,
+  "addr": "台北市瑞安街75號",
+  "hours_today": "10:30-13:30",
+  "rating": 4.6,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5ddb4f96d6895d66ea1527a6--%E6%B5%B7%E9%AE%AE%E9%BA%B5"
+ },
+ {
+  "page": 7,
+  "rank": 94,
+  "name": "津輕丸號",
+  "tags": [
+   "日本料理",
+   "午餐",
+   "壽司"
+  ],
+  "avg": 250,
+  "addr": "臺北市大安區瑞安街75號安東市場155攤位",
+  "hours_today": "10:00-14:00",
+  "rating": 4.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5e776c0a8c906d2836a343e0-%E6%B4%A5%E8%BC%95%E4%B8%B8%E8%99%9F"
+ },
+ {
+  "page": 7,
+  "rank": 95,
+  "name": "Stoppage Time 補時",
+  "tags": [
+   "咖啡",
+   "早午餐",
+   "甜點"
+  ],
+  "avg": 300,
+  "addr": "臺北市大安區和平東路二段96巷15弄30號",
+  "hours_today": "11:00-22:00",
+  "rating": 4.6,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559d78dec03a103ee86c7cd7-Stoppage-Time-%E8%A3%9C%E6%99%82"
+ },
+ {
+  "page": 7,
+  "rank": 96,
+  "name": "龍門客棧餃子館(瑞安店)",
+  "tags": [
+   "小吃",
+   "晚餐",
+   "午餐"
+  ],
+  "avg": 130,
+  "addr": "臺北市大安區瑞安街85號",
+  "hours_today": "11:30-14:30, 17:00-21:30",
+  "rating": 1.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5921d6e02756dd547fad91d1-%E9%BE%8D%E9%96%80%E5%AE%A2%E6%A3%A7%E9%A4%83%E5%AD%90%E9%A4%A8-%E7%91%9E%E5%AE%89%E5%BA%97-"
+ },
+ {
+  "page": 7,
+  "rank": 97,
+  "name": "136海鮮麵復興店",
+  "tags": [
+   "牛肉麵",
+   "晚餐",
+   "小吃"
+  ],
+  "avg": 250,
+  "addr": "臺北市大安區復興南路二段148巷32弄2號1樓",
+  "hours_today": "17:00-21:00",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/69db83c5927f8046f5ec645a--%E6%B5%B7%E9%AE%AE%E9%BA%B5%E5%BE%A9%E8%88%88%E5%BA%97"
+ },
+ {
+  "page": 7,
+  "rank": 98,
+  "name": "珍珠窩復興店",
+  "tags": [
+   "飲料店",
+   "冰品飲料",
+   "茶店"
+  ],
+  "avg": 150,
+  "addr": "臺北市大安區復興南路二段151巷43號",
+  "hours_today": "10:30-20:00",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6489c09501ba332ac60b1a75-%E7%8F%8D%E7%8F%A0%E7%AA%A9%E5%BE%A9%E8%88%88%E5%BA%97"
+ },
+ {
+  "page": 7,
+  "rank": 99,
+  "name": "Mars Kitchen 馬師厨房 原創料理",
+  "tags": [
+   "小吃",
+   "餐盒",
+   "外帶外送店家"
+  ],
+  "avg": 300,
+  "addr": "臺北市大安區瑞安街75號1樓143號",
+  "hours_today": "10:30-13:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5d0727bbd6895d5b9e62de52-Mars-Kitchen-%E9%A6%AC%E5%B8%AB%E5%8E%A8%E6%88%BF-%E5%8E%9F%E5%89%B5"
+ },
+ {
+  "page": 7,
+  "rank": 100,
+  "name": "找餐。店",
+  "tags": [
+   "早餐",
+   "早午餐",
+   "漢堡"
+  ],
+  "avg": 150,
+  "addr": "臺北市大安區和平東路三段1巷6之3號",
+  "hours_today": "08:00-14:00",
+  "rating": 3.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559d3936c03a103ee86c5308-%E6%89%BE%E9%A4%90-%E5%BA%97"
+ },
+ {
+  "page": 7,
+  "rank": 101,
+  "name": "Eat foodie Pasta好好吃餐房",
+  "tags": [
+   "義式料理",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 140,
+  "addr": "臺北市大安區和平東路三段1巷6之1號",
+  "hours_today": "11:00-14:00, 17:30-20:00",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/636a634ca3662f34f156d67e-Eat-foodie-Pasta%E5%A5%BD%E5%A5%BD%E5%90%83%E9%A4%90"
+ },
+ {
+  "page": 8,
+  "rank": 106,
+  "name": "安東食園",
+  "tags": [
+   "小吃",
+   "午餐",
+   "餐盒"
+  ],
+  "avg": 110,
+  "addr": "臺北市大安區瑞安街75號安東巿場141位",
+  "hours_today": "09:00-13:30",
+  "rating": 4.4,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5a7ab4f32756dd7bff171f54-%E5%AE%89%E6%9D%B1%E9%A3%9F%E5%9C%92"
+ },
+ {
+  "page": 8,
+  "rank": 107,
+  "name": "瑞安豆漿大王",
+  "tags": [
+   "早餐",
+   "小吃",
+   "宵夜"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區瑞安街69號",
+  "hours_today": "24小時營業",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5adeaf4523679c22f9ab564f-%E7%91%9E%E5%AE%89%E8%B1%86%E6%BC%BF%E5%A4%A7%E7%8E%8B"
+ },
+ {
+  "page": 8,
+  "rank": 108,
+  "name": "忠誠山東蔥油餅",
+  "tags": [
+   "小吃",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 120,
+  "addr": "臺北市大安區和平東路二段118巷44號",
+  "hours_today": "11:00-20:30",
+  "rating": 3.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559dbe22c03a103ee86ca3ba-%E5%BF%A0%E8%AA%A0%E5%B1%B1%E6%9D%B1%E8%94%A5%E6%B2%B9%E9%A4%85"
+ },
+ {
+  "page": 8,
+  "rank": 109,
+  "name": "29號館 義大利麵",
+  "tags": [
+   "義式料理",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 150,
+  "addr": "臺北市大安區瑞安街67之1號",
+  "hours_today": "11:30-14:30, 17:30-20:30",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5e8db5318c906d0e88986169--%E8%99%9F%E9%A4%A8-%E7%BE%A9%E5%A4%A7%E5%88%A9%E9%BA%B5"
+ },
+ {
+  "page": 8,
+  "rank": 110,
+  "name": "37號海鮮粥/麵",
+  "tags": [
+   "小吃",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 140,
+  "addr": "臺北市大安區和平東路三段1巷37號1樓",
+  "hours_today": "11:00-14:00, 17:00-20:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/630627447cc7fc2eec4f1dc6--%E8%99%9F%E6%B5%B7%E9%AE%AE%E7%B2%A5-%E9%BA%B5"
+ },
+ {
+  "page": 8,
+  "rank": 111,
+  "name": "邦食堂",
+  "tags": [
+   "日本料理",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 140,
+  "addr": "臺北市大安區和平東路二段96巷17弄28號",
+  "hours_today": "11:30-14:00, 17:30-20:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/627a75dbbaf6d37f2d27723e-%E9%82%A6%E9%A3%9F%E5%A0%82"
+ },
+ {
+  "page": 8,
+  "rank": 112,
+  "name": "23 Public Craft Beer 精釀啤酒",
+  "tags": [
+   "宵夜",
+   "晚餐"
+  ],
+  "avg": 220,
+  "addr": "臺北市大安區復興南路二段332號",
+  "hours_today": "12:30-00:00",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5906a6fe23679c0f2cf7e8bf--Public-Craft-Beer-%E7%B2%BE"
+ },
+ {
+  "page": 8,
+  "rank": 113,
+  "name": "拿坡里披薩",
+  "tags": [
+   "義式料理",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 400,
+  "addr": "臺北市大安區和平東路二段66號",
+  "hours_today": "11:00-21:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/59beb9d82756dd5b8c4d9f7f-%E6%8B%BF%E5%9D%A1%E9%87%8C%E6%8A%AB%E8%96%A9"
+ },
+ {
+  "page": 8,
+  "rank": 114,
+  "name": "素晴屋",
+  "tags": [
+   "居酒屋",
+   "酒吧",
+   "餐酒館"
+  ],
+  "avg": null,
+  "addr": "臺北市大安區瑞安街198號",
+  "hours_today": "11:00-20:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/578bc9622756dd59c2315848-%E7%B4%A0%E6%99%B4%E5%B1%8B"
+ },
+ {
+  "page": 8,
+  "rank": 115,
+  "name": "搗飛豆花 Tofu Pudding",
+  "tags": [
+   "甜點",
+   "冰品飲料",
+   "小吃"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區和平東路二段118巷47號",
+  "hours_today": "12:00-22:30",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5fc651662756dd0f2a5604e4-%E6%90%97%E9%A3%9B%E8%B1%86%E8%8A%B1-Tofu-Pudding"
+ },
+ {
+  "page": 8,
+  "rank": 116,
+  "name": "滇味小廚",
+  "tags": [
+   "中式料理",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區復興南路二段340巷5號",
+  "hours_today": "11:00-14:00, 17:00-21:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/55a5320cc03a10241de65098-%E6%BB%87%E5%91%B3%E5%B0%8F%E5%BB%9A"
+ },
+ {
+  "page": 8,
+  "rank": 117,
+  "name": "巧巧香雞排",
+  "tags": [
+   "小吃",
+   "宵夜",
+   "雞料理"
+  ],
+  "avg": 130,
+  "addr": "臺北市大安區瑞安街113號",
+  "hours_today": "15:50-21:50",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/641076c601ba337ad578e718-%E5%B7%A7%E5%B7%A7%E9%A6%99%E9%9B%9E%E6%8E%92"
+ },
+ {
+  "page": 8,
+  "rank": 118,
+  "name": "The Quiet Light 默光咖啡",
+  "tags": [
+   "咖啡",
+   "早午餐",
+   "下午茶"
+  ],
+  "avg": 530,
+  "addr": "臺北市大安區瑞安街262之2號",
+  "hours_today": "07:30-17:00",
+  "rating": 4.2,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5e8c8c7f2756dd51bc225a9d-The-Quiet-Light-%E9%BB%98%E5%85%89%E5%92%96%E5%95%A1"
+ },
+ {
+  "page": 8,
+  "rank": 119,
+  "name": "蔣記家薌麵",
+  "tags": [
+   "牛肉麵",
+   "小吃",
+   "午餐"
+  ],
+  "avg": 200,
+  "addr": "臺北市大安區四維路208巷18號之1",
+  "hours_today": "11:30-14:30, 17:30-20:30",
+  "rating": 4.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/55a68092c03a104df53ca724-%E8%94%A3%E8%A8%98%E5%AE%B6%E8%96%8C%E9%BA%B5"
+ },
+ {
+  "page": 8,
+  "rank": 120,
+  "name": "炸老大 瑞安店",
+  "tags": [
+   "下午茶",
+   "宵夜",
+   "小吃"
+  ],
+  "avg": 300,
+  "addr": "臺北市大安區瑞安街178號",
+  "hours_today": "16:00-23:00",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5f91865cd6895d6bfb6f9fde-%E7%82%B8%E8%80%81%E5%A4%A7-%E7%91%9E%E5%AE%89%E5%BA%97"
+ },
+ {
+  "page": 9,
+  "rank": 121,
+  "name": "泰米香 Thaid. Thaifood",
+  "tags": [
+   "合菜",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 230,
+  "addr": "臺北市大安區和平東路二段96巷15之1號",
+  "hours_today": "11:30-14:00, 17:00-20:30",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6233f9518282877f0607f424-%E6%B3%B0%E7%B1%B3%E9%A6%99-Thaid-Thaifood"
+ },
+ {
+  "page": 9,
+  "rank": 122,
+  "name": "Angle Cafe 自家烘焙咖啡館",
+  "tags": [
+   "咖啡",
+   "甜點",
+   "下午茶"
+  ],
+  "avg": 500,
+  "addr": "臺北市大安區瑞安街206號",
+  "hours_today": "10:00-21:00",
+  "rating": 4.6,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559d0621c03a103ee86c34a6-Angle-Cafe-%E8%87%AA%E5%AE%B6%E7%83%98%E7%84%99%E5%92%96%E5%95%A1%E9%A4%A8"
+ },
+ {
+  "page": 9,
+  "rank": 123,
+  "name": "老胡記米粉湯60年老店-復興店",
+  "tags": [
+   "小吃",
+   "宵夜",
+   "午餐"
+  ],
+  "avg": 85,
+  "addr": "臺北市大安區復興南路二段114號",
+  "hours_today": "00:00-01:00, 11:00-00:00",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/66d70d30927f8005682e11cb-%E8%80%81%E8%83%A1%E8%A8%98%E7%B1%B3%E7%B2%89%E6%B9%AF-%E5%B9%B4%E8%80%81%E5%BA%97-%E5%BE%A9%E8%88%88%E5%BA%97"
+ },
+ {
+  "page": 9,
+  "rank": 124,
+  "name": "阿富豆花瑞安店 下午茶 甜品 點心",
+  "tags": [
+   "下午茶",
+   "甜點",
+   "冰品飲料"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區瑞安街178號",
+  "hours_today": "12:00-21:30",
+  "rating": 4.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/64affb7801ba3343ab09d47c-%E9%98%BF%E5%AF%8C%E8%B1%86%E8%8A%B1%E7%91%9E%E5%AE%89%E5%BA%97-%E4%B8%8B%E5%8D%88%E8%8C%B6-%E7%94%9C%E5%93%81-%E9%BB%9E%E5%BF%83"
+ },
+ {
+  "page": 9,
+  "rank": 125,
+  "name": "馬祖麵館",
+  "tags": [
+   "小吃",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 170,
+  "addr": "臺北市大安區和平東路二段118巷49號",
+  "hours_today": "09:30-21:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/66cdd2bb927f8005681cd722-%E9%A6%AC%E7%A5%96%E9%BA%B5%E9%A4%A8"
+ },
+ {
+  "page": 9,
+  "rank": 126,
+  "name": "姊姊的廚房",
+  "tags": [
+   "中式料理",
+   "合菜",
+   "午餐"
+  ],
+  "avg": 150,
+  "addr": "臺北市大安區復興南路二段128巷3之2號",
+  "hours_today": "11:50-14:30, 17:30-20:30",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559d1d77c03a103ee86c4099-%E5%A7%8A%E5%A7%8A%E7%9A%84%E5%BB%9A%E6%88%BF"
+ },
+ {
+  "page": 9,
+  "rank": 127,
+  "name": "SELF Oasis 綠洲",
+  "tags": [
+   "酒吧",
+   "餐酒館",
+   "約會餐廳"
+  ],
+  "avg": 600,
+  "addr": "臺北市大安區瑞安街135巷4號1樓",
+  "hours_today": "00:00-01:00, 17:30-00:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5d4a999b8c906d259854c4e7-SELF-Oasis-%E7%B6%A0%E6%B4%B2"
+ },
+ {
+  "page": 9,
+  "rank": 128,
+  "name": "CHEN'S NICE PLACE 陳氏好地方",
+  "tags": [
+   "精緻高級",
+   "約會餐廳",
+   "牛排"
+  ],
+  "avg": 1500,
+  "addr": "臺北市大安區瑞安街135巷4號",
+  "hours_today": "11:00-22:00",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/67809a81eb74c4700d605b13-CHEN-S-NICE-PLACE-%E9%99%B3%E6%B0%8F"
+ },
+ {
+  "page": 9,
+  "rank": 129,
+  "name": "TMJ TAIPEI （寵物友善)",
+  "tags": [
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 1180,
+  "addr": "臺北市大安區瑞安街228號1F",
+  "hours_today": "00:00-14:30, 18:30-23:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/659d19a1eb74c48be56922aa-TMJ-TAIPEI-%E5%AF%B5%E7%89%A9%E5%8F%8B%E5%96%84-"
+ },
+ {
+  "page": 9,
+  "rank": 130,
+  "name": "願有記",
+  "tags": [
+   "港式料理",
+   "下午茶",
+   "小吃"
+  ],
+  "avg": 70,
+  "addr": "台北市大安區復興南路二段340巷7號1樓",
+  "hours_today": "11:30-20:00",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/57de18d223679c6cc0bdcb61-%E9%A1%98%E6%9C%89%E8%A8%98"
+ },
+ {
+  "page": 9,
+  "rank": 131,
+  "name": "SAKEMARU BAR 日本酒酒藏 瑞安店",
+  "tags": [
+   "居酒屋",
+   "日本料理",
+   "精緻高級"
+  ],
+  "avg": 700,
+  "addr": "臺北市大安區瑞安街226號1樓",
+  "hours_today": "00:00-01:00, 10:30-00:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/675c3481927f8005d018f4c5-SAKEMARU-BAR-%E6%97%A5%E6%9C%AC%E9%85%92%E9%85%92%E8%97%8F-%E7%91%9E"
+ },
+ {
+  "page": 9,
+  "rank": 132,
+  "name": "Antico Forno 老烤箱",
+  "tags": [
+   "義式料理",
+   "餐酒館",
+   "晚餐"
+  ],
+  "avg": 1500,
+  "addr": "臺北市大安區瑞安街141號",
+  "hours_today": "18:00-22:00",
+  "rating": 4.4,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559d53b6c03a103ee86c63f9-Antico-Forno-%E8%80%81%E7%83%A4%E7%AE%B1"
+ },
+ {
+  "page": 9,
+  "rank": 133,
+  "name": "小公園牛肉麵",
+  "tags": [
+   "牛肉麵",
+   "小吃",
+   "午餐"
+  ],
+  "avg": null,
+  "addr": "臺北市大安區龍圖裏瑞安街180巷1號",
+  "hours_today": "11:00-14:30, 17:00-20:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6ad3757473ccef01e39eab3f-%E5%B0%8F%E5%85%AC%E5%9C%92%E7%89%9B%E8%82%89%E9%BA%B5"
+ },
+ {
+  "page": 9,
+  "rank": 134,
+  "name": "COCOMAKER",
+  "tags": [
+   "甜點",
+   "下午茶",
+   "咖啡"
+  ],
+  "avg": 300,
+  "addr": "臺北市大安區瑞安街137之1號",
+  "hours_today": "12:00-20:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559d2215c03a103ee86c436d-COCOMAKER"
+ },
+ {
+  "page": 9,
+  "rank": 135,
+  "name": "TaSweet菓子屋",
+  "tags": [
+   "甜點",
+   "下午茶",
+   "咖啡"
+  ],
+  "avg": 300,
+  "addr": "臺北市大安區瑞安街224號",
+  "hours_today": "今日休息",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/68ca7c70eb74c485e1f6fc9c-TaSweet%E8%8F%93%E5%AD%90%E5%B1%8B"
+ },
+ {
+  "page": 10,
+  "rank": 136,
+  "name": "好食早餐",
+  "tags": [
+   "早餐",
+   "早午餐",
+   "午餐"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區和平東路二段357巷7號",
+  "hours_today": "07:30-14:00",
+  "rating": 4.6,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5704775c699b6e7532484c57-%E5%A5%BD%E9%A3%9F%E6%97%A9%E9%A4%90"
+ },
+ {
+  "page": 10,
+  "rank": 137,
+  "name": "姥義麵 La pasta di nonna",
+  "tags": [
+   "義式料理",
+   "餐酒館",
+   "午餐"
+  ],
+  "avg": 400,
+  "addr": "大安區四維路208巷14號",
+  "hours_today": "11:30-14:30, 17:30-21:30",
+  "rating": 4.3,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/604cc938cd995736141670be-%E5%A7%A5%E7%BE%A9%E9%BA%B5-La-pasta-di-nonn"
+ },
+ {
+  "page": 10,
+  "rank": 138,
+  "name": "文哥 巷仔口米粉湯",
+  "tags": [
+   "小吃",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 120,
+  "addr": "臺北市大安區和平東路二段118巷48號",
+  "hours_today": "10:30-14:00, 16:00-20:00",
+  "rating": 4.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/58c19a1e2756dd732689b776-%E6%96%87%E5%93%A5-%E5%B7%B7%E4%BB%94%E5%8F%A3%E7%B1%B3%E7%B2%89%E6%B9%AF"
+ },
+ {
+  "page": 10,
+  "rank": 139,
+  "name": "the Diner樂子",
+  "tags": [
+   "美式料理",
+   "早午餐",
+   "寵物友善"
+  ],
+  "avg": 250,
+  "addr": "臺北市大安區瑞安街145號",
+  "hours_today": "09:00-20:00",
+  "rating": 4.4,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559dd98ac03a103ee86cb434-the-Diner%E6%A8%82%E5%AD%90"
+ },
+ {
+  "page": 10,
+  "rank": 140,
+  "name": "四面八方",
+  "tags": [
+   "小吃",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區復興南路二段340巷10號",
+  "hours_today": "11:00-20:30",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/669bb97d927f8070e732d822-%E5%9B%9B%E9%9D%A2%E5%85%AB%E6%96%B9"
+ },
+ {
+  "page": 10,
+  "rank": 141,
+  "name": "你好原汁牛肉麵",
+  "tags": [
+   "牛肉麵",
+   "小吃",
+   "午餐"
+  ],
+  "avg": 230,
+  "addr": "臺北市大安區四維路170巷43號",
+  "hours_today": "11:00-20:50",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/680e3a80927f8005ac591cd3-%E4%BD%A0%E5%A5%BD%E5%8E%9F%E6%B1%81%E7%89%9B%E8%82%89%E9%BA%B5"
+ },
+ {
+  "page": 10,
+  "rank": 142,
+  "name": "earnestos",
+  "tags": [
+   "Fine Dining",
+   "晚餐",
+   "餐酒館"
+  ],
+  "avg": 3500,
+  "addr": "臺北市大安區瑞安街208巷5號",
+  "hours_today": "18:00-22:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/65abc8a3927f805ce3382861-earnestos"
+ },
+ {
+  "page": 10,
+  "rank": 143,
+  "name": "角屋關東煮",
+  "tags": [
+   "日本料理",
+   "小吃",
+   "晚餐"
+  ],
+  "avg": 150,
+  "addr": "臺北市大安區大安路二段141巷口",
+  "hours_today": "12:00-14:00, 17:00-21:40",
+  "rating": 4.6,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559ddd0cc03a103ee86cb693-%E8%A7%92%E5%B1%8B%E9%97%9C%E6%9D%B1%E7%85%AE"
+ },
+ {
+  "page": 10,
+  "rank": 144,
+  "name": "點亮咖啡",
+  "tags": [
+   "咖啡",
+   "下午茶",
+   "甜點"
+  ],
+  "avg": 300,
+  "addr": "臺北市大安區復興南路二段332號",
+  "hours_today": "13:00-18:30",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/59db8518f52468324adbc480-%E9%BB%9E%E4%BA%AE%E5%92%96%E5%95%A1"
+ },
+ {
+  "page": 10,
+  "rank": 145,
+  "name": "豚太郎日式丼飯",
+  "tags": [
+   "日本料理",
+   "午餐"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區臥龍街13號",
+  "hours_today": "11:30-14:00, 17:00-19:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/649c353901ba334e9f8a60f7-%E8%B1%9A%E5%A4%AA%E9%83%8E%E6%97%A5%E5%BC%8F%E4%B8%BC%E9%A3%AF"
+ },
+ {
+  "page": 10,
+  "rank": 146,
+  "name": "米食 미식",
+  "tags": [
+   "午餐",
+   "晚餐",
+   "小吃"
+  ],
+  "avg": 200,
+  "addr": "臺北市大安區瑞安街252號",
+  "hours_today": "11:30-14:30, 17:00-20:30",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5fb1e88002935e7755decb62-%E7%B1%B3%E9%A3%9F-"
+ },
+ {
+  "page": 10,
+  "rank": 147,
+  "name": "樂食堂",
+  "tags": [
+   "日本料理",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 500,
+  "addr": "臺北市大安區臥龍街11號",
+  "hours_today": "11:30-14:00, 17:30-20:30",
+  "rating": 4.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/55a684ebc03a104df53ca840-%E6%A8%82%E9%A3%9F%E5%A0%82"
+ },
+ {
+  "page": 10,
+  "rank": 148,
+  "name": "溫州大餛飩",
+  "tags": [
+   "小吃",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區和平東路二段335號",
+  "hours_today": "08:00-20:30",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/55a67ca7c03a104df53ca612-%E6%BA%AB%E5%B7%9E%E5%A4%A7%E9%A4%9B%E9%A3%A9"
+ },
+ {
+  "page": 11,
+  "rank": 151,
+  "name": "餓菱居",
+  "tags": [
+   "小吃",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區四維路170巷26號",
+  "hours_today": "11:00-14:00, 17:00-19:50",
+  "rating": 4.2,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/630448bc7cc7fc0cb9ca7091-%E9%A4%93%E8%8F%B1%E5%B1%85"
+ },
+ {
+  "page": 11,
+  "rank": 152,
+  "name": "一流清粥小菜",
+  "tags": [
+   "宵夜",
+   "小吃",
+   "午餐"
+  ],
+  "avg": 400,
+  "addr": "臺北市大安區復興南路二段106號",
+  "hours_today": "11:30-23:00",
+  "rating": 3.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5d936a8a8c906d37324c5f98-%E4%B8%80%E6%B5%81%E6%B8%85%E7%B2%A5%E5%B0%8F%E8%8F%9C"
+ },
+ {
+  "page": 11,
+  "rank": 153,
+  "name": "未央咖啡店",
+  "tags": [
+   "咖啡",
+   "甜點",
+   "宵夜"
+  ],
+  "avg": 500,
+  "addr": "台北市大安區四維路208巷10號",
+  "hours_today": "00:00-01:00, 13:00-00:00",
+  "rating": 4.2,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/56f038162756dd77f1d8c271-%E6%9C%AA%E5%A4%AE%E5%92%96%E5%95%A1%E5%BA%97"
+ },
+ {
+  "page": 11,
+  "rank": 154,
+  "name": "五九麵館",
+  "tags": [
+   "午餐",
+   "晚餐",
+   "麵食"
+  ],
+  "avg": 150,
+  "addr": "臺北市大安區龍淵裏和平東路二段118巷59號",
+  "hours_today": "11:00-14:00, 17:00-20:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6a2ffb58927f804b9edea398-%E4%BA%94%E4%B9%9D%E9%BA%B5%E9%A4%A8"
+ },
+ {
+  "page": 11,
+  "rank": 155,
+  "name": "馮家蔬菜蛋餅",
+  "tags": [
+   "早午餐"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區瑞安街153號",
+  "hours_today": "今日休息",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6529fc9b0fbeb11113e151d8-%E9%A6%AE%E5%AE%B6%E8%94%AC%E8%8F%9C%E8%9B%8B%E9%A4%85"
+ },
+ {
+  "page": 11,
+  "rank": 156,
+  "name": "就是果汁吧",
+  "tags": [
+   "午餐",
+   "果汁吧"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區和平東路三段12號",
+  "hours_today": "08:00-19:00",
+  "rating": 4.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/57e4de2a23679c66e976d25e-%E5%B0%B1%E6%98%AF%E6%9E%9C%E6%B1%81%E5%90%A7"
+ },
+ {
+  "page": 11,
+  "rank": 157,
+  "name": "Food二十食堂",
+  "tags": [
+   "日本料理",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 300,
+  "addr": "臺北市大安區瑞安街153號",
+  "hours_today": "11:30-14:30, 17:30-20:30",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6503b7763fc2742d24b1a7f6-Food%E4%BA%8C%E5%8D%81%E9%A3%9F%E5%A0%82"
+ },
+ {
+  "page": 11,
+  "rank": 158,
+  "name": "永和樓 韓式中華料理店",
+  "tags": [
+   "中式料理",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 200,
+  "addr": "臺北市大安區和平東路二段118巷52弄3號1樓",
+  "hours_today": "11:30-14:30, 17:00-21:00",
+  "rating": 4.1,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/631c90857cc7fc29b4ceb026-%E6%B0%B8%E5%92%8C%E6%A8%93-%E9%9F%93%E5%BC%8F%E4%B8%AD%E8%8F%AF%E6%96%99%E7%90%86%E5%BA%97"
+ },
+ {
+  "page": 11,
+  "rank": 159,
+  "name": "春桂雞肉",
+  "tags": [
+   "小吃",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 105,
+  "addr": "臺北市大安區四維路170巷22號",
+  "hours_today": "10:30-20:00",
+  "rating": 4.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5f1e94c28c906d0c98a07dad-%E6%98%A5%E6%A1%82%E9%9B%9E%E8%82%89"
+ },
+ {
+  "page": 11,
+  "rank": 160,
+  "name": "東區紅麵線",
+  "tags": [
+   "小吃",
+   "早餐",
+   "午餐"
+  ],
+  "avg": 55,
+  "addr": "臺北市大安區四維路170巷24號",
+  "hours_today": "07:00-19:00",
+  "rating": 4.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/68a9e393eb74c40e20de48fb-%E6%9D%B1%E5%8D%80%E7%B4%85%E9%BA%B5%E7%B7%9A"
+ },
+ {
+  "page": 11,
+  "rank": 161,
+  "name": "滝禾製麵所 大安瑞安店",
+  "tags": [
+   "拉麵",
+   "日本料理",
+   "午餐"
+  ],
+  "avg": 150,
+  "addr": "臺北市大安區瑞安街130號",
+  "hours_today": "11:30-21:00",
+  "rating": 4.2,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/64a75a3e77b9e95ecc9bc20f-%E6%BB%9D%E7%A6%BE%E8%A3%BD%E9%BA%B5%E6%89%80-%E5%A4%A7%E5%AE%89%E7%91%9E%E5%AE%89%E5%BA%97"
+ },
+ {
+  "page": 11,
+  "rank": 162,
+  "name": "拉麵らぁ麺魚堺-大安店",
+  "tags": [
+   "拉麵",
+   "日本料理",
+   "午餐"
+  ],
+  "avg": 280,
+  "addr": "臺北市大安區瑞安街260之3號",
+  "hours_today": "11:30-13:30, 17:00-20:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/681caf83927f8058f795b55d-%E6%8B%89%E9%BA%B5-%E9%BA%BA%E9%AD%9A%E5%A0%BA-%E5%A4%A7%E5%AE%89%E5%BA%97"
+ },
+ {
+  "page": 11,
+  "rank": 163,
+  "name": "二本松涮涮屋 本館",
+  "tags": [
+   "火鍋",
+   "Fine Dining",
+   "日本料理"
+  ],
+  "avg": 3000,
+  "addr": "臺北市大安區瑞安街118號",
+  "hours_today": "12:00-14:30, 17:30-22:30",
+  "rating": 4.9,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5e70be73d6895d5d4d2d0f61-%E4%BA%8C%E6%9C%AC%E6%9D%BE%E6%B6%AE%E6%B6%AE%E5%B1%8B-%E6%9C%AC%E9%A4%A8"
+ },
+ {
+  "page": 12,
+  "rank": 166,
+  "name": "永和豆漿大王",
+  "tags": [
+   "早餐",
+   "宵夜",
+   "小吃"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區復興南路二段102號",
+  "hours_today": "05:00-14:00",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/56759d1c2756dd3d5352adae-%E6%B0%B8%E5%92%8C%E8%B1%86%E6%BC%BF%E5%A4%A7%E7%8E%8B"
+ },
+ {
+  "page": 12,
+  "rank": 167,
+  "name": "百合麵包園",
+  "tags": [
+   "甜點",
+   "蛋糕",
+   "烘焙坊"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區大安路二段152號",
+  "hours_today": "07:00-22:00",
+  "rating": 3.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/55a560d9c03a10241de6610d-%E7%99%BE%E5%90%88%E9%BA%B5%E5%8C%85%E5%9C%92"
+ },
+ {
+  "page": 12,
+  "rank": 168,
+  "name": "憶馬當鮮 馬來西亞風味料理",
+  "tags": [
+   "約會餐廳",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 170,
+  "addr": "臺北市大安區和平東路二段118巷61號",
+  "hours_today": "11:30-14:00, 17:00-20:00",
+  "rating": 4.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5f0ec24d02935e0a5fe1b938-%E6%86%B6%E9%A6%AC%E7%95%B6%E9%AE%AE-%E9%A6%AC%E4%BE%86%E8%A5%BF%E4%BA%9E%E9%A2%A8%E5%91%B3%E6%96%99%E7%90%86"
+ },
+ {
+  "page": 12,
+  "rank": 169,
+  "name": "96巷麵店",
+  "tags": [
+   "小吃",
+   "早餐",
+   "午餐"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區和平東路二段96巷12之2號",
+  "hours_today": "07:00-14:30",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5fc4fff52756dd6123ea6cac--%E5%B7%B7%E9%BA%B5%E5%BA%97"
+ },
+ {
+  "page": 12,
+  "rank": 170,
+  "name": "諾蛙工作室 NOWA Studio",
+  "tags": [
+   "甜點",
+   "下午茶",
+   "蛋糕"
+  ],
+  "avg": 350,
+  "addr": "臺北市大安區和平東路二段118巷52弄9號1樓",
+  "hours_today": "11:00-19:00",
+  "rating": 4.2,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5d064904d6895d50bd5601b6-%E8%AB%BE%E8%9B%99%E5%B7%A5%E4%BD%9C%E5%AE%A4-NOWA-Studio"
+ },
+ {
+  "page": 12,
+  "rank": 171,
+  "name": "The Shed",
+  "tags": [
+   "咖啡",
+   "早午餐",
+   "咖哩"
+  ],
+  "avg": 360,
+  "addr": "臺北市大安區敦化南路二段172巷32號",
+  "hours_today": "11:30-20:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/664218b7927f80063ecca0c1-The-Shed"
+ },
+ {
+  "page": 12,
+  "rank": 172,
+  "name": "海福岡日本料理海鮮熱炒",
+  "tags": [
+   "日本料理",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 180,
+  "addr": "臺北市大安區四維路170巷31號",
+  "hours_today": "11:00-14:00, 16:30-20:00",
+  "rating": 2.4,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/55a5b24bc03a10241de67b8f-%E6%B5%B7%E7%A6%8F%E5%B2%A1%E6%97%A5%E6%9C%AC%E6%96%99%E7%90%86%E6%B5%B7%E9%AE%AE%E7%86%B1%E7%82%92"
+ },
+ {
+  "page": 12,
+  "rank": 173,
+  "name": "BAKEsmith 大吉先生·職人烘焙",
+  "tags": [
+   "甜點",
+   "蛋糕",
+   "下午茶"
+  ],
+  "avg": 250,
+  "addr": "臺北市大安區復興南路二段381之1號",
+  "hours_today": "10:00-18:30",
+  "rating": 4.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5cc15e31f524681d242eb44a-BAKEsmith-%E5%A4%A7%E5%90%89%E5%85%88%E7%94%9F-%E8%81%B7%E4%BA%BA%E7%83%98%E7%84%99"
+ },
+ {
+  "page": 12,
+  "rank": 174,
+  "name": "芝加哥比薩",
+  "tags": [
+   "美式料理",
+   "義式料理",
+   "午餐"
+  ],
+  "avg": 300,
+  "addr": "臺北市大安區復興南路二段379號",
+  "hours_today": "11:00-20:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6075a90c7cc7fc0dd212fa15-%E8%8A%9D%E5%8A%A0%E5%93%A5%E6%AF%94%E8%96%A9"
+ },
+ {
+  "page": 12,
+  "rank": 175,
+  "name": "賀運咖啡",
+  "tags": [
+   "咖啡"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區和平東路三段20號",
+  "hours_today": "10:00-17:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/593ed9022756dd524dd088c3-%E8%B3%80%E9%81%8B%E5%92%96%E5%95%A1"
+ },
+ {
+  "page": 12,
+  "rank": 176,
+  "name": "蘇江川小館",
+  "tags": [
+   "中式料理",
+   "合菜",
+   "午餐"
+  ],
+  "avg": 600,
+  "addr": "臺北市大安區四維路208巷6號",
+  "hours_today": "11:30-14:00, 17:30-20:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5defaa462756dd1efe2363ab-%E8%98%87%E6%B1%9F%E5%B7%9D%E5%B0%8F%E9%A4%A8"
+ },
+ {
+  "page": 12,
+  "rank": 177,
+  "name": "阿婆麵店",
+  "tags": [
+   "小吃",
+   "麵食"
+  ],
+  "avg": 100,
+  "addr": "台北市大安區和平東路二段96巷12號",
+  "hours_today": "尚無營業時間資訊",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/581a2aa02756dd31d1260f96-%E9%98%BF%E5%A9%86%E9%BA%B5%E5%BA%97"
+ },
+ {
+  "page": 12,
+  "rank": 178,
+  "name": "牛莊園牛肉麵",
+  "tags": [
+   "牛肉麵",
+   "小吃",
+   "午餐"
+  ],
+  "avg": 500,
+  "addr": "臺北市大安區四維路170巷27號",
+  "hours_today": "11:30-14:00, 17:30-20:20",
+  "rating": 4.6,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5b3917952756dd22ee47b25f-%E7%89%9B%E8%8E%8A%E5%9C%92%E7%89%9B%E8%82%89%E9%BA%B5"
+ },
+ {
+  "page": 12,
+  "rank": 179,
+  "name": "川味麵典",
+  "tags": [
+   "小吃",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 240,
+  "addr": "臺北市大安區四維路176巷17號",
+  "hours_today": "12:00-14:00",
+  "rating": 3.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/578bca522756dd59c2315874-%E5%B7%9D%E5%91%B3%E9%BA%B5%E5%85%B8"
+ },
+ {
+  "page": 12,
+  "rank": 180,
+  "name": "The FOLKS",
+  "tags": [
+   "咖啡",
+   "下午茶",
+   "甜點"
+  ],
+  "avg": 300,
+  "addr": "台北市大安區四維路208巷3-1號",
+  "hours_today": "08:00-13:00",
+  "rating": 4.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/563d80542756dd2c825fdf34-The-FOLKS"
+ },
+ {
+  "page": 13,
+  "rank": 181,
+  "name": "宅jài風格生活",
+  "tags": [
+   "下午茶",
+   "咖啡",
+   "茶店"
+  ],
+  "avg": null,
+  "addr": "台北市大安區瑞安街142巷2-2號",
+  "hours_today": "10:00-19:00",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5b9656bb23679c6ee53c0378-%E5%AE%85j-i%E9%A2%A8%E6%A0%BC%E7%94%9F%E6%B4%BB"
+ },
+ {
+  "page": 13,
+  "rank": 182,
+  "name": "noon",
+  "tags": [
+   "咖啡",
+   "下午茶",
+   "甜點"
+  ],
+  "avg": 200,
+  "addr": "臺北市大安區瑞安街142巷2之1號",
+  "hours_today": "09:30-18:00",
+  "rating": 4.7,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6339c21033ebbf23aa4a6209-noon"
+ },
+ {
+  "page": 13,
+  "rank": 183,
+  "name": "池先生咖哩屋",
+  "tags": [
+   "咖哩",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 200,
+  "addr": "臺北市大安區復興南路二段385號",
+  "hours_today": "11:30-20:30",
+  "rating": 4.3,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/578fbf282756dd01dcf7d481-%E6%B1%A0%E5%85%88%E7%94%9F%E5%92%96%E5%93%A9%E5%B1%8B"
+ },
+ {
+  "page": 13,
+  "rank": 184,
+  "name": "山西御品刀削麵館",
+  "tags": [
+   "小吃",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 150,
+  "addr": "臺北市大安區瑞安街208巷24弄6號",
+  "hours_today": "11:00-14:00, 17:00-20:00",
+  "rating": 4.7,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/55a52fc2c03a10241de64fc0-%E5%B1%B1%E8%A5%BF%E5%BE%A1%E5%93%81%E5%88%80%E5%89%8A%E9%BA%B5%E9%A4%A8"
+ },
+ {
+  "page": 13,
+  "rank": 185,
+  "name": "馬祖麵館",
+  "tags": [
+   "小吃",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區瑞安街155之3號",
+  "hours_today": "09:00-21:30",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/55a55734c03a10241de65db8-%E9%A6%AC%E7%A5%96%E9%BA%B5%E9%A4%A8"
+ },
+ {
+  "page": 13,
+  "rank": 186,
+  "name": "玖遛小売店 - Kyuu Roku Kouriten",
+  "tags": [
+   "早午餐",
+   "咖啡",
+   "下午茶"
+  ],
+  "avg": 150,
+  "addr": "臺北市大安區四維路208巷2號1樓",
+  "hours_today": "08:00-14:30",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5fb52e042756dd3ffcbe4b35-%E7%8E%96%E9%81%9B%E5%B0%8F%E5%A3%B2%E5%BA%97-Kyuu-Roku-Kour"
+ },
+ {
+  "page": 13,
+  "rank": 187,
+  "name": "溫州大餛飩",
+  "tags": [
+   "小吃",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區瑞安街155號",
+  "hours_today": "11:00-21:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/636db4b4faabb42fd66298b0-%E6%BA%AB%E5%B7%9E%E5%A4%A7%E9%A4%9B%E9%A3%A9"
+ },
+ {
+  "page": 13,
+  "rank": 188,
+  "name": "橋山.壽喜燒 すき焼き專門店",
+  "tags": [
+   "日本料理",
+   "火鍋",
+   "精緻高級"
+  ],
+  "avg": 3500,
+  "addr": "臺北市大安區瑞安街120巷3弄1號",
+  "hours_today": "12:00-14:30, 17:30-22:30",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/65da0d83927f8031e82c5140-%E6%A9%8B%E5%B1%B1-%E5%A3%BD%E5%96%9C%E7%87%92-%E7%84%BC-%E5%B0%88%E9%96%80%E5%BA%97"
+ },
+ {
+  "page": 13,
+  "rank": 189,
+  "name": "壹之穴沾麵專門店",
+  "tags": [
+   "拉麵",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 300,
+  "addr": "臺北市大安區復興南路二段350號",
+  "hours_today": "12:00-14:00, 17:00-20:00",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5f0d60af02935e66ad8d700f-%E5%A3%B9%E4%B9%8B%E7%A9%B4%E6%B2%BE%E9%BA%B5%E5%B0%88%E9%96%80%E5%BA%97"
+ },
+ {
+  "page": 13,
+  "rank": 190,
+  "name": "小小餐館little bistro",
+  "tags": [
+   "餐酒館",
+   "義式料理",
+   "下午茶"
+  ],
+  "avg": 200,
+  "addr": "臺北市大安區瑞安街43號",
+  "hours_today": "11:00-21:00",
+  "rating": 4.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/55a50ccbc03a10241de643de-%E5%B0%8F%E5%B0%8F%E9%A4%90%E9%A4%A8little-bistro"
+ },
+ {
+  "page": 13,
+  "rank": 191,
+  "name": "甜逗",
+  "tags": [
+   "甜點",
+   "小吃",
+   "冰品飲料"
+  ],
+  "avg": 80,
+  "addr": "臺北市大安區和平東路二段118巷63號1樓",
+  "hours_today": "11:00-20:30",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/644690b7e94eda15e0ee368a-%E7%94%9C%E9%80%97"
+ },
+ {
+  "page": 13,
+  "rank": 192,
+  "name": "無名麵攤",
+  "tags": [
+   "小吃",
+   "午餐",
+   "早餐"
+  ],
+  "avg": null,
+  "addr": "臺北市大安區和平東路二段76巷2弄1號",
+  "hours_today": "今日休息",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/69aad943927f807be995ac45-%E7%84%A1%E5%90%8D%E9%BA%B5%E6%94%A4"
+ },
+ {
+  "page": 13,
+  "rank": 193,
+  "name": "日日香小館",
+  "tags": [
+   "中式料理",
+   "合菜",
+   "午餐"
+  ],
+  "avg": null,
+  "addr": "臺北市大安區龍圖裏瑞安街208巷21號",
+  "hours_today": "11:30-13:30, 17:30-20:30",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6a4f9f48927f80b1893b73d9-%E6%97%A5%E6%97%A5%E9%A6%99%E5%B0%8F%E9%A4%A8"
+ },
+ {
+  "page": 13,
+  "rank": 194,
+  "name": "双生炒飯",
+  "tags": [
+   "小吃",
+   "午餐"
+  ],
+  "avg": 80,
+  "addr": "臺北市大安區四維路170巷18號",
+  "hours_today": "11:00-14:00",
+  "rating": 4.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/605d3797781cc026ea276a2b-%E5%8F%8C%E7%94%9F%E7%82%92%E9%A3%AF"
+ },
+ {
+  "page": 13,
+  "rank": 195,
+  "name": "賜福早午餐luckyou_brunch",
+  "tags": [
+   "義式料理",
+   "早午餐",
+   "午餐"
+  ],
+  "avg": 500,
+  "addr": "臺北市大安區和平東路二段118巷52弄16號",
+  "hours_today": "12:00-15:00, 18:00-21:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/68650e90eb74c439dcff8cb6-%E8%B3%9C%E7%A6%8F%E6%97%A9%E5%8D%88%E9%A4%90luckyou-brunch"
+ },
+ {
+  "page": 14,
+  "rank": 196,
+  "name": "呂 巷仔口麵食館",
+  "tags": [
+   "小吃",
+   "早餐",
+   "午餐"
+  ],
+  "avg": 60,
+  "addr": "臺北市大安區大安區和平東路二段76巷2號之1",
+  "hours_today": "06:30-13:30",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559d970ec03a103ee86c8d84-%E5%91%82-%E5%B7%B7%E4%BB%94%E5%8F%A3%E9%BA%B5%E9%A3%9F%E9%A4%A8"
+ },
+ {
+  "page": 14,
+  "rank": 197,
+  "name": "GOHAN 御飯食事处 敦南店",
+  "tags": [
+   "日本料理",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 300,
+  "addr": "臺北市大安區四維路210之1號",
+  "hours_today": "11:30-14:00, 17:30-21:00",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/62218690a627282b6376c55c-GOHAN-%E5%BE%A1%E9%A3%AF%E9%A3%9F%E4%BA%8B%E5%A4%84-%E6%95%A6%E5%8D%97%E5%BA%97"
+ },
+ {
+  "page": 14,
+  "rank": 198,
+  "name": "林記海南雞飯 和平店",
+  "tags": [
+   "午餐",
+   "晚餐",
+   "新加坡料理"
+  ],
+  "avg": 230,
+  "addr": "臺北市大安區和平東路二段118巷65號1樓",
+  "hours_today": "11:00-21:00",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/65fa7c117be9c3fac6555271-%E6%9E%97%E8%A8%98%E6%B5%B7%E5%8D%97%E9%9B%9E%E9%A3%AF-%E5%92%8C%E5%B9%B3%E5%BA%97"
+ },
+ {
+  "page": 14,
+  "rank": 199,
+  "name": "師大附中水煎包",
+  "tags": [
+   "早餐",
+   "餃子"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區和平東路二段118巷63號",
+  "hours_today": "06:30-11:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5ade21ee2756dd37d98fe191-%E5%B8%AB%E5%A4%A7%E9%99%84%E4%B8%AD%E6%B0%B4%E7%85%8E%E5%8C%85"
+ },
+ {
+  "page": 14,
+  "rank": 200,
+  "name": "魚韻日式料理",
+  "tags": [
+   "日本料理",
+   "晚餐",
+   "午餐"
+  ],
+  "avg": 680,
+  "addr": "臺北市大安區瑞安街208巷24弄14號",
+  "hours_today": "11:30-14:30, 17:00-21:00",
+  "rating": 4.6,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/606bff8ebaf6d32e5de12313-%E9%AD%9A%E9%9F%BB%E6%97%A5%E5%BC%8F%E6%96%99%E7%90%86"
+ },
+ {
+  "page": 14,
+  "rank": 201,
+  "name": "美鄉拉麵屋",
+  "tags": [
+   "拉麵",
+   "小吃",
+   "海鮮"
+  ],
+  "avg": 150,
+  "addr": "臺北市大安區建國南路二段151巷53號",
+  "hours_today": "11:30-13:15, 17:30-19:15",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/58f7a73f2756dd27438b4e2b-%E7%BE%8E%E9%84%89%E6%8B%89%E9%BA%B5%E5%B1%8B"
+ },
+ {
+  "page": 14,
+  "rank": 202,
+  "name": "淺草日式飯糰",
+  "tags": [
+   "日本料理",
+   "小吃",
+   "午餐"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區和平東路二段118巷54弄13號",
+  "hours_today": "07:30-18:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5b6bf23923679c379e5237c3-%E6%B7%BA%E8%8D%89%E6%97%A5%E5%BC%8F%E9%A3%AF%E7%B3%B0"
+ },
+ {
+  "page": 14,
+  "rank": 203,
+  "name": "Boulangerie Ours",
+  "tags": [
+   "早午餐",
+   "咖啡",
+   "下午茶"
+  ],
+  "avg": 280,
+  "addr": "臺北市大安區四維路375之3號一樓",
+  "hours_today": "今日休息",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5f97c5ff02935e5a13ba7ee2-Boulangerie-Ours"
+ },
+ {
+  "page": 14,
+  "rank": 204,
+  "name": "季肴酒 駄介 Dasuke by Sakemaru",
+  "tags": [
+   "日本料理",
+   "居酒屋",
+   "Fine Dining"
+  ],
+  "avg": 5918,
+  "addr": "臺北市大安區四維路375之2號1樓",
+  "hours_today": "18:00-23:00",
+  "rating": 4.3,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/654e3065927f80247a6fbe9f-%E5%AD%A3%E8%82%B4%E9%85%92-%E9%A7%84%E4%BB%8B-Dasuke-by-Sak"
+ },
+ {
+  "page": 14,
+  "rank": 205,
+  "name": "話一隻雞 大安店",
+  "tags": [
+   "咖啡"
+  ],
+  "avg": 230,
+  "addr": "臺北市大安區復興南路二段358號一樓",
+  "hours_today": "11:30-14:00, 17:00-20:00",
+  "rating": 4.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/68db96bc927f80d23fb3179b-%E8%A9%B1%E4%B8%80%E9%9A%BB%E9%9B%9E-%E5%A4%A7%E5%AE%89%E5%BA%97"
+ },
+ {
+  "page": 14,
+  "rank": 206,
+  "name": "找到咖啡義法料理 Findle Cafe",
+  "tags": [
+   "咖啡",
+   "義式料理",
+   "約會餐廳"
+  ],
+  "avg": 520,
+  "addr": "臺北市大安區建國南路二段151巷48號",
+  "hours_today": "11:00-21:00",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/68df3695927f80c6a6eea181-%E6%89%BE%E5%88%B0%E5%92%96%E5%95%A1%E7%BE%A9%E6%B3%95%E6%96%99%E7%90%86-Findle-Cafe"
+ },
+ {
+  "page": 14,
+  "rank": 207,
+  "name": "義美食品",
+  "tags": [
+   "早餐",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": null,
+  "addr": "臺北市大安區和平東路三段40號",
+  "hours_today": "08:00-22:00",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/66d70d2c927f8005682e11bf-%E7%BE%A9%E7%BE%8E%E9%A3%9F%E5%93%81"
+ },
+ {
+  "page": 14,
+  "rank": 208,
+  "name": "米粉湯",
+  "tags": [
+   "小吃",
+   "午餐",
+   "麵食"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區四維路192巷8號",
+  "hours_today": "07:30-13:30",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/618e23067cc7fc295fdf6e2a-%E7%B1%B3%E7%B2%89%E6%B9%AF"
+ },
+ {
+  "page": 14,
+  "rank": 209,
+  "name": "阿孟石碗燒河粉",
+  "tags": [
+   "午餐",
+   "晚餐",
+   "麵食"
+  ],
+  "avg": 160,
+  "addr": "臺北市大安區和平東路二段118巷69號",
+  "hours_today": "11:00-14:00, 17:00-20:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/68ecfc7a927f802b7dab5414-%E9%98%BF%E5%AD%9F%E7%9F%B3%E7%A2%97%E7%87%92%E6%B2%B3%E7%B2%89"
+ },
+ {
+  "page": 14,
+  "rank": 210,
+  "name": "馬修嚴選_敦南門市",
+  "tags": [
+   "午餐",
+   "晚餐"
+  ],
+  "avg": null,
+  "addr": "臺北市大安區四維路170巷10號",
+  "hours_today": "11:00-21:00",
+  "rating": 4.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/55a5b710c03a10241de67d1a-%E9%A6%AC%E4%BF%AE%E5%9A%B4%E9%81%B8-%E6%95%A6%E5%8D%97%E9%96%80%E5%B8%82"
+ },
+ {
+  "page": 15,
+  "rank": 211,
+  "name": "彭家水餃",
+  "tags": [
+   "小吃",
+   "午餐",
+   "餃子"
+  ],
+  "avg": 190,
+  "addr": "臺北市大安區敦化南路二段120號",
+  "hours_today": "11:00-14:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/63384078658aba439ab43acd-%E5%BD%AD%E5%AE%B6%E6%B0%B4%E9%A4%83"
+ },
+ {
+  "page": 15,
+  "rank": 212,
+  "name": "鈉 餐廳",
+  "tags": [
+   "Fine Dining",
+   "日本料理",
+   "晚餐"
+  ],
+  "avg": 3800,
+  "addr": "臺北市大安區敦化南路二段146巷1號",
+  "hours_today": "12:00-14:00, 18:00-22:00",
+  "rating": 4.7,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/688e104c927f80ba79e176aa-%E9%88%89-%E9%A4%90%E5%BB%B3"
+ },
+ {
+  "page": 15,
+  "rank": 213,
+  "name": "Rialto da Bere 雅朵義式小酒館",
+  "tags": [
+   "義式料理",
+   "餐酒館",
+   "約會餐廳"
+  ],
+  "avg": 1200,
+  "addr": "臺北市大安區敦化南路二段152樓7之1號",
+  "hours_today": "11:30-15:00, 17:30-22:00",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/677e7c21927f80263f4948c7-Rialto-da-Bere-%E9%9B%85%E6%9C%B5%E7%BE%A9%E5%BC%8F%E5%B0%8F"
+ },
+ {
+  "page": 15,
+  "rank": 214,
+  "name": "利休日本料理",
+  "tags": [
+   "日本料理",
+   "精緻高級",
+   "約會餐廳"
+  ],
+  "avg": 1500,
+  "addr": "臺北市大安區敦化南路二段144號",
+  "hours_today": "12:00-14:00, 17:30-21:30",
+  "rating": 4.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5c81e5722261395bd948b56c-%E5%88%A9%E4%BC%91%E6%97%A5%E6%9C%AC%E6%96%99%E7%90%86"
+ },
+ {
+  "page": 15,
+  "rank": 215,
+  "name": "神樂市場",
+  "tags": [
+   "日本料理",
+   "午餐",
+   "海鮮"
+  ],
+  "avg": 400,
+  "addr": "臺北市大安區敦化南路二段120號2樓23.24攤位",
+  "hours_today": "09:30-14:00",
+  "rating": 4.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/62fb9ba7baf6d33043795278-%E7%A5%9E%E6%A8%82%E5%B8%82%E5%A0%B4"
+ },
+ {
+  "page": 15,
+  "rank": 216,
+  "name": "何記港式私房菜 （成功市場二樓22號攤）",
+  "tags": [
+   "港式料理",
+   "攤販",
+   "餐盒"
+  ],
+  "avg": 200,
+  "addr": "臺北市大安區敦化南路二段120號2樓",
+  "hours_today": "10:30-13:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/632f064a7cc7fc29b4ff9313-%E4%BD%95%E8%A8%98%E6%B8%AF%E5%BC%8F%E7%A7%81%E6%88%BF%E8%8F%9C-%E6%88%90%E5%8A%9F%E5%B8%82%E5%A0%B4%E4%BA%8C%E6%A8%93-%E8%99%9F%E6%94%A4-"
+ },
+ {
+  "page": 15,
+  "rank": 217,
+  "name": "于家水餃",
+  "tags": [
+   "小吃",
+   "早餐",
+   "餃子"
+  ],
+  "avg": null,
+  "addr": "臺北市大安區群賢裏四維路192巷4之1號",
+  "hours_today": "07:00-12:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6a85acb7927f80a8395d1f63-%E4%BA%8E%E5%AE%B6%E6%B0%B4%E9%A4%83"
+ },
+ {
+  "page": 15,
+  "rank": 218,
+  "name": "滷味灶咖",
+  "tags": [
+   "小吃",
+   "午餐",
+   "餐盒"
+  ],
+  "avg": 220,
+  "addr": "臺北市大安區敦化南路二段120號2樓",
+  "hours_today": "08:30-13:30",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/62f35d55781cc02281fc0dea-%E6%BB%B7%E5%91%B3%E7%81%B6%E5%92%96"
+ },
+ {
+  "page": 15,
+  "rank": 219,
+  "name": "哈爾濱東北蔥花大餅",
+  "tags": [
+   "小吃",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區和平東路二段60之2號",
+  "hours_today": "07:30-21:30",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/55a50dacc03a10241de64437-%E5%93%88%E7%88%BE%E6%BF%B1%E6%9D%B1%E5%8C%97%E8%94%A5%E8%8A%B1%E5%A4%A7%E9%A4%85"
+ },
+ {
+  "page": 15,
+  "rank": 220,
+  "name": "韓蒔HAN SHIH",
+  "tags": [
+   "午餐",
+   "晚餐",
+   "餐酒館"
+  ],
+  "avg": 350,
+  "addr": "臺北市大安區四維路180號",
+  "hours_today": "11:30-14:00, 17:30-20:30",
+  "rating": 4.1,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/61a4d5a27cc7fc5078089141-%E9%9F%93%E8%92%94HAN-SHIH"
+ },
+ {
+  "page": 15,
+  "rank": 221,
+  "name": "立秋 Li Chiu",
+  "tags": [
+   "餐酒館",
+   "精緻高級",
+   "約會餐廳"
+  ],
+  "avg": 2074,
+  "addr": "臺北市大安區辛亥路二段171巷9號1樓",
+  "hours_today": "17:30-22:30",
+  "rating": 4.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/62ac80c97cc7fc525f472eef-%E7%AB%8B%E7%A7%8B-Li-Chiu"
+ },
+ {
+  "page": 15,
+  "rank": 222,
+  "name": "尚林鐵板燒餐廳",
+  "tags": [
+   "鐵板燒"
+  ],
+  "avg": 1200,
+  "addr": "敦化南路二段130號",
+  "hours_today": null,
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559d5c0cc03a103ee86c6918-%E5%B0%9A%E6%9E%97%E9%90%B5%E6%9D%BF%E7%87%92%E9%A4%90%E5%BB%B3"
+ },
+ {
+  "page": 15,
+  "rank": 223,
+  "name": "阿玉水餃",
+  "tags": [
+   "小吃",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 110,
+  "addr": "臺北市大安區辛亥路二段217號",
+  "hours_today": "08:00-20:00",
+  "rating": 4.1,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559d14a7c03a103ee86c3b50-%E9%98%BF%E7%8E%89%E6%B0%B4%E9%A4%83"
+ },
+ {
+  "page": 15,
+  "rank": 224,
+  "name": "D’N 敦南酒窖",
+  "tags": [
+   "餐酒館",
+   "酒吧",
+   "宵夜"
+  ],
+  "avg": 1000,
+  "addr": "臺北市大安區敦化南路二段140號",
+  "hours_today": "00:00-02:00, 18:00-00:00",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5e021f1d2756dd5699e012bc-D-N-%E6%95%A6%E5%8D%97%E9%85%92%E7%AA%96"
+ },
+ {
+  "page": 16,
+  "rank": 226,
+  "name": "台北市公有成功市場",
+  "tags": [
+   "早餐"
+  ],
+  "avg": null,
+  "addr": "臺北市大安區敦化南路二段120號",
+  "hours_today": "07:00-13:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6331beba658aba18a3daeaeb-%E5%8F%B0%E5%8C%97%E5%B8%82%E5%85%AC%E6%9C%89%E6%88%90%E5%8A%9F%E5%B8%82%E5%A0%B4"
+ },
+ {
+  "page": 16,
+  "rank": 227,
+  "name": "13香牛肉麵",
+  "tags": [
+   "牛肉麵",
+   "小吃",
+   "午餐"
+  ],
+  "avg": 300,
+  "addr": "臺北市大安區和平東路三段48之6號",
+  "hours_today": "11:30-14:30, 17:30-21:00",
+  "rating": 4.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/570944f82756dd5b1184a050--%E9%A6%99%E7%89%9B%E8%82%89%E9%BA%B5"
+ },
+ {
+  "page": 16,
+  "rank": 228,
+  "name": "HWC黑沃咖啡 大安和平店",
+  "tags": [
+   "精品咖啡"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區和平東路三段46之4號",
+  "hours_today": "08:00-18:00",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5f9e28a08c906d10a5203c6a-HWC%E9%BB%91%E6%B2%83%E5%92%96%E5%95%A1-%E5%A4%A7%E5%AE%89%E5%92%8C%E5%B9%B3%E5%BA%97"
+ },
+ {
+  "page": 16,
+  "rank": 229,
+  "name": "Unwined Bar & Vintner",
+  "tags": [
+   "酒吧",
+   "精緻高級",
+   "約會餐廳"
+  ],
+  "avg": 1500,
+  "addr": "臺北市大安區敦化南路二段148號",
+  "hours_today": "15:00-23:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/64db7cee38221f3626194b86-Unwined-Bar-Vintner"
+ },
+ {
+  "page": 16,
+  "rank": 230,
+  "name": "蘇草salvia",
+  "tags": [
+   "早午餐",
+   "義式料理",
+   "咖啡"
+  ],
+  "avg": 250,
+  "addr": "臺北市大安區辛亥路二段209號",
+  "hours_today": "10:00-20:30",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/58af23ad2756dd3c725cee59-%E8%98%87%E8%8D%89salvia"
+ },
+ {
+  "page": 16,
+  "rank": 231,
+  "name": "便當人台北大安店 I`M BENTO",
+  "tags": [
+   "午餐",
+   "餐盒",
+   "輕食"
+  ],
+  "avg": 150,
+  "addr": "臺北市大安區和平東路三段48號1樓",
+  "hours_today": "11:00-14:00, 16:30-19:30",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/64c0998977b9e964e09007e2-%E4%BE%BF%E7%95%B6%E4%BA%BA%E5%8F%B0%E5%8C%97%E5%A4%A7%E5%AE%89%E5%BA%97-I-M-BENTO"
+ },
+ {
+  "page": 16,
+  "rank": 232,
+  "name": "LOTUS CAFFÉ",
+  "tags": [
+   "咖啡",
+   "下午茶",
+   "甜點"
+  ],
+  "avg": 200,
+  "addr": "臺北市大安區復興南路二段65之1號",
+  "hours_today": "11:00-19:30",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/68187a287be9c31fd24762bd-LOTUS-CAFF-"
+ },
+ {
+  "page": 16,
+  "rank": 233,
+  "name": "台大黑飯糰",
+  "tags": [
+   "小吃",
+   "早餐",
+   "外帶外送店家"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區辛亥路二段171巷10號",
+  "hours_today": "06:00-10:30",
+  "rating": 4.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5655d8122756dd1d7a1afe95-%E5%8F%B0%E5%A4%A7%E9%BB%91%E9%A3%AF%E7%B3%B0"
+ },
+ {
+  "page": 16,
+  "rank": 234,
+  "name": "南庄香麵店",
+  "tags": [
+   "小吃",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區和平東路二段62巷2號C棟",
+  "hours_today": "10:00-14:30, 16:30-20:30",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6388ac4c01ba331496c44ca4-%E5%8D%97%E5%BA%84%E9%A6%99%E9%BA%B5%E5%BA%97"
+ },
+ {
+  "page": 16,
+  "rank": 235,
+  "name": "正香馬來西亞餐室（原正香海南雞飯）",
+  "tags": [
+   "咖哩",
+   "午餐",
+   "馬來西亞料理"
+  ],
+  "avg": 150,
+  "addr": "台北市大安區辛亥路二段203號",
+  "hours_today": "今日休息",
+  "rating": 4.2,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5c4f1be223679c64ec416027-%E6%AD%A3%E9%A6%99%E9%A6%AC%E4%BE%86%E8%A5%BF%E4%BA%9E%E9%A4%90%E5%AE%A4-%E5%8E%9F%E6%AD%A3%E9%A6%99%E6%B5%B7%E5%8D%97%E9%9B%9E%E9%A3%AF-"
+ },
+ {
+  "page": 16,
+  "rank": 236,
+  "name": "胖姐牛肉麵",
+  "tags": [
+   "牛肉麵",
+   "小吃",
+   "午餐"
+  ],
+  "avg": 180,
+  "addr": "台北市大安區敦化南路二段120號2樓",
+  "hours_today": "10:50-13:30",
+  "rating": 4.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/671503c8927f80deea8a20dd-%E8%83%96%E5%A7%90%E7%89%9B%E8%82%89%E9%BA%B5"
+ },
+ {
+  "page": 16,
+  "rank": 237,
+  "name": "安好食 和平店",
+  "tags": [
+   "早餐",
+   "早午餐",
+   "咖啡"
+  ],
+  "avg": 80,
+  "addr": "臺北市大安區和平東路二段118巷54弄6號",
+  "hours_today": "07:00-13:50",
+  "rating": 4.6,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5de7c3348c906d1d190360b2-%E5%AE%89%E5%A5%BD%E9%A3%9F-%E5%92%8C%E5%B9%B3%E5%BA%97"
+ },
+ {
+  "page": 16,
+  "rank": 238,
+  "name": "原鮨割烹",
+  "tags": [
+   "日本料理",
+   "Fine Dining",
+   "約會餐廳"
+  ],
+  "avg": 3500,
+  "addr": "臺北市大安區四維路187號1樓",
+  "hours_today": "12:00-14:30, 18:00-22:00",
+  "rating": 4.2,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5ee0ed09226139685202b3c7-%E5%8E%9F%E9%AE%A8%E5%89%B2%E7%83%B9"
+ },
+ {
+  "page": 16,
+  "rank": 239,
+  "name": "Toh-A桌藏",
+  "tags": [
+   "Fine Dining",
+   "約會餐廳",
+   "精緻高級"
+  ],
+  "avg": 2500,
+  "addr": "台北市和平東路二段76巷23弄9號",
+  "hours_today": "12:00-15:00, 18:00-22:30",
+  "rating": 4.1,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5642b59f699b6e43575d0171-Toh-A%E6%A1%8C%E8%97%8F"
+ },
+ {
+  "page": 16,
+  "rank": 240,
+  "name": "雞籠天婦羅",
+  "tags": [
+   "小吃"
+  ],
+  "avg": 200,
+  "addr": "臺北市大安區敦化南路二段120號2號樓2攤",
+  "hours_today": "08:00-13:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/632db49f7cc7fc29b4fa2f66-%E9%9B%9E%E7%B1%A0%E5%A4%A9%E5%A9%A6%E7%BE%85"
+ },
+ {
+  "page": 17,
+  "rank": 241,
+  "name": "18號咖啡",
+  "tags": [
+   "精品咖啡"
+  ],
+  "avg": 220,
+  "addr": "臺北市大安區敦化南路二段120號成功中繼市場飲食１８",
+  "hours_today": "08:00-14:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/64b1200301ba332965b21f09--%E8%99%9F%E5%92%96%E5%95%A1"
+ },
+ {
+  "page": 17,
+  "rank": 242,
+  "name": "漢堡王 敦南店",
+  "tags": [
+   "午餐",
+   "晚餐",
+   "漢堡"
+  ],
+  "avg": 130,
+  "addr": "臺北市大安區敦化南路二段164號",
+  "hours_today": "09:00-22:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6666fdc4927f80cee734c057-%E6%BC%A2%E5%A0%A1%E7%8E%8B-%E6%95%A6%E5%8D%97%E5%BA%97"
+ },
+ {
+  "page": 17,
+  "rank": 243,
+  "name": "瑞安油飯｜內用/外帶｜",
+  "tags": [
+   "小吃",
+   "早餐",
+   "午餐"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區瑞安街31巷3之2號",
+  "hours_today": "07:30-14:00",
+  "rating": 4.2,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/67f492d7927f8097cabb8601-%E7%91%9E%E5%AE%89%E6%B2%B9%E9%A3%AF-%E5%85%A7%E7%94%A8-%E5%A4%96%E5%B8%B6-"
+ },
+ {
+  "page": 17,
+  "rank": 244,
+  "name": "雙月食品社 森林公園店",
+  "tags": [
+   "小吃",
+   "宵夜",
+   "午餐"
+  ],
+  "avg": 500,
+  "addr": "臺北市大安區和平東路二段52號",
+  "hours_today": "11:00-14:00, 17:00-20:00",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6385c41f77b9e96389e039f0-%E9%9B%99%E6%9C%88%E9%A3%9F%E5%93%81%E7%A4%BE-%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9C%92%E5%BA%97"
+ },
+ {
+  "page": 17,
+  "rank": 245,
+  "name": "桃五咖啡",
+  "tags": [
+   "咖啡",
+   "下午茶",
+   "甜點"
+  ],
+  "avg": 150,
+  "addr": "臺北市大安區瑞安街208巷56號1樓",
+  "hours_today": "14:00-00:00",
+  "rating": 4.2,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/65256cc27be9c35e464c0a2d-%E6%A1%83%E4%BA%94%E5%92%96%E5%95%A1"
+ },
+ {
+  "page": 17,
+  "rank": 246,
+  "name": "梟夜",
+  "tags": [
+   "居酒屋",
+   "日本料理",
+   "餐酒館"
+  ],
+  "avg": 600,
+  "addr": "臺北市大安區四維路164號",
+  "hours_today": "18:00-00:00",
+  "rating": 4.6,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/62ce811aa627280e38d9afe4-%E6%A2%9F%E5%A4%9C"
+ },
+ {
+  "page": 17,
+  "rank": 247,
+  "name": "BeansLab coffee 豆研咖啡館",
+  "tags": [
+   "咖啡",
+   "甜點",
+   "輕食"
+  ],
+  "avg": 250,
+  "addr": "臺北市大安區辛亥路二段171巷6弄6號",
+  "hours_today": "08:30-18:00",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/6201d83d781cc0073577b4f8-BeansLab-coffee-%E8%B1%86%E7%A0%94%E5%92%96%E5%95%A1"
+ },
+ {
+  "page": 17,
+  "rank": 248,
+  "name": "小罐子點心鋪 敦南店",
+  "tags": [
+   "甜點",
+   "下午茶",
+   "蛋糕"
+  ],
+  "avg": 500,
+  "addr": "台北市大安區敦化南路二段100號",
+  "hours_today": "12:00-20:00",
+  "rating": 4.1,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/56d26ea12756dd173ace1d74-%E5%B0%8F%E7%BD%90%E5%AD%90%E9%BB%9E%E5%BF%83%E9%8B%AA-%E6%95%A6%E5%8D%97%E5%BA%97"
+ },
+ {
+  "page": 17,
+  "rank": 249,
+  "name": "昀吐司",
+  "tags": [
+   "早餐",
+   "午餐",
+   "咖啡"
+  ],
+  "avg": 170,
+  "addr": "臺北市大安區敦化南路二段100號",
+  "hours_today": "07:30-18:00",
+  "rating": 4.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/678a62a07be9c39f2145e63f-%E6%98%80%E5%90%90%E5%8F%B8"
+ },
+ {
+  "page": 17,
+  "rank": 250,
+  "name": "天辣麻辣火鍋",
+  "tags": [
+   "火鍋",
+   "吃到飽",
+   "晚餐"
+  ],
+  "avg": 599,
+  "addr": "臺北市大安區復興南路二段84號",
+  "hours_today": "00:00-01:30, 11:00-00:00",
+  "rating": 3.2,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5ba650202756dd0857079c65-%E5%A4%A9%E8%BE%A3%E9%BA%BB%E8%BE%A3%E7%81%AB%E9%8D%8B"
+ },
+ {
+  "page": 17,
+  "rank": 251,
+  "name": "北平同慶樓",
+  "tags": [
+   "中式料理",
+   "合菜",
+   "午餐"
+  ],
+  "avg": 400,
+  "addr": "臺北市大安區敦化南路二段168號",
+  "hours_today": "11:00-14:00, 17:00-21:00",
+  "rating": 4.4,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559d9734c03a103ee86c8d91-%E5%8C%97%E5%B9%B3%E5%90%8C%E6%85%B6%E6%A8%93"
+ },
+ {
+  "page": 17,
+  "rank": 252,
+  "name": "Mama Inca印加媽媽秘魯餐館",
+  "tags": [
+   "精緻高級",
+   "約會餐廳",
+   "午餐"
+  ],
+  "avg": 1000,
+  "addr": "台北市大安區瑞安街31巷1-1號",
+  "hours_today": "12:00-14:00, 17:30-21:00",
+  "rating": 4.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/618dcf7a781cc02b34c73e1c-Mama-Inca%E5%8D%B0%E5%8A%A0%E5%AA%BD%E5%AA%BD%E7%A7%98%E9%AD%AF%E9%A4%90%E9%A4%A8"
+ },
+ {
+  "page": 17,
+  "rank": 253,
+  "name": "弎弎川酒 · Sansan Bistro-大安餐酒館｜川菜",
+  "tags": [
+   "餐酒館",
+   "中式料理",
+   "晚餐"
+  ],
+  "avg": 1800,
+  "addr": "臺北市大安區敦化南路二段170號",
+  "hours_today": "11:30-14:00, 17:30-22:30",
+  "rating": 4.2,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/697224a0eb74c4f1b749084f-%E5%BC%8E%E5%BC%8E%E5%B7%9D%E9%85%92-Sansan-Bistro-%E5%A4%A7"
+ },
+ {
+  "page": 18,
+  "rank": 256,
+  "name": "四川蜀渝小吃",
+  "tags": [
+   "小吃",
+   "牛肉麵",
+   "熱炒"
+  ],
+  "avg": 200,
+  "addr": "臺北市大安區瑞安街244巷53號",
+  "hours_today": "休息",
+  "rating": 4.2,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559da43bc03a103ee86c93cf-%E5%9B%9B%E5%B7%9D%E8%9C%80%E6%B8%9D%E5%B0%8F%E5%90%83"
+ },
+ {
+  "page": 18,
+  "rank": 257,
+  "name": "Coffee Naps 蓁澄咖啡手作坊",
+  "tags": [
+   "咖啡",
+   "下午茶",
+   "甜點"
+  ],
+  "avg": 350,
+  "addr": "台北市大安區瑞安街256巷29號",
+  "hours_today": "11:00-20:30",
+  "rating": 4.8,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5b5f53922756dd2ba2cf1ec5-Coffee-Naps-%E8%93%81%E6%BE%84%E5%92%96%E5%95%A1%E6%89%8B%E4%BD%9C%E5%9D%8A"
+ },
+ {
+  "page": 18,
+  "rank": 258,
+  "name": "CUPETIT 卡柏蒂精品甜點",
+  "tags": [
+   "甜點",
+   "蛋糕",
+   "下午茶"
+  ],
+  "avg": 300,
+  "addr": "臺北市大安區瑞安街23巷2號",
+  "hours_today": "12:30-20:00",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559d2315c03a103ee86c4418-CUPETIT-%E5%8D%A1%E6%9F%8F%E8%92%82%E7%B2%BE%E5%93%81%E7%94%9C%E9%BB%9E"
+ },
+ {
+  "page": 18,
+  "rank": 259,
+  "name": "Boom咖啡館",
+  "tags": [
+   "咖啡",
+   "甜點",
+   "下午茶"
+  ],
+  "avg": 400,
+  "addr": "臺北市大安區敦化南路二段200巷16號",
+  "hours_today": "08:30-18:30",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/570b2aa7699b6e6a3d3b6834-Boom%E5%92%96%E5%95%A1%E9%A4%A8"
+ },
+ {
+  "page": 18,
+  "rank": 260,
+  "name": "棉花田有機餐廳",
+  "tags": [
+   "素食",
+   "早午餐",
+   "午餐"
+  ],
+  "avg": null,
+  "addr": "臺北市大安區建國南路二段201號",
+  "hours_today": "07:30-20:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559d5934c03a103ee86c67a0-%E6%A3%89%E8%8A%B1%E7%94%B0%E6%9C%89%E6%A9%9F%E9%A4%90%E5%BB%B3"
+ },
+ {
+  "page": 18,
+  "rank": 261,
+  "name": "八方雲集 (台北建南店)",
+  "tags": [
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 230,
+  "addr": "臺北市大安區建國南路二段151巷18號",
+  "hours_today": "11:00-20:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5d77afd68c906d27379a0355-%E5%85%AB%E6%96%B9%E9%9B%B2%E9%9B%86-%E5%8F%B0%E5%8C%97%E5%BB%BA%E5%8D%97%E5%BA%97-"
+ },
+ {
+  "page": 18,
+  "rank": 262,
+  "name": "福寶寶",
+  "tags": [
+   "小吃",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 980,
+  "addr": "臺北市大安區瑞安街23巷12號",
+  "hours_today": "11:00-20:30",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/63353f3a658aba6e4199c1bf-%E7%A6%8F%E5%AF%B6%E5%AF%B6"
+ },
+ {
+  "page": 18,
+  "rank": 263,
+  "name": "貝菈小屋",
+  "tags": [
+   "義式料理",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 250,
+  "addr": "臺北市大安區辛亥路二段159號",
+  "hours_today": "11:40-14:00, 17:00-21:00",
+  "rating": 4.2,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5b803d8222613912e1167680-%E8%B2%9D%E8%8F%88%E5%B0%8F%E5%B1%8B"
+ },
+ {
+  "page": 18,
+  "rank": 264,
+  "name": "仁里居",
+  "tags": [
+   "素食",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 230,
+  "addr": "台北市大安區建國南路二段151巷16號",
+  "hours_today": "11:30-14:30",
+  "rating": 4.7,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5c151a44f5246839a3b506da-%E4%BB%81%E9%87%8C%E5%B1%85"
+ },
+ {
+  "page": 18,
+  "rank": 265,
+  "name": "SOIL by FujinTree",
+  "tags": [
+   "餐酒館",
+   "精緻高級",
+   "約會餐廳"
+  ],
+  "avg": 1200,
+  "addr": "臺北市大安區敦化南路二段269號",
+  "hours_today": "00:00-02:00, 18:00-00:00",
+  "rating": 5.0,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/69ad09ceeb74c446a9d367c4-SOIL-by-FujinTree"
+ },
+ {
+  "page": 18,
+  "rank": 266,
+  "name": "彌生軒 YAYOI 敦南和平店",
+  "tags": [
+   "日本料理",
+   "午餐",
+   "晚餐"
+  ],
+  "avg": 500,
+  "addr": "號臺北市大安區敦化南路二段269",
+  "hours_today": "11:00-15:30, 17:00-22:00",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/59fb5f0b2756dd6f08e9737b-%E5%BD%8C%E7%94%9F%E8%BB%92-YAYOI-%E6%95%A6%E5%8D%97%E5%92%8C%E5%B9%B3%E5%BA%97"
+ },
+ {
+  "page": 18,
+  "rank": 267,
+  "name": "馬可波羅餐廳",
+  "tags": [
+   "Fine Dining",
+   "景觀餐廳",
+   "義式料理"
+  ],
+  "avg": 1200,
+  "addr": "臺北市大安區敦化南路二段201號38樓",
+  "hours_today": "11:30-14:30, 18:00-21:30",
+  "rating": 4.4,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5c2c354823679c4e1cdc4f60-%E9%A6%AC%E5%8F%AF%E6%B3%A2%E7%BE%85%E9%A4%90%E5%BB%B3"
+ },
+ {
+  "page": 18,
+  "rank": 268,
+  "name": "上海醉月樓 (香格里拉遠東飯店)",
+  "tags": [
+   "中式料理",
+   "合菜",
+   "午餐"
+  ],
+  "avg": 1820,
+  "addr": "臺北市大安區敦化南路二段201號39樓",
+  "hours_today": "11:30-14:30, 18:00-21:30",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559d57d4c03a103ee86c66ca-%E4%B8%8A%E6%B5%B7%E9%86%89%E6%9C%88%E6%A8%93-%E9%A6%99%E6%A0%BC%E9%87%8C%E6%8B%89%E9%81%A0%E6%9D%B1%E9%A3%AF%E5%BA%97-"
+ },
+ {
+  "page": 18,
+  "rank": 269,
+  "name": "The Cake Room",
+  "tags": [
+   "蛋糕"
+  ],
+  "avg": 1100,
+  "addr": "台北市大安區敦化南路二段201號",
+  "hours_today": "08:00-19:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5f7c373f02935e2e6459fb22-The-Cake-Room"
+ },
+ {
+  "page": 19,
+  "rank": 271,
+  "name": "Open開房間桌遊餐酒館",
+  "tags": [
+   "餐酒館",
+   "酒吧",
+   "漢堡"
+  ],
+  "avg": 400,
+  "addr": "臺北市大安區辛亥路二段145號一樓",
+  "hours_today": "16:30-23:30",
+  "rating": 4.6,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5f3f459002935e4d2651cc85-Open%E9%96%8B%E6%88%BF%E9%96%93%E6%A1%8C%E9%81%8A%E9%A4%90%E9%85%92%E9%A4%A8"
+ },
+ {
+  "page": 19,
+  "rank": 272,
+  "name": "詹記麻辣火鍋 敦南店",
+  "tags": [
+   "火鍋",
+   "宵夜",
+   "晚餐"
+  ],
+  "avg": 1000,
+  "addr": "臺北市大安區和平東路三段60號",
+  "hours_today": "00:00-01:00, 12:00-00:00",
+  "rating": 4.5,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/5be13cd022613901f8311b71-%E8%A9%B9%E8%A8%98%E9%BA%BB%E8%BE%A3%E7%81%AB%E9%8D%8B-%E6%95%A6%E5%8D%97%E5%BA%97"
+ },
+ {
+  "page": 19,
+  "rank": 273,
+  "name": "紅豆食府 遠企店",
+  "tags": [
+   "中式料理",
+   "合菜",
+   "精緻高級"
+  ],
+  "avg": 780,
+  "addr": "台北市大安區敦化南路二段203號",
+  "hours_today": "11:00-14:30, 17:00-21:00",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/608683f18282873466145b27-%E7%B4%85%E8%B1%86%E9%A3%9F%E5%BA%9C-%E9%81%A0%E4%BC%81%E5%BA%97"
+ },
+ {
+  "page": 19,
+  "rank": 274,
+  "name": "馬可波羅酒廊 (香格里拉遠東飯店)",
+  "tags": [
+   "景觀餐廳",
+   "下午茶",
+   "酒吧"
+  ],
+  "avg": 1080,
+  "addr": "臺北市大安區敦化南路二段201號38F",
+  "hours_today": "17:00-00:00",
+  "rating": 4.6,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559d57dec03a103ee86c66dc-%E9%A6%AC%E5%8F%AF%E6%B3%A2%E7%BE%85%E9%85%92%E5%BB%8A-%E9%A6%99%E6%A0%BC%E9%87%8C%E6%8B%89%E9%81%A0%E6%9D%B1%E9%A3%AF%E5%BA%97-"
+ },
+ {
+  "page": 19,
+  "rank": 275,
+  "name": "ibuki 日料餐廳",
+  "tags": [
+   "日本料理",
+   "精緻高級",
+   "約會餐廳"
+  ],
+  "avg": 2000,
+  "addr": "臺北市大安區敦化南路二段201號",
+  "hours_today": "11:30-14:30, 18:00-21:30",
+  "rating": 3.7,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/559dd6bfc03a103ee86cb23e-ibuki-%E6%97%A5%E6%96%99%E9%A4%90%E5%BB%B3"
+ },
+ {
+  "page": 19,
+  "rank": 276,
+  "name": "ROYCE' Chocolate 生巧克力",
+  "tags": [
+   "甜點"
+  ],
+  "avg": 300,
+  "addr": "台北市大安區敦化南路二段207號",
+  "hours_today": "11:00-21:30",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/619df8807cc7fc24fdfcd1dd-ROYCE-Chocolate-%E7%94%9F%E5%B7%A7%E5%85%8B%E5%8A%9B"
+ },
+ {
+  "page": 19,
+  "rank": 277,
+  "name": "開心農場素食店",
+  "tags": [
+   "素食",
+   "火鍋",
+   "午餐"
+  ],
+  "avg": 100,
+  "addr": "臺北市大安區建國南路二段123巷8號",
+  "hours_today": "10:30-13:30, 17:30-19:30",
+  "rating": null,
+  "closed": false,
+  "url": "https://ifoodie.tw/restaurant/55b9539840b5e303a1d56bbd-%E9%96%8B%E5%BF%83%E8%BE%B2%E5%A0%B4%E7%B4%A0%E9%A3%9F%E5%BA%97"
+ }
+]
