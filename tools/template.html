@@ -348,7 +348,7 @@ header .wrap{padding-top:calc(14px + env(safe-area-inset-top,0px))}
   .copy{min-height:36px;padding:0 12px}
   .sheet .tog{min-height:48px}
   #sheetClose{min-width:44px;min-height:44px}
-  .sheet .grab{padding:14px 0 10px}
+  .sheet .grab{padding:19px 0 20px;min-height:44px}
 }
 .sh-msg{margin:8px 0 0;font-size:13px;color:var(--muted);min-height:1em}
 
@@ -480,7 +480,7 @@ const origin=()=>ORIGINS[state.origin]||ORIGINS.kagura;
 function recompute(){const o=origin().ll;SHOPS.forEach(s=>{s.walk=Math.round(meters(o,s.ll)*1.3/10)*10;s.min=Math.max(1,Math.round(s.walk/75))})}
 const cp=s=>s.fit?s.fit.protein/s.fit.price*100:0;
 const fprice=s=>s.fit?s.fit.price:s.pmin;
-const staleYear=s=>{const m=String(s.menu_source_date||'').match(/^(\d{4})/);return m&&+m[1]<2024?m[1]:null};
+const staleYear=s=>{const ys=(String(s.menu_source_date||'').match(/(19|20)\d{2}/g)||[]).map(Number);if(!ys.length)return null;const y=Math.min(...ys);if(y>=2024)return null;return (ys[0]>=2024?'部分價格是 ':'價格是 ')+y+' 年的'};
 
 function tp(){const d=new Date(new Date().toLocaleString("en-US",{timeZone:"Asia/Taipei"}));return{wd:d.getDay(),mins:d.getHours()*60+d.getMinutes(),d}}
 const hm=s=>{const[a,b]=s.split(":").map(Number);return a*60+b};
@@ -560,7 +560,7 @@ function cardHTML(s){
   return '<article class="card'+(on?' active':'')+(ex?' open':'')+(shut?' shut':'')+'" id="c-'+s.id+'">'+
    '<h2 class="hh"><button class="head" data-id="'+s.id+'" aria-expanded="'+ex+'" aria-controls="d-'+s.id+'" aria-label="'+headLabel(s,st)+'，'+(ex?'收起':'看菜單')+'">'+
     '<span class="num g'+(s.fit?s.fit.grade:"C")+'">'+s.rank+'</span>'+
-    '<span class="hmain"><span class="name">'+esc(s.name)+'</span><span class="meta"><span class="pill '+st.cls+'">'+st.txt+'</span>'+(s.unverified?'<span class="pill flag" title="'+esc(s.unverified)+'">待確認</span>':'')+(staleYear(s)?'<span class="pill ok" title="菜單價格來自 '+staleYear(s)+' 年，現在可能已經漲價">價格是 '+staleYear(s)+' 年的</span>':'')+'<span>'+esc(s.cuisine)+'</span></span></span>'+
+    '<span class="hmain"><span class="name">'+esc(s.name)+'</span><span class="meta"><span class="pill '+st.cls+'">'+st.txt+'</span>'+(s.unverified?'<span class="pill flag" title="'+esc(s.unverified)+'">待確認</span>':'')+(staleYear(s)?'<span class="pill ok" title="'+staleYear(s)+'，現在可能已經漲價">'+staleYear(s)+'</span>':'')+'<span>'+esc(s.cuisine)+'</span></span></span>'+
     statHTML(s)+
     '<span class="body2">'+(s.fit?'<span class="ord">'+esc(s.fit.order)+'</span>':'')+'</span>'+
     '<span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg><span>'+(ex?'收起':'看菜單')+'</span></span>'+
@@ -622,7 +622,7 @@ function select(id,from){
   OPEN.add(id);state.active=id;
   if(from==="popup"||from==="svg")state.view="list";
   sync();render();
-  const c=$("c-"+id);if(c)c.scrollIntoView({behavior:RM()?"auto":"smooth",block:"start"});
+  const c=$("c-"+id);if(c){c.scrollIntoView({behavior:RM()?"auto":"smooth",block:"start"});const hd=c.querySelector(".head");if(hd)hd.focus({preventScroll:true})}
 }
 function sync(){
   document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c.dataset.t===state.type));
@@ -634,7 +634,7 @@ function sync(){
   if(window.LM)setTimeout(()=>LM.resize(),60);
   if(typeof syncTabs==='function'&&$("tabbar"))syncTabs();
 }
-let msgT;const msg=t=>{$("status").textContent=t||"";const sm=$("sheetMsg");if(sm)sm.textContent=t||"";requestAnimationFrame(barH);clearTimeout(msgT);if(t&&!/定位中/.test(t))msgT=setTimeout(()=>{$("status").textContent="";requestAnimationFrame(barH)},7000)};
+let msgT;const msg=t=>{$("status").textContent=t||"";const sm=$("sheetMsg");if(sm)sm.textContent=t||"";requestAnimationFrame(barH);clearTimeout(msgT);if(t&&!/定位中/.test(t))msgT=setTimeout(()=>{$("status").textContent="";const s2=$("sheetMsg");if(s2)s2.textContent="";requestAnimationFrame(barH)},7000)};
 $("expandAll").onclick=()=>{visible().forEach(s=>OPEN.add(s.id));render()};
 $("collapseAll").onclick=()=>{OPEN.clear();render()};
 
@@ -693,6 +693,7 @@ function initMap(){
     m.on("click",()=>{setActive(s.id);if(innerWidth>900){const c=$("c-"+s.id);if(c)c.scrollIntoView({behavior:RM()?"auto":"smooth",block:"nearest"})}});
     mk[s.id]=m});
   $("lmap").addEventListener("keydown",e=>{
+    if(e.key==="Escape"&&map._popup&&map._popup.isOpen&&map._popup.isOpen()){const src=map._popup._source&&map._popup._source.getElement&&map._popup._source.getElement();e.preventDefault();map.closePopup();if(src)src.focus();return}
     if(e.key!=="Enter"&&e.key!==" ")return;
     const icon=e.target.closest&&e.target.closest(".leaflet-marker-icon");if(!icon)return;
     const pin=icon.querySelector(".lpin");
@@ -796,7 +797,7 @@ addEventListener("popstate",e=>{
   if(state.view==="map"&&!(e.state&&e.state.view==="map")){state.view="list";sync();save()}
 });
 function clock(){const n=tp();$("clock").innerHTML='台北時間<b>週'+WD[n.wd]+' '+String(n.d.getHours()).padStart(2,"0")+":"+String(n.d.getMinutes()).padStart(2,"0")+'</b>'}
-function barH(){const r=document.documentElement.style;r.setProperty("--barh",$("bar").offsetHeight+"px");const tb=$("tabbar");if(tb)r.setProperty("--tabh",(tb.offsetHeight||0)+"px")}
+function barH(){const r=document.documentElement.style;r.setProperty("--barh",$("bar").offsetHeight+"px");const tb=$("tabbar");if(tb)r.setProperty("--tabh",(tb.offsetHeight||0)+"px");if(window.LM&&state.view==="map")setTimeout(()=>LM.resize(),30)}
 $("foot").innerHTML=META.footer.split("<br>").map(p=>p.startsWith("已排除")?'<details><summary>重點排除說明</summary><p>'+p+'</p></details>':"<p>"+p+"</p>").join("")+(META.coverage?'<div class="cov"><p>'+META.coverage.replace(/<details>/,'</p><details>')+'</div>':'');
 if(location.hash==="#map")state.view="map";if(location.hash==="#open")state.openNow=true;
 addEventListener("offline",()=>msg("目前離線：營業狀態依手機時間計算，地圖只顯示看過的區域。"));
